@@ -9,10 +9,48 @@
     <!-- family = xxx 是为什么 -->
     <link rel="stylesheet" type="text/css" href="css/css?family=Source+Sans+Pro:900&text=ABCDEFGHIJKLMNOPQRSTUVWXYZ">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+        .badge {
+            display:inline-block;
+            background-color: #ddd;
+            margin-right:10px;
+            padding: 8px;
+            font-size: 14px;
+            color:rgba(0,0,0,.6);
+        }
+        .intro {
+            display:none;
+        }
+        input:checked+div{
+            display: block!important;
+        }
+
+        .nav > ul > li >label {
+            cursor: pointer;
+        }
+
+        .pro-item:before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background-image: url('img/right.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body ng-controller="jy-videoDemo">
 
 <div class="nav box">
+        <ul class="video-list">
+            <li><label for="xxx" class="">我的简历</label></li>
+            <li><label for="projects" class="">我的项目</label></li>
+        </ul>
+        <br>
         <ul class="video-list">
             <li><a href="img/dock.mp4" class="playlist-btn">Video #1</a></li>
             <li><a href="img/river.mp4" class="playlist-btn">Video #2</a></li>
@@ -24,12 +62,104 @@
         </ul>
     </div>
     <div class="main">
-        <div id="overview" class="box">
-            <h1>个人简历<span class="dimmed"><small>.</small>PERSONAL INTRODUCTION</span></h1>
-            <h2>喜欢探索新事物，追求自己喜欢的东西</h2>
-            <p>Take a look at the source for this example to see how to implement a BigVideo.js playlist on a website. In addition to the normal functionality of BigVideo.js, I&rsquo;ve added an auto-hide script to this example, so the content fades out away when you stop moving the mouse (unless you are over the playlist nav). Take a look and feel free to implement that if it makes sense.</p>
-            <p>Keep in mind, you may have to adjust the styles in the bigvideo.css file to get this working right in your design. Making the site work for both desktop and mobile browsers is pretty tricky as well. Use Modernizr&rsquo;s touch feature detection to set up rules for how BigVideo behaves for touchscreen devices that likely do not allow autoplay.</p>
+        <!-- introduce -->
+        <input id="xxx" type="checkbox" style="display:none;">
+        <div id="introduction" class="box" style="display:none">
+            <h1>个人简历<BR/><span class="dimmed">PERSONAL-INTRODUCTION</span></h1>
+            <br>    
+            <h2><span class="badge">tags</span>探索新事物·英语·创造·设计</h2>
+            <p>【 探索新事物 】不具备好奇心的程序员不是好的程序员。刚开始入门这一行的时候可能觉得it这一行十分新鲜；真正学习到了构建网站的时候，会发现，原来代码的世界是如此elegent；到后来看看github等，发现网上有很多神人。不仅能够用很多工具，而且做到了另外的一个level。走在it这条路上，收获不少，但是永远也不知道前面会突然出现怎样高手，在完成他的绝世之作。</p>
+            <p>【 英语 】语言绝对是打开世界大门的钥匙，比如说英语。在编程中，没有比英语更好的朋友了。在编程中，“英语”就像老朋友一样。你永远不会感到孤单，英语会给你这种熟悉的感觉，这种感觉非常好。进而，会慢慢喜欢上编程。</p>
+            <p>【 创造 】如果只是学习而不会创造，那么只是代码的搬运工。作为一个传递世界的载体，必定是十分强大的工具。所以，学会如何灵活运用代码很重要。</p>
+            <p>【 设计 】理论上来讲，美学设计和程序员来说是无缘的。程序员只要注重代码写的elegent和程序的高级性（运用不同的技术手段）。但是作为一个前端，提高设计的眼界，如何让网站达到另外一个level，都是需要考虑到美学设计的。</p>
+            <p>【 CONCLUSION 】作为前端工程师，虽然具备以上的特质，但是可能还有其他的东西要学习，IT行业知识的更新是日新月异的。</p>
         </div>
+
+        <!-- projects -->
+        <input type="checkbox" id="projects" style="display:none;">
+        <div class="projects box" style="display:none;">
+            <h1>个人项目</h1>
+            <p>项目概述</p>
+            <!-- pro -->
+            <label for="yddpay">
+                <p  class="pro-item">2014.12.12 ydd支付 请联系 <a href="mailto:1376342485@qq.com">qq邮箱</a></p>
+            </label for="yddpay">
+            <input id="yddpay" type="radio" style="display:none;"/>
+            <div style="display:none;">
+                <p style="text-indent:2em;">【 项目介绍 】该项目是ydd公司的一个支付后台，接入微信支付</p>
+                <p style="text-indent:2em;">【 技术 】用jquery和自定义一套css和js的组件</p>
+                <ul>
+                    <li><a href="https://liduanjie.gitbooks.io/ydd_pay/content/htmlstructer.html">前端文档</a></li>
+                    <li><a href="">支付页面效果图</a></li>
+                    <li>如果需要查看其他页面，请联系 <a href="mailto:1376342485abc@gmail.com">liduanjie</a> </li>
+                </ul>
+            </div>
+            <!-- pro -->
+            <label for="ypt">
+                <p class="pro-item">2014.12.12 易跑腿 请联系 <a href="mailto:1376342485@qq.com">qq邮箱</a> </p>
+            </label>
+            <input id="ypt" type="radio" style="display:none;"/>
+            <div style="display:none;">
+                <p style="text-indent:2em;">【 项目介绍 】该项目是送快递的手机应用，分快递员端和客户端</p>
+                <p style="text-indent:2em;">【 技术 】用framework7 和template7框架，接入高德地图api</p>
+                <ul>
+                    <li><a href="">支付页面效果图</a></li>
+                    <li>如果需要查看其他页面，请联系 <a href="mailto:1376342485abc@gmail.com">liduanjie</a> </li>
+                </ul>
+            </div>
+            <!-- pro -->
+            <label for="ng-ionic">
+                <p class="pro-item">2014.12.12 angularionic项目 请联系 <a href="mailto:1376342485@qq.com">qq邮箱</a> </p>
+            </label>
+            <input id="ng-ionic" type="radio" style="display:none;">
+            <div style="display:none;">
+                <p style="text-indent:2em;">【 项目介绍 】该项目是招聘网站的客户端</p>
+                <p style="text-indent:2em;">【 技术 】用angularjs和ionic 最新的技术来写的h5应用，性能和用户体验接近原生效果</p>
+                <ul>
+                    <li><a href="">点击查看效果</a></li>
+                    <li>如果需要查看其他页面，请联系 <a href="mailto:1376342485abc@gmail.com">liduanjie</a> </li>
+                </ul>
+            </div>
+            <!-- pro -->
+            <label for="yiyuan">
+                <p class="pro-item">2013.1221.12 一元购项目重构 </p>
+            </label>
+            <input id="yiyuan" type="radio" style="display:none"/>
+            <div style="display:none;">
+                <p style="text-indent:2em;">【 项目介绍 】该项目是送快递的手机应用，分快递员端和客户端</p>
+                <p style="text-indent:2em;">【 技术 】用framework7 和template7框架，接入高德地图api</p>
+                <ul>
+                    <li>微信公众号关注<b>野大豆科技</b>，查看效果OR<a href="">点击查看效果图</a></li>
+                    <li>如果需要查看其他页面，请联系 <a href="mailto:1376342485abc@gmail.com">liduanjie</a> </li>
+                </ul>
+            </div>
+            <!-- contact -->
+            <p>联系方式</p>
+            <ul>
+                <li>邮箱：<a href="mailto:1376342485@qq.com">1376342485@qq.com</a> 或者
+                    <a href="mailto:1376342485abc@gmail.com">1376342485abc@gmail.com</a>
+                </li>
+                <li>手机: <a href="">15112060248</a></li>
+                <li>facebook：<a href="https://www.facebook.com/liduanjie123">like me on facebook <b>:D</b></a></li>
+            </ul>
+
+        </div>
+
+        <!-- overview -->
+        <div id="overview" class="box" style="display:n">
+            <h1>个人简历<span class="dimmed"><small>.</small><br/>PERSONAL INTRODUCTION</span></h1>
+            <h2>喜欢探索新事物·追求自己喜欢的东西·代码是兴趣爱好之一</h2>
+            <br/>
+            <p>【 一 】没有人不喜欢网络，代码可以创造很多的东西。</p>
+            <p>【 二 】小的时候比较喜欢collection，有的是当时流行的一些卡牌，有的是一些漂亮的玻璃珠，有的是香烟壳，有的是一个个零件（从四驱车上拆卸下来的）。其实小时候在完成收集收藏品的过程中，也就慢慢的在形成我的世界了。可能这有点抽象。再说个例子，自己在收藏的过程中，可能弟弟也会有。如果可以交换的话，那应该是一件很不错的事情。事实上也是如此。在交换的过程中，会发现，有可能因为规则定不好，或者反悔，结果就导致这种交换的失败。实际上，在这个时候已经意识到了这其实是世界的一小部分。</p>
+            <p>【 四 】长大后我发现，自己的兴趣还是沿着这个店发展下去，不过现在收藏的东西相对来说有价值，比如说时间，历史，视野，现实，谎言，真相等等，我认为，所有人思考过的，认识的，发生过的事情都值得收藏和研究</p>
+            <p>【 五 】之所以选择IT这一个行业也是这样子，是因为我觉得手上的代码可以创造出一个<a href="world.html">世界</a>。其实世界上还有其他的elegent的表达方式，比如书法，绘画，电影等等。这些表现手段和表达方式都是不错的，甚至可能有的人运用这些还可能达到一种登峰造极的境界。比如<a href="">一些网站</a>所有的艺术手法和表现手段都是运用于思想的表达，或者功能的实现。而我，则用来收藏时间，经历，尽量能够把有价值的东西留存下来。</p>
+            <p></p>
+            <p>Keep in mind, you may have to adjust the styles in the bigvideo.css file to get this working right in your design. Making the site work for both desktop and mobile browsers is pretty tricky as well. Use Modernizr&rsquo;s touch feature detection to set up rules for how BigVideo behaves for touchscreen devices that likely do not allow autoplay.</p>
+            <h2>项目简介</h2>
+            <p>一元项目</p>
+        </div>
+        
     </div>
     <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="js/EventEmitter.min.js"></script>
@@ -41,6 +171,8 @@
     <script type="text/javascript" src="js/bigvideo.min.js"></script>
     <script src="js/videoDemo.js"></script>
     <script type="text/javascript">
+
+
     </script>
     
 </body>
