@@ -52,7 +52,7 @@
             var BV = new $.BigVideo({forceAutoplay:isTouch});
             BV.init();
             // show background image
-            BV.show('static/video/img/background-dock.jpg');
+            BV.show('img/background-dock.jpg');
 
             // Playlist button click starts video, enables autohiding
             $('.playlist-btn').on('click', function(e) {
