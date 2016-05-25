@@ -9,6 +9,8 @@
     <!-- family = xxx 是为什么 -->
     <link rel="stylesheet" type="text/css" href="css/css?family=Source+Sans+Pro:900&text=ABCDEFGHIJKLMNOPQRSTUVWXYZ">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="js/lib/highlight/monokai_sublime.min.css">
+    <script src="js/lib/highlight/highlight.min.js"></script>
     <style type="text/css">
         .badge {
             display:inline-block;
@@ -77,6 +79,17 @@
             <h1>个人项目</h1>
             <p>项目概述</p>
             <!-- pro -->
+            <label for="contentMgr">
+                <p class="pro-item">2912.12.12 <b>内容管理系统</b></p>
+            </label>
+            <input id="contentMgr" type="checkbox" style="display:none;">
+            <div style="display:none;">
+                <p style="text-indent:2em;">【 项目介绍 】该项目是第一个php项目，内容管理系统</p>
+                <p style="text-indent:2em;">【 技术 】用adodb框架和smarty模板，php语言写的后台管理系统</p>
+                <ul style="margin-left:2em;">
+                </ul>
+            </div>
+            <!-- pro -->
             <label for="yiyuan-app">
                 <p class="pro-item">2912.12.12 <b>一元购app</b></p>
             </label>
@@ -84,9 +97,25 @@
             <div style="display:none;">
                 <p style="text-indent:2em;">【 项目介绍 】该项目是一元购的手机app版本</p>
                 <p style="text-indent:2em;">【 技术 】这是一个hybride app，考虑到性能，这个app并没有用到框架，并且为一些问题考虑了解决方案，用phonegap打包html代码，用jsonp等的技术</p>
-                <ul>
-                    <li> </li>
+                <ul style='margin-left:2em;'>
+                    <li></li>
                 </ul>
+            </div>
+            <!-- pro -->
+            <label for="yiyuan">
+                <p class="pro-item">2013.1221.12 <b>一元购项目重构</b> </p>
+            </label>
+            <input id="yiyuan" type="checkbox" style="display:none"/>
+            <div style="display:none;">
+                <p style="text-indent:2em;">【 项目介绍 】一元购手机版重构ui和部分功能</p>
+                <p style="text-indent:2em;">【 技术 】重新写过css组件和一些ajax功能</p>
+                <p style="text-indent:2em;">
+                    <ul style="margin-left:2em;">
+                        <li>微信公众号关注<b>野大豆科技</b>，OR<a href="">点击查看效果图</a></li>
+                        <li><a href="codedemo.html#yiyuan">css组件部分代码</a></li>
+                        <li>如果需要查看其他页面， </li>
+                    </ul>
+                </p>
             </div>
             <!-- pro -->
             <label for="yddpay">
@@ -138,23 +167,89 @@
                 </p>
             </div>
             <!-- pro -->
-            <label for="yiyuan">
-                <p class="pro-item">2013.1221.12 <b>一元购项目重构</b> </p>
+            <label for="ymca">
+                <p class="pro-item">2013.323.23 <b>ymca</b></p>
             </label>
-            <input id="yiyuan" type="checkbox" style="display:none"/>
+            <input id="ymca" type="checkbox" style="display: none;" />
             <div style="display:none;">
-                <p style="text-indent:2em;">【 项目介绍 】一元购手机版重构ui和部分功能</p>
-                <p style="text-indent:2em;">【 技术 】重新写过css组件和一些ajax功能</p>
-                <p style="text-indent:2em;">
+                <p style="text-indent:2em;">【 项目介绍 】沉香阁是做沉香，手链，佛珠的商城，风格比较淡雅自然;后来在商城中用discuz集成一个论坛</p>
+                <p style="text-indent:2em;">【 技术 】用jquery，ajax，kingeditor等技术构建商城</p>
+                <p style="text-indent: 2em;">
+                    【项目细节】
                     <ul style="margin-left:2em;">
-                        <li>微信公众号关注<b>野大豆科技</b>，OR<a href="">点击查看效果图</a></li>
-                        <li>如果需要查看其他页面， </li>
+                        <li><a href="http://www.uooou.net/bbs/index.php">沉香阁论坛</a></li>
+                        <li>您可以对比<a href="http://uooou.net"></a></li>
+                    </ul>
+                </p>
+            </div>
+            <!-- pro -->
+            <label for="sxb">
+                <p class="pro-item">2013.323.23 <b>实习宝</b></p>
+            </label>
+            <input id="sxb" type="checkbox" style="display: none;" />
+            <div style="display:none;">
+                <p style="text-indent:2em;">【 项目介绍 】沉香阁是做沉香，手链，佛珠的商城，风格比较淡雅自然;后来在商城中用discuz集成一个论坛</p>
+                <p style="text-indent:2em;">【 技术 】用jquery，ajax，kingeditor等技术构建商城</p>
+                <p style="text-indent: 2em;">
+                    【项目细节】
+                    <ul style="margin-left:2em;">
+                        <li><a href="http://www.uooou.net/bbs/index.php">沉香阁论坛</a></li>
+                        <li>您可以对比<a href="http://uooou.net"></a></li>
+                    </ul>
+                </p>
+            </div>
+            <!-- <div style="letter-spacing: 1em;color:#fff;margin:10px;">----divider----</div> -->
+            <!-- pro -->
+            <label for="zfsk">
+                <p class="pro-item">2013.323.23 <b>真房实客</b></p>
+            </label>
+            <input id="zfsk" type="checkbox" style="display: none;" />
+            <div style="display:none;">
+                <p style="text-indent:2em;">【 项目介绍 】沉香阁是做沉香，手链，佛珠的商城，风格比较淡雅自然;后来在商城中用discuz集成一个论坛</p>
+                <p style="text-indent:2em;">【 技术 】用jquery，ajax，kingeditor等技术构建商城</p>
+                <p style="text-indent: 2em;">
+                    【项目细节】
+                    <ul style="margin-left:2em;">
+                        <li><a href="http://www.uooou.net/bbs/index.php">沉香阁论坛</a></li>
+                        <li>您可以对比<a href="http://uooou.net"></a></li>
+                    </ul>
+                </p>
+            </div>
+            <!-- pro -->
+            <label for="jcyd">
+                <p class="pro-item">2013.323.23 <b>聚财有道</b></p>
+            </label>
+            <input id="jcyd" type="checkbox" style="display: none;" />
+            <div style="display:none;">
+                <p style="text-indent:2em;">【 项目介绍 】聚财有道是一个股票，期货的网站</p>
+                <p style="text-indent:2em;">【 技术 】用jquery，和echarts做的股票网站</p>
+                <p style="text-indent: 2em;">
+                    【项目细节】
+                    <ul style="margin-left:2em;">
+                        <li><a href="http://www.uooou.net/bbs/index.php">沉香阁论坛</a></li>
+                        <li>您可以对比<a href="http://uooou.net"></a></li>
+                    </ul>
+                </p>
+            </div>
+            <!-- pro -->
+            <label for="hy">
+                <p class="pro-item">2015.7 <b>灏毅</b></p>
+            </label>
+            <input id="hy" type="checkbox" style="display:none;" />
+            <div style="display:none;">
+                <p style="text-indent:2em;">【 项目介绍 】该项目是展示网站，是灏毅设计公司的一个网站，主要有公司和工程师，项目的介绍等</p>
+                <p style="text-indent:2em;">【 技术 】用jquery，ajax，kingeditor等技术构建商城</p>
+                <p style="text-indent: 2em;">
+                    【项目细节】
+                    <ul style="margin-left:2em;">
+                        <li><a href="http://www.uooou.net/bbs/index.php">沉香阁论坛</a></li>
+                        <li>您可以对比<a href="http://uooou.net"></a></li>
                     </ul>
                 </p>
             </div>
             <!-- pro -->
             <label for="cxg">
-                <p class="pro-item">2013.323.23 <b>沉香阁</b></p>
+                <p class="pro-item">2015.6 <b>沉香阁</b></p>
             </label>
             <input id="cxg" type="checkbox" style="display: none;" />
             <div style="display:none;">
@@ -169,21 +264,21 @@
                 </p>
             </div>
             <!-- pro -->
-            <label for="hy">
-                <p class="pro-item">2014.23.23 <b>灏毅</b></p>
+            <label for="mdxsh">
+                <p class="pro-item">2015.6 <b>免单新生活</b></p>
             </label>
-            <input id="hy" type="checkbox" style="display:none;" />
+            <input id="mdxsh" type="checkbox" style="display: none;" />
             <div style="display:none;">
-                <p style="text-indent:2em;">【 项目介绍 】该项目是展示网站，是灏毅设计公司的一个网站，主要有公司和工程师，项目的介绍等</p>
-                <p style="text-indent:2em;">【 技术 】用jquery，ajax，kingeditor等技术构建商城</p>
+                <p style="text-indent:2em;">【 项目介绍 】免单新生活做的是手机版的html页面</p>
+                <p style="text-indent:2em;">【 技术 】主要是ui</p>
                 <p style="text-indent: 2em;">
                     【项目细节】
                     <ul style="margin-left:2em;">
-                        <li><a href="http://www.uooou.net/bbs/index.php">沉香阁论坛</a></li>
-                        <li>您可以对比<a href="http://uooou.net"></a></li>
+                        
                     </ul>
                 </p>
             </div>
+            
             <!-- contact -->
             <p>联系方式</p>
             <ul>
@@ -206,9 +301,18 @@
             <p>【 四 】长大后我发现，自己的兴趣还是沿着这个店发展下去，不过现在收藏的东西相对来说有价值，比如说时间，历史，视野，现实，谎言，真相等等，我认为，所有人思考过的，认识的，发生过的事情都值得收藏和研究</p>
             <p>【 五 】之所以选择IT这一个行业也是这样子，是因为我觉得手上的代码可以创造出一个<a href="world.html">世界</a>。其实世界上还有其他的elegent的表达方式，比如书法，绘画，电影等等。这些表现手段和表达方式都是不错的，甚至可能有的人运用这些还可能达到一种登峰造极的境界。比如<a href="">一些网站</a>所有的艺术手法和表现手段都是运用于思想的表达，或者功能的实现。而我，则用来收藏时间，经历，尽量能够把有价值的东西留存下来。</p>
             <p>First, Everyone like surfing the internet so coding can do many things.Second, this is a hobby that collecting something like some cards, glass ball, paper wrapper or some part of the toy car.in fact, when I am in the process of collectiong something, I form my opinion of this world. This may be abstract for you, then another example. When I collecting, my younger brother does.It's a bralliant thing to exchange both of our collections, I think.In fact, it was.But sometimes when us exchange our collection, some reason that reget or disobey the rule lead to the exchange fail. As I grow older, I find that my interest develop by the way,but what I collect change to time, history, horizon, reality, lies, turth and so on. I think that it deserve to collect something that was happended. finnaly reuturn to the topic, I chose internet technology because I find that I can develop a world.In fact, there exsist another performace in the world, like hand writings, drawing, films and so on. These are great method to express and even someone reach the top level. I don't reach that level, I just use it to collect time, experience, and try to save something in the world.</p>
+            ```html
+            <DOCTYPE html>
+            <html>
+            </html>
+            ```
+            
         </div>
-        
+
     </div>
+    <script type="text/javascript">
+        hljs.initHighlightingOnLoad();
+    </script>
     <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="js/EventEmitter.min.js"></script>
     <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
@@ -218,10 +322,7 @@
     <script type="text/javascript" src="js/video.min.js"></script>
     <script type="text/javascript" src="js/bigvideo.min.js"></script>
     <script src="js/videoDemo.js"></script>
-    <script type="text/javascript">
-
-
-    </script>
+    
     
 </body>
 </html>

@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YiYuan Rebuild Project</title>
+  <link rel="stylesheet" type="text/css" href="js/lib/highlight/atelier-forest-dark.css">
+  <style type="text/css">
+    .hljs {
+      height: 200px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  定义一套ui组件
+    css部分重构
+    casual wear
+    cus-*是前缀，相当于自定义组件。
+
+    <pre>
+      <code class="css">
+        /*cus-select*/
+          .cus-select {
+            width: 100%;
+            overflow: hidden;
+            /*padding: 3px;*/
+            background: url('../images/btn_down_b.png') no-repeat;
+            background-size: 15px;
+            background-position: center right;
+          }
+
+          .cus-select  > select {
+            border: none;
+            width:250px;
+          }
+          /*cus-select*/
+
+          /*checkbox*/
+          .cus-checkbox {
+              display: inline-block;
+              cursor: pointer;
+              margin-right: 20px;
+              font-weight: normal;
+          }
+
+          label.cus-checkbox > i.red-checkbox {
+              background: url(../images/btn_sel.png) no-repeat;
+          }
+
+          label.cus-checkbox > i {
+              display: inline-block;
+              margin-top: -3px;
+              width: 23px;
+              height: 23px;
+              /* margin-right: 10px; */
+              background: url(../images/dot.png) no-repeat;
+              vertical-align: middle!important;
+              background-position: center bottom!important;
+              background-size: 100%!important;
+              margin-right: 8px;
+          }
+
+          label.cus-checkbox > input:checked+i, label.cus-checkbox > input:checked+i.red-checkbox {
+              background-position: center top!important;
+
+          }
+
+          label.cus-checkbox > input {
+            display:none;
+          }
+          /*checkbox*/
+
+
+          /*label*/
+          .cus-radio {
+              display: inline-block;
+              /*margin-bottom: 10px;*/
+              /*margin-left: 10px;*/
+              cursor: pointer;
+              margin-right: 20px;
+              font-weight: normal;
+          }
+
+          label.cus-radio > i.red-radio {
+              background: url(../images/btn-sel-yes.png) no-repeat;
+          }
+
+          label.cus-radio > i {
+              display: inline-block;
+              margin-top: -3px;
+              width: 23px;
+              height: 23px;
+              /* margin-right: 10px; */
+              background: url(../images/dot.png) no-repeat;
+              vertical-align: middle!important;
+              background-position: center bottom!important;
+              background-size: 100%!important;
+              margin-right: 8px;
+          }
+
+          
+
+          label.cus-radio > input:checked+i, label.cus-radio > input:checked+i.red-radio {
+              background-position: center top!important;
+
+          }
+
+          label.cus-radio > input {
+            display:none;
+          }
+
+          /*label*/
+      </code>
+    </pre>
+
+    <h3>定义button</h3>
+    <pre>
+      <code class="css">
+        
+      /*button*/
+
+      .cus-btn {
+        border-radius: 4px;
+        display:block;
+        text-align:center;
+        /*margin: 0 auto;*/
+        /*margin-right: 16px;*/
+        /*margin-left: 16px;*/
+        
+        
+      }
+      .cus-btn-lg {
+        height: 45px;
+        line-height: 45px;
+        font-size: 14px;
+      }
+      .cus-btn-red {
+        background-color:#db3855;
+        border:1px solid #db3855;
+        color: #fff;
+      }
+
+      .cus-btn-grey {
+        background-color: #ccc;
+        border: 1px solid #ccc;
+        color: #fff;
+      }
+
+      .cus-btn-red:hover {
+        background-color: #db3855 .5;
+      }
+
+      .cus-btn {
+        text-align:center;
+        padding: 0 10px;
+        min-width: 40px;
+        border-radius: 3px;
+        display: inline-block;
+      }
+      
+      .cus-btn-red-border {
+
+        border: 1px solid #db3855;
+        /*background-color:#db3855;*/
+        color: #db3855;
+        font-size:12px;
+      }
+
+      .cus-btn-orange-border {
+
+        border: 1px solid #ff8730;
+        /*background-color:#ff8730;*/
+        color: #ff8730;
+        font-size:12px;
+      }
+
+      .cus-btn-empty {
+        border: 1px solid #db3855;
+      }
+
+      .cus-btn-md {
+        font-size:12px;
+        height: 32px;
+        line-height: 32px;
+      }
+
+      .cus-btn-sm {
+        font-size: 12px;
+        height: 20px;
+        line-height: 20px;
+        
+      }
+      </code>
+    </pre>
+
+    <h3>定义xx</h3>
+    <pre>
+      <code class="css">
+
+        /*input1 */
+        .cus-list-input1 input,.cus-list-input1 select {
+          height: 46px;
+          width: 100%;
+          border:none;
+          padding-top: 4px;
+        }
+
+        .cus-list-input1 > div {
+          border-bottom: 1px solid #eee;
+        }
+
+        .cus-list-input1{
+          padding:0 18px;
+          background-color: #fff;
+          height: 48px;
+          font-size: 14px;
+          
+          /*background: url('../images/btn_return.png') no-repeat;*/
+          background-size: 15px;
+          background-position: 97% 15px;
+          
+        }
+
+        .cus-list-input1:after, .cus-list-select:after, .cus-list-textarea > div:after {
+          content: '';
+          display:table;
+          clear:both;
+        }
+        
+        .cus-list-input1 > div > label,.cus-list-select > div > label, .cus-list-textarea > div > label {
+          min-width: 97px;
+          float:left;
+          font-weight: normal;
+          color: #989898;
+          
+            vertical-align: middle;
+            position: relative; 
+            top: 15px;
+            text-align:left;
+        }
+
+        .cus-list-input1 > div > label.required:before, .cus-list-select > div  label.required:before {
+          content: '*';
+          color:#db3855;
+        }
+
+        .cus-list-input1 > div >  div{ 
+          margin-left: 100px;
+          /*margin-right: 30px;*/
+        }
+
+        .cus-list-input1 > div >  div .select {
+          
+        }
+
+        .cus-list-input1 > div >  div.item-radio {
+          position: relative; 
+          top:16px;
+          color:#989898;
+        }
+
+
+        .cus-list-select {
+          font-size: 14px;
+            padding: 0 18px;
+            background-color: #fff;
+        }
+
+        .cus-list-select > div > div > div {
+          height: 48px;
+          
+          /*background: url('../images/btn_down.png') no-repeat;*/
+          /*background-size: 12px;*/
+          /*background-position: 97% 21px;*/
+
+        }
+
+        .cus-list-select > div > div > div  {
+            margin-left: 100px; 
+            /*padding-right: 50px; */
+          border-bottom: 1px solid #eee;
+            
+        }
+
+        .cus-list-select > div > div > div > div  select  {
+          height: 46px;
+          width: 90%;
+          border:none;
+          padding-top: 2px;
+          -webkit-appearance:none;
+           -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          
+          float: left;
+        }
+
+        .cus-list-textarea {
+          /*background: #fff;*/
+            padding: 0 18px;
+            font-size: 14px;
+        }
+
+        .cus-list-textarea > div {
+          height: 183px;
+        }
+
+        .cus-list-textarea > div >div {
+          position: relative;
+          top: 15px;
+        }
+
+        .cus-list-textarea > div > div > textarea {
+          width: 100%;
+          -webkit-appearance:none;
+           -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            height: 145px;
+          border: 1px solid #eee;
+          padding: 8px;
+          font-size: 14px;
+        }
+
+        .item-text {
+          height: 46px;
+          line-height: 48px;
+          text-align: right;
+        }
+        /*input1 */
+      </code>
+    </pre>
+
+
+    ydd_pay
+    <pre>
+      <code class="css">
+        /**
+         * author: liduanjie
+         * function: ui
+         * this part is a public component
+         * includes header, footer, buttons, panel style, and other comoponent
+         * details: 
+         * key reference: component-nav, footer, button-component, panel-comoponent, title-comppnent
+         * change log: 2016.3.14 text-color: #333-> #222;
+         */
+
+        /**
+         * develop in the future 
+         * define the form style;
+         */
+
+        /*reset*/
+        body {
+          background-color: #e7e8eb;
+          /*font: 14px/1.6 "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","黑体",Arial,sans-serif;*/
+          font-size: 14px;
+          color: #222;
+          font-weight: 400;
+          font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif!important;
+        }
+
+        .pure-g [class *="pure-u"] {
+          font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif!important;
+        }
+
+        a {
+          text-decoration: none;
+          color:#0099CC;
+        }
+
+        /*form component*/
+        input {
+          /*padding: 3px;
+            height: 18px;
+          border-radius: 3px;
+          font-size: 13px;
+            margin: 0 3px;
+            padding: 5px 4px;
+            border-radius: 4!important;
+            color: #858585;
+            background-color: #fff;
+            border: 1px solid #d5d5d5;
+            line-height: 1.2;
+            font-family: inherit;
+            -webkit-box-shadow: none!important;
+            box-shadow: none!important;
+            -webkit-transition-duration: .1s;
+            transition-duration: .1s;*/
+
+            display: inline-block;
+            position: relative;
+            height: 30px;
+            line-height: 30px;
+            vertical-align: middle;
+            font-size: 14px;
+            padding: 0 10px;
+            border: 1px solid #e7e7eb;
+        }
+
+        select {
+            border: 1px solid #e7e7eb;
+            line-height: 1;
+          font-size: 13px;
+            height: 30px;
+            line-height: 1.2;
+            border-radius: 4!important;
+            vertical-align: middle;
+            -webkit-box-shadow: none!important;
+            box-shadow: none!important;
+            -webkit-transition-duration: .1s;
+            transition-duration: .1s;
+        }
+
+        /*reset dialog*/
+
+        .ui-dialog {
+          border-radius: 0px!important;
+          border: 1px solid #f4f5f9!important;
+        }
+
+        .ui-dialog-grid > tbody > tr:nth-child(1)  {
+          border-bottom:1px solid #ddd;
+          background-color: #f4f5f9;
+        }
+
+        .ui-dialog-grid > tbody  .ui-dialog-title {
+          padding: 5px 15px!important;
+        }
+
+        .ui-dialog-grid > tbody > tr:nth-child(2)  {
+          font-size: 12px;
+        }
+
+        .ui-dialog-footer {
+           padding: 3px!important;
+             border-top: 1px solid #ddd!important; 
+            text-align: center!important;
+
+        }
+
+        .ui-dialog-footer button {
+          font-size: 12px!important;
+          width: 7em!important;
+        }
+
+        .ui-dialog-grid > tbody > tr:nth-child(3) {
+          background-color: #f4f5f9!important;
+        } 
+
+        .ui-dialog-button {
+          float:none!important;
+          text-align: center!important;
+        }
+
+        .ui-dialog-footer button.ui-dialog-autofocus {
+          background-color: #44b549!important;
+            border-color: #44b549!important;
+        }
+
+        .ui-dialog-close {
+          top: 5px!important;
+        }
+          
+
+        /**
+         * extra-component: you can customize your component as a tool in this part.
+         * some component such as padding, border, background-format, text-align, float, gap, container
+         * to exten it , use prefix "cus-" to prevent domain pollution
+         */
+
+        .empty {
+            font-size: 20px;
+            color: rgb(220, 220, 220);
+        }
+
+        .cus-width-50 { 
+          width: 50%;
+        }
+
+        .cus-loading {
+            width: 40px;
+            height: 40px;
+            background-repeat: no-repeat;
+            background-image: url('../img/loading1.gif');
+            background-size: 100%;
+            background-position: center;
+        }
+
+        .cus-hidden {
+          display: none;
+        }
+
+        .cus-divider {
+          width: 100%;
+          border-top: 1px solid red;
+          /*margin: 1em 0.5em;*/
+          margin: 10px 0;
+        }
+
+        .cus-nothing-left {
+          color:#5D656B;
+          padding: 5px;
+          font-size:12px;
+          text-align: center;
+          display:block;
+          border: 1px dotted #ddd;
+          border-left: none;
+          border-right: none;
+          margin: 10px;
+        }
+
+        .cus-bg-format-cover{
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          background-color: #fff;
+        }
+
+        .cus-bg-format-auto {
+          background-repeat: no-repeat;
+          background-size: auto 80%;
+          background-position: center center;
+          background-color: #fff;
+        }
+
+        .cus-bg-format-100 {
+          background-repeat: no-repeat;
+          background-size: 100%;
+          background-position: center center;
+          background-color: #fff;
+        }
+
+        .cus-inline-b {
+          display:inline-block;
+        }
+
+
+        /*组件之间的margin*/
+        .cus-mg-b-6 {
+          margin-bottom: 6px;
+        }
+
+        .cus-mg-b-9 {
+          margin-bottom: 9px;
+        }
+
+        .cus-mg-b-15 {
+          margin-bottom: 15px;
+        }
+
+        .cus-mg-b-20 {
+          margin-bottom: 20px;
+        }
+
+        .cus-mg-b-30 {
+          margin-bottom: 30px;
+        }
+        .cus-mg-l-20 {
+          margin-left: 20px;
+        }
+        .cus-wrap {
+            margin-top: 30px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 20px;
+        }
+
+        /*color*/
+        .cus-green {
+          color: #44b569;
+        }
+
+        /*组件的border*/
+        .cus-border-r {
+          border-right: 1px solid #eee;
+        }
+
+        .cus-border-b {
+          border-bottom: 1px solid #eee;
+        }
+
+        .cus-border-t {
+          border-top: 1px solid #eee;
+        }
+
+        .cus-text-center {
+          text-align: center;
+        }
+
+        .cus-text-r {
+          text-align: right;
+        }
+
+        .cus-text-l {
+          text-align: left;
+        }
+
+        /*clear组件*/
+
+        .cus-clearfix {
+          zoom: 1;
+        }
+
+        .cus-clearfix:before {
+          content: '';
+          clear:both;
+        }
+
+        .cus-clearfix:after {
+          visibility: hidden; 
+          display: table; 
+          font-size: 0; 
+          content: " "; 
+          clear: both; 
+          height: 0;
+        }
+
+        .cus-gap {
+          display: block;
+          height: 65px;
+        }
+
+        .pull-left{
+          float :left;
+        }
+
+        .pull-right {
+          float: right;
+        }
+
+        .cus-container {
+          width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+
+        /*component-nav*/
+
+        .component-nav-wrap{
+          z-index: 1000000;
+          position:fixed;
+          left: 0px;
+          top: 0px;
+          width: 100%;
+        }
+
+        .component-nav {
+          background-color:rgb(31,32, 34);
+          padding: 0 30px;
+        }
+
+        .component-nav  ul {
+          float:right;
+        }
+
+        .component-nav  ul > li > a {
+          color: #fff!important;
+          font-size: 12px;
+        }
+
+        .component-nav  ul > li >a:hover {
+          background-color: #44b569;
+          color: #fff;
+        }
+
+        /*component-nav*/
+
+
+        /*headbox*/
+
+        .head_box {
+          position: relative;
+          background-color: #fff;
+          /*border-top: */
+          border-bottom: 1px solid #d9dadc;
+        }
+
+        .head_box > .inner {
+          height: 60px;
+          padding: 0 15px;
+        }
+
+        .head_box > .inner .logo {
+          float: left;
+          /*padding-top*/
+          font-size: 24px;
+          margin-top: 10px;
+        }
+
+        .head_box > .inner  .logo > a {
+          display:block;
+          width: 200px;
+          height: 40px;
+          overflow: hidden;
+          
+          /*background-image: url('http://placehold.it/200x200')*/
+          background-image: url('../img/logo.png');
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: auto 100%;
+          
+        } 
+
+        .head_box > .inner .logo-text {
+          display: inline-block;
+          /*margin-left: 5px;*/
+          margin-top: 17px;
+        }
+
+        @media (max-width: 1300px) {
+          .head_box > .inner .logo-text  {
+            display: none;
+          }
+        }
+
+        .head_box > .inner .logo-text > a {
+          display:block;
+          margin: 0;
+          font-size: 16px;
+          color: #333;
+          padding-left:10px;
+          
+          color: #8d8d8d;
+          text-decoration: none;
+          
+        }
+
+        .head_box > .inner .page-nav {
+          display: inline-block;
+          padding: 0px;
+          margin: 0;
+          margin-top: 25px;
+          
+          float:left;
+        }
+
+        .head_box > .inner .page-nav > li {
+          list-style: none;
+          float: left;
+        }
+
+        .head_box > .inner .page-nav > li > a {
+          padding: 10px 2em;
+          text-decoration: none;
+          font-size: 14px;
+          color: #333;
+          letter-spacing: 0.1em;
+          font-size: 18px;
+        }
+
+        .head_box > .inner .page-nav > li .active {
+            border-bottom: 4px solid #44b549;
+        }
+
+        .head_box > .inner .page-nav > li > a:hover {
+            border-bottom: 4px solid #44b549;
+        }
+
+        /*headbox*/
+
+
+        /*footer*/
+
+        .footer {
+          margin-top: 70px;
+          padding: 30px 0;
+          color: #f1f1f1;
+          text-align: center;
+          background-color: #b8b9b9;
+        }
+
+        /*footer*/
+
+
+        /*button-component*/
+
+        .cus-btn {
+    display: inline-block;
+    overflow: visible;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3px;
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 8em;
+    padding: 0 2em;
+    
+    font: 13.3333px Arial;
+    font-weight: 400;
+    margin-right: 10px;
+    /*transition: 0.5s all;*/
+}
+
+.cus-btn-green:hover{
+  background-color: #2f9833;
+}
+
+.cus-btn-md {
+    height: 32px;
+    line-height: 32px!important;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+}
+
+.cus-btn-green {
+    border: 1px solid #44b549;
+    background-color: #44b549;
+    color: #fff;
+}
+
+.cus-btn-primary {
+    border: 1px solid #f2f2f2;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.cus-btn-primary:hover {
+  background-color:#e7e7eb;
+}
+
+.cus-btn-white {
+  color: #333;
+  background-color: rgb(242, 242, 242);
+  border: 1px solid rgb(200, 200, 200);
+}
+
+.cus-btn-white:hover {
+  background-color:#e7e7eb; 
+}
+
+.cus-btn > i {
+  font-size: 14px;
+}
+
+/*button-component*/
+
+
+/*title-componnet*/
+
+.cus-title {
+  position: relative;
+  /*border-left: 4px solid #44b569;*/
+  /*text-indent: 1em;*/
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cus-title > em{
+  margin-right: 1em;
+  font-style: normal;
+  color: #44b569;
+}
+
+.cus-title > span {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+/*title-componnet*/
+
+
+/*component-panel*/
+
+/**
+ * author: liduanjie
+ * introduction: include panel-image, panel-item, panel-left, panel-right;
+ * panel-item define the fontsize and line-height; panel-image define a list of image;
+ * panel bottom gap can customize like "cus-mg-b-15"
+ * something can be improved: ul reset can remove to public.css
+ */
+
+.component-panel-wrap {
+  margin-top:30px;
+  margin-left:15px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+.component-panel {
+  border: 1px solid #e7e7eb;
+}
+
+.component-panel > .component-panel-header {
+  font-size: 14px;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: #f4f5f9;
+  border-bottom: 1px solid #e7e7eb;
+  /*height: 20px;*/
+  line-height: 3em;
+}
+
+.component-panel > .component-panel-header > .more{
+  text-decoration: none;
+  float:right;
+  color: #222;
+}
+
+.component-panel > .component-panel-body {
+  padding: 15px;
+  padding-left: 25px;
+}
+
+.component-panel > .component-panel-body .panel-item {
+  /*font-size: 12px;*/
+  line-height: 28px;
+  
+  font-size: 14px;
+}
+
+.component-panel > .component-panel-body .panel-item > label {
+  margin-right: 1em;
+  vertical-align: top;
+  
+  display:inline-block;
+  min-width: 5em;
+}
+
+.component-panel > .component-panel-body .panel-item .item-image {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.component-panel > .component-panel-body .panel-item .item-image > ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.component-panel > .component-panel-body .panel-item .item-image > ul > li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.component-panel > .component-panel-body .panel-item .item-image > ul > li > a {
+  display: inline-block;
+  width: 105px;
+  height: 150px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat:no-repeat;
+  border: 1px solid #e7e7eb;
+}
+
+.component-panel > .component-panel-body .panel-item h3 {
+  margin: 0px;
+}
+
+.component-panel > .component-panel-body .panel-item .green {
+  color: #44b569
+}
+
+.component-panel > .component-panel-body .panel-item .red {
+  color: #FF0000
+}
+
+.component-panel > .component-panel-body .panel-item em {
+  font-style: normal;
+  vertical-align: top;
+}
+/*component-panel*/
+
+
+/*component-query */
+
+.component-query{
+  margin-left: 30px;
+  font-size: 14 px;
+}
+
+.component-query .input-format {
+  width: 100px;
+  /*padding: 5px 4px;*/ 
+}
+
+/*【develop】this can add to the reset*/
+.component-query input {
+  /*padding: 3px;*/
+  border-radius: 3px;
+  
+    width: 125px;
+    font-size: 13px;
+    margin: 0 3px;
+    /*padding: 5px 4px;*/
+    border-radius: 4!important;
+    color: #858585;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    line-height: 1.2;
+    font-family: inherit;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    -webkit-transition-duration: .1s;
+    transition-duration: .1s;
+}
+
+.component-query .query-input-item{
+  display:inline-block;
+  margin-right:3em;
+}
+
+.component-query .query-input-item:last-child{
+  /*clear:both;*/
+}
+
+.component-query > .input {
+  line-height: 80px;
+  /*height: 80px; */
+}
+
+.component-query > .input.one-line {
+  /*height: 80px!important;*/
+}
+
+.component-query > .input .buttons {
+    line-height: 10px;
+}
+
+@media (max-width: 1550px) {
+  .component-query > .input {
+    /*height: 160px;*/
+    line-height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .component-query > .input .buttons {
+    display: inline-block;
+  }
+}
+
+/*component-query */
+
+
+/*paginate*/
+.cus-paginate {
+  float: right;
+}
+
+.cus-paginate > ul  {
+  letter-spacing: -2em;
+  padding: 0px;
+  margin: 0px;
+  
+  border: 1px solid #ddd;
+}
+
+.cus-paginate > ul > li{
+    list-style: none;
+    display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+    
+    border-right: 1px solid #ddd;
+    float:left;
+}
+
+.cus-paginate > ul > li:last-child {
+  border-right: none;
+}
+
+.cus-paginate > ul > li > a {
+  background-color: #fff;
+    padding: 6px 15px;
+    font-size: 12px;
+}
+
+.cus-paginate > ul > li > a.selected {
+  background-color:#E6E6E6;
+}
+
+
+/*checkbox component*/
+
+.cus-label {
+  cursor: pointer;
+}
+
+.cus-label input[type="checkbox"] {
+  display: none;
+}
+
+.cus-label input[type="checkbox"] + i {
+  cursor: pointer;
+  margin-right: 3px;
+    display: inline-block;
+    width: 16px;
+    vertical-align: middle;
+    height: 19px;
+    margin-top: -5px;
+    background: url(../img/radio.png) 0px 3px no-repeat;
+    cursor: pointer;
+  /*-webkit-transition: background 0.2s linear;*/
+}
+
+.cus-label > input[type='checkbox']:checked + i{
+  background: url(../img/radio.png) 0px -23px no-repeat;
+}
+
+/*checkbox component*/
+
+
+/*radio component*/
+
+label.cus-radio {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+} 
+
+label.cus-radio > input  {
+    display: none;
+    margin-bottom: 10px;
+} 
+
+label.cus-radio > i {
+  display: inline-block;
+  margin-top: -3px;
+    width: 17px; 
+    height: 17px;
+    /*margin-right: 10px;*/
+    background: url(../img/radio_uncheck1.png) no-repeat;
+    vertical-align: middle;
+}
+
+label.cus-radio > input:checked+i{
+    background: url(../img/radio_check1.png) no-repeat; 
+}
+
+/*radio component*/
+
+.upload-pictures-preview{
+  max-width: 150px;
+}
+      </code>
+    </pre>
+    
+    component tablee
+    <pre>
+      <code class="css">
+        
+      </code>
+    </pre>
+
+    
+vlk
+</body>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="js/lib/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  亚乐客
+</html>
