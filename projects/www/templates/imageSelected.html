@@ -1,0 +1,14 @@
+<ion-view view-title="imageSelected">
+<ion-content>
+  <ion-nav-buttons side="right ">
+    <button class="button button-royal"><i class="icon ion-navicon"></i>tips</button>
+  </ion-nav-buttons>
+  <ion-list>
+    <ion-item>
+      <a href="#tab/imageMoment">
+        <img src="{{item.url}}" ng-repeat="item in items">
+      </a>
+    </ion-item>
+  </ion-list>
+</ion-content>
+</ion-view>
