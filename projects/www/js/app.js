@@ -130,6 +130,37 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('tab.highRecommand', {
+    url: '/highRecommand',
+    views: {
+      'tab-highRecommand': {
+        templateUrl: 'templates/highRecommand.html',
+        controller: 'highRecommand'
+      }
+    }
+  })
+
+  .state('tab.ranking', {
+    url: '/ranking',
+    views: {
+      'tab-ranking': {
+        templateUrl: 'templates/ranking.html',
+        controller: 'ranking'
+      }
+
+    }
+  })
+
+  .state('tab.ranking1', {
+    url: '/ranking1',
+    views: {
+      'tab-ranking': {
+        templateUrl: 'rankTpl.html',
+        controller: 'rankTpl'
+      }
+    }
+  })
+
   
 
   // .state('tab.nottest', {

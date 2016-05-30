@@ -1,0 +1,25 @@
+<ion-view view-title="website-store排行版">
+  <div class="bar bar-subheader ">
+    <div class="button-bar">
+      <a href="" class="button button-dark">rank1</a>
+      <a href="" class="button">rank1</a>
+    </div>
+  </div>
+  <ion-nav-buttons side="left">
+    <a href="#/tab/ranking1" class="button button-clear button-positives button-small">类别</a>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-clear"><i class="icon ion-navicon"></i></button>
+  </ion-nav-buttons>
+  <ion-content class="has-subheader">
+    <div class="list">
+      <a class="item item-thumbnail-left" collection-repeat="item in items">
+        <img src="item.img" alt="" width="40" height="40">
+        <h2>{{item.title}}</h2>
+        <p>{{item.subtitle}}</p>
+        <!-- <p>{{item.rank}}</p> -->
+        <span class="item-note button button-outline button-positive button-small">获取</span>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

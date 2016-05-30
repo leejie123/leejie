@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>  
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="lib/highlight/atelier-forest-dark.css">
-
-    
 
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -47,6 +45,24 @@
     -->
     <ion-nav-view animation="slide-in-up"></ion-nav-view>
   </body>
+
+  <script type="text/ng-template" id="rankTpl.html">
+    <ion-view view-title="all store">
+      <ion-nav-buttons side="right">
+        <a href="" class="button button-clear">取消 </a>
+      </ion-nav-buttons>
+      <ion-content>
+        <ul class="list list-inset">
+          <label ng-repeat="item in items">
+            <ion-radio ng-if="!item.hasparent">{{item.child.name}}</ion-radio>
+            <a href="{{item.child.link}}" class="item item-icon-right" ng-if="item.hasparent">
+              <i class="icon ion-chevron-right positive"></i> {{item.child.name}}
+            </a>
+          </label>
+        </ul> 
+      </ion-content>
+    </ion-view>
+  </script>
 
 
 </html>

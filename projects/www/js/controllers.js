@@ -34,9 +34,153 @@ angular.module('starter.controllers', [])
   })
 
   .controller('imageYear', function($scope) {})
-  .controller('imageSelected', function($scope) {
+  .controller('highRecommand', function($scope) {})
+  .controller('ranking', function($scope) {
+    $scope.items = [
+      {
+        'title': 'lohas乐活',
+        'subtitle': 'lohas乐活',
+        'link': '',
+        'tag': '生活 free rank top 健康',
+        'img': 'http://placehold.it/200x200',
+        'rank': '100'
+      },
+      {
+        'title': 'lohas乐活',
+        'subtitle': 'lohas乐活',
+        'link': '',
+        'tag': '生活 free rank top 健康',
+        'img': 'http://placehold.it/200x200',
+        'rank': '100'
+      },
+      {
+        'title': 'lohas乐活lohas乐活lohas乐活lohas乐活lohas乐活lohas乐活',
+        'subtitle': 'lohas乐活',
+        'link': '',
+        'tag': '生活 free rank top 健康',
+        'img': 'http://placehold.it/200x200',
+        'rank': '100'
+      },
 
-alert();    hljs.initHighlightingOnLoad();
+    ]
+  })
+  .controller('rankTpl', function($scope) {
+    $scope.items = [
+      {
+        'hasparent': true,
+        'child': {'link': '#/tab/ranking', 'name': 'has not p'},
+      },
+      {
+        'hasparent': true,
+        'child': {'name': '所有类别'},
+      },
+      {
+        'hasparent': false,
+        'child': {
+          'name': '儿童',
+          'subChild': [
+            {'name': 'sfio'},
+            {'name': 'sfio'},
+            {'name': 'sfio'}
+          ]},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '教育'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '购物'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '摄影与录像'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '效率'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '美食佳饮'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '生活'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '健康健美'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '旅游'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '音乐'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '体育'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '商务'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '新闻'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '工具'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '娱乐'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '社交'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '报刊杂志'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '财务'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '参考'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '导航'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '医疗'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '读书'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '天气'},
+      },
+      {
+        'hasparent': false,
+        'child': {'name': '商品指南'},
+      },
+
+    ];
+  })
+  .controller('imageSelected', function($scope) {
+   hljs.initHighlightingOnLoad();
 
     $scope.items = [
       {url: 'http://placehold.it/40x40?text=sdfasodifiasod'},
