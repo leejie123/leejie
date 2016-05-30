@@ -26,6 +26,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+  console.log($stateProvider)
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -141,7 +142,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   .state('tab.ranking', {
-    url: '/ranking',
+    url: '/ranking/:sort',
     views: {
       'tab-ranking': {
         templateUrl: 'templates/ranking.html',
@@ -151,15 +152,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.ranking1', {
-    url: '/ranking1',
+  .state('tab.detail', {
+    url: '/detail/:id',
     views: {
       'tab-ranking': {
-        templateUrl: 'rankTpl.html',
-        controller: 'rankTpl'
+        templateUrl: 'templates/detail.html',
+        controller: 'details'
       }
     }
   })
+
+  // .state('tab.ranking1', {
+  //   url: '/ranking1',
+  //   views: {
+  //     'tab-ranking': {
+  //       templateUrl: 'rankTpl.html',
+  //       controller: 'rankTpl'
+  //     }
+  //   }
+  // })
 
   
 

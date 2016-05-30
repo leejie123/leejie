@@ -35,44 +35,28 @@ angular.module('starter.controllers', [])
 
   .controller('imageYear', function($scope) {})
   .controller('highRecommand', function($scope) {})
-  .controller('ranking', function($scope) {
-    $scope.items = [
-      {
-        'title': 'lohas乐活',
-        'subtitle': 'lohas乐活',
-        'link': '',
-        'tag': '生活 free rank top 健康',
-        'img': 'http://placehold.it/200x200',
-        'rank': '100'
-      },
-      {
-        'title': 'lohas乐活',
-        'subtitle': 'lohas乐活',
-        'link': '',
-        'tag': '生活 free rank top 健康',
-        'img': 'http://placehold.it/200x200',
-        'rank': '100'
-      },
-      {
-        'title': 'lohas乐活lohas乐活lohas乐活lohas乐活lohas乐活lohas乐活',
-        'subtitle': 'lohas乐活',
-        'link': '',
-        'tag': '生活 free rank top 健康',
-        'img': 'http://placehold.it/200x200',
-        'rank': '100'
-      },
+  .controller('ranking', function($scope, $stateParams, $ionicModal) {
+    $ionicModal.fromTemplateUrl('rankTpl.html', {
+      scope: $scope,
+      animate: 'slide-in-up'
+    }).then(function(modal){
+      $scope.modal = modal;
+    })
 
-    ]
-  })
-  .controller('rankTpl', function($scope) {
-    $scope.items = [
+    $scope.openModal = function() {
+      $scope.modal.show()
+    }
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    }
+    $scope.tplItems = [
       {
         'hasparent': true,
-        'child': {'link': '#/tab/ranking', 'name': 'has not p'},
+        'child': {'link': '#/tab/ranking/children', 'name': 'has not p'},
       },
       {
         'hasparent': true,
-        'child': {'name': '所有类别'},
+        'child': {'name': '所有类别', 'link': '#/tab/ranking/allsort'},
       },
       {
         'hasparent': false,
@@ -86,11 +70,11 @@ angular.module('starter.controllers', [])
       },
       {
         'hasparent': false,
-        'child': {'name': '教育'},
+        'child': {'name': '教育', 'link': '#/tab/ranking/education'},
       },
       {
         'hasparent': false,
-        'child': {'name': '购物'},
+        'child': {'name': '购物', 'link': '#/tab/ranking/shopping'},
       },
       {
         'hasparent': false,
@@ -178,7 +162,104 @@ angular.module('starter.controllers', [])
       },
 
     ];
-  })
+    switch($stateParams.sort){
+      case 'children':
+        $scope.items = [
+          {
+            'title': 'china',
+            'subtitle': 'lohas乐活',
+            'link': '',
+            'tag': '生活 free rank top 健康',
+            'img': 'http://placehold.it/200x200',
+            'rank': '100'
+          },
+          {
+            'title': 'enghlist',
+            'subtitle': 'lohas乐活',
+            'link': '',
+            'tag': ['生活', 'free', ' rank',' top',' 健康'],
+            'img': 'http://placehold.it/200x200',
+            'rank': '100'
+          },
+          {
+            'title': 'sfsf healthy somethingss',
+            'subtitle': 'lohas乐活',
+            'link': '',
+            'tag': ['生活',' free',' rank',' something',' healthy',' 健康'],
+            'img': 'http://placehold.it/200x200',
+            'rank': '100',
+          },
+          {
+            'title': 'lohas乐2323232活',
+            'subtitle': 'lohas乐活',
+            'link': '',
+            'tag': '生活 free rank top 健康',
+            'img': 'http://placehold.it/200x200',
+            'rank': '100'
+          },
+          {
+            'title': 'lohas42423525434乐活',
+            'subtitle': 'lohas乐活',
+            'link': '',
+            'tag': '生活 free rank top 健康',
+            'img': 'http://placehold.it/200x200',
+            'rank': '100'
+          },
+        ];
+        break;
+      case 'shopping':
+        $scope.items = [
+          {
+            'title': '玩具熊',
+            'subtitle': '商场里的文具熊都没那么熊。。',
+            'link': '',
+            'tag': '生活 free rank top 健康',
+            'img': 'http://placehold.it/200x200',
+            'rank': '100'
+          },
+        ]
+    };
+
+    $scope.select = function(str) {
+
+      $scope.rank = str;
+      $scope.rankStyle="button-dark"
+      $scope.unRank = 'button-stable';
+      $scope.$watch($scope.rank, function(z) {
+        $scope.isActive = true;
+      });
+
+    } 
+    
+    // $scope.items = [
+    //   {
+    //     'title': 'lohas乐活',
+    //     'subtitle': 'lohas乐活',
+    //     'link': '',
+    //     'tag': '生活 free rank top 健康',
+    //     'img': 'http://placehold.it/200x200',
+    //     'rank': '100'
+    //   },
+    //   {
+    //     'title': 'lohas乐活',
+    //     'subtitle': 'lohas乐活',
+    //     'link': '',
+    //     'tag': '生活 free rank top 健康',
+    //     'img': 'http://placehold.it/200x200',
+    //     'rank': '100'
+    //   },
+    //   {
+    //     'title': 'lohas乐活lohas乐活lohas乐活lohas乐活lohas乐活lohas乐活',
+    //     'subtitle': 'lohas乐活',
+    //     'link': '',
+    //     'tag': '生活 free rank top 健康',
+    //     'img': 'http://placehold.it/200x200',
+    //     'rank': '100'
+    //   },
+
+    // ]
+  }) 
+
   .controller('imageSelected', function($scope) {
    hljs.initHighlightingOnLoad();
 
@@ -245,4 +326,5 @@ angular.module('starter.controllers', [])
       })
     }
     
-  });
+  })
+ 
