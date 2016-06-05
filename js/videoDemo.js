@@ -41,7 +41,7 @@
             // Use Modernizr to detect for touch devices, 
             // then serve them alternate background image content
             var isTouch = Modernizr.touch;
-            
+
             // vars for auto hiding
             var isShowingPlaylist = false;
             var isHidden = false;
