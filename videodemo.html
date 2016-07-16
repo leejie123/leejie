@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>个人介绍--liduanjie</title>
+    <title>inset</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
@@ -68,6 +68,23 @@
             vertical-align: middle;
             margin-top: -2px;
         }
+        p.divider {
+            text-align: center;
+        }
+        p.divider:before {
+            content: '-----------------------------';
+            letter-spacing: 3px;
+            font-weight: normal;
+            margin-right: 10px;
+            margin-top: -2px;
+        }
+        p.divider:after {
+            content: '-----------------------------';
+            letter-spacing: 3px;
+            font-weight: normal;
+            margin-left: 10px;
+            margin-top: -2px;
+        }
     </style>
 </head>
 <body ng-controller="jy-videoDemo">
@@ -76,6 +93,9 @@
         <ul class="video-list">
             <li><label for="xxx" class="">我的简历</label></li>
             <li><label for="projects" class="">我的项目</label></li>
+            <li><label for="selfEsteem" class="">自我评价</label></li>
+            <li><label for="everyDayQuote" class="" title="对世界的一点看法·视界">每日名言·立言</label></li>
+            <li><label for="planning" class="" title="之所以起这个名字，是因为计划对于个人素养的构建还是有一定重要性的">千里之堤</label></li>
         </ul>
         <br>
         <ul class="video-list">
@@ -85,6 +105,11 @@
         </ul>
     </div>
     <div class="main">
+        <!-- about website -->
+        <div class="box">
+            <p>本来呢，这网站是没有名字的，后来想想，还是改一个吧。就叫“昆虫”把，外国的一些黑客在吃一盒薯片，或者拿一双袜子的时候，就把在技术界有名的东西起名成为这手边的玩意儿，所以，延续这种黑客精神，从此这网站就叫。</p>
+        </div>
+
         <!-- introduce -->
         <input id="xxx" type="checkbox" style="display:none;">
         <div id="introduction" class="box" style="display:none">
@@ -96,6 +121,13 @@
             <p>【 创造 】如果只是学习而不会创造，那么只是代码的搬运工。作为一个传递世界的载体，必定是十分强大的工具。所以，学会如何灵活运用代码很重要。</p>
             <p>【 设计 】理论上来讲，美学设计和程序员来说是无缘的。程序员只要注重代码写的elegent和程序的高级性（运用不同的技术手段）。但是作为一个前端，提高设计的眼界，如何让网站达到另外一个level，都是需要考虑到美学设计的。</p>
             <p>【 CONCLUSION 】作为前端工程师，虽然具备以上的特质，但是可能还有其他的东西要学习，IT行业知识的更新是日新月异的。</p>
+        </div>
+
+        <!-- selfEsteem -->
+        <input type="checkbox" style="display:none;" id="selfEsteem" name="">
+        <div class="selfEsteem box" style="display:none;">
+            <span class="badage">脱离了低级趣味</span>
+            <span class="badage">即将脱离负能量</span>
         </div>
 
         <!-- projects -->
@@ -334,6 +366,33 @@
             </ul>
         </div>
 
+        <!-- everyday a quote -->
+        <input type="checkbox" id="everyDayQuote" name="" style="display:none;">
+        <div class="everyDayQuote box" style="display:none">
+            <p title="可惜了，这里没有表情包。这么不要脸调侃自己的还是第一次见。">怀才就像怀孕，日子久了才会被看出来。从这点上来说，包装也挺重要的，因为包装蒙骗了许多人的眼睛。</p>
+            <p title="真的假的？其实躁动这种东西，是需要很大的能量的，精力充沛的人可以改造环境。">躁动具有很大的能量，往往可以创造出少有人走的路。</p>
+            <p>很多的时候，对自己的作品如数家珍是因为，这作品记录了你的成长过程，记录在这个过程对于你的重要程度。而并不是说这时候你做的有多好。但是这些东西并不能为你的发展铺开一条路，而真正重要的是领悟了其中的精髓。这个时候，就不是从技术层面而言，而是从格局上来说。你在没有工具的时候可以构思，你在什么都没有的时候可以完全从零创造，这样，做过多少东西反而不是重点了，也并不值得标榜，而是能够把会的东西贯连起来，然后把自己心里的愿望用最高的技术精髓实现，这就达到了格局水平了。</p>
+            <p>网络上有很多负能量的东西，而且很容易上瘾。所以，立言的目标也在于此，作为正能量之宗。</p>
+            <p title="这其实是自己告诫自己的。">很多东西，不过虚名而已，不必在乎</p>
+            <p title="诸位看官，个人意见，仅供参考">有的时候，个性往往会让自己比较突出，“要低调，不要尝试”的这种论调，其实是没有个性的一种体现。个性强的人往往追求深层次的东西。对于一些方面还是有真知灼见的。如果一开始就不适应，可能是因为觉得自己的个性在环境中不适应罢了。</p>
+            <p>在一个大舞台上，一不小心就会碰到高手。还是要在不压抑自己个性的情况下谦虚一点。</p>
+            <p>人总是在骗自己，自己有多厉害，感觉有多好。其实还是挺喜欢那种感觉的，有点侠客的意味。</p>
+            <p>把技术当玩具就可以了，当你又学会了一门技术，那么你手上又多了一件玩具。</p>
+            <p class="divider">2016-7-15</p>
+        </div>
+
+        <!-- planning -->
+        <input type="checkbox" id="planning" name="" style="display:none;">
+        <div class="planning box" style="display:none;">
+            <ul>
+                <li>每天可以看一本书</li>
+                <li>或者写一本，写一个或两个故事。</li>
+                <li>或者学习一些和技术无关的知识，如果自己创造了玩具，自己又不能玩，那还有什么意思？所以，放开的玩。</li>
+                <li>学会在应该认真的时候认真，在玩的时候就放开的玩。</li>
+                <li>不要浪费时间。勤奋一点点。</li>
+            </ul>
+        </div>
+
         <!-- overview -->
         <div id="overview" class="box" style="">
             <h1>关于我<span class="dimmed"><small>.</small><br/>ABOUT ME</span></h1>
@@ -366,5 +425,26 @@
     <script type="text/javascript" src="js/video.min.js"></script>
     <script type="text/javascript" src="js/bigvideo.min.js"></script>
     <script src="js/videoDemo.js"></script> 
+    <script type="text/javascript">
+    var Insect = (function() {
+        var popup = function() {
+
+        }
+
+        popup.prototype = {
+            init: function(params) {
+
+            },
+            append: function() {
+                $('<div><div class="insetPopup"><div class="popup-header" style="height:30px;line-height:30px;">somet</div></div>').css({
+                })
+            }
+        }
+        reuturn 
+    })
+    // var visitor = new Insect.popup({
+        // 有朋自远方来，不亦乐乎？
+    // })
+    </script>
 </body>
 </html>
