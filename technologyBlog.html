@@ -13,7 +13,7 @@
 <body>
 
 	<h3>总结·反省</h3>
-	<q>遇到的问题·经验的不足方面·合作方面的不足，有的时候玩的太过，不好</q>
+	<q>遇到的问题·经验的不足方面·合作方面的不足，有的时候玩的太过，不好,应该有一套法则，有据可循。</q>
 	<q>几点原则</q>
 	<ul>
 		<li>给到别人手中一定是通过了自己这一关，不需要再修改的了。</li>
@@ -31,7 +31,12 @@
 		<li>技术上来说，new一个对象会有很大的开销，可能需要些很多回调。感觉这个做的还不够完善，扩展性是有的，但是要做到layer的还有差距，要研究下。</li>
 		<li>twbspagination的不足：只能够初始化一次（解决方案，只能够用twbspagination('destory')）</li>
 		<li>$(element).bind('click',dosomething)这个可能会重复绑定，解决方案是：1、$(element).unbind().bind('click',dosomething)或者$(element).bind('click', function(){... $(this).unbind()})</li>
+		<li>注意jquery不同版本之间的区别</li>
 		<li>研究一个技术框架也不容易，比如闲心的layer，竟然能够实现自定义的confirm，然后又返回值，从常规上来说，如果函数要有返回值一般是return，但是点击事件发生之前，函数已经有返回值了。浏览器的confirm是用线程阻塞来实现这个问题的。</li>
+		<li>研究下iframe的架构</li>
+		<li>看看类和插件有没有其他写法。自己写的可能还没有那么elegent</li>
+		<li>其实图片还可以压缩，css和js也是，用webpack</li>
+		<li>外国网页的命名，class，等到自己看外国网页觉得没什么，自己也已经成为大神。看一个网页，一定要能够把握结构，以及学到一点东西。</li>
 		<li>没想到辛苦做的弹框竟然用不上，还是换掉吧。失落的感觉。</li>
 		<li>twbs pagination的问题：1、初始化时自动加载第一页 2、在重新输入分页参数的时候不能刷新</li>
 		<li><b>合作问题</b> <small>这方面的才是大问题，该想想如何解决。</small></li>
@@ -40,5 +45,38 @@
 		<li>总而言之，不能够领会设计意图。每一分设计都是有意义的。注意看。</li>
 		<li><b>按照流程来是不是就不会出错？其实应该看东西的时候没有入心，就是别人设计的重点和一些细节没有看到。</b></li>
 	</ul>
+	<h3>plugins</h3>
+	<ul>
+		<li><b>jquery plugins</b></li>
+		<li>各种模式，各种名词，amd，cmd，各种插件，</li>
+		<li><a href="https://github.com/malsup/form">jquery form</a></li>
+		<li>jquery ui</li>
+		<li>modernizer</li>
+		<li><b>wordpress</b></li>
+		<li><a href="https://codestag.com/themes/ink/">wordpress theme</a></li>
+	</ul>
+
+	<h3>study a website a day</h3>
+	<ul>
+		<li></li>
+	</ul>
+
+	<h3>study a framework a day</h3>
+	<ul>
+		<li></li>
+	</ul>
+
+	<h3>every day a blog</h3>
+	<ul>
+		<li><a href="http://sentsin.com/web/">sentsin</a></li>
+	</ul>
+
+	<h3>css tricks</h3>
+
+	<h3>一下用大量篇幅来研究所得</h3>
+
+	<h3>jquery插件以及插件的一般形式</h3>
+	功能，有点，不足
+	自己实现起来的缺陷，不能够实现的地方。
 </body>
 </html>
