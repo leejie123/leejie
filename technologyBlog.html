@@ -28,6 +28,10 @@
 		<li>兼容性，截图，上传</li>
 		<li>ie的opacity，以及rgba在jq中设置会报错</li>
 		<li>z-index的设置</li>
+		<li>技术上来说，new一个对象会有很大的开销，可能需要些很多回调。感觉这个做的还不够完善，扩展性是有的，但是要做到layer的还有差距，要研究下。</li>
+		<li>twbspagination的不足：只能够初始化一次（解决方案，只能够用twbspagination('destory')）</li>
+		<li>$(element).bind('click',dosomething)这个可能会重复绑定，解决方案是：1、$(element).unbind().bind('click',dosomething)或者$(element).bind('click', function(){... $(this).unbind()})</li>
+		<li>研究一个技术框架也不容易，比如闲心的layer，竟然能够实现自定义的confirm，然后又返回值，从常规上来说，如果函数要有返回值一般是return，但是点击事件发生之前，函数已经有返回值了。浏览器的confirm是用线程阻塞来实现这个问题的。</li>
 		<li>没想到辛苦做的弹框竟然用不上，还是换掉吧。失落的感觉。</li>
 		<li>twbs pagination的问题：1、初始化时自动加载第一页 2、在重新输入分页参数的时候不能刷新</li>
 		<li><b>合作问题</b> <small>这方面的才是大问题，该想想如何解决。</small></li>
