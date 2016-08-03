@@ -3,6 +3,7 @@
 <head>
 	<title>technology blog</title>
 	<meta charset="utf-8">
+	<meta name="description" content="this page is build based in tags system.More extendable, you can search the tags and find the topices you want, and just convinence for my study.">
 	<style type="text/css">
 		b {
 			color: skyblue;
@@ -103,6 +104,7 @@
 		<q>准确描述问题，找出问题所在，并提出解决方案，就是这个流程。</q>
 		<li>兼容性，截图，上传</li>
 		<li><span class="tags">[compability]</span>ie的opacity，以及rgba在jq中设置会报错<br/> <small>用rgb和opacity：alaphy来设置ie的透明度 <span class="tags"> [advanced relatived]</span>ie的render和现代浏览器的render，差别，以及检测方式，一些包，hack，补丁，border-radius，box-shadow <span class="tags">[plan]</span>写篇文章</small></li>
+		<li><span class="tags">[compability]</span>jquery的css({})设置会有问题。最好不要用来设置css，可以用addClass代替</li>
 		<li><span class="tags">[css]</span>z-index的设置</li>
 		<li><span class="tags">[javascript]</span>技术上来说，new一个对象会有很大的开销，可能需要些很多回调。感觉这个做的还不够完善，扩展性是有的，但是要做到layer的还有差距，要研究下。</li>
 		<li><span class="tags">[jquery version]</span>注意jquery不同版本之间的区别</li>
@@ -116,6 +118,8 @@
 		<li><span class="tags">[function]</span>拍照，上传图片，数据流，</li>
 		<li><span class="tags">[plan]</span>做一个可以记笔记的读书社区</li>
 		<li><span class="tags">[before dom]</span>before属于dom？但是怎么refer到dom，js，css</li>
+		<li><span class="tags">[file upload]</span>文件上传原理</li>
+		<li><span class="tags">[plugins]</span>注意插件的初始化，有的在插件内部初始化。这样需要些很多回调，要考虑到很多问题</li>
 		<li><span class="tags">[grid css js]</span>排序表格，用css做出表格的效果 <small>可以用<ul><li><a></a><a></a></li><li><a></a><a></a></li></ul>这种可以解决边线是1的问题，或者如果浏览器支持，可以设置边线为0.5</small></li>
 
 
@@ -149,6 +153,8 @@
 	<h3>every day a blog</h3>
 	<ul>
 		<li><a href="http://sentsin.com/web/">sentsin</a></li>
+		<li><a href="https://css-tricks.com/css-content/">css-tricks</a></li>
+		<li><a href="http://www.css3.info/tooltips-with-css3/">css3</a></li>
 	</ul>
 
 	<h3>css tricks</h3>
@@ -177,8 +183,6 @@
 			document.write(str.toString())
 		</script> 
 	</pre>
-
-
 
 	<h3>jquery插件以及插件的一般形式</h3>
 	功能，有点，不足
@@ -296,7 +300,14 @@
 	}
 
 	var xx = new TS();
-	xx.main()
+	xx.main();
+
+	// dynamic tabled or called json table
+	/**
+	 *
+	**/
+
+	//cascad menu 联动菜单
 	
 	
 
