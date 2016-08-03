@@ -63,6 +63,23 @@
 		#sortx:checked + label > div {
 			height: auto;
 		}
+
+		.everydayathought > li {
+			list-style:none;
+		}
+
+		.everydayathought > li:before {
+			content: attr(data-title);
+			color: red;
+			display: inline-block;
+			margin-right: 10px;
+			height: 18px;
+			line-height: 18px;
+			padding: 0px 10px;
+			border: 1px solid red;
+			border-radius: 3px;
+			font-size: 12px;
+		}
 	</style>
 </head>
 <body>
@@ -72,6 +89,10 @@
 	<label for="sortx" style="cursor:pointer">
 		<div id="sort"></div>
 	</label>
+
+	https://leohxj.gitbooks.io/front-end-database/content/jQuery/jQuery-source-code/index.html
+	http://www.zhihu.com/question/20521802
+	http://www.logphp.com/html/aWXmtY@op4jlmajosIPnlKjmkYTlg4@lpLQ=.html
 	<!-- search component -->
 
 	<pre style="display:none;background:#eaeaea;">
@@ -86,10 +107,27 @@
 				-rework
 		tags可以根据tags-name来判断如何现实，如果tags = ‘plan’那么可以有提醒设置;
 		tags = css 那么该条目录就被归类为css条目。
+		回归基础，基础要牢固
 	</pre>
 
+	<h3>every day a throught</h3>
+	<ul class="everydayathought">
+		<li data-title=2016.8.3><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/WebRTC">mozilla develop</a>切换,替换图片，flexbox css framework，栅格布局，一些理念，meterial，mui，创建图形，创建动画，游戏，hover 特效，meterial，different effect，loading 动画，css3 动画， linear，css media query,svg生成器,Utils</li>
+		<li><a href="http://developer.51cto.com/art/201511/498027.htm">javascript模块化以及searjs远吗分析</a></li>
+		<li>源码分析 <a href="http://www.zhihu.com/question/20521802">jquery源码分析，外国人做的html5，注意查看结构，字体的单位，字体设置</a></li>
+		<li><a href="http://www.codingdivas.net/divascookies/">eu cookie</a></li>
+		<li><a href="http://manos.malihu.gr/repository/custom-scrollbar/demo/examples/complete_examples.html">scrollbar</a></li>
+		<li><a href="https://www.berriart.com/sidr/">slide menu</a></li>
+	</ul>
+
+	http://www.zhixiu86.com/Web/81-3/3558.html
+	https://w3c.github.io/
+http://www.cssmatic.com/box-shadow
 	<h3>总结·反省</h3>
+	<p></p>
 	<q>遇到的问题·经验的不足方面·合作方面的不足，有的时候玩的太过，不好,应该有一套法则，有据可循。</q>
+	<p>在没做之前应该思考下应该怎么做，先参照下别人的已经做出来的那些东西</p>
+	<p>怎么做才是争取的</p>
 	<q>几点原则</q>
 	<ul>
 		<li>给到别人手中一定是通过了自己这一关，不需要再修改的了。</li>
@@ -114,6 +152,7 @@
 		<li> <span class="tags">[plan]</span>其实图片还可以压缩，css和js也是，用webpack</li>
 		<li><span class="tags">[website study]</span>外国网页的命名，class，等到自己看外国网页觉得没什么，自己也已经成为大神。看一个网页，一定要能够把握结构，以及学到一点东西。</li>
 		<li><span class="tags">[jquery plugins]</span> twbs pagination的问题：1、初始化时自动加载第一页 2、在重新输入分页参数的时候不能刷新 <small>1、解决方案，只能够用twbspagination('destory') 2、$(element).bind('click',dosomething)这个可能会重复绑定，解决方案是：1、$(element).unbind().bind('click',dosomething)或者$(element).bind('click', function(){... $(this).unbind()}),[plan]或者自己做一个分页插件，注意难点的总结</small></li>
+		<li><span class="tags"></span><a href="http://www.html5tricks.com/demo/pure-css3-jingang/index.html">效果</a></li>
 		<li><span class="tags">[css]</span>网页字体设置，rem,em,px这三种字体设置以及换算，字体的大小，以及浏览器的渲染，字体的font-style</li>
 		<li><span class="tags">[function]</span>拍照，上传图片，数据流，</li>
 		<li><span class="tags">[plan]</span>做一个可以记笔记的读书社区</li>
@@ -121,28 +160,94 @@
 		<li><span class="tags">[file upload]</span>文件上传原理</li>
 		<li><span class="tags">[plugins]</span>注意插件的初始化，有的在插件内部初始化。这样需要些很多回调，要考虑到很多问题</li>
 		<li><span class="tags">[grid css js]</span>排序表格，用css做出表格的效果 <small>可以用<ul><li><a></a><a></a></li><li><a></a><a></a></li></ul>这种可以解决边线是1的问题，或者如果浏览器支持，可以设置边线为0.5</small></li>
-
+		<li><span class="tags">[plan]</span>可以自己制作一个拖拽功能的插件，dynamic table</li>
+		<li><span class="tags">[plan]</span>font icon</li>
+		<li><span class="tags">[plan]</span>星星rating,图片延迟加载，瀑布流lazyload，文字滚动，打字机效果，exif读取图像元数据，多级下拉菜单，做一个和bootstrp cms,日历控件，图片裁剪，fullpage，滚动，定位，幻灯片，图片轮播，文字动画，文件上传，uploadify，dropzone的原理，文件流的概念，制作markdown编辑器</li>
+		<li><span class="tags">[]</span>预加载和懒加载</li>
+		<li><b>有的东西是效果原理不容易理解，有的东西是因为各个部分的组合，另外有的东西是需要考虑很周到，很全面，所以比较麻烦</b></li>
+		<li><span class="tags">[jquery plugisn]</span><a href="http://www.shouce.ren/study/api/s/6910">多级联动菜单</a></li>
+		<li><span class="tags">[jquery plugin emoji]</span><a href="http://www.shouce.ren/example/try?pc=/api/jq/5733e32681390/index.html">表情插件</a></li>
+		<li><span class="tags">[plan]</span>gis based javscript app, angular, react, vue, mongodb，ionic, frmaework7,template7,light7;研究这个框架必备的东西</li>
+		<li><span class="tags"></span>网盘的原理，网盘生成外链，视频网站架构，cdn涉及到了硬件方面（这个需要至少一年的时间来研究）</li>
+		<li><span class="tags">[微信开发]</span><a href="http://mp.weixin.qq.com/wiki/home/index.html">微信开发</a>，cms管理系统</li>
+		<li><span class="tags">[开放平台]</span><a href="http://www.shouce.ren/api/open">开放平台</a>需要去摸索的哦东西</li>
+		<li>模拟一些框架，jqueryUI， codova，angularjs， react,看看这些框架注意到了什么</li>
+		<li><span class="tags">[plan]</span>rss feed</li>
+		<li><span class="tags">[learn]</span>组织结构图,反色阅读，字体缩放，不同的样式，可以切换皮肤</li>
+		<li><span class="tags">[event javascript]</span>在form里面如果使用button，可能会触发button的提交事件，最好用其他的标签，不用button</li>
+		<li>
+			<a href="http://developer.51cto.com/art/201508/489526.htm">专业设计师的十大动画工具</a>
+		</li>
+		<li><span class="tages">[jqeruy plugins]</span><a href="http://www.shouce.ren/api/view/a/11144">模仿的网站，搜索插件，插件collection</a></li>
 
 		<li><b>合作问题</b> <small>这方面的才是大问题，该想想如何解决。</small></li>
 		<li>做的页面不能够达到要求。产品的角度来说，页面的逻辑不能够走通</li>
 		<li>ui的角度上来说，不能够细化到每一个像素</li>
+		<li> 模块工具类，用来初始化各模块视图、自定绑定事件以及其它辅助功能等</li>
 		<li>总而言之，不能够领会设计意图。每一分设计都是有意义的。注意看。</li>
 		<li><b>按照流程来是不是就不会出错？其实应该看东西的时候没有入心，就是别人设计的重点和一些细节没有看到。</b></li>
 	</ol>
+
+
 	<h3>plugins</h3>
 	<ul>
-		<li><b>jquery plugins</b></li>
+		<li><b>jquery plugins library</b></li>
 		<li>各种模式，各种名词，amd，cmd，各种插件，</li>
 		<li><a href="https://github.com/malsup/form">jquery form</a></li>
 		<li>jquery ui</li>
 		<li>modernizer</li>
+		<li><a href="http://als.musings.it/">anything scroll</a></li>
+		<li><a href="http://jsbeautifier.org/">prettify.js</a></li>
+		<li><a href="http://vadikom.com/tools/poshy-tip-jquery-plugin-for-stylish-tooltips/">jquery plugin for stylish tooltips</a></li>
+
+		<li><b>css library · 效果 · effect</b></li>
+		<li><a href="http://tobiasahlin.com/spinkit/">spinkit</a></li>
+		<li><a href="http://hiloki.github.io/kitecss/">kitecss</a></li>
+		<li><a href="http://www.vittoriozaccaria.net/dyn-css/#what-is-it">dyncss</a></li>
+		<li><a href="http://usablica.github.io/progress.js/">progressjs</a></li>
+		<li><a href="http://ianlunn.github.io/Hover/">hover css</a></li>
+		<li><a href="http://anijs.github.io/">anijs</a></li>
+		<li><a href="http://elrumordelaluz.github.io/csshake/#1">csshake</a></li>
+		<li><a href="http://devinhunt.github.io/typebase.css/">typebse</a></li>
+
 		<li><b>wordpress</b></li>
 		<li><a href="https://codestag.com/themes/ink/">wordpress theme</a></li>
+		<li><a href="http://fancyapps.com/fancybox/">fancybox</a></li>		
+		<li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">syntax highter</a></li>
+		<li><a href="">jquery cookie</a></li>
+		<li><a href="http://www.minimamente.com/example/magic_animations/">magic</a></li>
+		<li><a href="http://www.minimamente.com/">minimamente</a></li>
+		<li><a href="http://bouncejs.com/">bouncejs</a></li>
+		<li><a href="http://unicorn-ui.com/buttons/builder/">unicorn-ui</a></li>
+		<li><a href="http://github.hubspot.com/odometer/docs/welcome/">hubspot</a></li>
+		<li><a href="http://csswizardry.com/beautons/">beautons</a></li>
+
+
+		<li><b>fonts</b></li>
+		<li><a href="https://typekit.com/">typekit adobe font</a></li>
+
+		<li><a href="http://underscorejs.org/">underscore</a></li>
+
+
+		<li><a href="https://modernizr.com/">modernizr</a></li>
+
+
+		<li><a href="http://960.gs/">960.gs</a></li>
+
 	</ul>
 
 	<h3>study a website a day</h3>
 	<ul>
 		<li></li>
+	</ul>
+
+	<h3>代码社区, cdn</h3>
+	<ul>	
+		<li><a href="http://runjs.cn/">runjs.cn</a></li>
+		<li><a href="http://goto.io/">goto.io</a></li>
+
+		<li><b>cdn</b></li>
+		<li><a href="http://www.jsdelivr.com/">jsdelivr</a></li>
 	</ul>
 
 	<h3>study a framework a day</h3>
@@ -155,6 +260,8 @@
 		<li><a href="http://sentsin.com/web/">sentsin</a></li>
 		<li><a href="https://css-tricks.com/css-content/">css-tricks</a></li>
 		<li><a href="http://www.css3.info/tooltips-with-css3/">css3</a></li>
+		<li><a href="http://www.shadowsky.cn/">shadowsky</a></li>
+		<li><a href="http://www.dunsh.org/">dunsh</a></li>
 	</ul>
 
 	<h3>css tricks</h3>
@@ -183,6 +290,12 @@
 			document.write(str.toString())
 		</script> 
 	</pre>
+	
+	<h3>参考手册</h3>
+	<ul>
+		<li><a href="http://www.shouce.ren/api/javascript/ch23-719-fm2xml.html">手册网</a></li>
+	</ul>
+
 
 	<h3>jquery插件以及插件的一般形式</h3>
 	功能，有点，不足
