@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>technology blog</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		b {
+			color: skyblue;
+			font-size: 14px;
+		}
+
+		h3,p {
+			margin: 0px;
+			padding: 0px;
+			line-height: normal;
+		}
+
+		.tags {
+			color: #614;
+			font-weight: bold;
+		}
+
+		li {
+			cursor: pointer;
+		}
+
+		li > small {
+			display: block;
+		}
+
+		#sort{
+			background-color: #eaeaea;
+			padding: 10px;
+
+			/*height: 37px;*/
+			overflow: hidden;
+		}
+
+		#sort > div {
+			padding-left: 1em;
+			border: 1px solid #eaeaea;
+		}
+
+		#sort > div > input  {
+			border: 0px;
+			padding: 10px;
+		}
+
+		#sort > div > button {
+			border: 0px;
+			padding: 10px;
+			color: skyblue;
+			background-color: #ccc;
+			cursor: pointer;
+		}
+		.time:before {
+			display: inline-block;
+			content: '2016-3-2javascript set time';
+			color: orange;
+		}
+
+		#sortx:checked + label > div {
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- search component -->
+	<input type="checkbox" id="sortx" name="" style="display:none;s"> 
+	<label for="sortx" style="cursor:pointer">
+		<div id="sort"></div>
+	</label>
+	<!-- search component -->
+
+	<pre style="display:none;background:#eaeaea;">
+		一些原则：
+			plan-study（深入研究）
+				-donow（已经了解，可以开始做）
+				-dolater（以及了解，但是没有时间做）
+				-conclude（做完了，可以总结经验，到下次的项目中可以用上，做成通用的东西。）
+				-升华
+			css-study
+				-experience（）
+				-rework
+		tags可以根据tags-name来判断如何现实，如果tags = ‘plan’那么可以有提醒设置;
+		tags = css 那么该条目录就被归类为css条目。
+	</pre>
+
+	<h3>总结·反省</h3>
+	<q>遇到的问题·经验的不足方面·合作方面的不足，有的时候玩的太过，不好,应该有一套法则，有据可循。</q>
+	<q>几点原则</q>
+	<ul>
+		<li>给到别人手中一定是通过了自己这一关，不需要再修改的了。</li>
+		<li>有时候会有问题，但是应该不会是大问题。</li>
+		<li>总结自己有没有自己需要改进的。不断改进。</li>
+		<li>做好了自己手头的事情，再去做别的事情。</li>
+		<li>一些东西有了对比就不太容易做好，但是努力去做。</li>
+	</ul>
+	<h3>遇到的问题·主程</h3>
+	<ol>
+		<b>技术上问题</b>
+		<q>准确描述问题，找出问题所在，并提出解决方案，就是这个流程。</q>
+		<li>兼容性，截图，上传</li>
+		<li><span class="tags">[compability]</span>ie的opacity，以及rgba在jq中设置会报错<br/> <small>用rgb和opacity：alaphy来设置ie的透明度 <span class="tags"> [advanced relatived]</span>ie的render和现代浏览器的render，差别，以及检测方式，一些包，hack，补丁，border-radius，box-shadow <span class="tags">[plan]</span>写篇文章</small></li>
+		<li><span class="tags">[css]</span>z-index的设置</li>
+		<li><span class="tags">[javascript]</span>技术上来说，new一个对象会有很大的开销，可能需要些很多回调。感觉这个做的还不够完善，扩展性是有的，但是要做到layer的还有差距，要研究下。</li>
+		<li><span class="tags">[jquery version]</span>注意jquery不同版本之间的区别</li>
+		<li> <span class="tags">[plan]</span>研究一个技术框架也不容易，比如闲心的layer，竟然能够实现自定义的confirm，然后又返回值，从常规上来说，如果函数要有返回值一般是return，但是点击事件发生之前，函数已经有返回值了。浏览器的confirm是用线程阻塞来实现这个问题的。</li>
+		<li> <span class="tags">[plan]</span>研究下iframe的架构</li>
+		<li> <span class="tags">[plan]</span>看看类和插件有没有其他写法。自己写的可能还没有那么elegent</li>
+		<li> <span class="tags">[plan]</span>其实图片还可以压缩，css和js也是，用webpack</li>
+		<li><span class="tags">[website study]</span>外国网页的命名，class，等到自己看外国网页觉得没什么，自己也已经成为大神。看一个网页，一定要能够把握结构，以及学到一点东西。</li>
+		<li><span class="tags">[jquery plugins]</span> twbs pagination的问题：1、初始化时自动加载第一页 2、在重新输入分页参数的时候不能刷新 <small>1、解决方案，只能够用twbspagination('destory') 2、$(element).bind('click',dosomething)这个可能会重复绑定，解决方案是：1、$(element).unbind().bind('click',dosomething)或者$(element).bind('click', function(){... $(this).unbind()}),[plan]或者自己做一个分页插件，注意难点的总结</small></li>
+		<li><span class="tags">[css]</span>网页字体设置，rem,em,px这三种字体设置以及换算，字体的大小，以及浏览器的渲染，字体的font-style</li>
+		<li><span class="tags">[function]</span>拍照，上传图片，数据流，</li>
+		<li><span class="tags">[plan]</span>做一个可以记笔记的读书社区</li>
+		<li><span class="tags">[before dom]</span>before属于dom？但是怎么refer到dom，js，css</li>
+		<li><span class="tags">[grid css js]</span>排序表格，用css做出表格的效果 <small>可以用<ul><li><a></a><a></a></li><li><a></a><a></a></li></ul>这种可以解决边线是1的问题，或者如果浏览器支持，可以设置边线为0.5</small></li>
+
+
+		<li><b>合作问题</b> <small>这方面的才是大问题，该想想如何解决。</small></li>
+		<li>做的页面不能够达到要求。产品的角度来说，页面的逻辑不能够走通</li>
+		<li>ui的角度上来说，不能够细化到每一个像素</li>
+		<li>总而言之，不能够领会设计意图。每一分设计都是有意义的。注意看。</li>
+		<li><b>按照流程来是不是就不会出错？其实应该看东西的时候没有入心，就是别人设计的重点和一些细节没有看到。</b></li>
+	</ol>
+	<h3>plugins</h3>
+	<ul>
+		<li><b>jquery plugins</b></li>
+		<li>各种模式，各种名词，amd，cmd，各种插件，</li>
+		<li><a href="https://github.com/malsup/form">jquery form</a></li>
+		<li>jquery ui</li>
+		<li>modernizer</li>
+		<li><b>wordpress</b></li>
+		<li><a href="https://codestag.com/themes/ink/">wordpress theme</a></li>
+	</ul>
+
+	<h3>study a website a day</h3>
+	<ul>
+		<li></li>
+	</ul>
+
+	<h3>study a framework a day</h3>
+	<ul>
+		<li></li>
+	</ul>
+
+	<h3>every day a blog</h3>
+	<ul>
+		<li><a href="http://sentsin.com/web/">sentsin</a></li>
+	</ul>
+
+	<h3>css tricks</h3>
+
+	<h3>一下用大量篇幅来研究所得</h3>
+	<h3>every day a try</h3>
+	<ul>
+		<li class="time"></li>
+	</ul>
+	对header的研究：
+	<pre>
+		<script type="text/javascript">
+			var str = '<html lang="en-us" prefix="og:http://ogp.me.ns#" class="no-js">' +
+						'<meta name="viewport" content="width=device-width, initial-scale=1"> ' +
+						'<meta property="fb:app_id" content="sfsfsf"> ' +
+						'<link rel="profile" href="http://gmpg.org/xfn/11"> ' +
+						'<link rel="pingback" href="https://markmanson.net/xmlrpc.php"> ' +
+						'<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> ' +
+						'<link rel="dns-prefetch" href="//fonts.googleapis.com"> ' +
+						'<meta name="description" content="learning a foreign language can be duanting  at first. " >' +
+						'<meta name="robots" content="noodp"> ' +
+						'<link rel="canonical" href="https://markmanson.net/foreign-language"> ' +
+						'/* <![CDATA[ */ ' +
+						'var ajax_object = {"ajax_url":"https:\/\/markmanson.net\/wp-admin\/admin -ajax.php"}' +
+						'/* ]]> */ ' ;
+			document.write(str.toString())
+		</script> 
+	</pre>
+
+
+
+	<h3>jquery插件以及插件的一般形式</h3>
+	功能，有点，不足
+	自己实现起来的缺陷，不能够实现的地方。
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript">
+
+	// 标签系统 tags system
+	/**
+	 * 这个插件的主题就是用react的局部更新dom
+	 * 搜索算法还需要提升
+	 * 时间复杂度还需要提升，里面有两次的$each
+	**/
+	function TS() {
+		this.$tags = $('.tags');
+		this.tags = [];
+		this.template = '<li>#tags#</li>';
+		this.searchVal = [];
+	}
+
+	TS.prototype = {
+		search: function() {
+			var _self = this,
+				search = '<div><input type="search"><button>ok</button></div>';
+			this.$search = $(search);
+
+			this.$search.find('button').bind('click', function() {
+				var value = _self.$search.find('input').val();
+
+				if (value == '') {
+					alert('input value is empty');
+					return;
+				}
+
+				if (value == '*') {
+					_self.searchVal = _self.tags;
+				} else {
+					for(i in _self.tags) {
+						var xx = _self.tags[i].indexOf(value);
+						if (xx > -1) {
+							_self.searchVal.push(_self.tags[i]);
+						} else {
+
+						}
+					}
+				}
+
+				_self.append(_self.searchVal)
+				if (_self.searchVal.length == 0) {
+					alert('tags you serach not exits...');
+					$('#sort').after('<span style="color:orange">tips:you can type * to get all tags<span>')
+				}
+
+			})
+		},	
+		main: function() {
+			var _self = this;
+			this.collectTags();
+			this.search();
+			this.append(_self.tags);
+		},
+		collectTags:function() {
+			var _self = this;
+			$.each(_self.$tags, function() {
+				var $this = $(this);
+				str = $this.html();
+				_self.tags.push(str)
+			})
+		},
+		searchResult: function(result) {
+			// 抽取dom算法，比较难（用显示和隐藏可能更好）
+			var _self = this;
+			console.log(_self.$tags)
+			_self.$tags.closest('li').hide();
+
+			$.each(_self.$tags, function() {
+				if ($(this).html() == result) {
+					console.log($(this));
+					$(this).closest('li').show()
+				}
+			})
+		},
+		append:function(arr) {
+			var _self = this,
+			tpl = '<ul>';
+
+			for (i in arr) {
+				tpl += _self.template.replace('#tags#', arr[i]);
+			}
+
+			tpl += '<li class="showAllTags">show all tags</li>'
+			tpl += '<li class="showAllProblem">show all problem</li>'
+
+			tpl += '</ul>';
+
+			var $tagsBtn = $(tpl);
+			$tagsBtn.find('li').bind('click', function() {
+				if ($(this).hasClass('showAllTags')) {
+					_self.append(_self.tags)
+				}
+				if ($(this).hasClass('showAllProblem')) {
+					_self.$tags.closest('li').show();
+					return;
+				}
+				var $this = $(this);
+				_self.searchResult($this.html())
+			})
+
+			$('#sort').empty();
+			_self.search();
+			
+			$('#sort').empty().append(_self.$search).append($tagsBtn)
+		}
+	}
+
+	var xx = new TS();
+	xx.main()
+	
+	
+
+</script>
+</html>
