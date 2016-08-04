@@ -85,6 +85,21 @@
             margin-left: 10px;
             margin-top: -2px;
         }
+
+        .lifeSong > li {
+            list-style: none;
+
+        }
+        .lifeSong > li:before {
+            content: attr(data-title);
+            border-radius: 1px solid orange;
+            border-radius: 3px;
+            height: 24px;
+            line-height: 24px;
+            margin-right: 10px;
+            color: orange;
+            display: inline-block;
+        }
     </style>
 </head>
 <body ng-controller="jy-videoDemo">
@@ -95,13 +110,15 @@
             <!-- <li><label for="projects" class="">我的项目</label></li> -->
             <li><label for="selfEsteem" class="">自我评价</label></li>
             <li><label for="books" class="">阳春白雪</label></li>
+            <li><label for="books" class="" alt="ScienceLab 当真正的自然科学被营销和强人眼球的节目秀玩坏的时候，可以有投票啊等的活动，草根眼中的东西，草根想法。">实验室</label></li>
             <li><label for="billionwhys" class="">十万个为什么</label></li>
             <li><label for="everyDayQuote" class="" title="对世界的一点看法·视界">每日名言·立言</label></li>
+            <li><label for="lifeSong" class="" title="lifeSong">年轻的基调</label></li>
             <li><label for="planning" class="" title="之所以起这个名字，是因为计划对于个人素养的构建还是有一定重要性的">千里之堤</label></li>
             <li><a href="technologyBlog.html">TB</a></li>
-            <li><a href="technologyBlog.html">时间轴</a></li>
-            <li><a href="technologyBlog.html" title="基于GIS的个人信息系统">Personal</a></li>
-            <li><a href="technologyBlog.html" title="分析所有">analyse</a></li>
+            <li><a href="technologyBlog.html" data-type="building">时间轴</a></li>
+            <li><a href="technologyBlog.html" title="基于GIS的个人信息系统" data-type="building">Personal</a></li>
+            <li><a href="technologyBlog.html" title="分析所有" data-type="building">analyse</a></li>
             <li><a href="technologyBlog.html">htmlStory</a></li>
         </ul>
         <br>
@@ -125,6 +142,15 @@
             <p><b>web信息架构</b> <small>sfisdfsd</small></p>
         </div>
 
+        <!-- lifesong -->
+        <input type="checkbox" name="" id="lifeSong" style="display:none">
+        <div class="box" style="display:none">
+            <q>不妨选一首歌作为自己的基调</q>
+            <ul class="lifeSong">
+                <li data-title="年轻真好">飞 -朱晔</li>
+            </ul>
+        </div>
+
         <!-- introduce -->
         <input id="xxx" type="checkbox" style="display:none;">
         <div id="introduction" class="box" style="display:none">
@@ -141,7 +167,7 @@
         <!-- billionwhys -->
         <input type="checkbox" style="display:none" id="billionwhys" name="">
         <div class="box">
-            <q>人人都有十万个为什么，有的人找到貌似合理的答案，但是从别人身上得到的答案注定是错的，解铃还需系铃人，求人不如求己，自己去思考这些东东罢了。</q>
+            <q>人人都有十万个为什么，有的人找到貌似合理的答案，但是从别人身上得到的答案注定是错的，解铃还需系铃人，求人不如求己，自己去思考这些东东罢了。有的东西很简单，但是有的问题就像是下棋，入门很简单，但是要用一辈子去精通。</q>
             <p>成功和失败</p>
             <p>应该做什么</p>
             <p>鉴别，分辨，判断，思考各种情况·</p>
@@ -162,6 +188,7 @@
             <p>什么才叫失败？不敢面对，心存芥蒂</p>
             <p>保留自己的想法，不做随便的人。</p>
             <p><b>关于有意义的事情的思考</b></p>
+            <p>不同的地方，不同的思考，比如，在演讲的时候，不冷场。</p>
             <ul>
                 <li>工具式或者是框架式的工作，可以在此基础上进行更加深入的开发。</li>
                 <li>做表情包，用工具实现出现实中有的，不过图像化，或者是电子化，可以重现场景。</li>
@@ -171,6 +198,9 @@
             <p>好好描画一下生活</p>
             <p>随性，随缘</p>
             <p>imagine and draw a life, or you don't have to imagine, you just taste it.</p>
+            <p>all the way , to be yourself</p>
+            <p>为什么管理后台是这个样子的？普遍答案都是：别人的都是这样子的。其实如果自己做出来，都可以做成很有想法的后台了。很多人用的，不一定是最好的，但是比较成熟。</p>
+            <p>当一个人的内心强大到足以抛弃自己的外表，那么他是成功的了。</p>
         </div>
 
         <!-- selfEsteem -->
@@ -510,6 +540,9 @@
             <p>呐呐，来了， 在这里要证明几个结论。比如说现在的一些人在这个世界里行走太久，连一点点的敏感能力都没有了。（这里将会有一个专题，不过，可能需要一段时间，最近也没时间做这个。）</p>
             <p>今天讨论一些东西，觉得xy哥说的一些东西还是挺对的，比如说，做一个东西要有自己的想法在里面，这样，做出来的东西就是你自己的东西了。</p>
             <p>随心而动，能够附和音乐节拍的东西</p>
+            <p>做个音乐播放器吧。。</p>
+            <p>弄个可以刮奖的东西。有的人想把东西做的高大上，但是失败了，但是有的人把东西做的不是那么完美，但是草根，喜闻乐见，结果成功了。告诉我，需要什么，那么我就去实现它。技术只能为了需求服务。</p>
+            <p>人的很多东西都是集合在一起的，而不单单是单一的存在，这样组合起来才完整。</p>
             <p class="divider">2016-8-4</p>
         </div>
 
@@ -553,7 +586,9 @@
             <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=267196&auto=1&height=66"></iframe> -->
             <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=70484&auto=1&height=66"></iframe> -->
             <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=364512&auto=1&height=66"></iframe> -->
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=39442125&auto=1&height=66"></iframe>
+            <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=39442125&auto=1&height=66"></iframe> -->
+            <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=276830&auto=1&height=66"></iframe> -->
+            <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=27552906&auto=1&height=66"></iframe> -->
         </div>
         <div class="box">
             <p>record</p>
@@ -568,6 +603,10 @@
                 <li>我们都一样 -曹轩宾 <small>推开窗/看见星星/依然守在天空中/心中不免有了些/暖暖的感动/一闪一闪的光/努力吧黑夜变亮/气氛如此安详/你在我的生命中/是那最闪亮的星/一直在无声夜空/守护者我们的梦/这世界那么大/我的爱只想要你懂/p陪伴我孤寂旅程/你知道我的梦/你知道我的痛/你知道我们感受都相同/就算有再大的风也挡不住勇敢的冲动/努力的往前飞/再累也无所谓/黑夜过后的光芒有多美/分享你我的力量就能把对方的路照亮</small></li>
                 <li>红色石头 -李智楠 <small></small></li>
                 <li>月心蚀 -埋葬YJ <small>听到烟花的味道没有？像一个村庄在过节，真的，喜气洋洋的感觉。</small></li>
+                <li>盛夏的果实 -莫文蔚 <small>也许放弃/才能靠近你/不再见你/你才会把我记起/时间累积/这盛夏的果实/回忆里寂寞的香气我要试着离开你/不要再想你/虽然这并不是我本意/你曾说过/会永远爱我/也许承诺不过因为没把握/别用沉默/再去掩饰什么/当结果是那么赤裸裸/以为你会说什么/才离开我/你只是转过头/不看我/不要可以说/你还爱我/当看尽潮起潮落/只要你记得我</small></li>
+                <li>少年嘉庆（飞） -朱烨 <small>我高飞眼迷离/风声起心会意/曾想过顺着原路回去/可是天可是地/还有你告诉我/展翅起无人敢和我比翼/流些泪/要笑着擦/有些痛也从容答/哪点恨不都是来自牵挂/放开心放开手/上云霄俯瞰大地/你的笑容永远是我的奇迹/天多大呼啦啦啦啦去追最炫的云霞/一次次风一场场雨为我们壮怀/天多大呼啦啦啦啦逆风而上才精彩/抱定阳光千丈万丈笑在天外/天多大呼啦啦啦啦去追最炫的云霞/一次次风一场场雨为我们壮怀/天多大呼啦啦啦啦逆风而上才精彩/抱定阳光千丈万丈笑在天外</small></li>
+                <p>intro:朱桦 唱的歌还是很好听的，这首是少年嘉庆 <sup>电视剧</sup>的主题曲</p>
+
             </ol>
         </div>
 
@@ -586,6 +625,25 @@
         alert('来来~~，这里有另外一个世界，真的~~')
         // window.location.href = 'http://www.baidu.com';
     }
+
+    // building msg
+    var $buildObj = $('a[data-type="building"]');
+    $.each($buildObj,function() {
+        $(this).bind('click', function(e) {
+            e.preventDefault();
+            var $buildMsg = $('<div><div style="text-align:left;background:#fff;border:1px solid #ddd;padding:10px;margin: 0 auto;margin-top:20%;display:inline-block;width:300px;"><b style="display:block;margin-bottom:10px;">The castle is building...Please wating for a moment</b>During this time, you can access my idea by <a style="color:#333" href="idea.html">See my Pro</a></div></div>').css({
+                'position': 'fixed',
+                'top': '0px',
+                'right': '0px',
+                'left': '0px',
+                'bottom': '0px',
+                'text-align': 'center'
+            }).appendTo($('body'));
+            setTimeout(function() {
+                $buildMsg.remove();
+            }, 3000)
+        })
+    })
     var Insect = (function() {
         var popup = function() {
 
