@@ -1,0 +1,10 @@
+{
+	"success": true,
+	"data": {
+		"name": "liduanjie",
+		"age": 24,
+		"avatar": "http://placehold.it/200x200",
+		"reply1": "something in the world",
+		"reply2": "something in the world...."
+	}
+}
