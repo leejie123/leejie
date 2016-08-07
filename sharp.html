@@ -32,9 +32,49 @@
 			font-size:12px;
 			text-decoration:none;
 		}
+
+		.voting > div > label {
+			display: block;
+			height: 30px;
+			line-height: 30px;
+			padding: 0px 10px;
+		}
+
+		.voting > div > label > span {
+			float: right;
+		}
+
+		.voting > div > label:hover {
+			background-color: #eaeaea;
+		}
+
+		.voting > div.voteItem {
+			width: 300px;
+		}
+
+		.voting > div > .vote {
+			display: block;
+			width: 100%;
+			border: 0px;
+			background-color: #eaeaea;
+			height: 30px;
+			line-height: 30px;
+			cursor: pointer;
+		}
+
+		.voting > .addVoting > input {
+			float: left;
+		}
+
+		.voting > .addVoting > input, .voting > .addVoting > button {
+			padding: 10px;s
+		}
+
 	</style>
 </head>
 <body>
+
+	<h1>小组件的大功能</h1>
 	<q>in this strage, I rely on jquery.</q>
 	<div class="commentWrap">
 		<input type="text" id="user" value='{"name": "liduanjie", "avatar": "http://www.baidu.com"}'>
@@ -54,10 +94,27 @@
 		<li>极少依赖dom的是最好的。</li>
 	</ul>
 
-	<div>
-		<label><input type="radio" name=""> 半道英雄</label>
-		<label><input type="radio" name=""> 采茶季</label>
+	<div class="voting">
+		<div class="addVoting">
+			<input type="" name="">
+			<button class="addBtn">add</button>
+			<!-- 数据库有的东西可以通过查找。 -->
+			<div class="searchResult">
+				<ul>
+					<li>someting in the woerld</li>
+					<li>someting in the woerld</li>
+					<li>someting in the woerld</li>
+				</ul>
+			</div>
+		</div>
+		<div class="voteItem">
+			<label><input type="radio" name=""> 采茶季 <span>★★★</span></label>
+			<label><input type="radio" name=""> 半道英雄 <span>★★★</span></label>
+			<button class="vote">确定</button>
+		</div>
 	</div>
+
+	<div id="voting"></div>
 
 
 	<div>
@@ -265,13 +322,95 @@
 	 * 投票系统（voting system）
 	**/
 	var Voting = function() {
+		this.template = '<div class="voting">' +
+							'<div class="addVoting">' +
+								'<input type="" name="">' +
+								'<button class="addBtn">add</button>' +
+								'<div class="searchResult">' +
+									'<ul>' +
+									'</ul>' +
+								'</div>' +
+							'</div>' +
+							'<div class="voteItem">' +
+								'<label><input type="radio" name=""> 采茶季 <span>★★★</span></label>' +
+								'<button class="vote">确定</button>' +
+							'</div>' +
+						'</div>';
+		this.searchResultTpl = '<li>#resultItem#</li>';
+		this.searchResult = '';
+		this.$parent = $('#voting');
 
+								
+		this.labelTpl = '<label><input type="radio" name="#name#"> #value# <span>#rate#</span></label>';
+		this.recommand = ['采茶季', 'all soul waltz','xx1','xx3', 'hello','adsdad'];
+		this.search = [];
+		this.voted = ['xx1', 'xx2', 'xx3', 'xx4'];
 	}
 
 	Voting.prototype = {
+		main: function() {
+			var _self = this;
+			_self.$template = $(_self.template);
 
+			var $addBtn = _self.$template.find('.addBtn'),
+				$input = _self.$template.find('input');
+
+			_self.votedItem();
+
+			$input.bind('keyup', function() {
+				var value = $(this).val();
+				_self.search = [];
+				for (var i = 0; i<_self.recommand.length;i++) {
+					if (_self.recommand[i].indexOf(value) > -1) {
+						_self.search.push(_self.recommand[i]);
+					}
+				}
+				_self.searchR();
+			})
+
+			$addBtn.bind('click', function() {
+				var value = $input.val();
+				if (_self.voted.indexOf(value) !== -1) {
+					alert('already voted, select another to add.');
+					return;
+				} else {
+					_self.voted.push(value);
+					_self.votedItem();
+				}
+			})
+
+			_self.$parent.append(_self.$template)
+		},
+		votedItem: function() {
+			var _self = this;
+			_self.votedItem = '';
+			for (var i=0;i<_self.voted.length;i++) {
+				_self.votedItem += _self.labelTpl.replace('#value#', _self.voted[i]);
+			}
+			$voteItem = $(_self.votedItem);
+
+			_self.$template.find('.voteItem > button').before($voteItem);
+		},
+		searchR: function() {
+			var _self = this;
+			for(var j = 0;j < _self.search.length; j++) {
+				_self.searchResult = '';
+				_self.searchResult += _self.searchResultTpl.replace('#resultItem#',_self.search[j]);
+			}
+			_self.$searchResult = $(_self.searchResult);
+			_self.$searchResult.bind('click', function() {
+				_self.$template.find('input').val($(this).html());
+			})
+			_self.$template.find('.searchResult > ul').empty().append(_self.$searchResult);
+		},
+		efficient: function() {
+			// 判断浏览器的性能，不行就不执行查询
+		}
 	}
 
+
+	var xxx = new Voting();
+	xxx.main();
 	/**
 	 * 迷宫（game）
 	**/
