@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>类的收集</title>
+</head>
+<body>
+<script type="text/javascript">
+	/**
+	 * 可以做到多级回复，而且不会相互影响，但是用new的开销有点大
+	**/
+	// 回复按钮
+	function Reply($elem) {
+		this.template = '<div class="reply">' +
+							'<textarea placeholder="快来帮助小伙伴们回答吧..."></textarea>' +
+							'<p>' +
+								'<span>您还可输入 <i>60</i>个字符</span>' +
+								'<button class="postComment" data-id="1">评论</button>' +
+							'</p>' +
+						'</div>';
+		this.template1 = '<div class="commandList">' + 
+				'<div class="imageWrap">' +
+					'<img src="#avatar#">' +
+				'</div>' +
+				'<div class="info">' +
+					'<p class="posting-info">' +
+						'<span class="user">#name#</span>' +
+						'<span class="post-time">#pubTime#</span>' +
+					'</p>' +
+					'<p class="reply">#question#</p>' +
+					'<p class="content">#answer#<a href="" class="showmore">......显示更多</a> </p>' +
+					'<p class="reply-btn">' +
+						'<a href="" class="replyBtn">回复</a>' +
+					'</p>' +
+				'</div>'
+			'<div class="reply" style="display: block;"><textarea placeholder="快来帮助小伙伴们回答吧..."></textarea><p><span>您还可输入 <i>6</i>个字符</span><button class="postComment" data-id="1">评论</button></p></div></div>'
+		this.ajaxResult = {};
+		this.$replyBtn = $elem;
+		this.first = true;
+	}
+	Reply.prototype = {
+		main:function() {
+			var _self = this;
+			_self.$commandList = _self.$replyBtn.closest('.commandList');
+
+			_self.$replyBtn.bind('click', function (e) {
+				e.preventDefault();
+				if(_self.first) {
+					_self.$result = $(_self.template).css({
+						'display': 'block'
+					})
+
+					// postComment
+					_self.$result.find('.postComment').bind('click', function() {
+						var recomment = _self.$result.find('textarea').val();
+						if (recomment == '') {
+							alert('评论不能为空');
+							return;
+						}
+
+						_self.ajaxResult = {
+							success: true,
+							data: {
+								name: '三维家-xx设计师',
+								pubTime: '6天前',
+								question: 'to be or not to be , its a question',
+								answer: 'to live or to die, its up to you.',
+								avatar: 'Content/Images/useravtar.png'
+							}
+						}
+
+						_self.ajaxLoad();
+
+						if (returnResule) {
+							//判断result的信息是否全面
+
+
+							// 初始化click
+						}
+
+						$.ajax({
+							url: '',
+							data: {
+
+							},
+							type: 'post',
+							successs: function(data) {
+
+							}, 
+							fail: function(err) {
+
+							}
+						})
+					})
+
+					//统计字数
+					var	maxLen = 10;
+					var leftlen;
+					$textarea = _self.$result.find('textarea');
+					var $remainCon = _self.$result.find('i');
+
+					$remainCon.html(maxLen);
+					$textarea.bind('keyup', function() {
+						var strLen = $(this).val().length;
+
+						leftLen = maxLen - strLen;
+						$remainCon.html(leftLen)
+						if (strLen >= maxLen) {
+							alert('您书写的已经超过字数')
+							return;
+						}
+					})
+
+					_self.$result.appendTo(_self.$commandList);
+					_self.first = false;
+				} else {
+					_self.$result.remove();
+					_self.first = true;
+				}
+
+			})
+		},
+		ajaxLoad: function() {
+			var _self = this;
+			var xx = _self.template1.replace('#name#', _self.ajaxResult.data.name)
+									.replace('#avatar#', _self.ajaxResult.data.avatar)
+									.replace('#pubTime#', _self.ajaxResult.data.pubTime)
+									.replace('#answer#', _self.ajaxResult.data.answer)
+									.replace('#question#', _self.ajaxResult.data.question);
+			var $tpl = $(xx);
+			$tpl.find('.replyBtn').bind('click', function(e) {
+				e.preventDefault();
+				var reply1 = new Reply($(this));
+				reply1.main();
+			})
+			$('.latest-command').find('h3').after($tpl);
+		}
+	}
+
+	//初始化评论框
+	var $replyBtn = $('.replyBtn');
+	$.each($replyBtn, function() {
+		var reply1 = new Reply($(this));
+		reply1.main();
+	})
+</script>
+</body>
+</html>
