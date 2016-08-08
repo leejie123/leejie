@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript class collection and testing center</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		/*comment*/
+		.commentWrap {
+
+		}
+
+		.commonItem > .imgWrap {
+			width:25px;
+			height:25px;
+			overflow:hidden;
+			float:left;
+		}
+
+		.commonItem > .reply1 {
+			border-left:2px solid skyblue;
+			margin-left:30px;
+			padding-left:8px;
+		}
+
+		.commonItem > .reply2 {
+			padding-left:8px;
+			margin-left:30px;
+		}
+
+		.commonItem > p > a {
+			float:right;
+			font-size:12px;
+			text-decoration:none;
+		}
+
+		.voting > div > label {
+			display: block;
+			height: 30px;
+			line-height: 30px;
+			padding: 0px 10px;
+		}
+
+		.voting > div > label > span {
+			float: right;
+		}
+
+		.voting > div > label:hover {
+			background-color: #eaeaea;
+		}
+
+		.voting > div.voteItem {
+			width: 300px;
+		}
+
+		.voting > div > .vote {
+			display: block;
+			width: 100%;
+			border: 0px;
+			background-color: #eaeaea;
+			height: 30px;
+			line-height: 30px;
+			cursor: pointer;
+		}
+
+		.voting > .addVoting > input {
+			float: left;
+		}
+
+		.voting > .addVoting > input, .voting > .addVoting > button {
+			padding: 10px;s
+		}
+
+	</style>
+</head>
+<body>
+
+	<h1>小组件的大功能</h1>
+	<q>in this strage, I rely on jquery.</q>
+	<div class="commentWrap">
+		<input type="text" id="user" value='{"name": "liduanjie", "avatar": "http://www.baidu.com"}'>
+		<h3>多级回复示例</h3>
+		<div class="commonItem">
+			<div class="imgWrap">
+				<img src="svg.svg">
+			</div>
+			<div >name : name ; age: age</div>
+			<div class="reply1">this is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is replythis is reply</div>
+			<div class="reply2">this is reply</div>
+			<p><a href="" class="showReply">回复</a></p>
+		</div>
+	</div>
+
+	<ul>
+		<li>极少依赖dom的是最好的。</li>
+	</ul>
+
+	<div class="voting">
+		<div class="addVoting">
+			<input type="" name="">
+			<button class="addBtn">add</button>
+			<!-- 数据库有的东西可以通过查找。 -->
+			<div class="searchResult">
+				<ul>
+					<li>someting in the woerld</li>
+					<li>someting in the woerld</li>
+					<li>someting in the woerld</li>
+				</ul>
+			</div>
+		</div>
+		<div class="voteItem">
+			<label><input type="radio" name=""> 采茶季 <span>★★★</span></label>
+			<label><input type="radio" name=""> 半道英雄 <span>★★★</span></label>
+			<button class="vote">确定</button>
+		</div>
+	</div>
+
+	<div id="voting"></div>
+
+
+	<div>
+		<h3>网页书评</h3>
+		<div class="books">
+			个逻辑绑定在了一起。点回复按钮的时候，会append，textarea， 点提交按钮的时候，会append整块commentItem;append之后，重新执行一次这个过程。
+		 * 尝试一下不用类来写。
+		 * 私有作用域如果不变成对象作用域，那么未来的动作就可能相互影响。也就是说可能两个点击的按钮会公用同一个对象
+		 * 问题，在ajax加载完成之后拿不到对象的ajaxData,因为没有设置async，相当于异步了，没有线程阻塞，结果在后面的步骤返回数据，不过已经晚了。在前面执行的函数，到了后面才能拿到数据。
+		 * 浏览器创建多少个类才会卡斯
+		 * 字符串转json
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript">
+	/**
+	 * 最好自己可以研究一些什么东西出来啦。
+	**/
+	/**
+	 * 多级回复
+	 * 评价： 两个逻辑绑定在了一起。点回复按钮的时候，会append，textarea， 点提交按钮的时候，会append整块commentItem;append之后，重新执行一次这个过程。
+	 * 尝试一下不用类来写。
+	 * 私有作用域如果不变成对象作用域，那么未来的动作就可能相互影响。也就是说可能两个点击的按钮会公用同一个对象
+	 * 问题，在ajax加载完成之后拿不到对象的ajaxData,因为没有设置async，相当于异步了，没有线程阻塞，结果在后面的步骤返回数据，不过已经晚了。在前面执行的函数，到了后面才能拿到数据。
+	 * 浏览器创建多少个类才会卡斯
+	 * 字符串转json
+	**/
+
+	var Comment = function() {
+		this.template = '<div class="reply">' +
+							'<label>comment</label>' +
+							'<textarea></textarea>' +
+							'<button class="replayBtn">提交</button>' +
+						'</div>';
+		this.template1 = '<div class="commonItem">' +
+							'<div class="imgWrap">' +
+								'<img src="#avatar#">' +
+							'</div>' +
+							'<div ><span>name : #name#</span>  <span>age: #age#</span></div>' +
+							'<div class="reply1">#reply1#</div>' +
+							'<div class="reply2">#reply2#</div>' +
+							'<p><a href="" class="showReply">回复</a></p>' +
+						'</div>';
+		this.$showReply;
+		this.ajaxData;
+		this.once = true;
+	}
+	Comment.prototype = {
+		showReply: function($elem) {
+			var _self = this;
+
+				_self.$showReply = $elem;
+				_self.$commentItem = $elem.closest('.commonItem');
+
+				$elem.bind('click', function(e) {
+					e.preventDefault();
+					_self.reply1 = _self.$commentItem.find('.reply2').html();
+					if (_self.once) {
+						_self.$template = $(_self.template);
+						_self.$template.find('.replayBtn').bind('click', function() {
+							_self.reply2 = $(this).closest('.reply').find('textarea').val();
+							//ajax加载数据之后判断数据的完整性
+							_self.ajaxCB(function() {
+								_self.checkHandle();
+							});
+							
+							var newTpl = _self.template1.replace('#avatar#', _self.ajaxData.data.avatar)
+												.replace('#name#', _self.ajaxData.data.name)
+												.replace('#age#', _self.ajaxData.data.age)
+												.replace('#reply1#', _self.ajaxData.data.reply1)
+												.replace('#reply2#', _self.ajaxData.data.reply2);
+							_self.$newTpl = $(newTpl);
+							var xx = new Comment();
+							xx.showReply(_self.$newTpl.find('.showReply'));
+							$('.commentWrap > h3').after(_self.$newTpl);
+						})
+						_self.$commentItem.after(_self.$template);
+						_self.once = false;
+					} else {
+						_self.$template.remove();
+						_self.once = true;
+					}
+				})
+		},
+		ajaxCB: function(success) {
+			var _self = this;
+
+			// 这个作为虚拟数据的时候用到
+			var data = JSON.parse($('#user').val());
+			this.ajaxData = {
+				success: true, 
+				data: {
+					avatar: data.avatar,
+					name: data.name,
+					age: new Date(),
+					reply1:_self.reply1,
+					reply2:_self.reply2
+				}
+			}
+
+			// 下面这个作为异步加载
+
+			// $.ajax({
+			// 	type: 'post',
+			// 	async: false,
+			// 	url: 'http://localhost/projects/blog/leejie/data.json',
+			// 	success: function(data) {
+			// 		_self.ajaxData = data;
+			// 	}
+			// })
+			if(success) {
+				success()
+			}
+		},
+		checkHandle: function() {
+			var _self = this;	
+			if (_self.ajaxData) {
+				_self.ajaxData.data.avatar == 'undefined' ? _self.ajaxData.data.avatar = _self.ajaxData.data.avatar : 'default';
+				_self.ajaxData.data.name == 'undefined' ? _self.ajaxData.data.name =  _self.ajaxData.data.name : 'default';
+				_self.ajaxData.data.age == 'undefined' ? _self.ajaxData.data.age =  _self.ajaxData.data.age : 'default';
+				_self.ajaxData.data.reply1 == 'undefined' ? _self.ajaxData.data.reply1 =  _self.ajaxData.data.reply1 : 'default';
+				_self.ajaxData.data.reply2 == 'undefined' ? _self.ajaxData.data.reply2 =  _self.ajaxData.data.reply2 : 'default';
+			}
+		},
+		test: function() {
+			// 作为测试之用
+
+		}
+	}
+ 
+	var $showReply = $('.showReply');
+	$.each($showReply, function() {
+		var xx = new Comment();
+		xx.showReply($(this));
+	})
+
+
+	/**
+	 * 级联动菜单
+	 * 传入的是一个container，最好能够自定义样式，而且初始化能够有更多扩展性。
+	**/
+	var Cascad = function() {
+		this.data = {
+			parent: {
+				id: '',
+				child: {
+
+				}
+			}
+		}
+	}
+
+	Cascad.prototype = {
+
+	}
+
+
+	/**
+	 * 上传图片的研究
+	**/
+	
+
+	/**
+	 * 网站笔记
+	**/
+
+	var Noting = function() {
+
+	}
+
+	Noting.prototype = {
+
+	}
+
+
+
+	$('.books').bind('mouseup', function(e) {
+		var parentOffset = $(this).offset();
+		var x = e.pageX - parentOffset.left;
+		var y = e.pageY - parentOffset.top;
+		var txt = window.getSelection();
+	})
+
+	/**
+	 * 手势库
+	**/
+	/**
+	 * 标签云图
+	**/
+
+	/**
+	 clandar
+	**/
+
+	/**
+	 * imageload
+	**/
+
+	/**
+	 * 瀑布流
+	**/
+
+	/**
+	 * 投票系统（voting system）
+	**/
+	var Voting = function() {
+		this.template = '<div class="voting">' +
+							'<div class="addVoting">' +
+								'<input type="" name="">' +
+								'<button class="addBtn">add</button>' +
+								'<div class="searchResult">' +
+									'<ul>' +
+									'</ul>' +
+								'</div>' +
+							'</div>' +
+							'<div class="voteItem">' +
+								'<label><input type="radio" name=""> 采茶季 <span>★★★</span></label>' +
+								'<button class="vote">确定</button>' +
+							'</div>' +
+						'</div>';
+		this.searchResultTpl = '<li>#resultItem#</li>';
+		this.searchResult = '';
+		this.$parent = $('#voting');
+
+								
+		this.labelTpl = '<label><input type="radio" name="#name#"> #value# <span>#rate#</span></label>';
+		this.recommand = ['采茶季', 'all soul waltz','xx1','xx3', 'hello','adsdad'];
+		this.search = [];
+		this.voted = ['xx1', 'xx2', 'xx3', 'xx4'];
+	}
+
+	Voting.prototype = {
+		main: function() {
+			var _self = this;
+			_self.$template = $(_self.template);
+
+			var $addBtn = _self.$template.find('.addBtn'),
+				$input = _self.$template.find('input');
+
+			_self.votedItem();
+
+			$input.bind('keyup', function() {
+				var value = $(this).val();
+				_self.search = [];
+				for (var i = 0; i<_self.recommand.length;i++) {
+					if (_self.recommand[i].indexOf(value) > -1) {
+						_self.search.push(_self.recommand[i]);
+					}
+				}
+				_self.searchR();
+			})
+
+			$addBtn.bind('click', function() {
+				var value = $input.val();
+				if (_self.voted.indexOf(value) !== -1) {
+					alert('already voted, select another to add.');
+					return;
+				} else {
+					_self.voted.push(value);
+					_self.votedItem();
+				}
+			})
+
+			_self.$parent.append(_self.$template)
+		},
+		votedItem: function() {
+			var _self = this;
+			_self.votedItem = '';
+			for (var i=0;i<_self.voted.length;i++) {
+				_self.votedItem += _self.labelTpl.replace('#value#', _self.voted[i]);
+			}
+			$voteItem = $(_self.votedItem);
+
+			_self.$template.find('.voteItem > button').before($voteItem);
+		},
+		searchR: function() {
+			var _self = this;
+			for(var j = 0;j < _self.search.length; j++) {
+				_self.searchResult = '';
+				_self.searchResult += _self.searchResultTpl.replace('#resultItem#',_self.search[j]);
+			}
+			_self.$searchResult = $(_self.searchResult);
+			_self.$searchResult.bind('click', function() {
+				_self.$template.find('input').val($(this).html());
+			})
+			_self.$template.find('.searchResult > ul').empty().append(_self.$searchResult);
+		},
+		efficient: function() {
+			// 判断浏览器的性能，不行就不执行查询
+		}
+	}
+
+
+	var xxx = new Voting();
+	xxx.main();
+	/**
+	 * 迷宫（game）
+	**/
+
+
+
+
+/**
+ * 信息架构，其实可以从另外的一些方面来，就是目标搜索，推荐浏览，画廊浏览，可以用路由决定用户想要什么。一级一级分离，然后再达到受众手中的信息，应该比较精确。全局，自定义的面向受众的标签
+**/
+
+</script>
+</html>
