@@ -3,6 +3,7 @@
 <head>
 	<title>javascript class collection and testing center</title>
 	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 	<style type="text/css">
 		/*comment*/
 		.commentWrap {
@@ -67,7 +68,7 @@
 		}
 
 		.voting > .addVoting > input, .voting > .addVoting > button {
-			padding: 10px;s
+			padding: 10px;
 		}
 
 	</style>
@@ -116,6 +117,209 @@
 
 	<div id="voting"></div>
 
+	<style type="text/css">
+		.audio {
+			width: 100%;
+			position: fixed;
+			bottom: 100px;
+			left: 0px;
+			background-color: #333;
+			height: 56px;
+		}
+
+		.audio > .btns {
+			display: inline-block;
+			float: left;
+			position: relative;
+			top: 20px;
+		}
+
+		.audio > .btns > a {
+			color: #fff;
+			font-weight: bold;	
+			text-align: center;
+			font-size: 12px;
+			line-height: 20px;
+			width: 20px;
+			height: 20px;
+			border: 1px solid #fff;
+			border-radius: 50%;
+			margin-right: 10px;
+			display: inline-block;
+		}
+
+		.audio > .play {
+			width: 500px;
+			display: inline-block;
+		    position: relative;
+		    top: 10px;
+		}
+
+		.audio > .play > .imgWrap {
+			float: left;
+			width: 25px;
+			height: 25px;
+			overflow: hidden;
+		}
+		.audio > .play > .content {
+			margin-left: 41px;
+		}
+		.audio > .play > .content > p {
+			color: #fff;
+			margin: 0px;
+			margin-bottom: 6px;
+			font-size: 12px;
+			line-height: normal;
+		}
+
+		.audio > .play > .content > .proWrap {
+			width:500px;
+		}
+
+		.audio > .play > .content > .proWrap > .time {
+			float: right;
+			display: inline-block;
+			width: 100px;
+			font-size: 12px;
+			color: #fff;
+			position: relative;
+			top: -2px;
+		}
+
+		.audio > .play > .content > .proWrap >.progress {
+			position: relative;
+			margin-right: 110px;
+			cursor: pointer;
+		}
+
+		.audio > .play > .content > .proWrap >.progress > .bar {
+			width: 100%;
+			height: 9px;
+			background-color: #ddd;
+			opacity: .7;
+			border-radius: 30px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			z-index: -1;
+			transition: 1s all;
+		}
+		.audio > .play > .content > .proWrap >.progress > .pbar {
+			width:200px;
+			background-color: red;
+			height: 9px;
+			position: relative;
+			border-radius: 30px;
+			z-index: 10;
+			transition: 1s all;
+		}
+
+		.audio > .play > .content > .proWrap >.progress > .pbar > i {
+			content: '';
+			display: inline-block;
+			width: 5px;
+			height: 5px;
+			border: 8px solid #fff;
+			background-color: red;
+			border-radius: 50%;
+			position: absolute;
+			right: -5px;
+			top: -6px;
+		}
+
+		.audio > .ctrl {
+			color: #fff;
+			font-size: 14px;
+			float: right;
+			
+		}
+
+		.audio > .ctrl > a{
+			margin-right: 10px;
+			height: 56px;
+			line-height: 56px;
+			display: inline-block;
+			width: 3em;
+			text-align:center;
+			cursor: pointer;
+		}
+
+		.audio > .ctrl > a:hover {
+			background-color: #ddd;
+			color: #333;
+		}
+	</style>
+
+	<div class="audio">
+		<!-- <button>playlist</button> -->
+		<!-- <div class="playlist">
+			<div class="pl-title">
+				<h3>播放列表（<span>330</span>）</h3>
+			</div>
+			<div class="pl-body">
+				<div class="listb">
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+			</div>	
+		</div> -->
+		<div class="btns">
+			<a class="prev"><</a>
+			<a class="play">||</a>
+			<a class="next">></a>
+		</div>
+		<div class="play">
+			<div class="imgWrap">
+				<img src="http://placehold.it/200x200">
+			</div>
+			<div class="content">
+				<p>
+					<span class="name">含笑</span>
+					<span class="composer">含笑</span>
+				</p>
+				<div class="proWrap">
+					<span class="time">02:55/04:55</span>
+					<div class="progress">
+						<div class="pbar"><i></i></div>
+						<div class="bar"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ctrl">
+			<a class="add">add</a>
+			<a class="add">share</a>
+			<a class="add">volumn</a>
+			<a class="playlistBtn">playlist</a>
+		</div>
+	</div>
+	如何控制音乐的速度
+	关于音乐刘: <a href="https://www.google.com/search?q=%E9%9F%B3%E4%B9%90%E6%B5%81%E6%98%AF%E6%80%8E%E6%A0%B7buffer%E8%BF%87%E6%9D%A5%E7%9A%84&oq=%E9%9F%B3%E4%B9%90%E6%B5%81%E6%98%AF%E6%80%8E%E6%A0%B7buffer%E8%BF%87%E6%9D%A5%E7%9A%84&aqs=chrome..69i57.12212j0j4&sourceid=chrome&ie=UTF-8">music</a>
+	<script type="text/javascript">
+		var $pbar = $('.pbar');
+		var $progress = $('.progress');
+		var $i = $pbar.find('i');
+		var locationX = $i.offset().left;
+		var correcting = 4;
+		$progress.bind('click', function(e) {
+			$pbar.css({
+				'width': 200 + e.pageX - locationX - correcting + 'px'
+			})
+			console.log(e.pageX)
+		})
+		// $pbar.find('i').on('mousemove', function(e) {
+		// 	var $this = $(this);
+		// 	var distance = e.pageX -200;
+		// 	console.log(distance)
+		// 	$pbar.css({
+		// 		width:  200 + distance + 'px'
+		// 	})
+		// })
+	</script>
+
 
 	<div>
 		<h3>网页书评</h3>
@@ -129,8 +333,8 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 <script type="text/javascript">
+
 	/**
 	 * 最好自己可以研究一些什么东西出来啦。
 	**/
@@ -457,6 +661,20 @@
 	 * 迷宫（game）
 	**/
 
+
+	/**
+	 * 音乐播放器
+	 * 包含歌曲调用组件。，歌曲分类组件，歌曲展示组件，分享组件
+	**/
+	var Audio = function() {
+
+	}
+
+	Audio.prototype = {
+		init: function() {
+			alert()
+		}
+	}
 
 
 
