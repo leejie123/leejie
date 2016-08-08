@@ -258,24 +258,66 @@
 	 * 传入的是一个container，最好能够自定义样式，而且初始化能够有更多扩展性。
 	**/
 	var Cascad = function() {
-		this.data = {
-			parent: {
-				id: '',
-				child: {
-
+		this.data = [
+				{
+					name: '一级菜单',
+					id: 22,
+					child: [
+							{
+								'name': '二级菜单1',
+								'id': 111
+							},
+							{
+								'name': '二级菜单1',
+								'id': 111
+							}
+						]
+				},
+				{
+					name: '一级菜单',
+					id: 22,
+					child: [
+							{
+								'name': '二级菜单1',
+								'id': 111
+							},
+							{
+								'name': '二级菜单1',
+								'id': 111
+							}
+					]
 				}
-			}
-		}
+			]
 	}
 
 	Cascad.prototype = {
-
+		loop: function(data) {
+			console.log(data)
+			$.each(data, function(k,v) {
+				
+			} )
+		},
+		main: function() {
+			var _self = this;
+			_self.loop(_self.data);
+		}
 	}
+
+	var xi = new Cascad();
+	xi.main();
 
 
 	/**
 	 * 上传图片的研究
 	**/
+
+	var Upload = function () {
+
+	}
+
+	Upload.prototype = {
+
+	}
 	
 
 	/**
