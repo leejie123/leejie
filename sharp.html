@@ -94,12 +94,15 @@
 	<ul>
 		<li>极少依赖dom的是最好的。</li>
 	</ul>
-
-	<div class="voting">
+	迷宫
+	播放器buffer
+	流媒体
+	http://he91-com.iteye.com/blog/1907749
+	<!-- <div class="voting">
 		<div class="addVoting">
 			<input type="" name="">
 			<button class="addBtn">add</button>
-			<!-- 数据库有的东西可以通过查找。 -->
+			数据库有的东西可以通过查找。
 			<div class="searchResult">
 				<ul>
 					<li>someting in the woerld</li>
@@ -113,7 +116,7 @@
 			<label><input type="radio" name=""> 半道英雄 <span>★★★</span></label>
 			<button class="vote">确定</button>
 		</div>
-	</div>
+	</div> -->
 
 	<div id="voting"></div>
 
@@ -121,7 +124,7 @@
 		.audio {
 			width: 100%;
 			position: fixed;
-			bottom: 100px;
+			bottom: 0px;
 			left: 0px;
 			background-color: #333;
 			height: 56px;
@@ -248,24 +251,159 @@
 			background-color: #ddd;
 			color: #333;
 		}
+
+		.playlist {
+			height: 300px;
+			border-radius: 5px;
+		}
+
+		.playlist > .pl-title {
+			background-color: #333;
+			height: 40px;
+			line-height: 40px;
+			font-size: 14px;
+			font-weight: bold;
+			color: #fff;
+			padding: 0px 20px;	
+		}
+		.playlist > .pl-body {
+			position: relative;
+		}
+		.playlist > .pl-body > .listb {
+			position: absolute;
+			top: 0px;
+			left: 2px;
+			width: 558px;
+			height: 260px;
+			background-color: #121212;
+			opacity: .2;
+			color: #fff;
+		}
+		.playlist > .pl-body > .listb > ul {
+			padding: 0px;
+		}
+
+		.playlist > .pl-body > .listb > ul > li {
+			list-style: none;
+		}
+
+		.playlist > .pl-body > .listb > ul > li:after{
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		.playlist > .pl-body > .listb > ul > li > .col {
+			float: left;
+			padding-left: 10px;
+			line-height: 28px;
+			height: 28px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.playlist > .pl-body > .listb > ul > li > div.playicon {
+			width: 10px;
+		}
+		.playlist > .pl-body > .listb > ul > li > div.name {
+			width: 256px;
+		}
+
+		.playlist > .pl-body > .listb > ul > li > .icons {
+			width: 78px;
+			visibility: hidden;
+		}
+		.playlist > .pl-body > .listb > ul > li > .time {
+			width: 35px;
+		}
+		.playlist > .pl-body > .listb > ul > li > .link {
+			width: 37px;
+			padding-left: 6px;
+		}
+
+		.playlist > .pl-body > .listb > ul > li:hover {
+			background-color: red;
+		}
+		.playlist > .pl-body > .listb > ul > li:hover > .icons{
+			visibility: visible;
+		}
+
+		.playlist > .pl-body > .listlyric {
+			position: absolute;
+			left: 560px;
+			top: 0px;
+			z-index: 4;
+			width: 420px;
+			height: 250px;
+			background-color: #121212;
+
+		}
+
+
+		
 	</style>
 
-	<div class="audio">
-		<!-- <button>playlist</button> -->
-		<!-- <div class="playlist">
+		<div class="playlist">
 			<div class="pl-title">
 				<h3>播放列表（<span>330</span>）</h3>
+				<!-- <div>
+					<span>收藏全部</span>
+					<span>清除</span>
+				</div> -->
 			</div>
 			<div class="pl-body">
 				<div class="listb">
 					<ul>
 						<li>
-							
+							<div class="playicon col">df</div>
+							<div class="name col">阿凡提</div>
+							<div class="icons col">
+								<span class="add">a</span>
+								<span class="share">e</span>
+								<span class="download">d</span>
+								<span class="delete">l</span>
+							</div>
+							<div class="composer col"><a href="">群星</a></div>
+							<div class="time col">01:02</div>
+							<div class="link col">icon</div>
+						</li>
+						<li>
+							<div class="playicon col">df</div>
+							<div class="name col">阿凡提</div>
+							<div class="icons col">
+								<span class="add">a</span>
+								<span class="share">e</span>
+								<span class="download">d</span>
+								<span class="delete">l</span>
+							</div>
+							<div class="composer col"><a href="">群星</a></div>
+							<div class="time col">01:02</div>
+							<div class="link col">icon</div>
+						</li>
+						<li>
+							<div class="playicon col">df</div>
+							<div class="name col">阿凡提</div>
+							<div class="icons col">
+								<span class="add">a</span>
+								<span class="share">e</span>
+								<span class="download">d</span>
+								<span class="delete">l</span>
+							</div>
+							<div class="composer col"><a href="">群星</a></div>
+							<div class="time col">01:02</div>
+							<div class="link col">icon</div>
 						</li>
 					</ul>
 				</div>
+				<div class="bline" style="display:none;"></div>
+				<div class="listlyric">
+					
+				</div>
+
 			</div>	
-		</div> -->
+		</div>
+	<div class="audio">
+		<!-- <button>playlist</button> -->
 		<div class="btns">
 			<a class="prev"><</a>
 			<a class="play">||</a>
