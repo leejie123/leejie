@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首次尝试，场景动画</title>
+	<meta charset="utf-8">
+</head>
+<body>		
+step1:
+构建场景，以及场景对象
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+
+
+<style type="">	
+		.door {
+			padding: 10px;
+			background-color: #333;
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+		}
+		.door > .ku > .bar {
+			position: absolute;
+			right: 10px;
+			top: 60px;
+			width: 20px;
+			border-radius: 6px;
+			height: 30px;
+			background-color: skyblue;
+		}
+		.door > .ku > .bar > .bar1 {
+			position: relative;
+			left: -15px;
+			top: 10px;
+			width:25px;
+			height: 10px;
+			background-color: #ddd;
+			border: 1px solid #eaeaea;
+			border-radius: 6px 0px 0px 6px;
+			transition: 1s all;
+		}
+
+		.door:before {
+			content: '';
+			display: inline-block;
+			width: 100px;
+			height: 200px;
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			background-color: #fff;
+		}
+
+		.door > .ku {
+			width:100px;
+			height: 200px;
+			position: 	relative;
+			background-color: #f9d8d8;
+			transition: 1s all;
+		}
+
+		.door > .kan {
+			width: 150px;
+			height: 15px;
+			position: absolute;
+			background-color: #ddd;
+			left: -10px;
+			bottom: -15px;
+		}
+
+		/*炸弹*/
+		.door > .bomb {
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			position: absolute;
+			top: 30px;
+			right: 10px;
+			background-color: #333;
+			opacity: .7;
+			border-radius: 50%;
+			display: none;
+		}
+
+		/*effect*/
+		@keyframes bombing {
+			0% {
+				border: 0px;
+				opacity: 0;
+				background-color: #333;
+			}
+			50% {
+				border: 30px solid yellow;
+				opacity: 1;
+				background-color: #fff;
+			}
+			100% {
+				border: 30px;
+				opacity: 0;
+				background-color: #fff;
+			}
+		}
+
+		.bombing {
+			animation: bombing 1s;
+		}
+
+		.door.open > .bomb {
+			display: block;
+		}
+
+		.door.open > .ku {
+			-webkit-transform: rotateY(70deg);
+		}
+
+		.door.open > .ku > .bar > .bar1 {
+			transform: rotate(-30deg);
+		}
+
+
+</style>
+<div class="door">	
+	<div class="bomb"></div>	
+	<div class="ku">
+		<div class="bar">
+			<div class="bar1"></div>
+		</div>
+	</div>
+	<div class="kan"></div>
+</div>	
+
+<div class="img">	
+	<div class="imgWrap">	
+		<img src="http://placehold.it/200x200">
+	</div>
+</div>
+<script type="">
+
+	//以后改写成为require模块
+	// 一些封装类。
+	//应该还需要封装.class这个css类，专门做效果。
+	//存储状态值的命名规则。
+	var Door = function() {
+		this.$door = $('.door');
+	 	this.door = {
+	 		bomb: true,
+	 		open: true,
+	 		status: 'people die',
+	 		//不同类型场景的切换。
+	 		type: 'newScene/random/bomb/treasure/'
+	 	};
+	 	this.$bomb = this.$door.find('.bomb');
+	 	this.doorTpl = '<div class="door">' +
+							'<div class="bomb"></div>' +
+							'<div class="ku">' +
+								'<div class="bar">' +
+									'<div class="bar1"></div>' +
+								'</div>' +
+							'</div>' +
+							'<div class="kan"></div>' +
+						'</div>';
+	}
+
+	Door.prototype = {
+		main: function() {
+			var _self = this;
+
+			// 通过开门事件来实现
+			//通过class添加效果。
+			//通过type来控制场景。
+
+			switch (_self.type) {
+				case 'nomal':
+					break;
+			}
+			_self.$door.find('.bar1').bind('click', function() {
+				if(_self.door.open) {
+					_self.$door.addClass('open');
+					if (_self.door.bomb) {
+						_self.$bomb.addClass('bombing');
+					}
+					$('body').bind('keydown', function(e) {
+						var direction = KeyCode.get(e.keyCode);
+						if (direction == 'up') {
+							
+						}
+					})
+					_self.door.open = false;
+				} else {
+					_self.$door.removeClass('open')
+					_self.door.open = true;
+				}
+			})
+
+			_self.$door.show();
+		},
+		normal: function() {
+
+		},
+		newScene: function() {
+			//打开门，新游戏，新场景。
+			var _self = this;
+			_self.$door.fadeOut();
+		},
+		random: function() {
+			/**
+			 * 打开门可能会有不同的场景。做个随机算法
+			**/
+			
+		},
+		refreshListener: function() {
+			//更新监听函数，比如type改变了， 或者bomb的值改变了。都可以监听。像angular的双向绑定
+		}
+	}
+
+	var door = new Door();
+	door.main();
+
+
+	// 实用工具：
+	var KeyCode = {
+		get: function(key) {
+			switch(key){
+				case 32: 
+					return 'space';
+					break;
+				case 37:
+					return 'left';
+					break;
+				case 38:
+					return 'up';
+					break;
+				case 39:
+					return 'right';
+					break;
+				case 40:
+					return 'down';
+					break;
+			}
+		}
+	}
+
+	var Iframe = {
+		alert: function(msg) {
+			alert(msg)
+		},
+		confrim: function() {
+			confrim('you sure to do something?')
+		}
+	}
+
+
+
+	//专用弹框和风格
+ 	
+	
+
+ 
+
+	// 可以用键盘控制操作步行，但是需要指定对象。这个比较麻烦。
+	/**
+	 * 可以通过door来设置时间，进入之后的场景，另外一个section反正door   命名：door——万物之门。
+	 * 一些效果， 比如bomb的效果
+	 * 变换场景
+	 * 不足：show hide()会影响到样式
+	 * 切换场景，鼠标移动的事件，镜头随着变，这个3d以后做，先做2d平面上的东西。
+	 * 动画在执行期间，没有回调，css3动画，所以没法判断动画是否执行完成。、
+	 *http://www.phpweblog.net/kiyone/archive/2007/04/19/1138.html
+	**/
+
+	/**
+	 * 许愿树
+	 * 这里是功能
+	**/
+
+</script>
+
+</body>
+</html>
