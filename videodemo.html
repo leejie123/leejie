@@ -112,6 +112,7 @@
             <li><label for="books" class="">阳春白雪</label></li>
             <li><label for="books" class="" alt="ScienceLab 当真正的自然科学被营销和强人眼球的节目秀玩坏的时候，可以有投票啊等的活动，草根眼中的东西，草根想法。">实验室</label></li>
             <li><label for="billionwhys" class="">十万个为什么</label></li>
+            <li><label for="culture" class="">关于文化</label></li>
             <li><label for="everyDayQuote" class="" title="对世界的一点看法·视界">每日名言·立言</label></li>
             <li><label for="lifeSong" class="" title="lifeSong">年轻的基调</label></li>
             <li><label for="planning" class="" title="之所以起这个名字，是因为计划对于个人素养的构建还是有一定重要性的">千里之堤</label></li>
@@ -140,6 +141,13 @@
         <div class="box" style="display:none;">
             <q>其实我喜欢看书啦，但是看了，又忘记了把书摘保存下来，也不能分享，也是个麻烦问题。就摘在这里，自己看得开心。</q>
             <p><b>web信息架构</b> <small>sfisdfsd</small></p>
+        </div>
+
+        <!-- culture -->
+        <input type="checkbox" name="" id="culture" style="display:none;">
+        <div class="box" style="display:none;">
+            <q>·潮汕文化 ·人文 ·自然科学 ·豆瓣小组 ·</q>
+            <p></p>
         </div>
 
         <!-- lifesong -->
@@ -213,19 +221,6 @@
             <p>运动是永恒，适用于所有。</p>
             <p>看并模仿着</p>
 
-            <p><a href="https://www.youtube.com/watch?v=cW6fx7ivKWM">潮汕文化在香港
-            </a></p>
-            潮汕文化，传承，资金，规模
-            积极推广
-            英歌舞
-            潮州音乐（有心人）
-            潮州话
-            <a href="https://www.youtube.com/watch?v=9KWp93sRQ28">豆豆·豆芽一刻</a>
-            还是外国的表达情感的方式好玩一点
-            天下武功，
-            综艺节目
-            制造东西的过程
-            史诗影片
         </div>
 
         <!-- selfEsteem -->
@@ -604,7 +599,24 @@
             <p class="divider">2016.8.8</p>
             <p>plan: 调研行业</p>
             <p>zhihu:金融，it，律师，医生，建筑业。后三者是熬年头的行业，熬了年头也未必过得好。混年头到中产的人；重点：各个行业的人的社会地位，收入水平，整体行业收入，最高行业收入。入行门槛（比如医学的入行门槛就比较高，需要长时间培养。）</p>
+            <p><a href="https://www.youtube.com/watch?v=cW6fx7ivKWM">潮汕文化在香港
+            </a></p>
+            潮汕文化，传承，资金，规模
+            积极推广
+            英歌舞
+            潮州音乐（有心人）
+            潮州话
+            <a href="https://www.youtube.com/watch?v=9KWp93sRQ28">豆豆·豆芽一刻</a>
+            还是外国的表达情感的方式好玩一点
+            天下武功，
+            综艺节目
+            制造东西的过程
+            史诗影片
             <p class="divider">2016.8.9</p>
+            <p>昨天晚上的一些animation的展示，需要有些其他的东西过来配合一下会更好。</p>
+            <p><a href="http://rettamkrad.blogspot.sg/2012/04/work-smart-work-passionate-rework_03.html">情绪《rework》</a></p>
+            <p class="divider">2016.8.10</p>
+
         </div>
 
         <!-- planning -->
@@ -656,11 +668,7 @@
             <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=27552906&auto=1&height=66"></iframe> -->
             <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=5241063&auto=1&height=66"></iframe> -->
             <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=368800&auto=1&height=66"></iframe> -->
-<<<<<<< HEAD
             <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=287231&auto=1&height=66"></iframe>
-=======
-
->>>>>>> d1046383e62986ba46ae1ff88acf859c07f14e70
         </div>
         <div class="box">
             <p>record</p>
@@ -687,6 +695,13 @@
             </ol>
         </div>
 
+        <div style="position:fixed;top:0px;left:0px;right:0px;bottom:0px;background-color:rgba(255,255,255,.9)">
+        卷轴的效果
+            每天还是要有点期盼和向往的东西
+            something in the world
+
+        </div>
+
     </div> 
     <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="js/EventEmitter.min.js"></script>
@@ -698,12 +713,14 @@
     <script src="js/videoDemo.js"></script> 
     <script type="text/javascript">
 
-    var result =window.confirm('新花样~~你要看一下很炫的东西吗？那就跟我来吧~~');
-    var str = '世界上最美好的东西。'
-    if (result) {
-        alert('来来~~，这里有另外一个世界，真的~~')
-        window.location.href = 'projects/impress.js/index.html';
-    }
+    // var result =window.confirm('新花样~~你要看一下很炫的东西吗？那就跟我来吧~~');
+    // var str = '世界上最美好的东西。'
+    // if (result) {
+    //     alert('来来~~，这里有另外一个世界，真的~~')
+    //     window.location.href = 'projects/impress.js/index.html';
+    // }
+
+
 
     // building msg
     var $buildObj = $('a[data-type="building"]');
