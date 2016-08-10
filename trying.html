@@ -133,6 +133,25 @@ step1:
 		<img src="http://placehold.it/200x200">
 	</div>
 </div>
+
+<!-- dialog应该是怎么样的我还没想好 -->
+绝对的放纵是不好的，因为到最后是取决于人。所以，好玩的人玩的满盘开花，不好玩的人，把一盘搞砸。所以需要有方向引导。
+step2:故事情节：dialog,有一些robot的一些算法，不过烂了点，不太适用，重新做一个出来。还有配合场景，动作，难度 x<sup>2</sup>
+音乐配合，灯光，达到什么效果，听众什么心情。其实在这里可以讨论的主题，好，现在可以list出来一些需要的了。不过这个主题所挂钩的东西有很多。background music‘从background music可能衍生出其他的东西。应该说，所有的东西应该是一体的，看起来就像是真的一样。
+还有就是如果需要成为完全的版本，就需要模拟整个城市。这个是后话了，不过这个是萌芽。当类积累到一定程度，就有可能。当到达一个城市的规模的时候，需要浏览器的性能上的高度支持，以及各种东西的配合。将可以做出非常精致的游戏，只要类的粒度够精致。
+<p>a：what do you feel like this:</p>
+<p>a：somewhere like a home, feeling it warmth.</p>
+<p>a: </p>
+
+<pre>
+	
+	主题：
+		以书改编
+		人物故事
+		人物传记
+		个人生活
+
+</pre>
 <script type="">
 
 	//以后改写成为require模块
@@ -167,6 +186,8 @@ step1:
 			// 通过开门事件来实现
 			//通过class添加效果。
 			//通过type来控制场景。
+			//可以定义get函数来获得返回door对象
+			//场景切换可以多一个类。Scene，只要提供就可以调用。
 
 			switch (_self.type) {
 				case 'nomal':
@@ -178,10 +199,11 @@ step1:
 					if (_self.door.bomb) {
 						_self.$bomb.addClass('bombing');
 					}
+					// 判断人物动作行为，其实应该在人物对象里面的。
 					$('body').bind('keydown', function(e) {
 						var direction = KeyCode.get(e.keyCode);
 						if (direction == 'up') {
-							
+
 						}
 					})
 					_self.door.open = false;
@@ -239,6 +261,10 @@ step1:
 		}
 	}
 
+	var Guide = {
+		//这个是为了提示用户的操作。提示层，可以分为很多个， 箭头引导是一个，不过这个有点庸俗。可以想点别的。有些需要自动动画，这样用户看到就会认为这个是有功能的，就会去玩一下。
+	}
+
 	var Iframe = {
 		alert: function(msg) {
 			alert(msg)
@@ -265,6 +291,7 @@ step1:
 	 * 切换场景，鼠标移动的事件，镜头随着变，这个3d以后做，先做2d平面上的东西。
 	 * 动画在执行期间，没有回调，css3动画，所以没法判断动画是否执行完成。、
 	 *http://www.phpweblog.net/kiyone/archive/2007/04/19/1138.html
+	 * 重点是能够引起兴趣并且能够留下用户自己的痕迹。
 	**/
 
 	/**
