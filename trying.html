@@ -4,7 +4,7 @@
 	<title>首次尝试，场景动画</title>
 	<meta charset="utf-8">
 </head>
-<body>		
+<body style="font-size:100">		
 step1:
 构建场景，以及场景对象
 	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
@@ -134,6 +134,24 @@ step1:
 	</div>
 </div>
 
+<div class="bridgeWrap">
+	<div class="bridge">
+		<div style="width:40rem;height:100px;border-radius:500px 500px 0px 0px;background-color:red;position:relative;">
+			<div class="dun" style="border-bottom:50px solid #fff; border-left:80px solid transparent;position:absolute;bottom:0px;left:20px;border-right:80px solid transparent;width:400px;"></div>
+			<div class="water" style="background-color:skyblue;width:800px;height:40px;position:absolute;bottom:-20px;"></div>
+			<div style="height:10px;background-color:brown;width:300px;position:absolute;top:-60px;left:60px;">
+				<div class="langan" style="width:10px;height:60px;background-color:green;margin-right:30px;float:left;"></div>
+				<div class="langan" style="width:10px;height:60px;background-color:green;margin-right:30px;float:left;"></div>
+				<div class="langan" style="width:10px;height:60px;background-color:green;margin-right:30px;float:left;"></div>
+				<div class="langan" style="width:10px;height:60px;background-color:green;margin-right:30px;float:left;"></div>
+				<div class="langan" style="width:10px;height:60px;background-color:green;margin-right:30px;float:left;"></div>
+				<div class="langan" style="width:10px;height:60px;background-color:green;margin-right:30px;float:left;"></div>
+				<div class="langan" style="width:10px;height:60px;background-color:green;margin-right:30px;float:left;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- dialog应该是怎么样的我还没想好 -->
 绝对的放纵是不好的，因为到最后是取决于人。所以，好玩的人玩的满盘开花，不好玩的人，把一盘搞砸。所以需要有方向引导。
 step2:故事情节：dialog,有一些robot的一些算法，不过烂了点，不太适用，重新做一个出来。还有配合场景，动作，难度 x<sup>2</sup>
@@ -143,7 +161,11 @@ step2:故事情节：dialog,有一些robot的一些算法，不过烂了点，�
 <p>a：somewhere like a home, feeling it warmth.</p>
 <p>a: </p>
 
+
 <pre>
+
+
+	主题。
 	
 	主题：
 		以书改编
@@ -154,14 +176,14 @@ step2:故事情节：dialog,有一些robot的一些算法，不过烂了点，�
 </pre>
 <script type="">
 
-	//以后改写成为require模块
+	//以后改写成为require模块，或者可以改写成为运行速度比较快的。
 	// 一些封装类。
 	//应该还需要封装.class这个css类，专门做效果。
 	//存储状态值的命名规则。
 	var Door = function() {
 		this.$door = $('.door');
 	 	this.door = {
-	 		bomb: true,
+	 		bomb: true,	
 	 		open: true,
 	 		status: 'people die',
 	 		//不同类型场景的切换。
