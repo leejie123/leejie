@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!-- <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>vivus.js - svg animation</title>
+		<meta name="description" content="SVG Drawing Animation" />
+		<style type="text/css">
+
+		body {
+			    background: transparent url("http://subtlepatterns.com/patterns/paper_3.png") repeat scroll 0% 0%;
+		}
+
+		#svg-animate object {
+			width: 100%;
+		}
+
+		#svg-animate svg {
+			color: #eee;
+		}
+		</style>
+	</head>
+	<body>
+
+		<div id="svg-animate" style="height: 100%; width: 100%; position: absolute;">
+
+		</div>
+		<script src="js/vivus/dist/vivus.js"></script>
+		<script type="text/javascript">
+			var hi = new Vivus(
+				'svg-animate', 
+				{
+					type: 'delayed', 
+					duration: 150, 
+					start: 'autostart', 
+					dashGap: 20, 
+					forceRender: false,
+					file: 'images/stork.svg'
+				})
+		</script>
+	</body>
+</html>
+ -->
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="http://www.aaronvanderzwan.com/maximage/lib/css/jquery.maximage.css?v=1.2">
+    <link rel="stylesheet" type="text/css" href="http://www.aaronvanderzwan.com/maximage/lib/css/screen.css?v=1.2">
+    <style type="text/css">
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+      #svg-draw {
+        background: transparent url("http://subtlepatterns.com/patterns/paper_3.png") repeat scroll 0% 0%;
+        position: absolute;
+        width: 0;
+        top: 0;
+        z-index: -2;
+      }
+
+    #svg-draw object {
+      width: 100%;
+    }
+
+    .orginal {
+      /*background-image: url('');*/
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      background-size: 100%;
+      opacity: 0;
+    }
+
+    .tag {
+      position: absolute;
+      bottom: 70px;
+      padding: 25px;
+      background-color: #FFF;
+      right: 20px;
+      opacity: 0;
+      transition: all 1s;
+    }
+
+    .tag.drawn {
+      opacity: 1;
+    }
+    .tag .tag-container {
+      position: relative;
+    }
+
+    .tag .content {
+      display: inline-block;
+      padding: 10px 40px;
+      opacity: 0;
+      transition-duration: 1s;
+      transition-property: opacity;
+      transition-delay: 1s;
+    }
+
+    .tag .frame {
+       position: absolute;
+    }
+
+    .tag .frame.top {
+      left: 0px;
+      top: 0px;
+      height: 4px;
+      width: 100%;
+    }
+
+    .tag .frame.top > div {
+      width: 0px;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+    }
+
+    .tag .frame.bottom {
+      right: 0px;
+      bottom: 0px;
+      height: 4px;
+      width: 100%;
+    }
+
+    .tag .frame.bottom > div {
+      right: 0px;
+      top: 0px;
+      width: 0px;
+      height: 100%;
+    }
+
+    .tag .frame.left {
+      left: 0px;
+      bottom: 0px;
+      width: 4px;
+      height: 100%;
+    }
+
+    .tag .frame.left > div {
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: 0px;
+    }
+
+    .tag .frame.right {
+      right: 0px;
+      top: 0px;
+      height: 100%;
+      width: 4px;
+    }
+
+    .tag .frame.right > div {
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 0px;
+    }
+
+    .tag .frame div {
+      position: absolute;
+      background: #1D1D1D none repeat scroll 0% 0%;
+      transition-duration: 1s;
+      transition-property: width, height;
+      transition-delay: 1s;
+      overflow: hidden;
+    }
+
+    .tag.drawn .frame > div {
+      height: 100%;
+      width: 100%;
+    }
+
+    .tag.drawn .content {
+      opacity: 1
+    }
+
+    .enter {
+      width: 100%;
+      text-align: center;
+      bottom: 100px;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .enter.animated {
+      opacity: 1;
+    }
+    </style>
+  </head>
+  <bod>
+    <canvas id="demoCanvas" width="1920" height="720"></canvas>
+
+    <div class="orginal">
+      <div id="slider1" class="slider">
+        <img src="images/draw-original.jpg">
+
+        <div class="tag">
+          <div class="tag-container">
+            <div class="frame top">
+              <div></div>
+            </div>
+            <div class="frame bottom">
+              <div></div>
+            </div>
+            <div class="frame left">
+              <div></div>
+            </div>
+            <div class="frame right">
+              <div></div>
+            </div>
+            <div class="content">
+              <h2>软装设计</h2>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="slider2" class="slider">
+        <img src="images/construction.jpg">
+        <div class="tag">
+          <div class="tag-container">
+            <div class="frame top">
+              <div></div>
+            </div>
+            <div class="frame bottom">
+              <div></div>
+            </div>
+            <div class="frame left">
+              <div></div>
+            </div>
+            <div class="frame right">
+              <div></div>
+            </div>
+            <div class="content">
+              <h2>土建工程</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="slider3" class="slider">
+        <img src="images/planing.jpg">
+        <div class="tag">
+          <div class="tag-container">
+            <div class="frame top">
+              <div></div>
+            </div>
+            <div class="frame bottom">
+              <div></div>
+            </div>
+            <div class="frame left">
+              <div></div>
+            </div>
+            <div class="frame right">
+              <div></div>
+            </div>
+            <div class="content">
+              <h2>高级私人订制</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="slider4" class="slider">
+        <img src="images/painting.jpg">
+        <div class="tag">
+          <div class="tag-container">
+            <div class="frame top">
+              <div></div>
+            </div>
+            <div class="frame bottom">
+              <div></div>
+            </div>
+            <div class="frame left">
+              <div></div>
+            </div>
+            <div class="frame right">
+              <div></div>
+            </div>
+            <div class="content">
+              <h2>硬装工程</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="enter">
+      <a href="#"><img src='images/enter.png'></a>
+    </div>
+
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://www.aaronvanderzwan.com/maximage/lib/js/jquery.cycle.all.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://www.aaronvanderzwan.com/maximage/lib/js/jquery.maximage.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vivus/dist/vivus.js"></script>
+    <script src="https://code.createjs.com/createjs-2015.05.21.min.js"></script>
+    <script>
+
+    $(function(){
+          var svgDraw = document.createElement("div");
+      svgDraw.id = "svg-draw";
+    $svgDraw = $(svgDraw);
+
+
+      $('.enter a').click(function(e){
+        e.preventDefault();
+        $('.enter').removeClass('animated');
+        c.Tween.get(rect1, {loop: false})
+          .to({y: canvasHeight / 2 +1 }, 1000, c.Ease.getPowInOut(4))
+          ;
+        c.Tween.get(rect2, {loop: false})
+          .to({y: canvasHeight / 2}, 1000, c.Ease.getPowInOut(4))
+          ;
+        c.Tween.get(text, {loop: false})
+          .to({alpha: 0}, 1000, c.Ease.getPowInOut(4))
+          ;
+        c.Tween.get(bitmap, {loop: false})
+          .to({y: canvasHeight / 2 - 37.5}, 1000, c.Ease.getPowInOut(4))
+          .wait(200)
+          .call(function(){
+            location.href = "index.html";
+          })
+          ;
+
+      })
+
+
+      var c = createjs, 
+      stage = new c.Stage("demoCanvas"), 
+      rect1 = new c.Shape(),
+      rect2 = new c.Shape(),
+      windowWidth = window.innerWidth,
+      windowHeight = window.innerHeight,
+      canvasWidth = windowWidth,
+      canvasHeight = windowHeight,
+      WIDTH = stage.canvas.width,
+      HEIGHT = stage.canvas.height,
+      bitmap = new c.Bitmap("images/logo_white.png"),
+      text = new c.Bitmap("images/logo_text.png");
+
+       c.Sound.alternateExtensions = ["mp3"];
+       c.Sound.on("fileload", handleBGMLoaded);
+        c.Sound.registerSound("common/bgm.mp3", "soundId");
+
+       function loadHandler(event) {
+           // This is fired for each sound that is registered.
+           var instance = c.Sound.play("sound");  // play using id.  Could also use full source path or event.src.
+           instance.on("complete", c.proxy(this.handleComplete, this));
+           instance.volume = 0.5;
+       }
+
+       function handleBGMLoaded(){
+        
+        c.Sound.play('soundId');
+       }
+
+
+      function init() {
+
+        bitmap.scaleX = 0.3;
+        bitmap.scaleY = 0.3;
+
+        bitmap.x = canvasWidth / 2 - 37.5;
+        bitmap.y = canvasHeight / 2 - 37.5;
+
+
+
+        stage.canvas.width = canvasWidth;
+        stage.canvas.height = canvasHeight;
+
+        $svgDraw.css({height: canvasHeight});
+
+
+        document.body.appendChild(svgDraw);
+
+        rect1.w = 100;
+        rect1.h = 100;
+
+        rect2.w = 100;
+        rect2.h = 100;
+
+        rect1.graphics.beginFill('rgb(186, 41, 45)').drawRect(0, 0, 100, 100);
+        rect1.x = canvasWidth / 2;
+        rect1.y = canvasHeight / 2;
+        rect1.regX = 50;
+        rect1.regY = 100;
+
+        rect2.graphics.beginFill('rgb(186, 41, 45)').drawRect(0, 0, 100, 100);
+        rect2.x = canvasWidth / 2;
+        rect2.y = canvasHeight / 2 -1;
+        rect2.regX = 50;
+        rect2.regY = 0;
+
+        text.scaleX = 0.3;
+        text.scaleY = 0.3;
+        text.x = canvasWidth / 2 - 37.5;
+        text.y = rect1.y - (canvasHeight / 2) + 100;
+        text.alpha = 0;
+
+        stage.addChild(rect1);
+        stage.addChild(rect2);
+        stage.addChild(bitmap);
+        stage.addChild(text);
+
+        c.Tween.get(rect1, {loop: false})
+          .to({scaleX:19.2}, 1000, c.Ease.getPowInOut(4))
+          .to({scaleY:5}, 1000, c.Ease.getPowInOut(4))
+          .wait(100)
+          .to({y: rect1.y - (canvasHeight / 2 - 150)}, 1000, c.Ease.getPowInOut(4))
+          ;
+
+        c.Tween.get(text, {loop: false})
+          .wait(2500)
+          .to({alpha: 1}, 1000, c.Ease.getPowInOut(4))
+          ;
+
+        c.Tween.get(bitmap, {loop: false})
+          .wait(2100)
+          .to({y: rect1.y - (canvasHeight / 2) + 20}, 1000, c.Ease.getPowInOut(4))
+          ;
+
+        c.Tween.get(rect2, {loop: false})
+          .to({scaleX:19.2}, 1000, c.Ease.getPowInOut(4))
+          .to({scaleY:5}, 1000, c.Ease.getPowInOut(4))
+          .wait(500)
+          .to({y: rect1.y + canvasHeight / 2 - 50}, 1000, c.Ease.getPowInOut(4))
+          .call(showSvgDraw, [WIDTH])
+          ;
+
+
+          // $svgDraw.animate({
+          //   width: WIDTH
+          // })
+// clip.width = 100;
+// createjs.Tween.get(clip).to({width:500}).addEventListener("change", handleChange");
+// function handleChange(event) {
+//     clip.graphics.clear().{DRAWING_OPERATIONS HERE}
+//     // using clip.width.
+// }
+        c.Ticker.setFPS(60);
+        c.Ticker.addEventListener("tick", stage);
+        // circle = new c.Shape();
+
+       //  circle.graphics.beginFill("Crimson").drawCircle(0, 0, 50);
+       //  circle.x = 100;
+       //  circle.y = 100;
+       //  stage.addChild(circle);
+       //  c.Tween.get(circle, {loop: true})
+       //    .to({x: 1820}, 1000, c.Ease.getPowInOut(4))
+       //    .to({alpha: 0, y: 75}, 500, c.Ease.getPowInOut(2))
+       //    .to({alpha: 0, y: 125}, 100)
+       //    .to({alpha: 1, y: 100}, 500, c.Ease.getPowInOut(2))
+       //    .to({x: 100}, 800, c.Ease.getPowInOut(2));
+       //  c.Ticker.setFPS(60);
+       //  c.Ticker.addEventListener("tick", stage);
+      }
+
+      function showSvgDraw(WIDTH){
+          
+          $svgDraw.animate({
+            width: WIDTH
+          }, 1000, function(){
+
+
+            })
+            var hi = new Vivus(
+            'svg-draw', 
+            {
+              type: 'delayed', 
+              duration: 100, 
+              start: 'autostart', 
+              dashGap: 20, 
+              forceRender: false,
+              file: 'images/stork.svg'
+            }, function(){
+              $svgDraw.animate({opacity: 0}, 2000);
+              $('.orginal').maximage({
+                cycleOptions: {
+                  fx: 'fade',
+                  speed: 1000, // Has to match the speed for CSS transitions in jQuery.maximage.css (lines 30 - 33)
+                  // timeout: 0,
+                  pause: 0,
+                  before: function(last,current){
+                  },
+                  after: function(last,current){
+                    $('.orginal').find('.tag').removeClass('drawn');
+                    $(current).find('.tag').addClass('drawn');
+                  }
+                },
+                onFirstImageLoaded: function(){
+                }
+              });
+            
+              $('.orginal').animate({opacity: 1}, 2000, function(){
+                $('.enter').addClass('animated');
+              });
+          })
+
+      }
+      init();
+    })
+
+
+    </script>
+  </body>
+</html>
+

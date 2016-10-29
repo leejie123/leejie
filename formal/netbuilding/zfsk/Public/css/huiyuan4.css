@@ -1,0 +1,102 @@
+
+
+
+
+/*刘德华框*/
+
+.content-one-1 li {
+  	  float: left;
+  	  padding: 5px 0 0 7px;
+  }
+
+  .content-one-1 {
+  	border: 1px solid #bababa;
+    background: #fff;
+  }
+
+  .content-one-1-2 {
+  	padding-left: 30px;
+  	color: #807e7e;
+  	vertical-align: top;
+  }
+
+  .content-one-1-2 .zi {
+  	float: left;
+  	color: #7B5700;
+  	font-size: 22px;
+  	font-weight: bold;
+  }
+
+  .content-one-1-2 .num {
+  	float: right;
+  	color: #111;
+  }
+
+  .content-one-1-2 .poe {
+  	float: right;
+  	margin: 0 6px 0 0px;
+  	color: #F5D437;
+  }
+
+  .content-one-1-2 p {
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 18em;
+  }
+
+
+  .content-one-2 {
+  	border: 1px solid #bababa;
+  	height: 70px;
+    background: #fff;
+  }
+
+  .content-one-2 li {
+  	float: left;
+	margin: 22px 15px;
+	border-right: 1px solid #ccc;
+	padding-right: 20px;
+  }
+
+  .content-one-2 li a {
+  	border: 1px solid #bababa;
+	padding: 4px 11px;
+    color: #807e7e;
+    border-radius: 2px;
+  }
+
+  .content-one-2 li i {
+  	font-size: 14px;
+  	color: #7B5700;
+  }
+
+  .content-one-2 .li-2w {
+  	border-right:none;
+  }
+  /**/
+
+
+  .ldh {
+  	width: 47%;
+  }
+
+  .row.xiaqu {
+  	margin-top: 20px;
+  }
+
+  .shoubu {
+	margin-top: 30px;
+  }
+
+  .shoubu p {
+  	color: #7B5700;
+  }
+
+  .bti {
+  	margin-top: 40px;
+  }
+
+  .cm8-4.bti {
+  	margin: 20px 0 0 0 ;
+  }

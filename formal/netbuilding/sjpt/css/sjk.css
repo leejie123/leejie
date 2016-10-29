@@ -1,0 +1,31 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.product-essential {
+    padding: 0px;
+    margin: 0px 0px 10px;
+}
+form {
+    margin: 0px 0px 18px;
+    display: inline;
+}
+.row-fluid [class*="span"] {
+    display: block;
+    float: left;
+    width: 100%;
+    min-height: 28px;
+    margin-left: 2.5641%;
+    box-sizing: border-box;
+}
+.row-fluid .span5 {
+    width: 45%;
+}
+.product-view .product-img-box .product-image {
+    margin: 0px;
+    border: 1px solid #DDD;
+    padding: 5px;
+}
+.row-fluid .span7 {
+    width: 52%;
+}

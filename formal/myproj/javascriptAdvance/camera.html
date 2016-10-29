@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+<style type="text/css">	
+.bbs-checkbox {
+
+}
+.bbs-checkbox > i {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-image: url('test.png');
+	background-size: 100%;
+	background-position: top center;
+
+}
+</style>
+<label class="bbs-checkbox">
+	<input type="checkbox" name="">
+	<i style=""></i>
+	check me
+</label>
+
+
+<script type="text/javascript">
+	$('.bbs-checkbox').find('input').on('change', function () {
+		if ($(this).prop('checked')) {
+			$(this).next().css({
+				'background-position': 'bottom center'
+			})
+		} else  {
+			$(this).next().css({
+				'background-position': 'top center'
+			})
+		}
+	})
+</script>
+
+
+</body>
+</html>

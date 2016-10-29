@@ -1,0 +1,28 @@
+
+
+.ink {
+	width: 30%;
+	margin: 40px auto;
+	padding: 40px 0;
+	border: 5px solid #F5D437;
+	text-align: center;
+	color: #7B5700;
+}
+
+.denglu-block {
+	padding: 40px 0;
+}
+
+.ink a {
+	color: #7B5700;
+}
+
+.semi {
+	width: 50%;
+	margin:0 auto;
+	text-align: right;
+}
+
+.label-to {
+	margin-right: 57px;
+}

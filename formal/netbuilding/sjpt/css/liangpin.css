@@ -1,0 +1,345 @@
+/*开始Index-liangpin*/
+
+.liangpin  h2 {
+    border-bottom: 2px solid #64BFF9;
+    font-size: 18px;
+    color: #444;
+    font-weight: normal;
+    line-height: 30px;
+    padding: 15px 0px 5px;
+}
+.liangpin_sx {
+    border: 1px solid #E3E3E3;
+    margin-top: 20px;
+}
+.fenlei {
+    margin: 18px;
+    line-height: 26px;
+    padding: 0px;
+
+}
+.fenlei span {
+    color: #999;
+    float: left;
+    width: 71px;
+    margin-top: 3px;
+}
+.fenlei ul {
+    line-height: 20px;
+    float: left;
+	padding-left: 0px;
+}
+.fenlei li {
+    float: left;
+    margin: 3px;
+    padding: 0px 10px;
+}
+.sx_cur {
+    background: #45A1DE none repeat scroll 0% 0%;
+}
+.sx_cur a {
+    color: #FFF;
+}
+.clear {
+    clear: both;
+    overflow: hidden;
+}
+.sx_page {
+    height: 40px;
+    background: #EFF2F5 none repeat scroll 0% 0%;
+    border-top: 1px solid #E3E3E3;
+    text-align: right;
+    line-height: 40px;
+    padding-right: 15px;
+    font-weight: bold;
+}
+.sx_page a {
+    width: 20px;
+    height: 20px;
+    padding: 5px 8px;
+    margin: 0px 5px;
+    background: #FFF none repeat scroll 0% 0%;
+    border-radius: 100%;
+    border: 1px solid #E1E1E1;
+    display: inline;
+
+}
+.liangpin_right {
+    width: 280px;
+    float: right;
+}
+.liangpin_about {
+    width: 278px;
+    border: 1px solid #E3E3E3;
+    margin-top: 20px;
+}
+.liangpin_icon {
+    height: 95px;
+    float: left;
+    border-bottom: 2px solid #45A1DE;
+}
+.liangpin_icon a {
+    display: block;
+    width: 69px;
+    text-align: center;
+    float: left;
+    color: #999;
+}
+
+.pz {
+    background: transparent url("../images/zh_icon.png") no-repeat scroll -68px center;
+}
+.sh {
+    background: transparent url("../images/zh_icon.png") no-repeat scroll -102px center;
+}
+.th {
+    background: transparent url("../images/zh_icon.png") no-repeat scroll -136px center;
+}
+.by {
+    background: transparent url("../images/zh_icon.png") no-repeat scroll right center;
+}
+.liangpin_icon i {
+    width: 34px;
+    height: 34px;
+    margin: 15px auto 5px;
+    display: block;
+}
+.liangpin_article {
+    margin: 10px 12px;
+    line-height: 24px;
+}
+.liangpin_article p {
+    color: #666;
+    font-size: 16px;
+    margin-left: 7px;
+}
+.liangpin_article ul {
+    margin-top: 18px;
+}
+.liangpin_article li {
+    width: 254px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.liangpin_article li i {
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background: #45A1DE none repeat scroll 0% 0%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.liangpin_article li a {
+    color: #999;
+    font: 12px/2 arial,宋体;
+    outline: 0px none;
+}
+.ice_box ul {
+    float: left;
+}
+.liangpin_list li {
+    width: 280px;
+    height: 340px;
+    margin-right: 24px;
+    padding-bottom: 5px;
+}
+.ice_box li {
+    float: left;
+    width: 255px;
+    border: 1px solid #E3E3E3;
+    text-align: center;
+    margin: 20px 10px;
+    position: relative;
+}
+.level_sss {
+    background: transparent url("/newlib/img/level_sss.png") no-repeat scroll left top;
+}
+.ice_box li a {
+    display: block;
+}
+.ice_box img {
+    width: 160px;
+    height: 160px;
+    margin: 35px 50px 28px;
+}
+.ice_box h4 {
+    text-align: left;
+    color: #666;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0px 18px;
+}
+.ice_box p {
+    color: #999;
+    font-size: 14px;
+    text-align: left;
+    margin: 0px 18px;
+}
+.ice_box p span {
+    text-decoration: line-through;
+    margin: 0px 8px;
+}
+.ice_box p i {
+    color: #F60;
+}
+.liangpin_list p b {
+    font-size: 20px;
+    font-weight: normal;
+    color: #E95D4E;
+    float: left;
+}
+.liangpin_list p a {
+    width: 90px;
+    height: 28px;
+    background: #2394F4 none repeat scroll 0% 0%;
+    border-radius: 5px;
+    display: block;
+    color: #FFF;
+    float: right;
+    font-size: 14px;
+    text-align: center;
+    line-height: 28px;
+}
+.ice_box h4{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.liangpin_list img {
+    margin: 38px 50px;
+}
+/*结束Index-liangpin*/
+/*开始Index-ershou*/
+.list_brand {
+    margin-top: 20px;
+    background: #FFF none repeat scroll 0% 0%;
+    border: 1px solid #E3E3E3;
+}
+.list_brand h3 {
+    background: #F6F6F6 none repeat scroll 0% 0%;
+    padding: 0px 10px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #E3E3E3;
+    font-weight: normal;
+    text-shadow: 0px 1px 0px #FFF;
+}
+.list_brand p {
+    padding-top: 10px;
+}
+.list_brand p a {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    margin: 0px 20px 10px;
+    padding: 0px 10px;
+}
+.list_brand a {
+    color: #666;
+    font-size: 11px;
+    text-decoration: none;
+    outline: medium none;
+    transition: color 0.3s ease 0s;
+}
+.list_brand h3 i {
+    margin: 0px 8px;
+    font-size: 12px;
+}
+.list_brand h3 span {
+    color: #999;
+    font-size: 12px;
+}
+.wrapper {
+    margin: 0px auto;
+}
+.list h3 {
+    height: 40px;
+    line-height: 40px;
+    font-weight: normal;
+    background: #F6F6F6 none repeat scroll 0% 0%;
+    border: 1px solid #E3E3E3;
+    margin-bottom: 15px;
+    padding: 0px 10px;
+    text-shadow: 0px 1px 0px #FFF;
+}
+.list h3 span {
+    color: #999;
+}
+.list h3 em {
+    margin-left: 10px;
+    font-size: 12px;
+}
+.left {
+    float: left;
+}
+.list h3 em a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background: #FFF none repeat scroll 0% 0%;
+    border: 1px solid #E3E3E3;
+    vertical-align: middle;
+    line-height: 20px;
+    text-decoration: none;
+    margin: 0px 5px;
+    border-radius: 20px;
+}
+.orange {
+    color: #F60;
+    font-size: 12px;
+}
+.list ul {
+    overflow: hidden;
+    list-style: outside none none;
+}
+.list ul li {
+    float: left;
+    width: 246px;
+    margin: 0px 19px 15px;
+    text-align: center;
+}
+.list ul li h4 {
+    font-weight: normal;
+    height: 18px;
+    overflow: hidden;
+}
+.list ul li p {
+    color: #999;
+}
+.page {
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    margin-top: 20px;
+}
+.page span {
+    color: #999;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.page a {
+    height: 22px;
+    line-height: 22px;
+    display: inline-block;
+    padding: 0px 8px;
+    border: 1px solid #E3E3E3;
+    margin: 0px 5px;
+    border-radius: 3px;
+}
+.page a:hover, .page a.cur {
+    background: #F60 none repeat scroll 0% 0%;
+    border-color: #F60;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.menu{
+    display: none;
+}
+.lunbo{
+    width: 100%;
+}
+/*结束Index-ershou*/

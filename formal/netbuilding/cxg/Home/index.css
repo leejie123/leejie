@@ -1,0 +1,182 @@
+
+/*导航部分*/
+.navigation ul li{
+	list-style: none;
+	float: left;
+	width: 20%;
+	text-align: center;
+	color: rgb(204 198 166);
+
+}
+
+.navigation ul li a{
+	text-decoration: none;
+	color: #fff;
+	padding-bottom: 3px;
+}
+
+.navigation ul li a:hover{
+	border-bottom: 1px solid rgb(203,198,166);
+}
+
+.navigation ul{
+	border-top: 1px solid rgb(204 198 166);
+	padding-top: 5px;
+	padding-left: 0px;
+}
+
+.title_1{
+	display: block;
+	text-align: center;
+}
+
+.title_1 div{
+	width: 15%;
+	display: inline-block;
+	margin: 0 auto;
+	color:#fff;
+}
+
+.title_1 div img,.title_1 div p{
+	float: left;
+}
+
+
+.title_1 div img{
+	width: 50px;
+}
+
+.title_1 div p{
+	display: inline-block;
+	padding:4px 2px;
+	background:rgb(107,104,82)
+}
+
+.big_pic ul{
+	padding-left: 0px;
+}
+
+
+/*modify +a*/
+.big_pic ul > li {
+	float: left;
+	list-style: none;
+	width: 27%;
+	margin:0 3%;
+
+}
+
+
+.big_pic ul  > li > a div{
+	background-size:100%!important;
+	background-position:center!important;
+}
+
+/*中部导航*/
+
+
+/*小图片部分*/
+.title_2 p{
+	text-align: center;
+	color: #fff;
+
+}
+
+.title_2 ul{
+	border-top: 1px solid #fff;
+	padding-top: 10px;
+	margin-bottom: 4%;
+}
+.title_2 ul li{
+	list-style: none;
+	float: left;
+	width: 2em;
+	padding:2px;
+	margin:0 3.7%;
+	border:1px solid #fff;
+	text-align: center;
+}
+
+.title_2 ul li a{
+	text-decoration: none;
+	color:#fff;
+}
+
+.title_2 ul li:hover{
+	background: #fff;
+	color: #000;
+}
+
+.title_2 ul li:hover a{
+	color: #000;
+}
+
+.small_pic ul{
+	padding-left: 0px;
+}
+
+.small_pic ul li{
+	float: left;
+	list-style: none;
+	width: 19%;
+	margin:0 3%;
+}
+
+.small_pic ul li div{
+	background-size:100%!important;
+	background-position:center!important;
+}
+
+.small_pic ul li a{
+	color: #fff;
+	text-decoration: none;
+}
+
+.small_pic ul li p{
+	height: 45px;
+	overflow: hidden;
+	padding-top: 5px;
+	color: #fff;
+}
+
+
+/*尾部分页*/
+.foot-nav ul li{
+			float: left;
+			width: 50px;
+			list-style: none;
+
+		}
+
+		.foot-nav{
+			display: block;
+			text-align: center;
+		}
+		.foot-nav ul {
+			display: inline-block;
+			margin: 0 auto;
+
+		}
+		.foot-nav ul li a{
+			border-radius: 50%;
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			vertical-align: middle;
+			text-decoration: none;
+			color: #fff;
+		}
+	
+
+		.foot-nav ul li:hover a{
+			background:rgb(204,198,166);
+			color: #000;
+		}
+
+		.foot-nav ul li.li1 a{
+			border-radius: 0px;
+			width:50px;
+			height:30px;
+		}

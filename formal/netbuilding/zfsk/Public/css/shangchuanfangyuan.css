@@ -1,0 +1,133 @@
+
+  
+   .onelogo{
+    float: left;
+   }
+   .btn01{
+    background: rgb(245,212,55);
+    border-color: rgb(245,212,55);
+    padding: 1px 9px;
+    font-size: 21px;
+    color: #fff;
+   }
+   .nav-ul{
+    margin-left: 184px;
+    width: 61%;
+    text-align: center;
+   }
+
+    .footer-image{
+    text-align: center;
+    padding: 15px 0;
+   }
+   .footer{
+    background: rgb(245,212,55);
+    height: 450px;
+    text-align: center;
+    color: rgb(123,87,0);
+   }
+   .footer p:nth-child(1){
+    margin-bottom: 30px;
+    padding-top: 7px;
+   }
+   .footer-ul li{
+    list-style: none;
+    display: inline-block;
+ }
+ .clear{
+    clear: both;
+   }
+   .btn02 b{
+    font-weight: normal;
+    padding-right: 22px;
+    color: rgb(123,87,0);
+   }
+   .firline ul li{
+    float: left;
+    text-align: center;
+    color: rgb(123,87,0);
+    padding: 0 25px;
+   }
+   .firline ul{
+    margin: 0px auto;
+    width: 71%; 
+   }
+   .footer .ul-fo li{
+       float: left;
+      margin: 0 30px;
+   }
+   .footer .ul-fo{
+     width: 42%;
+       margin: 0 auto;
+   }
+   .footer > p:nth-of-type(4){
+    margin-top: 28px;
+   }
+  
+   /*导航无色条*/
+   ul li a.land-a{
+    padding: 0 3px;
+    background: rgb(245,212,55);
+   }
+ /*上传房源按钮*/
+ .sedai{
+    background: rgb(232,229,222);
+    text-align: center;
+    margin-top: 10px;
+ }
+ .sedai a{
+    color: rgb(123, 87, 0);
+font-size: 20px;
+font-weight: bold;
+padding: 3px 30px;
+line-height: 60px;
+border: 3px solid rgb(245,212,55);
+ }
+ .sedai a:hover{
+    text-decoration: none;
+ }
+ .sedai p{
+    color: rgb(123,87,0);
+line-height: 40px;
+padding-bottom: 16px;
+ }
+ .input-k{
+    text-align: center;
+ }
+ .input-k li{
+    padding: 10px 0;
+ }
+ .input-k input{
+    line-height: 30px;
+    width: 200px;
+ }
+ .input-k span{
+    color: rgb(245,212,55);
+    margin-left: 5px;
+    font-size: 20px;
+ }
+ .choice-down3{
+    width: 57%;
+ }
+ .choice-down3 p{
+    color: rgb(123,87,0);
+ }
+ .choice-down3 ul ul ul li{
+    color: rgb(123,87,0);
+ }
+  .e3{
+    display: inline-block;
+margin-left: 34%;
+background:rgb(245,212,55);
+padding: 2px 13px;
+color:rgb(123,87,0);
+margin-bottom: 0;
+ }
+  .cont-t{
+    margin-bottom: 75px;
+  }
+   .wadd {
+    background:  rgb(245,212,55);
+    border-color:  rgb(245,212,55);
+    color: rgb(123,87,0);
+   }

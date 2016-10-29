@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- 小图标引用库 -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <title>新首尾版</title>
+    <!-- <link rel="stylesheet" type="text/css" href="nav.css">
+    <link rel="stylesheet" type="text/javascript" src="app.js"> -->
+<style type="text/css">
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .navbar-firstpart{
+    padding: 0;
+    margin: 0 0 0 217px;
+    background: white;
+    text-decoration: none;
+    border: none;
+   }
+   .navbar-right1{
+     float: right;
+     margin-top: 23px;
+   }
+   .onelogo{
+    float: left;
+   }
+   .navbar-form .form-group .ipt1{
+    width: 300px;
+    border-color: rgb(245,212,55);
+    background: rgb(245,212,55);
+   }
+   .btn01{
+    background: rgb(245,212,55);
+    border-color: rgb(245,212,55);
+    padding: 1px 9px;
+    font-size: 21px;
+    color: #fff;
+   }
+   .navbar-secondpart{
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: rgba(8, 7, 7, 0.16) none repeat scroll 0% 0%;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    min-height: auto;
+    height: 30px;
+   }
+   .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    color: #fff;
+    background-color: transparent;
+    }
+   .nav-ul{
+    margin-left: 184px;
+    width: 61%;
+    text-align: center;
+   }
+   
+   .navbar-default .navbar-nav > li > a {
+    color: rgb(123,87,0);
+    border-right: 2px solid #fff;
+    padding: 5px 40px;
+    font-weight: bold;
+    }
+    .navbar-nav > li > a{
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .footer-image{
+    text-align: center;
+   }
+   .footer{
+    background: rgb(245,212,55);
+    height: 150px;
+    text-align: center;
+    color: rgb(123,87,0);
+   }
+   .footer p:nth-child(1){
+    margin-bottom: 30px;
+    padding-top: 7px;
+   }
+   .footer-ul li{
+    list-style: none;
+    display: inline-block;
+ }
+ .clear{
+    clear: both;
+   }
+   .navbar{
+    line-height: 0;
+   }
+   .navbar-right li a{
+    padding: 2px 6px;
+    margin-top: 10%;
+    margin-right: 15%;
+   }
+   
+   /*幻灯片*/
+   .h1text{
+  color: #fff;
+}
+.btn{
+  border-radius: 0;
+}
+.btn03{
+    background: rgb(245,212,55);
+    border-color: rgb(245,212,55);
+    color: rgb(123,87,0);
+    padding: 6px 38px;
+}
+.btn02{
+    background: #fff;
+}
+ .search-wrap-ofcont{
+    background: rgba(255, 255, 255, 0.58) none repeat scroll 0% 0%;
+    padding: 10px;
+ }
+ .search-wrap-ofcont{
+      width: 45%;
+      margin: 0 auto;
+}
+ .search-wrap{
+  position: absolute;
+   bottom: 55%; 
+   width: 100%;
+   text-align:center;
+ }
+ .search-wrap-cont{
+  margin: auto; 
+  width: 620px;  
+ }
+
+ .input-group{
+  width: 82%;
+ }
+
+ .fl{
+  float: left;
+ }
+
+ .fr{
+  float:right;
+ }
+   /*导航无色条*/
+   ul li a.land-a{
+    padding: 0 3px;
+    background: rgb(245,212,55);
+   }
+.collapse ul.navbar-nav li a:hover{
+  background:rgb(245,212,55);
+ }
+ .navbar-right li{
+  float: left;
+ }
+ .navbar-right li a{
+  color: rgb(123,87,0);
+ }
+ /**/
+ .padding{
+        padding-bottom: 10px;
+   }
+   .imagebox1{
+    position: relative;
+   }
+ .onimage-content-right{
+    position: absolute;
+    bottom: 0;
+    background: rgba(245, 212, 55, 0.41) none repeat scroll 0% 0%;
+    width: 100%;
+    text-align: center;
+   }
+   .onimage-content-right span{
+    color: #fff;
+   }
+</style>
+</head>
+<body>
+     <!-- 导航栏 -->
+<nav class="navbar  navbar-firstpart">
+    <div class="onelogo"><img src="image/logo.jpg"></div>
+    <div class="navbar-right1">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control ipt1" placeholder="广州市，海珠区">
+        </div>
+        <button type="submit" class="btn btn-default btn01"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+</nav>
+<!-- 2 -->
+<nav class="navbar navbar-default navbar-secondpart">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav nav-ul">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="珠江新城.html">珠江新城专版</a></li>
+        <li><a href="上传房源.html">上传房源</a></li>
+        <li><a href="#">会员中心</a></li>
+        <li><a href="租赁专家.html">租赁专家</a></li>
+        <li><a href="#" style="border-right:none;">公司介绍</a></li>
+      </ul>
+      <ul class="navbar-right">
+        <li><a href="#" class="land-a btn">登陆</a></li>
+        <li><a href="#" class="land-a btn">注册</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- 幻灯片 -->
+<section class="section03">
+ <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="image/a01.png" alt="..." >
+      <div class="carousel-caption">
+      
+      </div>
+    </div>
+    <div class="item">
+      <img src="image/a01.png" alt="...">
+      <div class="carousel-caption">
+       
+      </div>
+      
+
+    </div>
+    <div class="item">
+      <img src="image/a01.png" alt="...">
+      <div class="carousel-caption">
+       
+      </div>
+      
+
+    </div>
+   
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+ </div>
+ <div class="search-wrap">
+
+  <h1 class="h1text">真房源，实在客，轻松找房省中介费！</h1>
+  <div class="search-wrap-ofcont">
+
+    <div class="search-wrap-cont">
+        <div>
+          <div class="input-group fl">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle btn02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">买房<span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">卖房</a></li>
+                <li><a href="#">租房</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control" aria-label="..." placeholder="广州市，海珠区">
+          </div><!-- /input-group -->
+          <button id="button2id" name="button2id" class="btn btn-danger btn03" class="fr">搜索</button>
+          <div style="clear:both"></div>
+         </div>
+      </div>
+  </div>
+ </div>
+</section>
+
+<!--  -->
+<div class="row">
+                <div>
+                     <div class="col-md-2">
+                          <div class="padding">
+                              <div class="imagebox1">
+                                <div style="background:url('image/a10.png');background-size:cover;background-position:center;height:125px;"></div>
+                                 <div class="onimage-content-right">
+                                              <span> 天河区珠江新城 120m<sup>2</sup></span>
+                                 </div> 
+                              </div>
+                            </div>
+                     </div>
+                     <div class="col-md-2">
+                          <div class="padding">
+                              <div class="imagebox1">
+                                <div style="background:url('image/a10.png');background-size:cover;background-position:center;height:125px;"></div>
+                                 <div class="onimage-content-right">
+                                              <span> 天河区珠江新城 120m<sup>2</sup></span>
+                                 </div> 
+                              </div>
+                            </div>
+                     </div>
+                     <div class="col-md-2">
+                          <div class="padding">
+                              <div class="imagebox1">
+                                <div style="background:url('image/a10.png');background-size:cover;background-position:center;height:125px;"></div>
+                                 <div class="onimage-content-right">
+                                              <span> 天河区珠江新城 120m<sup>2</sup></span>
+                                 </div> 
+                              </div>
+                            </div>
+                     </div>
+                     <div class="col-md-2">
+                          <div class="padding">
+                              <div class="imagebox1">
+                                <div style="background:url('image/a10.png');background-size:cover;background-position:center;height:125px;"></div>
+                                 <div class="onimage-content-right">
+                                              <span> 天河区珠江新城 120m<sup>2</sup></span>
+                                 </div> 
+                              </div>
+                            </div>
+                     </div>
+                     <div class="col-md-2">
+                          <div class="padding">
+                              <div class="imagebox1">
+                                <div style="background:url('image/a10.png');background-size:cover;background-position:center;height:125px;"></div>
+                                 <div class="onimage-content-right">
+                                              <span> 天河区珠江新城 120m<sup>2</sup></span>
+                                 </div> 
+                              </div>
+                            </div>
+                     </div>
+                     <div class="col-md-2">
+                          <div class="padding">
+                              <div class="imagebox1">
+                                <div style="background:url('image/a10.png');background-size:cover;background-position:center;height:125px;"></div>
+                                 <div class="onimage-content-right">
+                                              <span> 天河区珠江新城 120m<sup>2</sup></span>
+                                 </div> 
+                              </div>
+                            </div>
+                     </div>
+                </div>
+           </div>
+
+
+
+   <!-- 页脚 -->
+<section>
+   <div class="footer-image"><div><img src="image/logo.jpg"></div></div>
+        <div class="footer">
+              <p>友情链接：都市圈 广州市房地产中介协会</p>
+              <ul class="footer-ul">
+                   <li><a href="#">关于我们</a></li>
+                   <li>丨</li>
+                   <li><a href="#">服务条款</a></li>
+                   <li>丨</li>
+                   <li><a href="#">会员中心</a></li>
+                   <li>丨</li>
+                   <li><a href="#">房源中心</a></li>
+                   <li>丨</li>
+                   <li><a href="#">加盟经纪人</a></li>
+                   <li>丨</li>
+                   <li><a href="#">免责声明</a></li>
+                   <li>丨</li>
+                   <li><a href="#">投诉监督</a></li>
+                   <li>丨</li>
+                   <li><a href="#">招贤纳才</a></li>
+                   <li>丨</li>
+                   <li><a href="#">联系我们</a></li>
+              </ul>
+              <div class="clear"></div>
+              <p>在线客服QQ：点击这里给我们发消息  客服热线020~38056216 业务合作热线18928810958</p>
+              <p>信产部备案号：粤ICP备10020346号</p>
+        </div>
+</section>
+         
+</body>
+</html> 

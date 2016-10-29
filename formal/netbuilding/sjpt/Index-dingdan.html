@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+    <title>手机页面框架</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script  src="js/region_select.js"></script>
+<link rel="stylesheet" href="css/gonggong.css">
+<link rel="stylesheet" href="css/guowuche.css">
+</head>
+<body onLoad="setup()">
+<!-- 头部 -->
+<nav class="navbar">
+    <div class="container">
+        <h1>手机平台</h1>
+        <form class="navbar-form  hidden-xs" role="search" style="text-align: center;">
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" style="width: 380px;">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"style="padding-left: 25px; padding-right: 25px;color: #FFF;background: #32A5E9;"><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+            </div>
+            <div class="nav navbar-nav navbar-right"> <button class="btn btn-default" type="button"style="padding: 10px;background: #F3F3F3;"><i class="glyphicon glyphicon-calendar"style="color: rgb(50, 165, 233);"></i> 我的购物车 ></button></div>
+        </form>       
+         <div class="clear"></div>
+    </div>
+</nav>
+<div class="container">    
+    <div class="main"> 
+        <menu class="car_top">
+            <p class="sel" style="z-index:9; width:34%;">1.我的购物车<i></i></p>
+            <p class="sel" style="z-index:8;">2.填写核对订单信息<i></i></p>
+            <p>3.成功提交订单</p>
+            <div class="clear"></div>
+        </menu>
+        <h3 class="car_tit">收货人信息<a class="blue" id="add_address" href="">新增收货地址</a></h3>
+        <div id="new_address" class="new_address" style="block">
+            <form name="" id="" url="">
+                <table class="carinfo_tab">
+                    <tbody>
+                        <tr>
+                            <th width="100"><b class="red">*</b>收货人：</th>
+                            <td><input class="text" style="width: 200px;" name="txtUser_Name" id="txtUser_Name" value="" datatype="*2-20" nullmsg="请填写收货人姓名" sucmsg=" " type="text"><span class="Validform_checktip"></span></td>
+                        </tr>
+                        <tr>
+                            <th width="100"><b class="red">*</b>所在地区：</th>
+                            <td style="padding-bottom:15px;">
+                              <select id="s1"> 
+                                <option>所在省份</option> 
+                                </select> 
+                                <select id="s2"> 
+                                <option>所在城市</option> 
+                                </select> 
+                                <select id="s3"> 
+                                <option>所在地区</option> 
+                                </select> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="100"><b class="red">*</b>详细地址：</th>
+                            <td><input class="text" name="txtAddress" id="txtAddress" maxlength="200" value="" datatype="*2-50" nullmsg="请填写详细地址" sucmsg=" " type="text"><span class="Validform_checktip"></span></td>
+                        </tr>
+                        <tr>
+                            <th width="100"><b class="red">*</b>手机号码：</th>
+                            <td><input name="txtMobile" id="txtMobile" class="text" style="width: 200px;" maxlength="11" value="" datatype="m" nullmsg="请填写手机号码" sucmsg=" " type="text"><span class="Validform_checktip"></span></td>
+                        </tr>
+                        <tr>
+                          <th width="100">邮箱地址：</th>
+                          <td><input name="txtEmail" id="txtEmail" class="text" style="width: 200px;" maxlength="50" value="" ignore="ignore" datatype="e" nullmsg="请填写邮箱地址" sucmsg=" " type="text"><span class="Validform_checktip"></span></td>
+                        </tr>
+                        <tr>
+                            <th width="100"><b class="red">*</b>邮编：</th>
+                            <td><input name="txtZip" id="txtZip" class="text" style="width: 200px;" maxlength="6" value="" datatype="p" nullmsg="请填写邮编" sucmsg=" " type="text"><span class="Validform_checktip"></span></td>
+                        </tr>
+                        <tr>
+                            <th width="100"><b class="red">*</b>地址别名：</th>
+                            <td><input name="txtAlias" id="txtAlias" class="text" style="width: 200px;" maxlength="200" value="" datatype="*2-20" nullmsg="请填写地址别名" sucmsg=" " type="text">设置一个易记的名称，如：“送到家里”、“送到公司”<span class="Validform_checktip"></span></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>
+                                <input name="btnSubmit" id="btnSubmit" style="margin:20px 0; width:200px;" class="sub" value="保存" type="submit">
+                            </td>
+                        </tr>
+                  </tbody>
+                </table>
+            </form>
+        </div>
+        <form name="order_form" id="order_form" url="">
+            <div class="clear h20"></div>
+            <h3 class="car_tit">购物车商品</h3>
+            <table class="car_list">
+                <tbody>
+                    <tr>
+                        <th colspan="2">商品信息</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>优惠</th>
+                        <th>合计</th>
+                    </tr>
+                    <tr class="carborderbot">
+                        <td width="110"><a href="" target="_blank"><img src="http://img2015.yaya.cn/upload/201508/12/201508121433053657.png" width="100"></a></td>
+                        <td style="text-align:left;" width="400"><a href="" target="_blank">三星SAMSUNG Galaxy S6 盖世6 电信定制版G9209-黑色-32G</a></td>
+                        <td class="red">￥<span class="decimal_format">4,620.00</span></td>
+                        <td width="150">1</td>
+                        <td><!--<select><option>无优惠</option></select>--></td>
+                        <td class="red">￥<span class="decimal_format">4,620.00</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <h3 class="car_tit">支付方式</h3>
+            <p class="car_pay">
+                <a class="paymentAmountTotal " payment_id="7" payment_price="0" title="门店自提">门店自提</a>
+              
+                <a class="paymentAmountTotal " payment_id="3" payment_price="0" title="支付宝">支付宝</a>
+              
+                <a class="paymentAmountTotal " payment_id="6" payment_price="0" title="中国银联">中国银联</a>
+              
+                <a class="paymentAmountTotal " payment_id="9" payment_price="0" title="货到付款">货到付款</a>
+              
+              <input id="payment_id" name="payment_id" value="1" type="hidden">
+              <input id="payment_price" name="payment_price" value="0" type="hidden">
+            </p> -->
+            <h3 class="car_tit">配送方式</h3>
+            <div class="car_pay">
+                <select id="" name=""><option value="1" selected="">同城配送 (免运费)</option><option value="2">邮政EMS</option><option value="3">顺丰速递</option></select>      
+                <input id="" name="" value="0" type="hidden">
+            </div>
+            <h3 class="car_tit">发票信息<a class="blue" id="fapiao_show" href="">我需要发票</a></h3>
+            <div id="" class="new_address" style="">
+                <table class="carinfo_tab">
+                    <tbody>
+                        <tr>
+                            <th width="100">是否需要发票：</th>
+                            <td><input name="fpflag" value="0" checked="" type="radio">不开发票&nbsp;&nbsp;&nbsp;&nbsp;<input name="fpflag" value="1" type="radio">开发票</td>
+                        </tr>
+
+                        <tr>
+                            <th width="100">发票开据：</th>
+                            <td><input name="fapiao_type" value="0" checked="" type="radio">个人&nbsp;&nbsp;&nbsp;&nbsp;<input name="fapiao_type" value="1" type="radio">公司</td>
+                        </tr>
+
+                         <tr>
+                            <th width="100">发票抬头：</th>
+                            <td><input class="text" value="" name="heading" id="heading" type="text"></td>
+                        </tr>             
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="car_tit" id="h3_yht_title">我的优惠券</h3>
+            <ul class="prefersum" id="prefersum">
+                <li>
+                <div class="d01">
+                    <input type="checkbox">
+                    <p>20元</p>
+                    <span>仅可购买配件</span>
+                    <span>有效期至2015-07-22</span>
+                </div>
+                <div class="d01">
+                     <input type="checkbox">
+                    <p>20元</p>
+                    <span>仅可购买配件</span>
+                    <span>有效期至2015-07-22</span>
+                </div>
+                </li>
+                <li>
+                    <div class="d02">
+                        <span>有优惠券兑换码？</span>
+                        <input class="text ml15" id="txt_yhq_code" style="width:150px;height:30px;line-height:30px;" type="text">
+                        <input value="提交" class="sub" style="-webkit-appearance:none;" id="btn_check_yhq" type="button">
+                        <input value="" id="txt_yhq_id" name="txt_yhq_id" type="hidden">
+                        <span style="margin-left: 50px;" id="sp_yhq_tips">可以优惠<b class="sc" id="sp_yhq_je">0</b>元</span>
+                        <div class="clear"></div>
+                    </div> 
+                </li>
+            </ul>
+            <h3 class="car_tit">备注信息</h3>
+            <div class="car_pay">
+                <textarea name="" id="" rows="3" cols="100"></textarea>
+            </div>
+            <div class="car_btn">
+                <a class="ml20 fc" onclick="">返回上一页</a>
+                <input value="9240" id="" type="hidden">
+                <span>共<b class="fc fw-b">2</b>件商品&nbsp;&nbsp;商品金额：<b class="fc fw-b decimal_format">9,240.00</b>元 + 运费：<b id="express_price_show" class="fc fw-b decimal_format">0.00</b>元 + 手续费：<b id="sx_price_show" class="fc fw-b decimal_format">0.00</b>元 - 优惠券：<b id="yhq_price_show" class="fc fw-b decimal_format">0.00</b>元 - 返现：<b id="fx_price_show" class="fc fw-b decimal_format">0.00</b>元 = 订单总额：<b id="all_price_show" class="fc fw-b decimal_format">9,240.00</b>元</span>
+                <input class="sub" name="" id="" value="提交订单" type="submit">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="foot_help">
+
+            <dl>
+                <dt>新手指南</dt>
+                <dd>
+                    <a href="">购物流程</a>
+                    <a href="">手机百科</a>
+                    <a href="">积分计划</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>付款方式</dt>
+                <dd>
+                    <a href="">支付方式</a>
+                    <a href="/help/fenqifukuan.aspx">分期付款</a>
+                    <a href="/onlinepay.aspx">网银在线支付</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>配送方式</dt>
+                <dd>
+                    <a href="">到店自提</a>
+                    <a href="">送货上门</a>
+                    <a href="">自提点自提</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>售后服务</dt>
+                <dd>
+                    <a href="">手机保修条例</a>
+                    <a href="">硬件维修及报价</a>
+                    <a href="/fuwu/fuwu.aspx">延保/意外保服务</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="">常见问题解答</a>
+                    <a href="">4G热点问题解答</a>
+                    <a href="">交易条款</a>
+                </dd>
+            </dl>
+             <dl>
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="">常见问题解答</a>
+                    <a href="">4G热点问题解答</a>
+                    <a href="">交易条款</a>
+                </dd>
+            </dl>           
+        </div>
+    </div>
+    <div  id="footer-2014">
+        <div class="links">
+            <a  href="">关于我们</a>|<a href="">联系我们</a>|<a  href="">商家入驻</a>|<a  href="">营销中心</a>|<a href="">手机</a>|<a  href="">友情链接</a>|<a target="_blank" href="">销售联盟</a>|<a href="" >手机社区</a>|<a href="" target="_blank">手机公益</a>|<a href="" >English Site</a>|<a href="">Contact Us</a>
+        </div>
+        <div class="copyright">各门店营业时间：周一至周日 09:00-21:30 &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a target="_blank" href=""> 工作时间：周一至周日 09:00-21:30</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>
+        <a rel="nofollow" href="" target="_blank">网站ICP备案号：滇ICP备06002001号 </a>&nbsp;&nbsp;|&nbsp;&nbsp;电信业务经营许可证：滇B2-20110012号&nbsp;&nbsp;|&nbsp;&nbsp;   云南网警ICP备案 53010303402252  <br>旗下网站：<a target="_blank" href="">360TOP</a>&nbsp;&nbsp;<a href="" target="_blank">拍拍网</a>&nbsp;&nbsp;<a href="" target="_blank">网银在线</a></div>
+        
+        <div class="authentication">
+            <a rel="nofollow" target="_blank" href="">
+                <img alt="经营性网站备案中心" src="http://img12.360buyimg.com/da/jfs/t535/349/1185317137/2350/7fc5b9e4/54b8871eNa9a7067e.png" class="err-product" height="32" width="103">
+            </a>
+            
+            <a rel="nofollow" target="_blank" id="urlknet" tabindex="-1" href="">
+                <img onclick="CNNIC_change('urlknet')" oncontextmenu="return false;" name="CNNIC_seal" alt="可信网站" src="http://img11.360buyimg.com/da/jfs/t643/61/1174624553/2576/4037eb5f/54b8872dNe37a9860.png" class="err-product" border="true" height="32" width="103">
+            </a>
+            <a rel="nofollow" target="_blank" href="">
+                <img alt="朝阳网络警察" src="http://img11.360buyimg.com/da/jfs/t559/186/1172042286/2795/7d90b036/54b8874bN694454a5.png" class="err-product" height="32" width="103">
+            </a>
+            <a rel="nofollow" target="_blank" href="">
+                <img src="http://img11.360buyimg.com/da/jfs/t451/173/1189513923/1992/ec69b14a/54b8875fNad1e0c4c.png" class="err-product" height="32" width="103">
+            </a>
+            <a target="_blank" href="">
+                <img src="http://img10.360buyimg.com/da/jfs/t520/303/1151687373/1180/2f8340fc/54b8863dN8d2c61ec.png" class="err-product" height="32" width="185">
+            </a>
+        </div>
+    </div>   
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $(".blue").click(
+            function(){
+                $(".new_address").toggle();
+
+            })
+    });
+</script>
+

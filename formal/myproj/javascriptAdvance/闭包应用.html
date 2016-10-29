@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试闭包应用(javascript 高级)</title>
+	<meta charset="utf-8">
+</head>
+<body>
+保证所有可以入门
+gulp
+grunt，
+javascript高级
+瀑布流
+预加载和懒加载
+
+<script type="text/javascript"> 
+
+	// for(var i=0;i<10;i++) {
+	// 	setTimeout((function(i) {alert(i)})(i), 1000)
+	// }
+
+		var Hello = function () {
+			
+		}
+		Hello.prototype = {
+			init: function(params) {
+				this.name = params.name;
+				this.age = params.age;
+				this.title = params.title;
+				console.log(params)
+			}
+		}
+		return Hello;
+	var xx = new Hello();
+	"use strict"
+	var Data = (function() {
+			var Hello = function() {
+				this.name;
+				this.age;
+				this.params;
+			}
+			Hello.prototype.func = function() {
+				this.init = function(params) {
+					this.type = params.type;
+					this.params = params;
+					this.callback = params.callback;
+				}
+				this.print = function() {
+					console.log(this.name)
+					console.log('something in the world');
+				}
+				this.set = function(name) {
+					this.name = name;
+					this.print();
+				}
+				this.close = function() {
+					this.callback();
+				}
+			}
+			return Hello;
+		})() 
+
+		function Person() {}
+		Object.defineProperty(Person.prototype, 'nickname', {
+			value: 'tome',
+			writable: false,
+			enumberable: true,
+			configurable: true
+		})
+
+		var tim = new Person();
+		console.log(tim.nickname)
+		tim.nickname = 'ifsifosfioio'
+		console.log(tim.nickname)
+
+
+</script>
+</body>
+</html>

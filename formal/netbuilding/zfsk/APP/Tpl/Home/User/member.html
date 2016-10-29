@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>会员中心</title>
+     
+    <include file="Public:head" />
+    <link rel="stylesheet" href="__PUBLIC__/css/member.css"> 
+</head>
+<body>
+     <!-- 导航栏 -->
+<!-- 内容 -->
+<section>
+<include file="Public:header" />
+
+     <div class="container member-page-body">
+         <include file="Public:side" />
+          <!-- /-3-->
+          <div class="col-md-8 c-m-8">
+               <h3>我的联系方式</h3>
+               <div class="cm8-1">
+                    <ul>
+                         <li><span><i class="fa fa-phone-square"></i><b>{$user.phone}</b></span><!-- <span class="sp"><i class="fa fa-weibo"></i><b>@真房实客</b></span> --></li>
+                         <li><span><i class="fa fa-envelope"></i><b>{$user.email}</b></span><span><i class="fa fa-qq"></i><b>{$user.qq_number}</b></span></li>
+                    </ul>
+               </div>
+               <h3>我的求租要求</h3>
+               <form class="txt-a" method="post" action="{:U('User/member')}" enctype="multipart/form-data">
+               <input value="{$user.id}" type="hidden" name="id">
+               <textarea class="form-control doot"  placeholder="中海花城湾的2房1厅，租金在5000到8000左右要有电视，床，热水器，空调，灶具抽烟机，阳台向南。" rows="10" name="demand"></textarea>
+               <button class="btn btn-success wadd">提交</button>
+               </form>
+               <div class="btn-group">
+                           <button type="button" class="btn btn-default wdaa">我的求租进度</button>
+                           <button type="button" class="btn btn-default dropdown-toggle wadd" 
+                               data-toggle="dropdown" style="margin-left:1px;">
+                              <span class="caret"></span>
+                              <span class="sr-only">切换下拉菜单</span>
+                           </button>
+                           <ul class="dropdown-menu" role="menu">
+                              <li><a href="#">已租</a></li>
+                              <li><a href="#">未租</a></li>
+                              <li><a href="#">预约</a></li>
+                              <li><a href="#">其他</a></li>
+                           </ul>
+                        </div>
+               <div class="foo">
+                        <div>
+                             <p>1月1日 租赁专家与推介客户取得联系</p>
+                             <p>1月2日 推介客户在真房实客网成功注册会员</p>
+                             <p>1月2日 推介客户的验证会员升级成为VIP会员</p>
+                             <p>1月3日 租赁专家为客户推荐房源</p>
+                             <p>1月3日 租赁专家带领客户看房</p>
+                             <a href="#"><div class="foo-t"><span class="caret"></span></div></a>
+                        </div>
+               </div>
+               <h3>我的意向的房源</h3>
+               <a class="mysome" href="#">更多</a>
+               <div class="clear"></div>
+               <div class="cm8-4">
+                  <volist name="real" id="vo">
+                     <div class="col-md-3">
+                          <div class="padding">
+                              <div class="imagebox1">
+                                <a href="#"><div style="background:url('__PUBLIC__/upload/image/real/{$vo['image']}');background-size:cover;background-position:center;height:125px;"></div></a>
+                                 <div class="onimage-content-right">
+                                              <span> {$vo.real.place_name} {$vo.real.area}m<sup>2</sup></span>
+                                 </div> 
+                              </div>
+                            </div>
+                     </div>
+                  </volist>   
+                     <div class="clear"></div>
+                </div>
+          </div><!-- /-8 -->
+     </div><!-- /container -->
+</section>
+
+
+
+   <!-- 页脚 -->
+<include file="Public:footer" />
+<include file="Public:script" />
+         
+</body>
+</html> 

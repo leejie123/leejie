@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>会员VIP</title>
+     
+    <include file="Public:head" />
+    <link rel="stylesheet" href="__PUBLIC__/css/member.css"> 
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/huiyuan3.css">
+</head>
+<body>
+     <!-- 导航栏 -->
+<!-- 内容 -->
+<section>
+<include file="Public:header" />
+
+     <div class="container member-page-body">
+      <include file="Public:side" />
+      <div class="col-lg-8">
+      <!-- 会员中心右侧内容开始 -->
+        <!-- 内容 -->
+         <div class="shoubu">
+                  <p class="biaoti">VIP专区</p>
+                  <p>VIP会员享有我站每月举办的免费聚会及旅游活动</p>
+                  <p>VIP会员可获赠免费每月上门检测维修房屋一次</p>
+                  <p>VIP会员可获赠我公司不定期送出的精美礼品</p>
+              </div>
+              <div class="xiaodaohang">
+                   <p class="biaoti">分类信息栏</p>
+                   <ul>
+                       <volist name="cate_list" id="vi">
+                          <li><a href="{:U('User/hy_VIP' , array('cate_id' => $vi['id']))}">{$vi.name}</a></li>
+                       </volist>
+                       <!-- <li><a href="#">租房故事分享</a></li>
+                       <li><a href="#">会员活动</a></li>
+                       <li><a href="#">租房交友</a></li>
+                       <li><a href="#">同城新闻</a></li>
+                       <li><a href="#">大杂烩</a></li>
+                       <li><a href="#">租房常见问题问答</a></li> -->
+                       <form method="get" action="{:U('User/hy_VIP')}"><li><input type="text" name="search" class="form-control cd float"><button type="submit" class="btn btn-default float"><i class="fa fa-search"></i></button><div class="clear"></div></li></form>
+                       <div class="clear"></div>
+                   </ul>
+              </div>
+              <volist name="vip_info_list" id="vo">
+                <div class="xdhx">
+                   <if condition="$vo['is_recommend'] == '1'">
+                    <p class="biaoti">推荐</p>
+                   <else />
+                    <p class="biaoti">非推荐</p>
+                   </if>
+                   <div class="xdhr">
+                        <div class="">
+                          <p class="p01 yanse">{$vo.title|mb_substr=0,20,'utf-8'}</p>
+                          <p class="p02 jh"><i class="fa fa-user"></i>{$vo.user.username}</p>
+                          <div class="clear"></div>
+                        </div>
+                        <div>
+                            <p class="p01">{$vo.content|strip_tags|mb_substr=0,45,'utf-8'}...</p>
+                            <p class="p02"><i class="fa fa-clock-o"></i> {$vo.create_time|date='Y-m-d H:i:s',###}</p>
+                            <div class="clear"></div>
+                        </div>
+                   </div>
+                   <div class="clear"></div>
+                   <div class="image-tobead">
+                       <volist name="vo['photo']" id="vu" offset="0" length='4'>
+                            <div class="background-image liantu float" style="background-image:url('../../../..{$vu}');"></div>
+                       </volist>
+                   </div>
+                   <hr>
+                   <hr>
+                   <hr>
+                   <hr>
+                   <hr>
+                   <hr>
+                </div>
+              </volist>
+              <!-- <div>
+                <p class="biaoti">租房常见问题问答</p>
+              </div> -->
+              <!-- <div class="xdhx zx">
+                   <p class="biaoti">推荐</p>
+                   <div class="xdhr">
+                        <div class="">
+                          <p class="p01 yanse">你还在为租房烦恼吗？</p>
+                          <p class="p02 jh"><i class="fa fa-user"></i>小&nbsp;&nbsp;&nbsp;二</p>
+                          <div class="clear"></div>
+                        </div>
+                        <div>
+                            <p class="p01">每天更新上千家租房信息 100%真实房源！<br>免费在线咨询+免费看房+免费发布</p>
+                            <p class="p02"><i class="fa fa-clock-o"></i> 15:11</p>
+                            <div class="clear"></div>
+                        </div>
+                   </div>
+                   <div class="clear"></div>
+                   <div class="image-tobead">
+                       <div class="background-image liantu float" style="background-image:url('__PUBLIC__/image/z-41.png');"></div>
+                       <div class="background-image liantu float" style="background-image:url('__PUBLIC__/image/z-42.png');"></div>
+                       <div class="background-image liantu float" style="background-image:url('__PUBLIC__/image/z-43.png');"></div>
+                       <div class="background-image liantu float" style="background-image:url('__PUBLIC__/image/z-44.png');"></div>
+                       <div class="clear"></div>
+                   </div>
+                   <hr>
+              </div>
+              <div class="xdhx">
+                   <p class="biaoti">推荐</p>
+                   <div class="xdhr">
+                        <div class="">
+                          <p class="p01 yanse">办公室租赁-首选入驻商务办公室</p>
+                          <p class="p02 jh"><i class="fa fa-user"></i>小&nbsp;&nbsp;&nbsp;二</p>
+                          <div class="clear"></div>
+                        </div>
+                        <div>
+                            <p class="p01">租金75折+送免租期全新办公室，租期灵活+即租即用+可注册公司！</p>
+                            <p class="p02"><i class="fa fa-clock-o"></i> 15:11</p>
+                            <div class="clear"></div>
+                        </div>
+                   </div>
+                   <div class="clear"></div>
+                   <hr>
+              </div>
+              <div class="xdhx">
+                   <p class="biaoti">推荐</p>
+                   <div class="xdhr">
+                        <div class="">
+                          <p class="p01 yanse">广州 建业五栋大楼A栋楼王8楼整数出租</p>
+                          <p class="p02 jh"><i class="fa fa-user"></i>小&nbsp;&nbsp;&nbsp;二</p>
+                          <div class="clear"></div>
+                        </div>
+                        <div>
+                            <p class="p01">豪华楼王！风水宝地！客似云来！建业五栋大楼A栋楼王8楼整层出租</p>
+                            <p class="p02"><i class="fa fa-clock-o"></i> 15:11</p>
+                            <div class="clear"></div>
+                        </div>
+                   </div>
+                   <div class="clear"></div>
+                   <div class="image-tobead">
+                       <div class="background-image liantu float" style="background-image:url('__PUBLIC__/image/z-41.png');"></div>
+                       <div class="background-image liantu float" style="background-image:url('__PUBLIC__/image/z-42.png');"></div>
+                       <div class="background-image liantu float" style="background-image:url('__PUBLIC__/image/z-42.png');"></div>
+                       <div class="background-image liantu float" style="background-image:url('__PUBLIC__/image/z-44.png');"></div>
+                       <div class="clear"></div>
+                   </div>
+                   <hr>
+              </div>
+              <div class="xdhx">
+                   <p class="biaoti">推荐</p>
+                   <div class="xdhr">
+                        <div class="">
+                          <p class="p01 yanse">你还在为租房烦恼吗？</p>
+                          <p class="p02 jh"><i class="fa fa-user"></i>张&nbsp;&nbsp;&nbsp;三</p>
+                          <div class="clear"></div>
+                        </div>
+                        <div>
+                            <p class="p01">每天更新上千家租房信息 100%真实房源！<br>免费在线咨询+免费看房+免费发布</p>
+                            <p class="p02"><i class="fa fa-clock-o"></i> 15:11</p>
+                            <div class="clear"></div>
+                        </div>
+                   </div>
+                   <div class="clear"></div>
+                   <hr>
+              </div>
+              <div class="xdhx">
+                   <p class="biaoti">推荐</p>
+                   <div class="xdhr">
+                        <div class="">
+                          <p class="p01 yanse">你还在为租房烦恼吗？</p>
+                          <p class="p02 jh"><i class="fa fa-user"></i>李&nbsp;&nbsp;&nbsp;四</p>
+                          <div class="clear"></div>
+                        </div>
+                        <div>
+                            <p class="p01">每天更新上千家租房信息 100%真实房源！<br>免费在线咨询+免费看房+免费发布</p>
+                            <p class="p02"><i class="fa fa-clock-o"></i> 15:11</p>
+                            <div class="clear"></div>
+                        </div>
+                   </div>
+                   <div class="clear"></div>
+                   <hr>
+              </div>
+              <div class="xdhx">
+                   <p class="biaoti">推荐</p>
+                   <div class="xdhr">
+                        <div class="">
+                          <p class="p01 yanse">你还在为租房烦恼吗？</p>
+                          <p class="p02 jh"><i class="fa fa-user"></i>王&nbsp;&nbsp;&nbsp;五</p>
+                          <div class="clear"></div>
+                        </div>
+                        <div>
+                            <p class="p01">每天更新上千家租房信息 100%真实房源！<br>免费在线咨询+免费看房+免费发布</p>
+                            <p class="p02"><i class="fa fa-clock-o"></i> 15:11</p>
+                            <div class="clear"></div>
+                        </div>
+                   </div>
+                   <div class="clear"></div>
+              </div> -->
+              <br />
+              <br />
+              <br />
+
+              <if condition="$user['group'] == '2'">
+                  <form method="post" action="{:U('User/vipactivity_add')}" enctype="multipart/form-data">
+                       <div><p class="fayan">发言</p></div>
+                       <div class="form-group">
+                              <label class="col-md-1 control-label ma_top">标题</label>
+                              <div class="col-md-4"><input type="text" name="title" class="form-control"></div>
+                              <label class="col-md-1 control-label ma_top">分类</label>
+                              <div class="col-md-4">
+                                  <select name="cate_id" class="form-control">
+                                      <volist name="cate_list" id="vl">
+                                          <option value="{$vl.id}">{$vl.name}</option>
+                                      </volist>
+                                  </select>
+                              </div>
+                        </div>
+                        <br /><br>
+                       <script id="editor" name="content" type="text/plain" style="width: 100%;height:500px;"></script>
+                       <div class="col-md-8"></div>
+                       <div class="col-md-3 sc"><button class="jfsk-btn yellow sut" type="submit">提交</button></div>
+                  </form>
+              </if>
+
+
+      <!-- 会员中心右侧内容结束 -->
+      </div>
+     </div><!-- /container -->
+</section>
+
+
+
+   <!-- 页脚 -->
+<include file="Public:footer" />
+<include file="Public:script" />
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var ue = UE.getEditor('editor');
+    });
+
+    </script>        
+</body>
+</html> 

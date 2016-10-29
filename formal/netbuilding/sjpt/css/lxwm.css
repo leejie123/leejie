@@ -1,0 +1,263 @@
+		#l-map {
+			width:100%; 
+			height:500px;
+			overflow: hidden;
+		}
+		#result{
+			width:100%;
+		}
+		li{
+			line-height:28px;
+		}
+		.cityList{
+			height: 320px;
+			width:372px;
+			overflow-y:auto;
+		}
+		.sel_container{
+			z-index:9999;
+			font-size:12px;
+			position:absolute;
+			right:0px;
+			top:0px;
+			width:140px;
+			background:rgba(255,255,255,0.8);
+			height:30px;
+			line-height:30px;
+			padding:5px;
+		}
+		.map_popup {
+			position: absolute;
+			z-index: 200000;
+			width: 382px;
+			height: 344px;
+			right:0px;
+			top:40px;
+		}
+		.map_popup .popup_main { 
+			background:#fff;
+			border: 1px solid #8BA4D8;
+			height: 100%;
+			overflow: hidden;
+			position: absolute;
+			width: 100%;
+			z-index: 2;
+		}
+		.map_popup .title {
+			background: url("http://map.baidu.com/img/popup_title.gif") repeat scroll 0 0 transparent;
+			color: #6688CC;
+			font-weight: bold;
+			height: 24px;
+			line-height: 25px;
+			padding-left: 7px;
+		}
+		.map_popup button {
+			background: url("http://map.baidu.com/img/popup_close.gif") no-repeat scroll 0 0 transparent;
+			cursor: pointer;
+			height: 12px;
+			position: absolute;
+			right: 4px;
+			top: 6px;
+			width: 12px;
+		}	
+
+
+
+
+
+		.dianpu {
+    border-width: 1px 1px 0px;
+    border-style: solid solid none;
+    border-color: #DDD #DDD -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: #FFF none repeat scroll 0% 0%;
+    z-index: 9;
+    box-shadow: -2px 0px 6px #DDD;
+}
+.addr_con {
+    padding: 10px;
+    overflow-x: scroll;
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+}
+ol, ul {
+    list-style: outside none none;
+}
+.addr_con li {
+    display: inline-block;
+    padding-left: 10px;
+}
+.addr_con li h4 {
+    color: #39F;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Microsoft YaHei",simhei;
+    padding: 5px 0px;
+}
+.icon_sev {
+    width: 30px;
+    text-align: center;
+    height: 19px;
+    line-height: 19px;
+    display: inline-block;
+    background: #FFF none repeat scroll 0% 0%;
+    color: #F60;
+    font-size: 12px;
+    margin-left: 10px;
+    border: 1px solid #F60;
+    border-radius: 3px;
+}
+.icon_hou {
+    border-color: #0048A3;
+    margin-left: 5px;
+    color: #0048A3;
+}
+ i {
+    font-weight: 400;
+    font-style: normal;
+}
+.addr_con li p {
+    line-height: 25px;
+}
+.btn-box {
+    padding: 10px 0px;
+}
+a.btn1 {
+    color: #FFF;
+    background: #F60 none repeat scroll 0% 0%;
+    border-color: #F60;
+    margin-right: 10px;
+}
+a.btn1, a.btn2 {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    border: 1px solid #FFF;
+}
+a.btn2 {
+    color: #39F;
+    background: #FFF none repeat scroll 0% 0%;
+    border-color: #DDD;
+}
+
+
+
+.shadow_box {
+    box-shadow: 0px 0px 5px #DDD;
+    background: #FFF none repeat scroll 0% 0%;
+}
+.dianpu_main {
+    border: 1px solid #DDD;
+    padding: 10px;
+}
+.dp_img {
+    border: 1px solid #DDD;
+    width: 250px;
+    height: 289px;
+    float: left;
+}
+.dp_con {
+    float: right;
+    width: 530px;
+}
+.dp_con h3 {
+    font-size: 20px;
+    color: #F33;
+    font-family: "Microsoft YaHei",SimHei;
+}
+.dpjieshao {
+    margin-top: 5px;
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 10px;
+}
+.dp_con p {
+    margin-top: 8px;
+}
+.dp_con a {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 20px;
+    display: block;
+    background: #F60 none repeat scroll 0% 0%;
+    color: #FFF;
+    margin-top: 15px;
+    font-size: 12px;
+}
+.dianpu_xx {
+    clear: both;
+    border: 1px solid #DDD;
+    margin-top: 10px;
+}
+.dianpu_detail {
+    height: 40px;
+    border-bottom: 1px solid #DDD;
+    line-height: 40px;
+    font-family: Microsoft YaHei,SimHei;
+    padding-left: 10px;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+.dp_detail_box {
+    margin: 50px auto;
+    width: 750px;
+}
+.shadow_box {
+    box-shadow: 0px 0px 5px #DDD;
+    background: #FFF none repeat scroll 0% 0%;
+}
+.zbdian {
+    border: 1px solid #DDD;
+    background: #FFF none repeat scroll 0% 0%;
+    padding-bottom: 10px;
+    width: 250px;
+}
+.zbdian h3 {
+    color: #F60;
+    font-size: 14px;
+    font-family: "Microsoft YaHei",SimHei;
+    border-bottom: 1px solid #E3E3E3;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    padding-left: 10px;
+    margin: 0;
+}
+.zbdian a {
+    height: 25px;
+    line-height: 25px;
+    color: #39F;
+    margin: 10px 0px 0px 10px;
+    padding: 0px 8px;
+    display: block;
+    float: left;
+    white-space: nowrap;
+    font-size:12px;
+    
+}
+.zhankai {
+    height: 140px;
+    overflow: hidden;
+}
+#showall {
+    background: #9C3 none repeat scroll 0% 0%;
+    outline: medium none;
+    margin: 10px auto;
+    display: block;
+    color: #FFF;
+    border: 0px none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.clear {
+    clear: both;
+}

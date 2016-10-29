@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+  <head>
+  <include file="Public:head" />
+  <link rel="stylesheet" href="__PUBLIC__/css/dataTables.bootstrap.min.css">
+  </head>
+  <!--
+  BODY TAG OPTIONS:
+  =================
+  Apply one or more of the following classes to get the
+  desired effect
+  |---------------------------------------------------------|
+  | SKINS         | skin-blue                               |
+  |               | skin-black                              |
+  |               | skin-purple                             |
+  |               | skin-yellow                             |
+  |               | skin-red                                |
+  |               | skin-green                              |
+  |---------------------------------------------------------|
+  |LAYOUT OPTIONS | fixed                                   |
+  |               | layout-boxed                            |
+  |               | layout-top-nav                          |
+  |               | sidebar-collapse                        |
+  |               | sidebar-mini                            |
+  |---------------------------------------------------------|
+  -->
+  <body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+    <!-- head -->
+    <include file="Public:header" />
+    <!-- sidebar -->
+    <include file="Public:sidebar" />
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+        业主列表
+          </h1>
+        </section>
+ <!-- |---------------------------------------------------------| -->
+        <!-- Main content -->
+        <section class="content">
+          
+
+ <!-- |---------------------------------------------------------| -->
+  <form class="form-horizontal">
+        <div class="form-group">
+          <label class=" control-label" for="button1id"></label>
+          <div class="col-md-8">
+            <a href="{:U('Owner/add')}" class="btn btn-success">添加业主</a>
+          </div>
+        </div>
+       <table>
+          <table class="table table-striped table-responsive datatable">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>账号</th>
+                  <th>昵称</th>
+                  <th>真实姓名</th>
+                  <th>手机号码</th>
+                  <th>微信号</th>
+                  <th>QQ号</th>
+                  <th>状态</th>
+                  <th>注册时间</th>
+                  <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <volist name="user" id="user">
+                    <tr>
+                      <td>{$user.id}</td>
+                      <td>{$user.username}</td>
+                      <td>{$user.nickname}</td>
+                      <td>{$user.name}</td>
+                      <td>{$user.phone}</td>
+                      <td>{$user.wechat}</td>
+                      <td>{$user.qq_number}</td>
+                      <td>{$user.group|searchDict="IS_MEMBER","value"}</td>
+                      <td>{$user.timestamp|date='Y-m-d',###}</td>
+                      <td><a href="{:U('User/update',array('id' =>$user['id']))}">修改</a><span>/</span><a href="{:U('User/delete',array('id' =>$user['id']))}">删除</a></td>
+                    </tr> 
+               </volist>
+               </tbody>
+          </table>
+       </table>
+   </form>       
+
+ <!-- |---------------------------------------------------------| -->
+
+
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+<!--  |---------------------------------------------------------| -->
+
+      <!-- footer -->
+      <include file="Public:footer" />
+    </div><!-- ./wrapper -->
+
+    <include file="Public:script" />
+    <script src="__PUBLIC__/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.datatable').DataTable({
+          "language": {
+                "url": "__PUBLIC__/js/Chinese.json"
+            }
+        });
+    });
+    </script>
+  </body>
+</html>

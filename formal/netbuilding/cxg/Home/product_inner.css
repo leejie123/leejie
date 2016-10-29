@@ -1,0 +1,211 @@
+
+*{
+	color:rgb(204,198,166);
+}
+
+.page_1{
+	padding: 0 7%;
+	margin-top: 8%;
+}
+.left{
+	float: left;
+	width: 55%;
+}
+
+.left .left_bottom{
+	display: block;
+	margin-bottom: 2%;
+}
+
+.right{
+	float: left;
+	margin-left: 4%;
+	width: 40%;
+}
+
+.right h4{
+	background:rgb(204,198,166);
+	padding:1%;
+	margin-top:0px;
+	color:#000;
+}
+.right .price{
+	height:80px;
+	margin-bottom:2%;
+	margin-bottom:6%;
+}
+
+.span_1{
+	font-size:24px;
+	vertical-align:middle;
+	padding: 0 10%;
+}
+
+.span_2{
+	display:inline-block;
+	vertical-align:middle;
+	padding: 0 10%;
+	text-align:center;
+}
+
+.span_3{
+	display:inline-block;
+	vertical-align:middle;
+	text-align:center;
+}
+
+.right>div{
+	padding:4% 0;
+}
+
+.right>div>div{
+	width:62px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+
+.span_4{
+	border:1px solid rgb(204,198,166);
+	width:40px;
+	height:40px;
+	vertical-align:text-bottom;
+	float:left;
+	margin-right:5px;
+	text-align: center;
+	padding-top:8px;
+}
+
+
+.span_5{
+	float:left;
+	width:17px;
+	height:17px;
+	border:1px solid rgb(204,198,166);
+	margin-bottom:5px;
+}
+
+.span_5:hover{
+	opacity:0.7;
+}
+
+.span_6{
+	float:left;
+	width:17px;
+	height:17px;
+	border:1px solid rgb(204,198,166);
+}
+
+.span_6:hover{
+	opacity: 0.7;
+}
+
+.right p:nth-child(2){
+	background:rgb(47,47,47);
+}
+
+
+.page_1 > p{
+	padding: 2% 0;
+
+}
+.page_1 > p>a{
+	text-decoration: none;
+	color: rgb(204,198,166);
+}
+
+.img_1{
+	background-size:100% !important;
+	background-position:center!important;
+	height:280px;
+	float:left;
+	width:95%;
+	clear:both;
+	margin-bottom:4%;
+}
+
+.img_2{
+	background:#000;
+	height:60px;
+	background-size:100%!important;
+	background-position:center!important;
+	width:80px;
+	float:left;
+	margin-right:2%;
+}
+
+.img_2:hover{
+	cursor: pointer;
+	border:1px solid #ddd;
+}
+
+.img_3{
+	background:#000;
+	height:60px;
+	background-size:100%!important;
+	background-position:center!important;
+	width:80px;
+	float:left;
+}
+
+
+.img_3:hover{
+	border:1px solid #ddd;
+	cursor: pointer;
+}
+
+.tab ul li {
+	list-style: none;
+	float:left;
+	width: 8%;
+	text-align: center;
+	color: rgb(204 198 166);
+}
+
+.tab ul li a{
+	text-decoration: none;
+	color: rgb(204,198,166);
+	padding-bottom: 3px;
+}
+
+.tab ul{
+	padding-left: 65px;
+}
+
+.tab ul li a:hover{
+	border-bottom: 1px solid rgb(203,198,166);
+}
+
+.tab ul{
+	border-top: 1px solid rgb(204 198 166);
+	padding-top: 15px;
+}
+
+details{
+	padding-left: 78px;
+	margin-top: 4%;
+}
+
+
+.right > p >button{
+	border-radius: 0;
+}
+
+
+.active1{
+	border: 2px solid #fff;
+}
+
+
+/*模态框*/
+.list-item ul{
+	padding-left: 0px;
+
+}
+
+.list-item ul > li{
+	list-style: none;
+	display: inline-block;
+	width: 20%;
+	margin-left: 20px;
+}

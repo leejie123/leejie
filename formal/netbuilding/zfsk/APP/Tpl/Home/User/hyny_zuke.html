@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>会员内页-推荐租客</title>
+     
+    <include file="Public:head" />
+    <link rel="stylesheet" href="__PUBLIC__/css/member.css"> 
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/huiyuan1.css">
+</head>
+<body>
+     <!-- 导航栏 -->
+<!-- 内容 -->
+<section>
+<include file="Public:header" />
+
+     <div class="container member-page-body">
+      <include file="Public:side" />
+      <div class="col-lg-8">
+      <!-- 会员中心右侧内容开始 -->
+        <!-- 内容 -->
+          <form method="post" action="{:U('User/tenant')}" enctype="multipart/form-data">
+               <div class="nrnr">
+                      <div class="hyan"><a class="zfsk-btn yellow" href="#">会员推荐租客</a></div>
+                           <p>通过验证的会员每推荐一名租客在本网站注册成为验证会员</p>
+                           <p>您将升级VIP会员通过验证的会员每推荐一名租客在本网站成功租房将获得300元介绍费</p>
+                           <div class="hyan"><a href="#">租客需求</a> </div>    
+                           <p class="gs">请输入租客需求便于我们更好的为你推荐适合的产业</p>
+                           <textarea type="text" rows="10" cols="100" name="demand"></textarea>
+                           <div class="form-group xqb">
+                                  <label class="col-md-2 control-label ds">租客姓名</label>  
+                                  <div class="col-md-4">
+                                  <input placeholder="姓名" class="form-control input-md" type="text" name="tenantname">
+                                  </div>
+                                  <label class="col-md-2 control-label ds" >租客手机</label>  
+                                  <div class="col-md-4">
+                                  <input placeholder="手机号码" class="form-control input-md" type="text" name="phone" maxlength="11">
+                            </div>
+                      </div>
+                      <div class="btnn yz"><button class="btn btn-success wadd" type="submit">提交验证</button></div>
+              </div>
+          </form>
+      <!-- 会员中心右侧内容结束 -->
+      </div>
+     </div><!-- /container -->
+</section>
+
+
+
+   <!-- 页脚 -->
+<include file="Public:footer" />
+<include file="Public:script" />
+         
+</body>
+</html> 

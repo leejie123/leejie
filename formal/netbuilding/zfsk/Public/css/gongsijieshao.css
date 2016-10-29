@@ -1,0 +1,171 @@
+
+  
+   .onelogo{
+    float: left;
+   }
+   .btn01{
+    background: rgb(245,212,55);
+    border-color: rgb(245,212,55);
+    padding: 1px 9px;
+    font-size: 21px;
+    color: #fff;
+   }
+   .nav-ul{
+    margin-left: 184px;
+    width: 61%;
+    text-align: center;
+   }
+
+    .footer-image{
+    text-align: center;
+    padding: 15px 0;
+   }
+   .footer{
+    background: rgb(245,212,55);
+    height: 450px;
+    text-align: center;
+    color: rgb(123,87,0);
+   }
+   .footer p:nth-child(1){
+    margin-bottom: 30px;
+    padding-top: 7px;
+   }
+   .footer-ul li{
+    list-style: none;
+    display: inline-block;
+ }
+ .clear{
+    clear: both;
+   }
+   .btn02 b{
+    font-weight: normal;
+    padding-right: 22px;
+    color: rgb(123,87,0);
+   }
+  
+   .footer > p:nth-of-type(4){
+    margin-top: 28px;
+   }
+   /*幻灯片*/
+   .h1text{
+  color: #fff;
+}
+.btn02{
+    background: #fff;
+}
+ .search-wrap-ofcont{
+    background: rgba(255, 255, 255, 0.58) none repeat scroll 0% 0%;
+    padding: 10px;
+ }
+ .search-wrap-ofcont{
+      width: 56%;
+      margin: 0 auto;
+}
+ .search-wrap{
+  position: absolute;
+   bottom: 55%; 
+   width: 80%;
+   left: 10%;
+   text-align:center;
+ }
+ .search-wrap-cont{
+  margin: auto; 
+  width: 620px;  
+ }
+
+ .input-group{
+  width: 82%;
+ }
+
+ .fl{
+  float: left;
+ }
+
+ .fr{
+  float:right;
+ }
+   /*导航无色条*/
+   ul li a.land-a{
+    padding: 0 3px;
+    background: rgb(245,212,55);
+   }
+ /**/
+ .dd{
+    border: 2px solid #ccc;
+    padding: 30px;
+    margin-left: 141px;
+ }
+ .dd .w1{
+   text-align: center;
+   color: rgb(123,87,0);
+ }
+
+ .dd .w1 p {
+    margin-top: 10px;
+ }
+ .dd .w2{
+   text-indent: 2em;
+   color: rgb(123,87,0);
+ }
+ .co{
+   width: 70%;
+margin: 0 auto;
+ }
+ .h2-c{
+    margin: 35px 0;
+ }
+ .text-yellow.olo{
+    background: rgb(245,212,55);
+display: inline;
+padding: 6px;
+font-size: 25px;
+ }
+ .x-j{
+    margin-left: 141px;
+    text-indent: 2em;
+    color: rgb(123,87,0);
+
+ }
+ .q1{
+    width: 0;
+    height: 0;
+    border-top: 50px solid rgb(245,212,55);
+    border-right: 50px solid transparent;
+    position: absolute;
+    left: -10px;
+ }
+ .q2{
+    width: 0;
+    height: 0;
+    border-top: 50px solid rgb(115,193,241);
+    border-right: 50px solid transparent;
+    position: absolute;
+    left: -10px;
+ }
+ .q3{
+    width: 0;
+    height: 0;
+    border-top: 50px solid rgb(224,127,92);
+    border-right: 50px solid transparent;
+    position: absolute;
+    left: -10px;
+ }
+ .ca{
+    line-height: 50px;
+    position: relative;
+ }
+ .nm{
+    position: relative;
+ }
+ .md{
+    position: absolute;
+    top: -14px;
+    left: -37px;
+ }
+ .md p{
+    line-height: 50px;
+    color: #fff;
+ }
+ .action{
+  background: rgb(245,212,55);
+}

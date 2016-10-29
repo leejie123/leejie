@@ -1,0 +1,302 @@
+
+
+
+.navigation ul li{
+	list-style: none;
+	float: left;
+	width: 20%;
+	text-align: center;
+	color: rgb(204 198 166);
+
+}
+
+.dis_img1{
+	width:75%;
+	display:inline-block
+}
+
+.dis_img2{
+	width: 20%;
+	display: inline-block;
+}
+.navigation ul li a{
+	text-decoration: none;
+	color: #fff;
+	padding-bottom: 3px;
+}
+
+.navigation ul li a:hover{
+	border-bottom: 1px solid rgb(203,198,166);
+}
+
+.navigation ul{
+	border-top: 1px solid rgb(204 198 166);
+	padding-top: 5px;
+	padding-left: 0px;
+}
+
+
+.display-img{
+	width:70%;
+	margin:0 auto;
+	margin-top:6%;
+	margin-bottom:6%;
+}
+
+.title_1{
+	display: block;
+	text-align: center;
+}
+
+.title_1 div{
+	width: 17%;
+	display: inline-block;
+	margin: 0 auto;
+	color:#fff;
+}
+
+.title_1 div img,.title_1 div p{
+	float: left;
+}
+
+
+.title_1 div img{
+	width: 50px;
+}
+
+.title_1 div p{
+	display: inline-block;
+	padding:4px 2px;
+	background:rgb(107,104,82)
+}
+
+.title_1 div p:before{
+	background-image: url("Home/img/xianglu.png");
+}
+
+.big_pic{
+	margin:4% 0;
+}
+
+.big_pic ul{
+	padding-left: 0px;
+}
+
+.big_pic ul li {
+	float: left;
+	list-style: none;
+	width: 27%;
+	margin:0 3%;
+
+}
+
+.big_pic ul li div{
+	background-size:100%!important;
+	background-position:center!important;
+}
+
+
+.title_2 p{
+	text-align: center;
+	color: #fff;
+
+}
+
+.title_2 ul{
+	border-top: 1px solid #fff;
+	padding-top: 10px;
+	margin-bottom: 4%;
+}
+.title_2 ul li{
+	list-style: none;
+	float: left;
+	width: 2em;
+	padding:2px;
+	margin:0 3.7%;
+	border:1px solid #fff;
+	text-align: center;
+}
+
+.title_2 ul li a{
+	text-decoration: none;
+	color:#fff;
+}
+
+.title_2 ul li:hover{
+	background: #fff;
+	color: #000;
+	margin-bottom: 12px;
+}
+
+.title_2 ul li:hover a{
+	color: #000;
+}
+
+
+/*中部导航*/
+
+.nav1{
+	margin-bottom: 4%;
+
+}
+
+.border{
+	border-bottom: 1px solid #fff;
+	opacity: 0.8;
+	width: 100%;
+	margin-bottom: 4%;
+}
+.item1{
+	height:30px;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	line-height: 25px;
+	border: 1px solid rgb(204,198,166);
+	color: rgb(204,198,166);
+	margin-bottom: 12px;
+	text-decoration: none;
+}
+
+.item-active{
+	color: rgb(101,79,30);
+	background:rgb(204,198,166);
+
+}
+
+.item1:hover{
+	background:rgb(204,198,166);
+	color: rgb(101,79,30);
+	cursor: pointer;
+	text-decoration: none;
+
+
+}
+
+/*小图片部分*/
+
+.small_pic ul{
+	padding-left: 0px;
+}
+
+.small_pic ul li{
+	float: left;
+	list-style: none;
+	width: 27%;
+	margin:0 3%;
+}
+
+.small_pic ul li div{
+	background-size:100%!important;
+	background-position:center!important;
+}
+
+.small_pic ul li a{
+	color: #fff;
+	text-decoration: none;
+}
+
+.small_pic ul li p{
+	height: 45px;
+	overflow: hidden;
+	padding-top: 5px;
+	color: #fff;
+}
+
+
+
+.foot-nav ul li{
+			float: left;
+			width: 50px;
+			list-style: none;
+
+		}
+
+		.foot-nav{
+			display: block;
+			text-align: center;
+		}
+		.foot-nav ul {
+			display: inline-block;
+			margin: 0 auto;
+
+		}
+		.foot-nav ul li a{
+			border-radius: 50%;
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			vertical-align: middle;
+			text-decoration: none;
+			color: #fff;
+		}
+	
+
+		.foot-nav ul li:hover a{
+			background:rgb(204,198,166);
+			color: #000;
+		}
+
+		.foot-nav ul li.li1 a{
+			border-radius: 0px;
+			width:50px;
+			height:30px;
+		}
+
+		/*论坛内容*/
+		.forum_content{
+			padding: 0 10%;
+		}
+
+		.fx{
+			position: relative;
+		}
+
+		.fx:before{
+			content: "推荐";
+			width: 54px;
+			height: 27px;
+			display: block;
+			position: absolute;
+			top: 12px;
+			left: -10%;
+			text-align: center;
+			line-height: 25px;
+			border: 1px solid #654F1E;
+			background: #CCC6A6;
+			color: #654F1E;
+		}
+
+		.fx > h4{
+			color: #654F1E; 
+		}
+
+		.fx > p{
+			color: #fff;
+		}
+
+		.fx > ul{
+			padding-left: 0px;
+			padding: 2% 0;
+		}
+
+		.fx > ul > li{
+			width: 23%;
+			margin-left: 2%;
+			float: left;
+			list-style: none;
+		}
+
+		.fx > ul > li > img:hover{
+			border: 2px solid #fff;
+		}
+
+		.fy{
+			color: #fff;
+		}
+
+		.display_none{
+			display: none;
+		}

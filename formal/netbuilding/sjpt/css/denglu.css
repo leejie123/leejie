@@ -1,0 +1,73 @@
+.container-fluid{
+	background: url("../images/beijing.jpg") no-repeat;
+	width: 100%;
+	height: 370px;
+}
+.hezuo h3 {
+    color: #999;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.hezuo p a {
+    display: inline-block;
+    padding: 0px 10px;
+    height: 25px;
+    line-height: 25px;
+    background: #F3F3F3 none repeat scroll 0% 0%;
+    border: 1px solid #E3E3E3;
+    border-radius: 3px;
+    margin-right: 10px;
+    text-shadow: 0px 1px 0px #FFF;
+}
+.hezuo p a i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: transparent url("http://img3.ch999img.com/images/log_icon.png") no-repeat scroll 0% 0%;
+}
+.hezuo p a i.wx {
+    background-position: 0px 0px;
+}
+.hezuo p a i.qq {
+    background-position: -16px 0px;
+}
+.hezuo p a i.alipay {
+    background-position: -32px 0px;
+}
+.navbar-form{
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+    width: 80px;
+}
+.form-signin-heading{
+    display: inline-block;
+}
+h4 {
+    font-size: 15px;
+}
+.checkbox, .radio{
+    margin-top: 38px;
+}
+@media screen and (max-device-width: 480px) {
+	img {
+		margin-top: 20px;
+		width: 100px;
+
+	}
+}
+
+
+/*注册*/
+.loginmain h3{
+    color: red;
+}
+.loginmain a{
+    float:right;
+    margin-bottom: 25px;
+    font-size: 14px;
+}

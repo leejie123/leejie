@@ -1,0 +1,98 @@
+
+body{
+	position: relative;
+	background-size: cover!important;
+	background-position:top center!important;
+}
+
+.title_1{
+	display: block;
+	text-align: center;
+}
+
+.title_1 div{
+	width: 15%;
+	display: inline-block;
+	margin: 0 auto;
+	color:#fff;
+}
+
+.title_1 div img,.title_1 div p{
+	float: left;
+}
+
+
+.title_1 div img{
+	width: 50px;
+}
+
+.title_1 div p{
+	display: inline-block;
+	padding:4px 2px;
+	background:rgb(107,104,82)
+}
+
+.big_pic ul{
+	padding-left: 0px;
+}
+
+.big_pic ul li {
+	float: left;
+	list-style: none;
+	width: 27%;
+	margin:0 3%;
+}
+
+.big_pic ul li div{
+	background-size:100%!important;
+	background-position:center!important;
+}
+
+.title_2{
+	padding-bottom: 50px;
+}
+
+
+
+.title_2 p{
+	text-align: center;
+	color: #fff;
+
+}
+
+.title_2 ul{
+	border-top: 1px solid #fff;
+	padding-top: 10px;
+}
+.title_2 ul li{
+	list-style: none;
+	float: left;
+	width: 2em;
+	padding:2px;
+	margin:0 10.7%;
+	border:1px solid #fff;
+	text-align: center;
+}
+
+.title_2 ul li:hover{
+	background: #fff;
+	opacity: 0.8;
+}
+
+.title_2 ul li a{
+	color: #fff;
+}
+
+.title_2 ul li:hover a{
+	color: #000;
+	text-decoration: none;
+
+}
+
+
+
+.introduction p{
+	text-indent: 2em;
+	color:#fff;
+}
+

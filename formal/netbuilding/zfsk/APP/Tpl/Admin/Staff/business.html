@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+  <head>
+  <include file="Public:head" />
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"> -->
+  </head>
+  <!--
+  BODY TAG OPTIONS:
+  =================
+  Apply one or more of the following classes to get the
+  desired effect
+  |---------------------------------------------------------|
+  | SKINS         | skin-blue                               |
+  |               | skin-black                              |
+  |               | skin-purple                             |
+  |               | skin-yellow                             |
+  |               | skin-red                                |
+  |               | skin-green                              |
+  |---------------------------------------------------------|
+  |LAYOUT OPTIONS | fixed                                   |
+  |               | layout-boxed                            |
+  |               | layout-top-nav                          |
+  |               | sidebar-collapse                        |
+  |               | sidebar-mini                            |
+  |---------------------------------------------------------|
+  -->
+  <body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+    <!-- head -->
+    <include file="Public:header" />
+    <!-- sidebar -->
+    <include file="Public:sidebar" />
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            添加交易
+          </h1>
+        </section>
+ <!-- |---------------------------------------------------------| -->
+        <!-- Main content -->
+        <section class="content">
+          
+
+ <!-- |---------------------------------------------------------| -->
+          <form class="form-horizontal" action="{:U('Staff/business')}" method="post" enctype="multipart/form-data">
+              <fieldset>
+              <input value="{$xiugai['id']}" type="hidden" name="id">
+              
+               <div class="form-group">
+                <label class="col-md-4 control-label" >选择租客账号</label>  
+                <select style="margin: 0px 14px; padding: 4px; font-size: 12px;" name="user_id" id="user_id" >
+                  <volist name="user" id="user" >
+                    <option style="padding: 0px 9px; font-size: 13px;" value="{$user.id}">{$user.username}</option>
+                  </volist>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" >选择房源</label>  
+                <select style="margin: 0px 14px; padding: 4px; font-size: 12px;" name="real_id" id="real_id" data-auto-value="{$real['staff_id']}">
+                  <volist name="real" id="real" >
+                    <option style="padding: 0px 9px; font-size: 13px;" value="{$real.id}">{$real.place_name}{$real.district_name}{$real.building}</option>
+                  </volist>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" >交易类型</label>  
+                <select style="margin: 0px 14px; padding: 4px; font-size: 12px;" name="cate_id" id="cate_id" >
+                  <volist name="real_cate" id="real_cate" >
+                    <option style="padding: 0px 9px; font-size: 13px;" value="{$real_cate.id}">{$real_cate.name}</option>
+                  </volist>
+                </select>
+              </div>
+                
+              <input type="hidden" value="{$staff_id}" name="staff_id">
+                 <div class="form-group">
+                    <label class="col-md-4 control-label" >上传身份证正面</label> 
+                    <input type="file" name="identification_image_positive">
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >上传身份证背面</label>
+                    <input type="file" name="identification_image_back">
+                </div>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" >租客姓名</label>  
+                 <div class="col-md-4">
+                  <input id="truename" name="truename" class="form-control input-md"  type="text">  
+                </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" >联系电话</label>  
+                <div class="col-md-4">
+                    <input id="phone" name="phone" class="form-control input-md"  type="text">
+                </div>
+              </div>
+               <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" >身份证号码</label>  
+                <div class="col-md-4">
+                    <input id="identification_card_num" name="identification_card_num" class="form-control input-md"  type="text">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="col-md-4 control-label" >交易金额</label>  
+                <div class="col-md-4">
+                    <input id="price" name="price" class="form-control input-md"  type="text">
+                </div>
+              </div>
+              <!-- Button (Double) -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="button1id"></label>
+                <div class="col-md-8">
+                  <button id="button1id" name="button1id" class="btn btn-success">提交</button>
+                  <button id="button2id" name="button2id" class="btn btn-default">重置</button>
+                </div>
+              </div>
+
+              </fieldset>
+          </form>
+<!-- |---------------------------------------------------------| -->
+
+
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+<!--  |---------------------------------------------------------| -->
+
+      <!-- footer -->
+      <include file="Public:footer" />
+    </div><!-- ./wrapper -->
+
+    <include file="Public:script" />
+  </body>
+</html>

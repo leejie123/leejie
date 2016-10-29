@@ -1,0 +1,28 @@
+
+.navigation ul li{
+	list-style: none;
+	float: left;
+	width: 20%;
+	text-align: center;
+	color: rgb(204 198 166);
+
+}
+
+.navigation ul li a{
+	text-decoration: none;
+	color: #fff;
+	padding-bottom: 3px;
+}
+
+.navigation ul{
+	padding-left: 0px;
+}
+
+.navigation ul li a:hover{
+	border-bottom: 1px solid rgb(203,198,166);
+}
+
+.navigation ul{
+	border-top: 1px solid rgb(204 198 166);
+	padding-top: 5px;
+}

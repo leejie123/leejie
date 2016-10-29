@@ -1,0 +1,343 @@
+
+body{
+	background-size: cover;
+	background-position: center center;
+}
+
+.content1{
+}
+
+.section1{
+	background: rgba(87, 87, 87, 0.23);
+	padding: 4% 0;
+}
+
+.border1{
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+	opacity: 0.2;
+}
+
+.line2{
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+}
+
+.line2> p{
+	text-align: center;
+	color: #fff;
+	font-size: 12px;
+}
+
+.bg_format{
+	background-size: cover;
+	background-position: center center;
+	height: 20px;
+	width: 100%;
+}
+
+/*slide*/
+.slide_wrap{
+	position: relative;
+}
+
+.controller1{
+	position: absolute;
+	bottom: 15px;
+	left: 135px;
+}
+
+.controller1 > ul{
+	padding-left: 0px;
+}
+
+.controller1 > ul > li{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	opacity: 0.5;
+	border-radius: 50%;
+	float: left;
+	list-style: none;
+	margin:5px;
+}
+
+.controller1 > ul > li:hover{
+	opacity: 0.9;
+	cursor: pointer;
+}
+
+/*biaoqian*/
+.tip > ul {
+	padding-left: 0px;
+	text-align: center;
+}
+
+.tip > ul > li {
+	display: inline-block;
+	border-radius: 5px;
+	border: 1px solid #CCC6A6;
+	height: 2em;
+	line-height: 25px;
+	padding: 0 10px;
+	margin-bottom: 11px;
+	margin-left: 10px;
+	cursor: pointer;
+
+}
+.tip > ul > li > a{
+	text-decoration: none;
+}
+
+.active-tip{
+	background-color:#CCC6A6;
+	color:#fff; 
+}
+.active-tip a{
+	color: #fff;
+}
+
+
+
+/*introduction*/
+
+.introduction{
+	padding: 15px;
+}
+
+.introduction > p{
+	text-indent: 2em;
+	font-size: 12px;
+	color: #CCC6A6;
+}
+
+/*图片*/
+.img{
+	padding: 0 15px;
+}
+.img > ul{
+	padding-left: 0px;
+}
+
+.img > ul > li{
+	float: left;
+	width: 23%;
+	list-style: none;
+}
+
+.img > ul > li > a > div{
+	width: 100%;
+	height: 100%;
+	min-height: 40px;
+}
+
+/*第一个修改图片*/
+.img_x > ul > li{
+	margin-left: 2%;
+
+}
+
+.img_x > ul > li:first-child{
+	margin-left: 0px;
+}
+
+.img_x > ul > li > a > div{
+	border-radius: 8px;
+}
+
+
+/*修改图片*/
+
+.section2{
+	padding: 4% 0;
+}
+
+.img_change > ul{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.img_change > ul > li{
+	width: 32%;
+	border-top: 1px solid rgb(40,38,30);
+
+}
+
+.img_change > ul > li > a > div{
+	border-radius: 0px;
+}
+
+.img_change > ul > li:nth-child(2){
+	margin:0 2%;
+}
+
+/*修改图片*/
+
+.img_change1 > ul > li {
+	width: 42%;
+	padding: 10px;
+	background: #fff;
+	opacity: 0.7;
+	margin-bottom: 8px;
+	padding-bottom: 0px;
+}
+
+.img_change1 > ul > li:nth-child(odd){
+	margin-right: 2%;
+
+}
+
+.img_change1 > ul > li > a {
+	text-decoration: none;
+}
+
+.img_change1 > ul > li > a > div{
+	border-radius: 0px;
+}
+
+.img_change1 > ul > li > a > p{
+	height: 2.5em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 11px;
+	line-height: 15px;
+	margin: 10px 0px;
+}
+
+
+
+
+
+div.title1 > .p1:before {
+	display: inline-block;
+	width: 58px;
+	height: 18px;
+	position: absolute;
+	top: 4px;
+	left: -56%;
+	background-image: url("../Home/img/cloud.png");
+	background-position: center center;
+	background-size: cover;
+	content: "";
+}
+
+
+.title1{
+	position: relative;
+	text-align: center;
+}
+
+.title1 > p{
+	display: inline-block;
+	padding: 4px 2px;
+	background-color: #6B6852 ;
+	color: #fff;
+	position: relative;
+}
+
+
+
+div.title1 > .p2:after {
+	display: inline-block;
+	width: 58px;
+	height: 18px;
+	position: absolute;
+	top: 4px;
+	left: 105%;
+	background-image: url("../Home/img/cloud.png");
+	background-position: center center;
+	background-size: cover;
+	content: "";
+	filter:flipH;
+}
+
+
+.section3{
+	margin: 8% 0;
+}
+
+
+
+/*footer*/
+.foot1{
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	
+
+}
+
+.foot1 > ul{
+	padding-left: 0px;
+	margin: 0 auto;
+}
+
+.foot1 > ul > li {
+	width: 24.5%;
+	height: 100%;
+	float: left;
+	list-style: none;
+	text-align: center;
+	border-left: rgb(228,225,208);
+	background-color: rgb(204,198,166);
+	padding-top: 10px;
+	cursor: pointer;
+	border-right:1px solid rgb(228,225,208);
+
+}
+
+.foot1 > ul > li:last-child{
+	border-right: 0px;
+	transition:1s all;
+}
+
+.foot1 > ul > li:hover{
+	background-color: rgb(228,225,208);
+}
+
+.active1{
+	background-color: rgb(228,225,208);
+}
+.foot1 > ul > li > a{
+	display: inline-block;
+	text-decoration: none;
+}
+
+.foot1 > ul > li > a > img{
+	width: 20px;
+	height: 20px;
+}
+
+.foot1 > ul > li > a > p{
+	font-size: 10px;
+
+}
+
+/*自定义构件*/
+.round{
+	display: inline-block;
+	border-radius: 50%;
+	background: #CCC6A6 none repeat scroll 0% 0%;
+	line-height: 50px;
+	text-align: center;
+	color: #11100B;
+	width: 50px;
+	height: 50px;
+}
+
+.round_wrap{
+	display: block;
+	text-align: center;
+	padding: 4%;
+	padding-bottom: 30px;
+}
+
+.contract_info p {
+	font-size: 12px;
+	color: #CCC6A6;
+	text-align: center;
+}

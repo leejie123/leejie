@@ -1,0 +1,137 @@
+<html>
+  <head>
+  <include file="Public:head" />
+<style type="text/css">
+      label {
+        text-indent: 5px;
+      }
+</style>
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"> -->
+  </head>
+  <!--
+  BODY TAG OPTIONS:
+  =================
+  Apply one or more of the following classes to get the
+  desired effect
+  |---------------------------------------------------------|
+  | SKINS         | skin-blue                               |
+  |               | skin-black                              |
+  |               | skin-purple                             |
+  |               | skin-yellow                             |
+  |               | skin-red                                |
+  |               | skin-green                              |
+  |---------------------------------------------------------|
+  |LAYOUT OPTIONS | fixed                                   |
+  |               | layout-boxed                            |
+  |               | layout-top-nav                          |
+  |               | sidebar-collapse                        |
+  |               | sidebar-mini                            |
+  |---------------------------------------------------------|
+  -->
+  <body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+    <!-- head -->
+    <include file="Public:header" />
+    <!-- sidebar -->
+    <include file="Public:sidebar" />
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+         <h1>
+            分配权限
+         </h1>
+        </section>
+ <!-- |---------------------------------------------------------| -->
+        <!-- Main content -->
+        <section class="content">
+          
+
+ <!-- |---------------------------------------------------------| -->
+<form class="form-horizontal" action="{:U('Rbac/setAccess')}" method="post" enctype="multipart/form-data">
+<fieldset>
+    <td><div style="padding-left:20px;">你正在为用户组：<span style="font-weight:bold;font-size:15px;color:blue;">{$name}</span> 分配权限。</div>
+    <volist name="nodelist" id="vo">
+        <p style="text-indent:{$vo['level']*20}px; <if condition="$vo.level eq 3">float:left<else />clear:both;</if>"> 
+       
+             <input id="{$vo.id}" type="checkbox" name="access[]" value="{$vo.id}_{$vo.level}" pid="{$vo.pid}" level="{$vo.level}" <if condition="$vo['access']">checked="checked" </if> />
+              <if condition="$vo['level'] eq '1'"><span style="font-weight:bold;">[项目]</span></if>
+              <if condition="$vo['level'] eq '2'"><span style="font-weight:bold;">[模块]</span></if>
+              <label name="name" value="{$vo.id}">{$vo.title}</label>
+    
+        </p>
+    </volist>
+    <div style="clear:both"></div>
+</td>
+
+<input type="hidden" name="rid" value="{$rid}" />
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="button1id"></label>
+    <div class="col-md-8">
+    
+    <button id="button1id" name="button1id" class="btn btn-success" type="submit">保存添加</button>
+    </div>
+  </div>
+
+</fieldset>
+</form>
+
+
+ <!-- |---------------------------------------------------------| -->
+
+
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+<!--  |---------------------------------------------------------| -->
+
+      <!-- footer -->
+      <include file="Public:footer" />
+    </div><!-- ./wrapper -->
+
+    <include file="Public:script" />
+    <script src="__PUBLIC__/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+        // $(function(){
+        //   $('input').click(function(){
+        //     var level = $(this).attr('level');
+        //     if(level == 1){
+        //       var str ='_';
+        //       var inputs = $('input[value*='+str+']');
+        //       $(this).attr('checked')?inputs.attr('checked',true):inputs.removeAttr('checked');
+        //     }
+        //     else if(level == 2){
+        //       var id = $(this).attr('id');
+        //       var inputs = $('input[pid='+id+']');
+        //       $(this).attr('checked')?inputs.attr('checked',true):inputs.removeAttr('checked');
+        //     }
+        //      else if(level == 3){
+        //       if($(this).attr('checked')){
+        //         var id = $(this).attr('id');
+        //         $('input[id='+pid+']').attr('checked',true);
+        //         var ppid = $(this).attr('pid');
+        //         $('input[id='+ppid+']').attr('checked',true);
+        //       }
+        //     }
+        //   });
+        // });
+
+       
+      
+      $(document).ready(function() {
+        $('#example').dataTable( {
+        } );
+
+    });
+    </script>
+  </body>
+</html>
+</fieldset>
+</form>
+
+
+
+
+
+</body>
+</html>

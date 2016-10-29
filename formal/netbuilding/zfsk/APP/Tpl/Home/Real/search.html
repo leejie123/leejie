@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>搜索结果</title>
+	<include file="Public:head" />
+	<include file="Public:script" />
+	 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/wyzf.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/zhujiang.css">
+</head>
+<body>
+	<include file="Public:header" />
+<section class="search-padding">
+	<div class="container search-se">
+		<h3>您搜索的结果：</h3> 
+		<div class="row">
+      <volist name="real" id="real" empty="对不起，无法搜索到符合你需求的房源。">
+       		<div class="col-md-4 mbtm">
+       			<div class="imagebox">
+                            <a href="{:U('Real/real_neiye',array('id' => $real['id']))}"><div class="background-image small" style="background-image:url('__PUBLIC__/upload/image/real/{$real.real_images.0.image_url}')">
+                           <if condition="$real['status'] eq 0">
+                                   <div class="ribbon yizu"></div>
+                            <else />
+                                <if condition="$realsuiji[status] eq 1">
+                                 <div class="ribbon daishen"></div>
+                                <else />
+                                   <div class="ribbon verified"></div>
+                                </if>   
+                            </if>  
+                            </div>
+                            <if condition="$real['recommend'] eq 1">
+                              <div class="tui_jian"><img src="__PUBLIC__/image/tuijian.png"></div>
+                            </if>
+                            </a>
+                            <div class="onimage-content">
+                               <ul>
+                                    <li>
+                                       <p>
+                                          <span><i class="fa fa-map-marker"></i> {$real.place_name}&nbsp;<span>{$real.area}m<sup>2</sup></span></span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                      <p><img src="__PUBLIC__/image/a2015-3.png"><br><span>{$real.real_number}房</span></p>
+                                      <p><img src="__PUBLIC__/image/a2015-1.png"><br><span>{$real.hall_number}厅</span></p>
+                                      <p><img src="__PUBLIC__/image/a2015-2.png"><br><span>{$real.toilet_number}卫</span></p>
+                                      <p><img src="__PUBLIC__/image/a2015-4.png"><br><span>{$real.balcony}阳</span></p>
+                                      <div style="clear:both"></div>
+                                    </li>
+                                    <li class="li-div">
+                                       <div class="li-div-sum"><a class="cp9" href="{:U('Real/real_neiye',array('id' => $real['id']))}">{$real.price}元</a></div>
+                                    </li>
+                              </ul>
+                            </div> 
+                </div>
+       		</div>
+      </volist>
+		</div>
+	</div>
+</section>
+<include file="Public:footer2" />
+<include file="Public:footer" />	
+</body>
+</html>

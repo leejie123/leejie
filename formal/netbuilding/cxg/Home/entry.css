@@ -1,0 +1,70 @@
+/*通用构件*/
+.mg-b-50{
+	margin-bottom: 40px;
+}
+
+.mg-b-20{
+	margin-bottom: 20px;
+}
+
+.ax{
+	text-decoration: none;
+
+}
+
+
+.bg{
+	width: 100%;
+	text-align: center;
+	}
+
+.content{
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 2%;
+	margin-bottom: 50px;
+}
+
+.content p{
+	color: rgb(204,198,166);
+	font-size: 14px;
+}
+
+.line1{
+	border-left:2px solid #ddd;
+	height:60px;
+	width:0px;
+	display: inline-block;
+
+}
+
+.footer p:nth-child(1){
+	text-align: right;
+	color: #fff;
+	padding-right: 50px;
+	font-size: 12px;
+}
+
+
+/*构件圆形*/
+.round{
+	display: inline-block;
+	border-radius: 50%;
+	background: rgb(204,198,166);
+	line-height: 20px;
+	line-height: 50px;
+	text-align: center;
+	color: rgb(17,16,11);
+	width: 50px;
+	height:50px;
+	cursor:pointer;
+
+}
+
+a:hover{
+	color: #fff;
+	opacity: 0.9;
+	text-decoration: none;
+}

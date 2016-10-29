@@ -1,0 +1,22 @@
+$(function(){
+	$("#add").click(function(){
+		$("#bkgl").css("display","none");
+		$("#bkbj").css("display","block");
+	})
+})
+$(function(){
+	$("#dele").click(function(){
+		$("#bkgl").css("display","block");
+		$("#bkbj").css("display","none");
+	})
+})
+$(function(){
+	$("#qx").click(function(){
+		$(".te").each(function(){
+			$(this).prop("checked",true);
+		})
+	})
+	$("#dele_all").click(function(){
+		$(".te").prop("checked",false);
+	})
+})

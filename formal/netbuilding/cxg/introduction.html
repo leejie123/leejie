@@ -1,0 +1,102 @@
+<html>
+<head>
+	<title>产品页</title>
+	<meta charset="utf-8">
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="Home/introduction.css">
+	<link rel="stylesheet" type="text/css" href="Home/nav.css">
+</head>
+<body style="background:url('Home/img/index_bg.png');">
+	
+	<!-- #include file="Home/public/top.html" -->
+  	<!-- 内容 -->
+  	<section class="page-body">
+  		<div class="container">
+  			<nav class="navigation">
+  				<ul>
+  					<li><a href="#">走进沉香阁</a></li>
+  					<li><a href="#">产品展示</a></li>
+  					<li>&nbsp;</li>
+  					<li><a href="#">沉香论坛</a></li>
+  					<li><a href="#">联系我们</a></li>
+  					<div style="clear:both"></div>
+  				</ul>
+  			</nav>
+  			<div class="title_1">
+	  			<div>
+	  				<img src="Home/img/cloud.png">
+	  				<p>【今日推荐香品】</p>
+	  			</div>
+  			</div>
+  			<div class="big_pic">
+  				<ul>
+  					<li>
+  						<div style="background:url('Home/img/pic_big1.png');"></div>
+  					</li>
+  					<li>
+  						<div style="background:url('Home/img/pic_big1.png');"></div>
+  					</li>
+  					<li>
+  						<div style="background:url('Home/img/pic_big1.png');"></div>
+  					</li>
+  					<div style="clear:both;"></div>
+  				</ul>
+  			</div>
+  			<div class="section_2" style="padding:0 6%;">
+	  			<div class="title_2">
+	  				<p>分类</p>
+	  				<div style="clear:both;"></div>
+	  				<ul>
+	  					<li><a href="#">公司简介</a></li>
+	  					<li><a href="#">公司厂房</a></li>
+	  					<li><a href="#">公司基地</a></li>
+	  					<li><a href="#">公司店面</a></li>
+	  					<div style="clear:both"></div>
+	  				</ul>
+	  			</div>
+	  			<div style="clear:both"></div>
+	  			<div class="introduction">
+	  				<p>福建省沉香阁工艺品有限公司于1993年从事沉香领域，公司正式挂牌成立于2009年，是福建省最早成立的沉香企业公司，沉香阁秉承“真心做人，正气作香”的商誉理念，并以“踏实，拼搏，责任”的企业精神经营，现已成为全干过影响力最高的中小企业，在全行业具有良好的信誉口碑。</p>
+	  				<p>福建省沉香阁的经营范围从原产地的原材料收购，至沉香艺术品雕刻，至沉香佛珠加工，至沉香制作生产，皆有严格的执行标准。并率先在福建省成立“沉香阁农民先进专业合作社”，进行沉香苗木的培养研究等业务。</p>
+	  				<p>“沉香阁”以周到的服务，卓越的品质为生存根本，现已是中国文化产业，沉香线香一线高端品牌</p>
+	  				<p>欢迎新老朋友前来参观，指导</p>
+	  			</div>
+  			</div>
+  		</div>
+  	</section>
+  	<section class="footer">
+  		<div class="" style="width:6%;text-align:center;display:block;margin:0 auto;padding:2% 0;">
+  			<img src="Home/img/logo_bottom.png" style="width:100%">
+  		</div>
+  		<div class="line-dec" style="background:url('Home/img/line_dec.png');background-size:cover;background-position:center;width:100%;height:20px;margin-bottom:1%;"></div>
+  		<div style="background:rgb(204,198,166);height:70px;">
+  			<p style="text-align:center;color:#000;font-size:14px;padding-top:5px;">福建省沉香阁工艺品有限公司 闽ICP备11008688号</p>
+  		</div>
+  	</section>
+	</section>
+<script type="text/javascript">
+
+	// 自适应页面高度
+	$(document).ready(function(){
+		var a=$(document).height();
+		console.log(a);
+		$('body').css('height',a);
+		// 大图片
+		var b=$('.big_pic>ul>li>div').width();
+		console.log(b);
+		var c=b/4*3;
+		$('.big_pic>ul>li>div').css('height',c);
+		
+	})
+</script>
+
+</body>
+</html>

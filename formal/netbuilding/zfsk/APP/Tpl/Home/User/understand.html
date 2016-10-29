@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title></title>
+    <include file="Public:head" />
+    <link rel="stylesheet" href="__PUBLIC__/css/member.css"> 
+</head>
+<body>
+     <!-- 导航栏 -->
+<!-- 内容 -->
+<section>
+<include file="Public:header" />
+
+     <div class="container member-page-body">
+      <include file="Public:side" />
+      <div class="col-lg-8">
+      <!-- 会员中心右侧内容开始 -->
+        <!-- 内容 -->
+        <div class="tppf">
+        <form class="w80pc blockcenter form-horizon2">
+          <div class="form-group table-bitian">
+            <label>联系人</label>
+            <input type="text" class="form-control" placeholder="联系人" name="name" required><span>*</span>
+          </div>
+          <div class="form-group table-bitian">
+            <label>手机</label>
+            <input type="text" class="form-control" placeholder="手机号码" name="phone" maxlength="11" required><span>*</span>
+          </div>
+          <div class="form-group table-bitian">
+            <label>密码</label>
+            <input type="password" class="form-control" placeholder="密码" name="password" required id="password"><span>*</span>
+          </div>
+          <div class="form-group table-bitian">
+            <label>确认密码</label>
+            <input type="password" class="form-control" placeholder="确认密码" name="passwordagain" required><span>*</span>
+          </div>
+          <div class="form-group">
+               <label class="control-label">性别</label>
+               <label><input name="sex" checked="checked" type="radio">男</label>
+               <label><input name="sex" checked="checked" type="radio">女</label>
+          </div>
+          <div class="form-group">
+              <label class=" control-label" >你的租房需求</label>                  
+              <textarea class="form-control"  placeholder="例如：还要找...." rows="10" name="demand"></textarea>
+          </div>
+          <button  class="btn btn-success wadd" type="submit">提交</button>
+          <button  class="btn btn-default" type="reset">重置</button>
+        </form>
+        </div>
+      <!-- 会员中心右侧内容结束 -->
+      </div>
+     </div><!-- /container -->
+</section>
+
+
+
+   <!-- 页脚 -->
+<include file="Public:footer" />
+<include file="Public:script" />
+ <script type="text/javascript">
+         $('.form-horizon2').validate({
+          rules:{
+            email:"required",
+            username:{
+              required:true,
+              minlength: 2
+            },
+            password:{
+              required:true,
+              minlength: 6
+            },
+            passwordagain:{
+              required: true,
+              minlength: 6,
+              equelTo: "#password"
+            },
+            phone:{
+              required:true,
+              maxlength:11
+            },
+            name:{
+              required:true,
+              minlength: 2
+            },
+            iddentification_card_num:{
+              required:true,
+              minlength: 18
+            }
+
+          },
+          messages:{
+            email:"请输入电子邮箱",
+            username:"请输入用户名称",
+            password:"请输入密码",
+            passwordagain:"再次输入密码",
+            qq_number: "请输入qq",
+            nickname:"请输入昵称",
+            phone:"请输入手机号码",
+            name:"请输入用户名称",
+            iddentification_card_num:"请输入身份证号码"
+          }
+        })
+   
+  </script>
+
+         
+</body>
+</html> 

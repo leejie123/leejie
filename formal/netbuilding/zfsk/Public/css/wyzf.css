@@ -1,0 +1,428 @@
+
+  
+   .onelogo{
+    float: left;
+   }
+   .btn01{
+    background: rgb(245,212,55);
+    border-color: rgb(245,212,55);
+    padding: 1px 9px;
+    font-size: 21px;
+    color: #fff;
+   }
+
+    .footer-image{
+    text-align: center;
+    padding: 15px 0;
+   }
+   .footer{
+    background: rgb(245,212,55);
+    height: 450px;
+    text-align: center;
+    color: rgb(123,87,0);
+   }
+   .footer p:nth-child(1){
+    margin-bottom: 30px;
+    padding-top: 7px;
+   }
+   .footer-ul li{
+    list-style: none;
+    display: inline-block;
+ }
+ .clear{
+    clear: both;
+   }
+   /*幻灯片*/
+   .h1text{
+  color: #fff;
+}
+ .search-wrap-ofcont{
+    background: rgba(255, 255, 255, 0.58) none repeat scroll 0% 0%;
+    padding: 10px;
+ }
+ .search-wrap-ofcont{
+      width: 56%;
+      margin: 0 auto;
+}
+ .search-wrap{
+  position: absolute;
+   bottom: 55%; 
+   width: 80%;
+   left: 10%;
+   text-align:center;
+ }
+ .search-wrap-cont{
+  margin: auto; 
+  width: 620px;  
+ }
+
+ 
+
+
+
+   /*多图区左边*/
+ .onimage-content img{
+  width: 50px;
+  height: 50px ;
+ }
+
+ .imagebox:hover .onimage-content{
+     max-height: 100%;
+ }
+ .inbox-image{
+    width:100%;
+ }
+ .gray-bar-ul li{
+    display: inline-block;
+    list-style: none;
+    font-size: 14px;
+    padding: 0px 12px;
+    margin-top: 14px;
+    color: rgb(123,87,0);
+ }
+ .gray-bar-ul{
+    text-align: center;
+ }
+ .gray-bar{
+    width: 100%;
+    height: 55px;
+    background: #e5e5e5;
+    margin: 35px 0;
+   }
+   .colimage{
+    padding:10px 0; 
+   }
+   .li-image{
+     width: 92%;
+   }
+   .li-div-sum a:hover{
+    text-decoration: none;
+   }
+   /*多图区右边*/
+   .right-sidebar-top{
+    width: 80%;
+    line-height: 32px;
+    text-align: center;
+    padding: 15px;
+    background: rgb(245,212,55) none repeat scroll 0% 0%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   }
+   .hotline{
+    padding: 5px 0;
+    color: rgb(123,87,0);
+    background: rgb(250,234,156);
+    padding: 0px 9px;
+   }
+   .land{
+     
+     margin-top: 10px;
+   }
+   .register{
+    margin-top: 5px;
+   }
+   .right-sidebar-image{
+      border: 1px solid rgb(245,212,55);
+        padding: 5px;
+        width: 80%;
+   }
+   .backg{
+     background: rgb(250,234,156) none repeat scroll 0% 0%;
+        padding: 20px;
+   }
+   .padding{
+        padding-bottom: 10px;
+   }
+   .land a{
+      font-size: 20px;
+    font-weight: bold;
+    color: rgb(123,87,0);
+    background: #fff;
+    padding: 5px 60px;
+   }
+   .register a{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(123,87,0);
+    background: #fff;
+    padding: 5px 50px;
+   }
+   .onimage-content-right{
+    position: absolute;
+    bottom: 0;
+    background: rgba(245, 212, 55, 0.41) none repeat scroll 0% 0%;
+    width: 100%;
+    text-align: center;
+   }
+   .onimage-content-right span{
+    color: #fff;
+   }
+   .imagebox1{
+    position: relative;
+   }
+   /*选择区*/
+   .choice ul li{
+     display: inline-block;
+     padding: 0px 25px;
+     margin: 3px;
+   }
+   .choice{
+    border-bottom: 1px dashed rgb(245,212,55);
+    width: 100%;
+    padding-top: 15px;
+
+   }
+   .choice-down1{
+    width: 70%;
+    margin: 0 auto;
+   }
+   .choice-down1 p{
+    display: inline-block;
+    float: left;
+    line-height: 30px;
+   }
+   .choice-down1 ul{
+    display: inline-block;
+    width: 90%;
+    line-height: 30px;
+   }
+   .choice-down1 ul ul{
+    width: 88%;
+   }
+   .choice-down1 ul ul li{
+  
+   }
+   .choice-down2 ul ul{
+    width: 88%;
+   }
+   .choice-down2 ul ul li{
+    padding: 0 10px;
+   }
+.choice-down2{
+    width: 70%;
+    margin: 0 auto;
+   }
+.choice-down2 p{
+    display: inline-block;
+    float: left;
+    line-height: 30px;
+   }
+.choice-down2 ul{
+    display: inline-block;
+    width: 90%;
+    line-height: 30px;
+   }
+   .choice-down3 ul ul{
+    width: 100%;
+   }
+.choice-down3{
+    width: 70%;
+    margin: 0 auto;
+   }
+.choice-down3 p{
+    display: inline-block;
+    line-height: 30px;
+    margin: 0;
+    width: 14%;
+   }
+.choice-down3 ul{
+    display: inline-block;
+    width: 85%;
+    line-height: 30px;
+   }
+   .pingd {
+    display: block;
+   }
+   .one-a{
+    border: 1px solid rgb(245,212,55);
+    padding: 0px 20px;
+    color: rgb(123,87,0);
+   }
+   .choice-button{
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+   }
+   .choice-button a{
+    padding: 10px 30px;
+    background: rgb(245,212,55) none repeat scroll 0% 0%;
+    line-height: 35px;
+    color: rgb(123,87,0);
+   }
+   .no-choice{
+    border: none;
+   }
+   .section2{
+    margin-bottom: 45px;
+   }
+   
+   .choice-down3 ul li a{
+    text-decoration: none;
+   }
+   .choice-button a{
+    text-decoration: none;
+   }
+   .register a{
+    text-decoration: none;
+   }
+   .land a{
+    text-decoration: none;
+   }
+   /**/
+   ul li a.land-a{
+    padding: 0 3px;
+    background: rgb(245,212,55);
+   }
+
+   /*start*/
+   .onimage-content ul li:nth-child(2) i{
+    font-size:20px;
+   }
+ .imagebox1 p{
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(123,87,0);
+ }
+ .gray-bar li a{
+  color: rgb(123,87,0);
+ }
+ .gray-bar li a:hover{
+  text-decoration: none;
+ }
+.choice .choice-down2 ul ul li a{
+  border: 1px solid rgb(245,212,55);
+  padding: 0 5px;
+}
+.choice a{
+  color: rgb(123,87,0);
+ 
+} 
+.choice-down1 ul ul li a{
+  padding: 0 9px;
+}
+.choice a:hover{
+  text-decoration: none;
+}
+.choice ul li a:hover{
+  background: rgb(102,80,30);
+  color: #fff;
+}
+.choice ul ul li a:hover{
+background: rgb(245,212,55);
+color: rgb(123,87,0);
+
+}
+
+.h1text b{
+  font-weight: normal;
+font-size: 24px;
+}
+/**/
+.s-j-x .z-f{
+    position: absolute;
+    top: 5px;
+    width: 0px;
+    height: 0px;
+    border-top: 50px solid rgba(245, 212, 55, 0.51);
+    border-right: 50px solid transparent;
+   }
+
+   .s-j-x .z-f:before {
+      content: "真房";
+      position: absolute;
+      top: -45px;
+      width: 30px;
+      font-size: 12px;
+      color: #fff;
+   }
+   .s-j-x .d-s{
+    position: absolute;
+    top: 5px;
+    width: 0px;
+    height: 0px;
+    border-top: 50px solid rgba(64,104,130, 1);
+    border-right: 50px solid transparent;
+   }
+
+   .s-j-x .d-s:before {
+      content: "待审";
+      position: absolute;
+      top: -45px;
+      width: 30px;
+      font-size: 12px;
+      color: #fff;
+   }
+   .s-j-x .y-z{
+    position: absolute;
+    top: 5px;
+    width: 0px;
+    height: 0px;
+    border-top: 50px solid rgba(227,167,144, 1);
+    border-right: 50px solid transparent;
+   }
+
+   .s-j-x .y-z:before {
+      content: "已租";
+      position: absolute;
+      top: -45px;
+      width: 30px;
+      font-size: 12px;
+      color: #fff;
+   }
+   /**/
+   .gray-bar .gray-bar-ul a{
+    color: rgb(123,87,0);
+     padding: 0 5px;
+   }
+   .gray-bar .gray-bar-ul a:hover{
+    text-decoration: none;
+    background: rgb(245,212,55);
+    padding: 0 5px;
+   }
+
+   .backg p {
+    text-align: center;
+    font-size: 17px;
+    color: #7B5700;
+    font-weight: bold;
+   }
+
+   .filter-select li {
+    border:1px solid #F5D437;
+    color: #7B5700;
+   }
+
+   .filter-select li:hover {
+    background: #F5D437;
+    color: #7B5700;
+   }
+
+   .filter-select li {
+    cursor: pointer;
+  }
+
+  .filter-select li.active {
+    background-color: #F5D437;;
+  }
+
+  .search-padding {
+    padding: 60px;
+  }
+
+  .container.search-se {
+    background:#eee;
+  }
+  /*分页*/
+  .jingge {
+    text-align: center;
+  }
+
+  .jingge li{
+      display: inline-block;
+      padding: 0 5px;
+  }
+
+  .jingge li a {
+    color: rgb(127,87,0);
+  }

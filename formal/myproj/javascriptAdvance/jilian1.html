@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript" src="jquery-2.1.1.js"></script>
+<script type="text/javascript">
+	var data = [
+			{
+				'title':1,
+				'child1': 2,
+				'chidadio': 2
+			},
+			{
+				'title': 1,
+				'child1': 2,
+				'chidadio': 2
+			},
+			{
+				'title': 1,
+				'child1': 2,
+				'chidadio': 2
+			}
+	]
+	for (var i=0;i<data.length;i++) {
+		$.each(data[i],function(key, value) {
+			console.log(key,value)
+			if (key == 0) {
+				console.log(key, value)
+			}
+		})
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.hide {
+			display: none;
+		}
+	</style>
+	<meta charset="utf-8">
+</head>
+<body>
+first： dynamic table
+<div id="xx"></div>
+<div id="xxx">
+	 
+</div>
+
+<div>
+	
+</div>
+<div style="display:none;" id="table-tpl">
+	<table>
+		<thead>
+			<tr>
+				<th class="#thclass#">#content#</th>
+				<th class="#thclass#">#content#</th>
+				<th class="#thclass#">#content#</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>#content#</td>
+				<td>#content#</td>
+				<td>#content#</td>
+			</tr>
+			<tr>
+				<td>#content#</td>
+			</tr>
+			<tr>
+				<td>#content#</td>
+			</tr> 
+		</tbody>
+	</table>
+</div>
+<script type="text/javascript" src="jquery-2.1.1.js"></script>
+
+<script type="">
+	var data2 = [
+		{
+			'中国 ': 2
+		},
+		{
+			'sfsd': 2
+		},
+		{
+			'333sdf': 2
+		}
+	]
+	var data = [
+		{
+			'中国' :[
+				{'id': 1},
+				{'id': 1},
+				{'id': 1}
+			]
+		},
+		{
+			'china33' :[
+				{'id': 1},
+				{'id': 1},
+				{'id': 1}
+			]
+		},
+		{
+			'china1' :[
+				{'id': 1},
+				{'id': 1},
+				{'id': 1}
+			]
+		}
+	]
+
+	function append (data) {
+		var select = '<select>'
+
+		for(var i=0;i<data.length;i++) {
+			$.each(data[i],function(key, value) {
+				select += '<option value='+ value +'> ' + key + '</option> ';
+			})
+		}
+		select += '</select>';
+		return select;
+	}
+	var select = append(data2);
+	$parent = $(select);
+	$('body').append($parent)
+	$parent.on('change', function() {
+		var parent = $(this).find('option:selected').text().trim();
+
+		for(var i=0;i<data.length;i++) {
+			// console.log(data[i]);
+			$.each(data[i], function(key, value){
+				if (key.toString() == parent.toString()) {
+					var str = append(value);
+					$('body').append(str)
+				}
+			})
+		}
+	})
+	$('body').append($parent)
+	console.log(select)
+</script>
+<script type="text/javascript">
+	var jilian = [
+		{
+			'liduanjie': 1,
+			"child": [
+				{
+					'sdfsdf': 12,
+					'fisidfoo': 23
+				}
+			]
+		},
+		{
+			'liduanjie': 1,
+			"child": [
+				{
+					'sdfsdf': 12,
+					'fisidfoo': 23
+				}
+			]
+		},
+	]
+
+	for (var i=0;i<jilian.lenght;i++ ) {
+		alert()
+		console.log(jilian[i])
+	}
+console.log(jilian);
+	// var Dyn = function() {
+	// 	this.tempEl;
+	// 	this.once1 = true;
+	// 	this.$table;
+	// 	this.table = {
+	// 		body: '',
+	// 		header: ''
+	// 	}
+	// 	this.reformData = {
+	// 		title: [],
+	// 		content: []
+	// 	}
+	// 	this.data = [
+	// 	{
+	// 		"title": "something",
+	// 		"age": "22",
+	// 		"date":"1",
+	// 		// "relate": {
+	// 		// 	'like': 'sfsio',
+	// 		// 	'like	': 'sfsio',
+	// 		// 	'like': 'sfsio',
+	// 		// }
+	// 	},
+	// 	{
+	// 		"title": "anoweewther",
+	// 		"age": "10",
+	// 		"date":"2",
+	// 		// "sdsf": 'sdfisod'
+	// 	},
+	// 	{
+	// 		"title": "ananother",
+	// 		"age": "2dfsf2",
+	// 		"date":"3"
+	// 	},
+	// 	{
+	// 		"title": "ananowewewether",
+	// 		"age": "2w2",
+	// 		"date":"4"
+	// 	},
+	// 	{
+	// 		"title": "ananother",
+	// 		"age": "22",
+	// 		"date":"5"
+	// 	}
+	// ]
+	// }
+
+	// Dyn.prototype = {
+	// 	init: function() {
+	// 		var data = this.transformData()
+	// 		this.$table = $(this.getTable());
+	// 			console.log(this.$table)
+	// 		var sort = this.getSort();
+	// 		$sort = $(sort);
+	// 		this.sort(this.$table);
+	// 		function listen () {
+	// 			$('tbody').find('.sort > span').on('click', function() {
+	// 				alert()
+	// 			})
+	// 		}
+	// 		$sort.find("li").on('click', function() {
+	// 		 		var sort = $(this).data('sort');
+	// 		 		var $el = $('.'+sort);
+	// 		 		if($el.hasClass('hide')) {
+	// 		 			$el.removeClass('hide');
+	// 		 		} else {
+	// 		 			$el.addClass('hide')
+	// 		 		}
+	// 		})
+	// 		$('#xx').append(this.$table);
+	// 		$('#xxx').append($sort)
+	// 		listen()
+	// 	},
+	// 	sort: function($table) {
+	// 		var _self = this;
+	// 		function bindEl(success) {
+	// 			$span = $(this).hide();
+	// 			var old_index = $span.html();
+	// 			var input = $(this).parent().find('input').show();
+	// 			var len = _self.reformData.title.length;
+	// 			input.on('change', function() {
+	// 				$(this).hide();
+	// 				var reg = /\d/;
+	// 				if (reg.exec($(this).val()) && $(this).val() <= len && $(this).val() > 0) {
+	// 					$span.html($(this).val()).show();
+	// 					var $el = $(_self.resort(old_index, $(this).val()));
+	// 					_self.tempEl = $el;
+	// 					var $tempEl = $(_self.tempEl);
+	// 					$('#xx').find('tbody').empty().append($tempEl);
+	// 				} else {
+	// 					$span.show();
+	// 					return;
+	// 				}
+	// 			})
+	// 		}
+
+	// 		$table.find('.sort > span').on('click',function() {
+	// 			var xx = bindEl.call(this);
+	// 		})
+
+	// 		console.log($('tbody').find('.sort > span'))
+			
+	// 	},
+	// 	resort: function(current, target) {
+	// 		var _self = this;
+	// 		var current = current - 1;
+	// 		var target = target - 1;
+	// 		var $content = _self.$table.find('tbody >tr');
+	// 		var arr = [];
+	// 		$.each($content, function(i) {
+	// 			if (i == current) {
+	// 				arr[i] = $content[target];
+	// 				$(arr[i]).find('span').html(i)
+	// 			} else if (i == target) {
+	// 				arr[i] = $content[current];
+	// 				$(arr[i]).find('span').html(i)
+	// 			} else {
+	// 				arr[i]= $content[i];
+	// 			}
+	// 		}) 
+	// 		return arr;
+
+	// 	},
+	// 	getSort: function() {
+	// 		var _self = this;
+	// 		var sort = "";
+	// 		sort += "<ul>";
+	// 		for(var i in _self.reformData.title) {
+	// 			sort += "<li data-sort=" + _self.reformData.title[i] + ">" + _self.reformData.title[i] + "</li>"
+	// 		}
+	// 		sort += "</ul>";
+	// 		return sort;
+	// 	},
+	// 	transformData: function() {
+	// 		var _self = this;
+	// 		for (i in _self.data) {
+	// 			// get header
+	// 			if (i == 0) {
+	// 				for (j in _self.data[0]) {
+	// 					if (j == 'sdsf') {
+	// 						return;
+	// 					}
+	// 					_self.reformData.title.push(j);
+	// 				}
+	// 			}
+	// 			_self.reformData.content[i] = [];
+	// 			for (var h in _self.data[i]) {
+	// 				if (_self.data[i] == 'sdsf') {
+	// 					break;
+	// 				}
+	// 				_self.reformData.content[i].push(_self.data[i][h])
+	// 				// console.log(data[i][h])
+	// 				// console.log([].push(data[i][h]));
+	// 			}
+	// 		}
+	// 		return _self.data;
+	// 	},
+	// 	getTable: function() {
+	// 		var _self = this;
+	// 		var title = [];
+	// 		var content = [];
+	// 		var thead = "";
+	// 		thead += "<thead><tr>";
+	// 		var sort_index = null;
+	// 		for (var i in _self.reformData.title) {
+	// 			thead += "<th class=" + _self.reformData.title[i] + ">" + _self.reformData.title[i] + "<th>";
+	// 			if (_self.reformData.title[i] == 'date') {
+	// 				sort_index = i;
+	// 			}
+	// 		}
+	// 		thead +="</tr></thead>";
+
+	// 		var tbody = "";
+	// 		tbody += "<tbody>"
+	// 		for(var i in _self.reformData.content) {
+
+	// 			tbody += "<tr>"
+	// 			for (var j in _self.reformData.content[i]) {
+	// 				if (j == sort_index) {
+	// 					console.log(i)
+	// 					tbody += "<td class=' " + 'sort ' + _self.reformData.title[j] + "'><span>" + _self.reformData.content[i][j] + "</span><input type='text' style='display:none;'></td>";
+
+	// 				} else {
+	// 					tbody += "<td class="+ _self.reformData.title[j] +">" + _self.reformData.content[i][j] + "</td>";
+	// 				}
+	// 			}
+	// 			tbody += "</tr>";
+	// 		}
+	// 		tbody +="</tbody>";
+
+	// 		var table = "<table>" + thead + tbody + "</table>";
+	// 		console.log(table)
+	// 		return table;
+	// 	},
+	// 	append: function(id, table) {
+	// 		document.getElementById(id).innerHTML = table;
+
+	// 	}
+	// }
+
+	// var something = new Dyn();
+	// something.init()
+	
+	
+
+
+	
+</script>
+数据格式转换
+实现jquery
+实现angular的repeat
+swipe：手势
+兼容性
+second: selector
+</body>
+</html>

@@ -1,0 +1,10 @@
+@font-face {
+font-family: 'klxiyuan411484';
+src: url('klxiyuan.eot');
+src: url('klxiyuan.eot?#iefix') format('embedded-opentype'),
+     url('klxiyuan.woff') format('woff'),
+     url('klxiyuan.ttf') format('truetype'),
+     url('klxiyuan.svg#klxiyuan') format('svg');
+    font-weight: normal;
+    font-style: normal;
+   }

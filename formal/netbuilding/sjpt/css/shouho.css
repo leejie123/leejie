@@ -1,0 +1,233 @@
+.sh_wd_warp li {
+    padding: 12px 0px;
+    border-bottom: 1px solid #DDD;
+}
+.anli li img {
+    width: 196px;
+    height: 153px;
+    border-radius: 3px;
+}
+.sh_tsfw_wrap li {
+    width: 160px;
+    margin: 0px 10px 10px 0px;
+    float: left;
+    height: 115px;
+    text-align: center;
+}
+.sh_tsfw_wrap li a {
+    height: 95px;
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+.sh_tsfw_wrap li i {
+    background: transparent url("../images/shouhou_icon.png") no-repeat scroll 0px -60px;
+    width: 60px;
+    display: block;
+    height: 63px;
+    margin: 0px auto;
+}
+.clear{
+	clear: both;
+}
+.service {
+    height: 64px;
+    background: #FFF none repeat scroll 0% 0%;
+    margin: 10px 0px 0px;
+    border: 1px solid #E6E6E6;
+}
+.service a {
+    display: block;
+    width: 72px;
+    border-right: 1px solid #EEE;
+    height: 64px;
+    float: left;
+    text-align: center;
+    background: #F9F9F9 none repeat scroll 0% 0%;
+}
+.service a i {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 5px auto;
+}
+.service a span {
+    color: #999;
+    font-size: 12px;
+}
+.service a i.mdcx {
+    background-position: -120px -16px;
+}
+.sh_sub_wrap h2 .right {
+    font-size: 14px;
+}
+.right {
+    float: right;
+}
+.p10 {
+    padding: 10px;
+}
+.sh_cjwt_wrap li {
+    width: 280px;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    padding: 0px 10px;
+}
+/*a {
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+}*/
+.sh_fri_list img {
+    float: left;
+    padding: 2px;
+    border: 1px solid #DEDEDE;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.sh_fri_list h3 {
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    padding-top: 5px;
+    border: 0px none;
+    font-weight: 700;
+    color: #39F;
+}
+.sh_fri_list h3 a {
+    color: #39F;
+}
+.sh_fri_list p {
+    line-height: 18px;
+    color: #81A6D7;
+    text-indent: 24px;
+}
+
+
+.sh_nav {
+    width: 205px;
+}
+.shadow {
+    box-shadow: 0px 0px 10px #DDD;
+}
+.left {
+    float: left;
+}
+.sh_all_menu_h3 {
+    background: #32A5E9 none repeat scroll 0% 0%;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: bold;
+    height: 39px;
+    line-height: 40px;
+    padding-left: 15px;
+    width: 205px;
+}
+.sh_all_menu {
+    border: 1px solid #32A5E9;
+}
+.sh_all_menu dt > a {
+    padding: 0px 20px;
+    display: block;
+}
+.sh_all_menu dt, .sh_all_menu dt > a {
+    height: 28px;
+    line-height: 28px;
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+}
+.sh_all_menu dl, dt, h2,  ul {
+    margin: 0px;
+    padding: 0px;
+}
+.sh_all_menu dt > a span {
+    float: left;
+}
+.sh_all_menu dt > a i {
+    opacity: 0;
+    font-weight: 700;
+    float: right;
+}
+.sh_sub_wrap {
+    border: 1px solid #DDD;
+    margin-top: 10px;
+    background: #FFF none repeat scroll 0% 0%;
+
+}
+.sh_sub_wrap a{
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;    
+}
+.sh_sub_wrap h2 {
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 10px;
+    color: #39F;
+    border-bottom: 1px solid #DDD;
+    overflow: hidden;
+}
+.sh_wd_warp {
+    padding: 10px;
+}
+.scrollVertical {
+    overflow: hidden;
+    margin-bottom: 10px;
+    position: relative;
+}
+.anli li {
+    height: 155px;
+    position: relative;
+}
+.sh_wd_warp li {
+    padding: 12px 0px;
+    border-bottom: 1px solid #DDD;
+}
+.anli li img {
+    max-width: 100%;
+    height: 153px;
+    border-radius: 3px;
+}
+.side_box {
+    width: 220px;
+    background: #FFF none repeat scroll 0% 0%;
+    height: 480px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.sh_tsfw_wrap li i.icon_wxsq {
+    background-position: 0px 0px;
+}
+.sh_tsfw_wrap li i.icon_zbcx {
+    background-position: -60px 0px;
+}
+.sh_tsfw_wrap li i.icon_jdcx {
+    background-position: -120px 0px;
+}
+.sh_tsfw_wrap li i.icon_hhcx {
+    background-position: -180px 0px;
+}
+.sh_tsfw_wrap li i.icon_wxfw {
+    background-position: -240px 0px;
+}
+.sh_tsfw_wrap li i.icon_wxbj {
+    background-position: -300px 0px;
+}
+.sh_tsfw_wrap li i.icon_shzx {
+    background-position: -360px 0px;
+}
+.sh_tsfw_wrap li i.icon_jhcx {
+    background-position: -420px 0px;
+}
+.sh_tsfw_wrap li i.icon_psfw {
+    background-position: -480px 0px;
+}
+.sh_tsfw_wrap li i.icon_sjfw {
+    background-position: -540px 0px;
+}

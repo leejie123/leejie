@@ -1,0 +1,108 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.shuangdanpromote li {
+    float: left;
+    width: 276px;
+    height: 350px;
+    border: 1px solid #FFF;
+    list-style: outside none none;
+    margin-left: 7px;
+    margin-top: 5px;
+    text-align: center;
+    background: #FFF none repeat scroll 0% 0%;
+    padding: 7px;
+}
+.shuangdanpromote li a {
+    display: block;
+    text-decoration: none;
+    position: relative;
+}
+.shuangdanpromote li p {
+    font-size: 16px;
+    margin: 0px;
+    font-family: "Microsoft YaHei";
+}
+.shuangdanpromote li b {
+    color: #F33;
+    font-size: 20px;
+}
+.shuangdanpromote li span {
+    text-decoration: line-through;
+    color: #CCC;
+    font-size: 14px !important;
+}
+.shuangdanpromote li p {
+    font-size: 16px;
+    margin: 0px;
+    font-family: "Microsoft YaHei";
+}
+.clear {
+    clear: both;
+}
+.bfd_title_hp {
+    margin: 15px 11px 0px 13px;
+    font-size: 16px;
+    height: 30px;
+    font-weight: bold;
+    padding-top: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E5E5E5 #E5E5E5 #DDD;
+    background-color: #FFF;
+}
+}
+.bfd_img_logo_hp {
+    width: 15px;
+    height: 15px;
+    text-align: right;
+}
+
+.bfd_message_hp {
+    height: 392px;
+    clear: both;
+    margin-top: -10px;
+    margin-left: 5px;
+}
+.bfd_message_hp ul {
+    height: 392px;
+    font-family: "微软雅黑";
+    margin-top: 21px;
+    margin-left: -2px;
+}
+.bfd_li_hp {
+    margin-left: 11px;
+}
+.bfd_message_hp ul li {
+    float: left;
+    width: 270px;
+    height: 386px;
+    background-color: #FFF;
+}
+.bfd_img_hp {
+    margin-top: 15px;
+    width: 260px;
+    height: 268px;
+    margin-left: 9px;
+}
+.bfd_prc_hp {
+    color: #F33;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+    font-family: 微软雅黑;
+}
+.bfd_name_hp {
+    width: 262px;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #444;
+    font-family: "微软雅黑";
+    height: 48px;
+    line-height: 24px;
+    margin-left: 10px;
+}

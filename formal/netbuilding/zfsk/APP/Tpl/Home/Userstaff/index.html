@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>租赁专家</title>
+    <include file="Public:head" />
+     <link rel="stylesheet" href="__PUBLIC__/css/staff.css">
+</head>
+<body>
+<include file="Public:header" />
+<include file="Public:carousel" />
+
+<!-- 为你推荐 -->
+<section>
+    <div class="container">
+        <div class="row row-one">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <form class="form-inline" action="{:U('Userstaff/staffLookup')}" method="post" enctype="multipart/form-data"> 
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="租赁专家姓名" name="truename">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                      </span>
+                  </div>
+                </form>
+           </div>
+         <!--   <div class="col-md-3">
+                    <div class="btn-group">
+                           <button type="button" class="btn btn-default infule">按房源</button>
+                           <button type="button" class="btn btn-default dropdown-toggle" 
+                              data-toggle="dropdown">
+                              <span class="caret"></span>
+                           </button>
+                           <ul class="dropdown-menu clickto" role="menu">
+                              <li><a data-cateid="1">天河区</a></li>
+                              <li><a data-cateid="2">海珠区</a></li>
+                              <li><a data-cateid="3">越秀区</a></li>
+                            </ul>
+                    </div>
+           </div> -->
+         <!--   <div class="col-md-3 mgn">
+                    <div class="btn-group">
+                           <button type="button" class="btn btn-default infule1">按评论</button>
+                           <button type="button" class="btn btn-default dropdown-toggle" 
+                              data-toggle="dropdown">
+                              <span class="caret"></span>
+                           </button>
+                           <ul class="dropdown-menu clickto1" role="menu">
+                              <li><a  data-cateid="1">好评量</a></li>
+                              <li><a  data-cateid="2">评价量</a></li>
+                           </ul>
+                    </div>
+           </div> -->
+        </div><!-- /row -->
+        <div class="a-d-p"><h3>为你推荐</h3><div class="clear"></div></div>
+        <!-- 图片 -->
+           <div class="row">
+             <volist name="staff" id="vo">
+                  <div class="col-md-4 mbtm35">
+                      <div class="content-one-1">
+                            <ul>
+                                <li><div class="content-one-1-1" style="background:url('__PUBLIC__/upload/image/real/{$vo.staff.0.top_image}');background-size:cover;background-position:center;height:70px;width:70px;"></div></li>
+                                <li>
+                                     <div class="content-one-1-2 suojin">
+                                          <ul>
+                                              <li class="zi">{$vo.staff.0.truename}</li>
+                                              <li class="num">{$vo.staff.0.phone}</li>
+                                              <li class="poe"><i class="fa fa-phone-square"></i></li>
+                                              <div class="clear"></div>
+                                          </ul>
+                                          <p>手头房源：租房（{$vo.unitQuantity}）</p>
+                                          <div class="xiaoqu text-limit">熟悉小区：<volist name="vo['property_id']" id="id">{$id.district_name}、</volist></div>
+                                     </div>
+                                </li>
+                                <div class="clear"></div>
+                            </ul>
+                            <button class="complain">投诉</button>
+                            <div class="complainbox">
+                                <form method="post" action="{:U('Userstaff/advice')}">
+                                  <input type="hidden" name="cid" value="{$vo.staff.0.id}">
+                                  <textarea name="content" cols="45" rows="5"></textarea>
+                                  <button class="btn-twop">确定</button>
+                                  <button class="btn-twop" type="reset">取消</button>
+                                </form>                              
+                            </div>  
+                      </div>
+                      <div class="content-one-2">
+                          <ul>
+                               <li><a href="{:U('Userstaff/detail',array('id' => $vo['staff'][0]['id']))}"><i class="fa fa-user"></i>了解我</a></li>
+                               <li><a href="{:U('Userstaff/detail',array('id' => $vo['staff'][0]['id']))}"><i class="fa fa-map-marker"></i>看房源</a></li>
+                               <li class="li-2w"><a href="{:U('Userstaff/detail',array('id' => $vo['staff'][0]['id']))}"><i class="fa fa-star"></i>评价</a></li>
+                               <div class="clear"></div>
+                          </ul>
+                      </div>
+                  </div>
+              </volist>  
+           </div><!-- /row -->
+           <div class="page-to">{$Page}</div>
+           <div class="a-d-p"><h3>推荐房源</h3><p><a href="{:U('Real/rental')}">更多</a></p><div class="clear"></div></div>
+           <div class="row row-two">
+                <div class="a-d-r">
+                    <volist name="recommend" id="recommend">
+                       <div class="col-md-2">
+                          <div class="padding">
+                              <div class="imagebox1">
+                                <a href="{:U('Real/real_neiye', array('id' => $recommend['id']))}"><div class="s-j-x" style="background:url('__PUBLIC__/upload/image/real/{$recommend.real_images.0.image_url}');background-size:cover;background-position:center;height:125px;"><div class="z-f"></div></div></a>
+                                 <div class="onimage-content-right">
+                                              <span> {$recommend.property.place_name|mb_substr=0,12,'utf-8'} {$recommend.area}m<sup>2</sup></span>
+                                 </div> 
+                              </div>
+                            </div>
+                       </div>
+                    </volist>
+                     <div class="clear"></div>
+                </div>
+           </div>
+            <div class="a-d-p"><h3>人气小区楼盘</h3><p><a href="{:U('Real/district_zhujiang')}">更多</a></p><div class="clear"></div></div>
+            <div class="row">
+                <volist name="popularity" id="popularity">
+                  <div class="col-md-4">
+                      <div class="imagebox">
+                           <a href="{:U('Real/real_neiye', array('id' => $popularity['id']))}"><div class="s-j-x1" style="background:url('__PUBLIC__/upload/image/real/{$popularity.real_images.0.image_url}');background-size:cover;background-position:center;height:188px;"><div class="sjx"></div></div></a>
+                            <div class="onimage-content">
+                               <ul>
+                                    <li>
+                                       <p>
+                                          <span><i class="fa fa-map-marker"></i>{$popularity.property.district_name}<span>{$popularity.area}m<sup>2</sup></span></span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                      <p><img src="__PUBLIC__/image/a2015-3.png"><br><span class="e3">{$popularity.real_number}房</span></p>
+                                      <p><img src="__PUBLIC__/image/a2015-1.png"><br><span class="e3">{$popularity.hall_number}厅</span></p>
+                                      <p><img src="__PUBLIC__/image/a2015-2.png"><br><span class="e3">{$popularity.toilet_number}卫</span></p>
+                                      <p><img src="__PUBLIC__/image/a2015-4.png"><br><span class="e3">{$popularity.balcony}阳</span></p>
+                                      <div style="clear:both"></div>
+                                    </li>
+                                    <li class="li-div">
+                                       <div class="li-div-sum"><a href="{:U('Real/real_neiye', array('id' => $popularity['id']))}">{$popularity.price}元</a></div>
+                                    </li>
+                              </ul>
+                            </div> 
+                        </div>
+                  </div>
+                </volist>
+            </div>
+    </div><!-- /container -->
+</section>
+
+
+
+   <!-- 页脚 -->
+<include file="Public:footer2" />
+<include file="Public:footer" />
+<include file="Public:script" />
+<include dile="Public:rental_script" />         
+</body>
+</html> 

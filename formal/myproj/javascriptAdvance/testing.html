@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this is class testing</title>
+	<meta charset="utf-8">
+	<style type="text/css">	
+	.can-header > ul{
+		border-bottom: 1px solid #ddd;
+	}
+	ul {
+		margin: 0px;
+		padding: 0px;
+	}
+	div,li {
+		box-sizing: border-box;	
+	}
+	ul.row {
+		list-style: none;
+		width:210px;
+
+	}
+	ul.row:after{
+		display:table;
+		clear:both;
+		content: '';
+
+	}
+	ul.row > li {
+		width:30px;
+		height: 30px;
+		background-color: #eee;
+		float:left;
+		/*border:1px solid #fff;*/
+		text-align: center;
+		line-height: 30px;
+	}
+	ul.row > li:hover {
+		background-color:#fefefe;
+		cursor: pointer;
+	}
+	.carosel {
+
+	}
+	.carosel > div {
+		width:300px;
+		overflow: hidden;
+		height: 300px;	
+	}
+	.carosel > div > div.inner {
+		width: 900px;
+		height: 300px;
+		position: relative;
+		top:0px;
+		left: 0px;
+		transition: left 1s;
+
+	}
+	.carosel > div > div >div {
+		float: left;
+	}
+
+	.control {
+		position: absolute!important;
+		left: 50%!important;
+		bottom: 20px!important;
+		background: green;
+		height: 20px!important;
+		width: 100px;
+	}
+	.control > span {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: #ddd;
+	}
+
+	.control > span:hover {
+		opacity: .7;
+		background-color: #fff;
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+<div>
+<div class="xx"></div>
+<div class="xx"></div>
+<div class="xx"></div>
+	<div class="carosel">
+		<div style="position:relative;">
+			<div id="wrap" class="inner">
+				<div style="width:300px;height:300px;" id="1">
+					<img src="test.png" style="width:100%">
+				</div>
+				<div style="width:300px;height:300px;" id="2">
+					<img src="test2.png" style="width:100%">
+				</div>
+				<div style="width:300px;height:300px;">
+					<img src="test.png" style="width:100%" id="3">
+				</div>
+				<div style="width:300px;height:300px;" id="2">
+					<img src="test2.png" style="width:100%">
+				</div>
+			</div>
+			<div class="control" id='control'>
+				<span data-index="1"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<div class="can-toolbar" style="width:210px;">
+		<div style="width:30px;height:30px;text-align:center;border:1px solid #fefefe;line-height:30px;background:#eee;float:left;"><</div>
+		<div style="margin-right:30px;margin-left:30px;display:inline-block;text-align:center;">fsdofsjdfi</div>
+		<div style="float:right;width:30px;height:30px;text-align:center;border:1px solid #fefefe;line-height:30px;background:#eee;" id="next">></div>
+		<div style="clear:both"></div>
+	</div>
+	<div class="can-header">
+		<ul class="row">
+			<li>一</li>
+			<li>一</li>
+			<li>一</li>
+			<li>一</li>
+			<li>一</li>
+			<li>一</li>
+			<li>一</li>
+		</ul>
+	</div>
+	<div class="can-body"> 
+		<div>
+			<ul class="row">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li>4</li>
+				<li>5</li>
+				<li>5</li>
+				<li>5</li>
+				<li>5</li>
+				<li>5</li>
+				<li>5</li>
+				<li>5</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+console.log('sfi')
+	function wrap1() {
+		var Event1 = function() {
+			this.data = {
+
+			}
+		}
+		Event1.prototype = {
+			adapter: function(event, func) {
+				if (window.attachEvent) {
+					window.addEventListener(event, func)
+				} else if (window.addEventListener) {
+					window.addEventListener(event, func)
+				}
+			},
+			click: function(func) {
+				var _self = this;
+				_self.adapter('click', func)
+			}
+		}
+		var google = function() {
+			this.date;
+			this.age;
+			this.name;
+		}
+		google.prototype = {
+			init: function(params) {
+				this.name = params.name;
+				this.age = params.age;
+				this.date = params.date;
+			},
+			print:function() {
+				console.log(this.date, this.age, this.name);
+				return 0;
+			}
+		}
+		return {
+			event: Event1,
+			google: google
+		};
+	} 
+
+	var xx = wrap1();
+	var xy = new xx.google();
+	xy.init({
+		name: 'liduanjie',
+		date: new Date(),
+		age: 'fdiweoiwoe',
+	})
+	xy.print()
+
+	var car = (function() {
+			var Hello = function() {
+				this.container = document.getElementById('wrap');
+				this.index = document.getElementById('control').childNodes;
+				this.num = '';
+			}
+			Hello.prototype = {
+					// el: {
+					// 	container:document.getElementById('wrap'),
+					// },
+					test: function() {
+						console.log(this.index);
+					},
+					init: function() {
+						var _self = this;
+						this.next()
+					},
+					next: function() {
+						var _self = this;
+						var left = 0;
+						var set = function() {
+							_self.container.style.left = left + 'px';
+							left -= 300;
+							if (left < -900) {
+								left = 0;
+							}
+							console.log(left)
+						}
+						this.xx = 'dsfosid'
+						this.run = setInterval(set, 3000);
+					}, 
+					click: function(el, event) {
+						if(window.attachEvent) {
+							alert('this is ie')
+							el.attachEvent('onclick',event)
+						} else if (window.addEventListener) {
+							el.addEventListener('click',event)
+						}
+					},
+					select: function (index) {
+						var _self = this;
+						var xx = document.getElementById('control');
+						var func1 = function() {
+							clearInterval(_self.run)
+							alert('clear interval')
+						}
+						_self.click(document.getElementById('control').childNodes[1], func1);
+
+						// for (var i=0;i<xx.length;i++) {
+						// 	console.log(xx[i])
+						// }
+					}
+
+			}
+			return Hello;
+		})()
+
+		var carosel = new car();
+		carosel.test();
+		carosel.init();
+		carosel.select();
+	var Hello = function() {
+		this.name = 'liduanjie';
+		this.age = 22;
+		this.showInfo = function() {
+			return 'name' + ':' + this.name + 'age' + ':' + this.age;
+		}
+	}
+
+	var helo = new Hello();
+	function GetEl(name) {
+		if (name.indexOf('#') !== -1 && name.indexOf('#') == 0) {
+			return document.getElementById(name.split('#')[0]);
+		} 
+		if (name.indexOf('.') !== -1 && name.indexOf('.') == 0) {
+			var el = document.getElementsByTagName('div');
+			var returndata = [];
+			for(var i=0;i<el.length;i++) {
+				if (el[i].className == name.split('.')[1]){
+					returndata.push(el[i]);
+				}
+			}
+			console.log(returndata)
+			return returndata;
+		}
+		this.find = function(el,tar) {
+			el.ChildNode.find('')
+		}
+	}
+	var wrap = (function() {
+			console.log(this);
+			function Inner() {
+				console.log(this);
+				this.name = data.name;
+				this.eat = data.age;
+				this.showInfo = function() {
+					return this.name,this.eat;
+				}
+
+				this.set = function(name, age) {
+					data.name = name;
+					data.age = age;
+				}
+			}
+			Inner.prototype = function() {
+
+			}
+			return Inner;
+		})()
+		// var xx = new wrap();
+		// console.log(xx)
+	// var xx = new Hello();
+	// console.log(xx.constructor);
+	// alert(xx.showInfo())
+
+	
+	// testing call and apply
+	var xx = function() {
+		console.log(this)
+		function Hello() {
+			console.log('inner' + this)
+		}
+		console.log(this instanceof Function )
+	}
+
+
+	var obj = new Object();
+	xx()
+
+	// xx.call(obj)
+
+	document.write(new Object().constructor)
+
+	function Hello1 (params) {
+		var data1 = {
+			name: 'liduanjie',
+			age: 22
+		}
+		var xx = {
+			showInfo: function() {
+				console.log(this.data)
+			},
+			data: {
+				name: data1.name,
+				age: data1.age
+			},
+			init: function(params) {
+				this.data.name = params.name;
+				this.data.age =params.age;
+				this.dosomething();
+			},
+			next: function() {
+				alert()
+			},
+			dosomething: function() {
+				var date = new Date();
+
+				var time = {
+					year: date.getYear(),
+					month: date.getMonth(),
+					day: date.getDay(),
+					hour: date.getHours(),
+					minute:date.getMinutes()
+				}
+				console.log(time)
+				console.log(time)
+				var str = '';
+				for (i in time ) {
+					var xx = '<label>' + i + '</label> is:' + '<span>' + time[i] + '</span>' + '<br/>';
+					str += xx;
+				}
+
+				document.write(str)
+			}
+		}
+		return xx;
+	}
+
+		var something  = new Hello1();
+	if (window.addEventListener) {
+		document.getElementById('next').addEventListener('click', function() {
+			alert()
+		})	
+	} else if(window.attachEvent) {
+		document.getElementById('next').attachEvent('onClick', function() {
+			alert()
+		})	
+	}
+	something.next()
+	something.init({
+		name: 'lidafoasiofsdd',
+		age: 1212121
+	})
+	function Child() {
+	}
+	Child.prototype = new Hello1();
+	var xx = new Child();
+	console.log('---------------dfsdf---------------')
+	xx.showInfo()
+
+	function H2(age, name) {
+		this.data = {
+			name: name,
+			age: age
+		}
+		this.showInfo = function() {
+			console.log( 'H2 data: ====');
+			console.log(this.data)
+		}
+	}
+
+	function Child (age, name) {
+		this.$super = H2;
+		this.$super(age, name);
+	}
+
+	Child.prototype = new H2();
+
+	var child = new Child(19, 'lidunanjie');
+	console.log(child);
+	// console.log(child.prototype.constructor)
+	child.showInfo();
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

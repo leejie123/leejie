@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<div>
+	级联选择
+	<select id='select1'>
+		<option>1212</option>
+		<option>1212</option>
+		<option>1212</option>
+	</select>
+	<select id='select2'>
+		<option>1212</option>
+		<option>1212</option>
+		<option>1212</option>
+	</select>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th>name</th>
+			<th>age</th>
+			<th>time</th>
+		</tr>
+	</thead>
+	<tbody >
+		<tr data-id="1" data-sort="1">
+			<td>liduanje</td>
+			<td>22</td>
+			<td class="time"> <span onclick="clickx(this)">xx</span> <input type="" style="display:none;" name=""></td>
+		</tr>
+		<tr data-id="2" data-sort="2">
+			<td>lichianduanje</td>
+			<td>22</td>
+			<td class="time"> <span  onclick="clickx(this)">sdiosdfis</span><input type="" style="display:none;" name=""></td>
+		</tr>
+		<tr data-id="3" data-sort="3">
+			<td>lidua2222222222222222nje</td>
+			<td>22</td>
+			<td class="time"><span onclick="clickx(this)">vsdfsdf</span><input type=""   style="display:none;" name=""></td>
+		</tr>
+		<tr data-id="4" data-sort="4">
+			<td>lidua22444442222222222nje</td>
+			<td>22</td>
+			<td class="time"><span onclick="clickx(this)">vsdfsdf</span><input type=""   style="display:none;" name=""></td>
+		</tr>
+
+<tr data-id="5" data-sort="5">
+			<td>lid55555ua2222222222222222nje</td>
+			<td>22</td>
+			<td class="time"><span onclick="clickx(this)">vsdfsdf</span><input type=""   style="display:none;" name=""></td>
+		</tr>	</tbody>
+</table>
+
+<script type="text/javascript">
+	$.get('http://localhost/projects/javascriptAdvance/jilian.json',function(jilian) {
+		console.log(jilian)
+		for(var i=0;i<jilian.length;i++) {
+			console.log(jilian[i])
+			alert()
+			for( var j in jilian[i].child) {
+				console.log(j)
+			}
+		}
+	});
+	$table = $('table');
+	function getdata(id) {
+		var data;
+		switch(id) {
+			case '1': 
+				data = ['liduanjie', 22, 'soemime']
+				break;
+			case '2': 
+				data = ['lidu232anjie', 22, 'soemime']
+				break;
+			case '3': 
+				data = ['11111', 22, 'soemime']
+				break;
+		}
+		return data;
+	}
+
+	var $span = $table.find('.time > span');
+	// $span.click(function() {
+	// 	clickx($(this));
+	// })
+	function clickx($span) {
+		// $span.each(function() {
+			$($span).on('click', function() {
+				$span = $(this);
+				$input = $(this).next('input');
+				$span.hide();
+				$input.show();
+				$input.change(function() {
+					$this = $(this);
+					var id = $this.closest('tr').data("id");
+					var sort_now = $this.val();
+					alert(sort_now)
+					if(sort_now == id || sort_now == '') {
+						$span.show();
+						$this.hide()
+						return;
+					}
+
+					var $tr = $this.closest('tr');
+					var $target = $('tr[data-sort=' + sort_now + ']');
+					var target_id = $target.data('id');
+					$tr.attr('data-id', target_id);
+					$target.attr('data-id', id);
+					var sort_old = $tr.data('sort');
+					// var now_data = getdata(sort_now);
+					$(this).hide();
+					$span.html($(this).val()).show();
+
+					$html_next = $('tr[data-sort='+ sort_now +']').html();
+					$('tr[data-sort='+ sort_now +']').html($tr.html());
+					$tr.html($html_next);
+					// clickx.call($span)					
+				})
+			})
+		// })
+	}
+</script>
+</body>
+</html>

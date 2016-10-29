@@ -1,0 +1,75 @@
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="__PUBLIC__/Admin/bootstrap/js/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="__PUBLIC__/Admin/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/validator/jquery.validate.js"></script>
+
+<script>
+$(function(){
+  $('#close_im').bind('click',function(){
+    $('#main-im').css("height","0");
+    $('#im_main').hide();
+    $('#open_im').show();
+  });
+  $('#open_im').bind('click',function(e){
+    $('#main-im').css("height","272");
+    $('#im_main').show();
+    $(this).hide();
+  });
+  $('.go-top').bind('click',function(){
+    $(window).scrollTop(0);
+  });
+  $(".weixing-container").bind('mouseenter',function(){
+    $('.weixing-show').show();
+  })
+  $(".weixing-container").bind('mouseleave',function(){        
+    $('.weixing-show').hide();
+  });
+
+  $('.search-type-dropdown > li > a').click(function(){
+      var html = $(this).html();
+      var cateId = $(this).data('cateid');
+      $('.dropdown-text').html(html);
+      $('.search-type').val(cateId);
+  })
+  $(".zaixiankefu").click(function(){
+  $("#im_main").css('display','block');
+  $("#open_im").css('display','none');
+  })
+});  
+
+$('.clickto > li > a').click(function(){
+  var html = $(this).html();
+  var cateId = $(this).data('cateid');
+  $('.infule').html(html); 
+})   
+$('.clickto1 > li > a').click(function(){
+  var html1= $(this).html();
+  var cateId = $(this).data('cateid');
+  $('.infule1').html(html1); 
+}) 
+
+ $(function(){
+    $('.yibai').click(function(){
+      var x=$(this).css('background-image');
+      $('.guankantu').css('background-image',x);
+      $('.yibai').removeClass('biansek')
+      $(this).addClass('biansek')
+    })
+ })
+
+ $(function(){
+    $(".complainbox").css("display","none");
+    $(".complain").click(function(){
+      $(this).next().css("display","block")
+    });
+    $(".btn-twop").click(function(){
+      $(".complainbox").css("display","none")
+    });
+ })
+
+
+
+ 
+
+</script>

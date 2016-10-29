@@ -1,0 +1,467 @@
+/*.dib-wrap {
+    font-size:0;
+    *word-spacing:-1px
+}*/
+.dib-wrap .dib {
+    font-size:12px;
+    letter-spacing:normal;
+    word-spacing:normal;
+    vertical-align:top
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .dib-wrap {
+    letter-spacing:-5px
+}
+}.dib {
+    display:inline-block;
+    display:inline;
+    zoom:1
+}
+
+.kd-popup {
+    position:relative;
+    z-index:100;
+    padding:3px;
+    background:#f2f2f2;
+    border:1px solid #a6a6a6;
+    font-family:tahoma;
+    font-size:12px;
+    -moz-box-shadow:2px 2px 0 #ccc;
+    -webkit-box-shadow:2px 2px 0 #ccc;
+    box-shadow:2px 2px 0 #ccc
+}
+.kd-popup .box {
+    background:#fff;
+    padding:10px 15px 10px 10px;
+    font-size:12px;
+    margin-bottom:0;
+    position:static
+}
+.kd-popup .hd {
+    font-size:12px;
+    font-weight:700;
+    margin:0;
+    color:#404040;
+    line-height:18px;
+    height:auto;
+    border:0;
+    background:0
+}
+.kd-popup .bd {
+    margin-top:2px;
+    line-height:20px;
+    color:#404040;
+    padding:0;
+    border:0;
+    background:0
+}
+
+
+.template {
+    display:none
+}
+.order-table {
+    width:100%;
+    margin-top:20px;
+    *table-layout:fixed
+}
+.order-table select {
+    width:140px;
+    height:24px
+}
+.order-table th {
+    border-left:2px solid #fff;
+    text-align:center;
+    height:24px;
+    line-height:24px
+}
+.order-table th.s-title {
+    width:350px;
+    border-left:0
+}
+.order-table th.s-price {
+    width:148px
+}
+.order-table th.s-amount {
+    width:118px
+}
+.order-table th.s-agio {
+    width:191px
+}
+.order-table th.s-total {
+    width:138px
+}
+.order-table th hr {
+    height:3px;
+    background-color:#B2D1FF;
+    color:#B2D1FF;
+    *display:block
+}
+.order-table tfoot td {
+    text-align:right
+}
+.tb-promotion {
+    margin-bottom:10px
+}
+.order-table tfoot .point-out {
+    padding:10px 0
+}
+.order-table tfoot .point-in {
+    position:relative;
+    padding-bottom:10px
+}
+
+
+.order-table tfoot .point-in .t {
+    font-weight:700
+}
+.order-go {
+    clear:both;
+    text-align:right
+}
+.back {
+    padding-left:16px;
+    background:url(http://a.tbcdn.cn/app/tc/img/back.png) no-repeat 0 3px;
+    position:absolute;
+    right:150px;
+    bottom:-28px;
+    width:60px
+}
+.btn-go {
+    position:absolute;
+    right:-1px;
+    margin-top: 10px;
+}
+
+.order-table .item-c2b-mobile-info .c2b-mobile-info .mobile-attr {
+    width:205px;
+    padding-left:8px;
+    padding-right:5px;
+    border-right:1px solid #EFEFEF;
+    border-bottom:0;
+    vertical-align:top
+}
+
+.order-table .first {
+    height:25px
+}
+.order-table .shop {
+    line-height:30px
+}
+.order-table .shop .seller {
+    margin-left:30px
+}
+.order-table .shop .promo {
+    text-align:right
+}
+.order-table .shop .promo div {
+    height:25px;
+    overflow:hidden
+}
+.order-table .other {
+    background-color:#f2f7ff
+}
+.order-table .other td {
+    border-bottom:1px solid #fff;
+    vertical-align:top
+}
+.order-table .shop-total {
+    background-color:#F2F7FF;
+    text-align:right
+}
+.order-table .shop-total td {
+    text-align:right;
+    padding:5px 0;
+    height:45px;
+    line-height:45px
+}
+.order-table .item td.s-total {
+    text-align:right
+}
+.other-line .title,.other-line .sel,.other-line .fee {
+    text-align:center;
+    line-height:40px
+}
+.other-line .title {
+    width:120px;
+    text-align:right;
+    position:relative;
+    right:25px
+}
+.input-disabled {
+    background-color:#ccc;
+    cursor:not-allowed
+}
+.other-line .sel {
+    width:194px
+}
+.other-line .fee {
+    width:136px;
+    *width:138px;
+    text-align:right
+}
+.other .price,.order-table .shop-total .price,.cod-tip {
+    margin-right:15px
+}
+.other .sel select {
+    width:140px
+}
+.icon img {
+    vertical-align:middle
+}
+
+
+.tm-bubble {
+    position:relative;
+    display:inline-block;
+    padding:1px 2px 2px 4px;
+    line-height:1.5;
+    text-align:left;
+    word-wrap:break-word;
+    background:#fff8d9;
+    border:1px solid #febe8f;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    *display:inline;
+    *zoom:1
+}
+.tm-bubble .title {
+    color:#f60
+}
+
+.payAnother-tip {
+    display:none
+}
+.user-info {
+    width:498px;
+    display: inline-block;
+}
+.user-info .wrap {
+    margin-left:10px;
+    border-right:1px solid #fff
+}
+.extra-info {
+    width:452px;
+    margin-left:186px;
+    display: inline-block
+}
+.extra-info .extra-area {
+    border-top:1px solid #fff
+}
+.extra-info .extra-area .content {
+    width:304px;
+    text-align:left;
+    padding-left:26px;
+    line-height:40px
+}
+.xb a,.xb span {
+    vertical-align:middle
+}
+.order-table .s-title .xb span {
+    margin-right:0
+}
+
+
+
+.order-table .item {
+    background-color:#fafcff
+}
+.order-table .item td {
+    text-align:center;
+    overflow:hidden;
+    padding:5px 0;
+    height:70px
+}
+.order-table .gift {
+    background-color:#fffaf2
+}
+.order-table .item .s-title {
+    text-align:left;
+    padding-left:70px
+}
+.order-table .item .title {
+    display:block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width:280px;
+    word-break:break-all;
+    cursor:pointer
+}
+.order-table .item .s-title .props {
+    color:gray
+}
+.order-table .item .s-title .props span {
+    margin-right:5px
+}
+.order-table .item .s-title .itempic {
+    float:left;
+    margin-left:-60px;
+    border:1px solid #ccc;
+    width:50px;
+    height:50px
+}
+.order-table .item .price {
+    margin-right:15px
+}
+.order-table .item .s-agio select {
+    width:140px
+}
+.icon-3c em {
+    color:#fff;
+    text-indent:-9999px;
+    display:inline-block;
+    *margin-top:5px;
+    overflow:hidden;
+    display:none!important
+}
+.address {
+    margin-bottom:40px
+}
+.address .manage-address {
+    float:right;
+    font-size:12px;
+    font-weight:400
+}
+.address .set-default {
+    margin-left:15px
+}
+.address h3 {
+    border-bottom:2px solid #f1f1f1;
+    margin-bottom:20px
+}
+.address .address-list li {
+    border:1px solid #fff;
+    *zoom:1;
+    line-height:24px;
+    padding-left:75px;
+    position:relative;
+    *padding-top:2px;
+    *padding-bottom:2px;
+    *border:0
+}
+.address .address-list li:hover {
+    background-color:#fffae5
+}
+.address li input,.address li label {
+    vertical-align:middle
+}
+.address li label {
+    }.address li.selected {
+    background-color:#fff5cc;
+    border:1px solid #ffe580
+}
+.address .marker {
+    background:url(http://img04.taobaocdn.com/tps/i4/T1sGyVXmlfXXXXXXXX-14-23.gif) no-repeat transparent;
+    position:absolute;
+    top:6px;
+    _top:1px;
+    left:10px;
+    width:15px;
+    height:25px;
+    display:none
+}
+.address .marker-tip {
+    position:absolute;
+    top:0;
+    left:30px;
+    color:#F50;
+    font-weight:700;
+    display:none;
+    _height:24px;
+    _line-height:24px
+}
+.address .modify {
+    display:none;
+    position:absolute;
+    right:10px
+}
+.address li.selected .marker,.address li.selected .marker-tip,.address li.selected .modify {
+    display:block
+}
+.address .address-bar {
+    margin-top:5px
+}
+.address .new {
+    margin-left:103px;
+    background:url(http://img04.taobaocdn.com/tps/i4/T1M2FrXeJvXXXXXXXX-91-27.png) no-repeat 0 -1px #fff;
+    width:90px;
+    height:25px;
+    display:inline-block;
+    font-size:0;
+    text-indent:-99px;
+    -webkit-text-size-adjust:none;
+    vertical-align:text-top
+}
+
+.address li.selected {
+    margin-bottom:7px;
+    margin-top:5px;
+    -webkit-box-shadow:5px 5px 0 #f3f3f3;
+    -moz-box-shadow:5px 5px 0 #f3f3f3;
+    box-shadow:5px 5px 0 #f3f3f3;
+    line-height:32px
+}
+.address-confirm {
+    position:relative;
+    padding-top:10px
+}
+.address-confirm .kd-popup {
+    float:right;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    border-color:#fca700;
+    right:0;
+    background-color:#ffebcc
+}
+
+.order-table .insure label,.order-table .insure input,.insure .fare-insure .price,.order-table .insure-tip .price {
+    vertical-align:middle
+}
+.order-table .insure-wrap {
+    margin-right:10px
+}
+.order-table .insure-tip .price {
+    margin-right:15px;
+    *margin-right:22px;
+    _margin-right:18px
+}
+.order-table .insure-wrap .price {
+    vertical-align:baseline;
+    margin-right:0
+}
+.insure {
+    text-align:right
+}
+.insure .msg {
+    margin-right:15px;
+    margin-top:5px
+}
+.gbook {
+    text-align:left;
+    margin-bottom:5px;
+    margin-top:10px
+}
+.label{
+    float: left;
+    font-size: 12px;
+    color: #000;
+}
+
+html,legend {
+    color:#404040;
+    background:#fff;
+}
+* {
+    margin:0;
+    padding:0;
+}
+li {
+    list-style:none;
+}
+
+
+
+

@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Two menu - Ace Admin</title>
+
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../assets/css/font-awesome.css" />
+		<link rel="stylesheet" href="../assets/css/ace-fonts.css" />
+		<link rel="stylesheet" href="../assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+		<link href="css/public.css" rel="stylesheet" />
+		<script src="../assets/js/ace-extra.js"></script>
+	</head>
+
+	<body class="no-skin">
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default    navbar-collapse">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="#" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+							微营销
+						</small>
+					</a>
+
+					<!-- /section:basics/navbar.layout.brand -->
+
+					<!-- #section:basics/navbar.toggle -->
+					<button class="pull-right navbar-toggle navbar-toggle-img collapsed" type="button" data-toggle="collapse" data-target=".navbar-buttons">
+						<span class="sr-only">Toggle user menu</span>
+
+						<img src="../assets/avatars/user.jpg" alt="Jason's Photo" />
+					</button>
+
+					<!-- /section:basics/navbar.toggle -->
+				</div>
+
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right  collapse navbar-collapse" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="transparent">
+							<div class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<div class="tabbable">
+									<ul class="nav nav-tabs">
+										<li class="active">
+											<a data-toggle="tab" href="#navbar-tasks">
+												Tasks
+												<span class="badge badge-danger">4</span>
+											</a>
+										</li>
+
+										<li>
+											<a data-toggle="tab" href="#navbar-messages">
+												Messages
+												<span class="badge badge-danger">5</span>
+											</a>
+										</li>
+									</ul><!-- .nav-tabs -->
+
+									<div class="tab-content">
+										<div id="navbar-tasks" class="tab-pane in active">
+											<ul class="dropdown-menu-right dropdown-navbar dropdown-menu">
+												<li class="dropdown-content">
+													<ul class="dropdown-menu dropdown-navbar">
+														<li>
+															<a href="#">
+																<div class="clearfix">
+																	<span class="pull-left">Software Update</span>
+																	<span class="pull-right">65%</span>
+																</div>
+
+																<div class="progress progress-mini">
+																	<div style="width:65%" class="progress-bar"></div>
+																</div>
+															</a>
+														</li>
+
+														<li>
+															<a href="#">
+																<div class="clearfix">
+																	<span class="pull-left">Hardware Upgrade</span>
+																	<span class="pull-right">35%</span>
+																</div>
+
+																<div class="progress progress-mini">
+																	<div style="width:35%" class="progress-bar progress-bar-danger"></div>
+																</div>
+															</a>
+														</li>
+
+														<li>
+															<a href="#">
+																<div class="clearfix">
+																	<span class="pull-left">Unit Testing</span>
+																	<span class="pull-right">15%</span>
+																</div>
+
+																<div class="progress progress-mini">
+																	<div style="width:15%" class="progress-bar progress-bar-warning"></div>
+																</div>
+															</a>
+														</li>
+
+														<li>
+															<a href="#">
+																<div class="clearfix">
+																	<span class="pull-left">Bug Fixes</span>
+																	<span class="pull-right">90%</span>
+																</div>
+
+																<div class="progress progress-mini progress-striped active">
+																	<div style="width:90%" class="progress-bar progress-bar-success"></div>
+																</div>
+															</a>
+														</li>
+													</ul>
+												</li>
+
+												<li class="dropdown-footer">
+													<a href="#">
+														See tasks with details
+														<i class="ace-icon fa fa-arrow-right"></i>
+													</a>
+												</li>
+											</ul>
+										</div><!-- /.tab-pane -->
+
+										<div id="navbar-messages" class="tab-pane">
+											<ul class="dropdown-menu-right dropdown-navbar dropdown-menu">
+												<li class="dropdown-content">
+													<ul class="dropdown-menu dropdown-navbar">
+														<li>
+															<a href="#">
+																<img src="../assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+																<span class="msg-body">
+																	<span class="msg-title">
+																		<span class="blue">Alex:</span>
+																		Ciao sociis natoque penatibus et auctor ...
+																	</span>
+
+																	<span class="msg-time">
+																		<i class="ace-icon fa fa-clock-o"></i>
+																		<span>a moment ago</span>
+																	</span>
+																</span>
+															</a>
+														</li>
+
+														<li>
+															<a href="#">
+																<img src="../assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+																<span class="msg-body">
+																	<span class="msg-title">
+																		<span class="blue">Susan:</span>
+																		Vestibulum id ligula porta felis euismod ...
+																	</span>
+
+																	<span class="msg-time">
+																		<i class="ace-icon fa fa-clock-o"></i>
+																		<span>20 minutes ago</span>
+																	</span>
+																</span>
+															</a>
+														</li>
+
+														<li>
+															<a href="#">
+																<img src="../assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+																<span class="msg-body">
+																	<span class="msg-title">
+																		<span class="blue">Bob:</span>
+																		Nullam quis risus eget urna mollis ornare ...
+																	</span>
+
+																	<span class="msg-time">
+																		<i class="ace-icon fa fa-clock-o"></i>
+																		<span>3:15 pm</span>
+																	</span>
+																</span>
+															</a>
+														</li>
+
+														<li>
+															<a href="#">
+																<img src="../assets/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+																<span class="msg-body">
+																	<span class="msg-title">
+																		<span class="blue">Kate:</span>
+																		Ciao sociis natoque eget urna mollis ornare ...
+																	</span>
+
+																	<span class="msg-time">
+																		<i class="ace-icon fa fa-clock-o"></i>
+																		<span>1:33 pm</span>
+																	</span>
+																</span>
+															</a>
+														</li>
+
+														<li>
+															<a href="#">
+																<img src="../assets/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+																<span class="msg-body">
+																	<span class="msg-title">
+																		<span class="blue">Fred:</span>
+																		Vestibulum id penatibus et auctor  ...
+																	</span>
+
+																	<span class="msg-time">
+																		<i class="ace-icon fa fa-clock-o"></i>
+																		<span>10:09 am</span>
+																	</span>
+																</span>
+															</a>
+														</li>
+													</ul>
+												</li>
+
+												<li class="dropdown-footer">
+													<a href="inbox.html">
+														See all messages
+														<i class="ace-icon fa fa-arrow-right"></i>
+													</a>
+												</li>
+											</ul>
+										</div><!-- /.tab-pane -->
+									</div><!-- /.tab-content -->
+								</div><!-- /.tabbable -->
+							</div><!-- /.dropdown-menu -->
+						</li>
+
+						<!-- #section:basics/navbar.user_menu -->
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="../assets/avatars/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									<small>Welcome,</small>
+									Jason
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-cog"></i>
+										Settings
+									</a>
+								</li>
+
+								<li>
+									<a href="profile.html">
+										<i class="ace-icon fa fa-user"></i>
+										Profile
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- /section:basics/navbar.user_menu -->
+					</ul>
+				</div>
+
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<!-- #section:basics/sidebar -->
+			<div id="sidebar" class="sidebar                  responsive">
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+					</div>
+				</div><!-- /.sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text">基础设置</span>
+							<i class="arrow fa fa-angle-down"></i>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+								<a href="wsq_bk.html">
+									<i class="menu-icon fa fa-caret-left"></i>
+									分销规则设置
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="wsq_ht.html">
+									<i class="menu-icon fa fa-caret-left"></i>
+									成为最低代理设置
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="wsq_tz.html">
+									<i class="menu-icon fa fa-caret-left"></i>
+									成为V客设置
+								</a>
+								<b class="arrow"></b>
+							</li><li class="">
+								<a href="wsq_tz.html">
+									<i class="menu-icon fa fa-caret-left"></i>
+									个人钱包设置
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="wsq_tz.html">
+									<i class="menu-icon fa fa-caret-left"></i>
+									消息模板设置
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="wsq_tz.html">
+									<i class="menu-icon fa fa-caret-left"></i>
+									网点分布设置
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="wsq_tz.html">
+									<i class="menu-icon fa fa-caret-left"></i>
+									名片生成设置
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-money"></i>
+							<span class="menu-text">佣金设置</span>
+							<i class="arrow fa fa-angle-down"></i>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-left"></i>
+									粉丝佣金
+								</a>
+							</li>
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-left"></i>
+									粉丝提现
+								</a>
+							</li>
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-left"></i>
+									代理佣金
+								</a>
+							</li>
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-left"></i>
+									代理商提现
+								</a>
+							</li>
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-left"></i>
+									订单佣金审核
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="" class="dropdown-toggle">
+							<i class="menu-icon fa fa-users"></i>
+							<span class="menu-text">用户管理</span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+								<a href="">
+									粉丝管理
+									<i class="menu-icon fa fa-caret-left"></i>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="">
+									代理商管理
+									<i class="menu-icon fa fa-caret-left"></i>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="">
+									代理商分组
+									<i class="menu-icon fa fa-caret-left"></i>
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="" class="dropdown-toggle">
+							<i class="menu-icon fa fa-level-up"></i>
+							<span class="menu-text">升级管理</span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+								<a href="">
+									代理商升级
+									<i class="menu-icon fa fa-caret-left"></i>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="">
+									粉丝升级
+									<i class="menu-icon fa fa-caret-left"></i>
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+				</ul><!-- /.nav-list -->
+
+				<!-- #section:basics/sidebar.layout.minimize -->
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+
+				<!-- /section:basics/sidebar.layout.minimize -->
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+			</div>
+
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="page-content">
+						<!-- #section:settings.box -->
+						<div class="ace-settings-container" id="ace-settings-container">
+							<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+								<i class="ace-icon fa fa-cog bigger-130"></i>
+							</div>
+
+							<div class="ace-settings-box clearfix" id="ace-settings-box">
+								<div class="pull-left width-50">
+									<!-- #section:settings.skins -->
+									<div class="ace-settings-item">
+										<div class="pull-left">
+											<select id="skin-colorpicker" class="hide">
+												<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+												<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+												<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+												<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+											</select>
+										</div>
+										<span>&nbsp; Choose Skin</span>
+									</div>
+
+									<!-- /section:settings.skins -->
+
+									<!-- #section:settings.navbar -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+										<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+									</div>
+
+									<!-- /section:settings.navbar -->
+
+									<!-- #section:settings.sidebar -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+										<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+									</div>
+
+									<!-- /section:settings.sidebar -->
+
+									<!-- #section:settings.breadcrumbs -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+										<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+									</div>
+
+									<!-- /section:settings.breadcrumbs -->
+
+									<!-- #section:settings.rtl -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+										<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+									</div>
+
+									<!-- /section:settings.rtl -->
+
+									<!-- #section:settings.container -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+										<label class="lbl" for="ace-settings-add-container">
+											Inside
+											<b>.container</b>
+										</label>
+									</div>
+
+									<!-- /section:settings.container -->
+								</div><!-- /.pull-left -->
+
+								<div class="pull-left width-50">
+									<!-- #section:basics/sidebar.options -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
+										<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
+										<label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
+										<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+									</div>
+
+									<!-- /section:basics/sidebar.options -->
+								</div><!-- /.pull-left -->
+							</div><!-- /.ace-settings-box -->
+						</div><!-- /.ace-settings-container -->
+						<div class="main-content" id="bkgl" style="display: block;">
+							<div class="main-content-inner">
+								<div class="page-header">
+									<ul class="breadcrumb">
+										<li>
+											<i class="ace-icon fa fa-home home-icon"></i>
+												<a href="#">云分销</a>
+										</li>
+										<li class="active">规则设置</li>
+									</ul><!-- /.breadcrumb -->
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-md-10 col-md-offset-1" id="bksh">
+									<table id="simple-table" class="table table-striped table-bordered table-hover" style="table-layout: fixed;">
+										<tr>
+											<td class="col-md-3 col-xs-3">返佣操作</td>
+											<td>
+												<input name="form-field-radio1" type="radio" />
+												<span>自动完成返佣</span>
+												<input name="form-field-radio1" type="radio" checked />
+												<span> 手动审核返佣</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">是否启用</td>
+											<td>
+												<input name="form-field-radio2" type="radio" />
+												<span>不启用</span>
+												<input name="form-field-radio2" type="radio"  checked />
+												<span> 启用</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">分销模式</td>
+											<td>
+												<input name="form-field-radio3" type="radio" />
+												<span>粉丝分销</span>
+												<input name="form-field-radio3" type="radio" />
+												<span> 代理分销</span>
+												<input name="form-field-radio3" type="radio" />
+												<span> 整合模式</span>
+												<input name="form-field-radio3" type="radio" checked  />
+												<span> 归属模式（<span class="red">新</span>）</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">返佣形式</td>
+											<td>
+												<input name="form-field-radio4" type="radio" />
+												<span>现金</span>
+												<input name="form-field-radio4" type="radio" />
+												<span> 积分</span>
+												<input name="form-field-radio4" type="radio" />
+												<span> 代理商积分&粉丝积分</span>
+												<input name="form-field-radio4" type="radio"  checked />
+												<span> 红包（<span class="red">新</span>）</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">关注送积分或佣金</td>
+											<td>
+												<input name="form-field-radio5_1" type="radio"  checked />
+												<span>不启用</span>
+												<input name="form-field-radio5_1" type="radio" />
+												<span> 启用</span>
+												<br />
+												<input name="form-field-radio5_2" type="radio" />
+												<span> 佣金</span>
+												<input name="form-field-radio5_2" type="radio"  checked />
+												<span> 积分</span>
+												<span>赠送值</span>
+												<input type="text" class="input-small" value="10.00">
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">适合商品</td>
+											<td>
+												<input name="form-field-radio6" type="radio"  checked />
+												<span>所有商品</span>
+												<input name="form-field-radio6" type="radio" />
+												<span> 指定商品 (指定商品需在发布商品时设置)</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">计算方式</td>
+											<td>
+												<input name="form-field-radio" type="radio" checked/>
+												<span>成交价*返现比例</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">团队拓展规则</td>
+											<td>
+												<input type="checkbox" />
+												<span>允许发展下级代理</span><br />
+												<input name="form-field-radio7" type="radio" checked/>
+												<span>所有代理商使用统一规则</span><br />
+												<span>由厂家统一设置代理商级别、渠道佣金及升级条件等规则，下级代理商不可单独设置。
+													<br /> 代理商有等级区分，每个等级的代理商在发展下级时的权限不一样，只能按等级向下发展。</span>
+											</td>
+										</tr>
+										<tr>
+											<td rowspan="4" class="col-md-3">代理商返佣规则设置</td>
+											<td>
+												<button type="button" class="btn btn-white btn-xs" id="addOne">添加一个</button>
+												<span>更改代理商等级设置将会对已有代理商造成影响，请谨慎操作</span><br />
+												<div class="col-md-8" style="margin-top: 5px;">
+													<table class="table table-striped table-bordered table-hover" id="fygz" style="table-layout: fixed;">
+														<thead>
+															<th>等级</th>
+															<th>名称</th>
+															<th>返佣比例</th>
+															<th>达到省级条件</th>
+															<th>操作</th>
+														</thead>
+														<tbody>
+															<td>
+																<input type="text" class="input-small" value="1">
+															</td>
+															<td>
+																<input type="text" class="input-small" value="一级代理">
+															</td>
+															<td>
+																<input type="text" class="input-small" value="1">%
+															</td>
+															<td>
+																<input type="text" class="input-small" value="30000">元
+															</td>
+															<td>
+																<a href="#">删除</a>
+															</td>
+														</tbody>
+														<tbody>
+															<td>
+																<input type="text" class="input-small" value="2">
+															</td>
+															<td>
+																<input type="text" class="input-small" value="二级代理">
+															</td>
+															<td>
+																<input type="text" class="input-small" value="1">%
+															</td>
+															<td>
+																<input type="text" class="input-small" value="20000">元
+															</td>
+															<td>
+																<a href="#">删除</a>
+															</td>
+														</tbody>
+														<tbody>
+															<td>
+																<input type="text" class="input-small" value="3">
+															</td>
+															<td>
+																<input type="text" class="input-small" value="三级代理">
+															</td>
+															<td>
+																<input type="text" class="input-small" value="2">%
+															</td>
+															<td>
+																<input type="text" class="input-small" value="10000">元
+															</td>
+															<td>
+																<a href="#">删除</a>
+															</td>
+														</tbody>
+													</table>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" checked>
+												<span>启用代理商自动升级</span><br />
+												<span style="word-break: break-all;">当代理商其下的购物金额总和累计（含代理商本人、其下级代理商以及下属粉丝用户）达到代理商的自动升级金额时，
+													<br />自动将其升级为相应等级的代理商。 当代理商向上升级导致脱离原体系时，按以下方式给予原上级代理商相应引荐佣金：
+												</span>
+												<div>
+													<input type="radio" name="form-field-radio-8" checked /> 一次性引荐佣金 
+													<input type="text" class="input-small" value="1000"> 元
+												<!--<br />-->
+												</div>
+												<div style="margin-top: 5px;">
+													<input type="radio" name="form-field-radio-8" /> 永久性引荐佣金
+													<input type="text" class="input-small" value="1"> % (以团队购物金额为准)
+												</div>
+												<br />
+												代理商自动升级为代理商是否需要经过厂家审核：<input type="radio" name="shenhe" checked />需要 <input type="radio" name="shenhe" />不需要
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" checked>
+												<span>启用粉丝自动升级 </span><br />
+												<span style="word-break: break-all;">当粉丝用户本人及其直属下级的购物金额总和累计达到代理商的自动升级金额时，自动将其设置为相应等级的代理商。
+													<br /> 当粉丝用户升级为代理商导致脱离原体系时，按以下方式给予原上级粉丝或原上级代理商相应引荐佣金：
+												</span>
+												<div>
+													<input type="radio" name="form-field-radio-8" checked /> 一次性引荐佣金 
+													<input type="text" class="input-small" value="1000"> 元
+												<!--<br />-->
+												</div>
+												<div style="margin-top: 5px;">
+													<input type="radio" name="form-field-radio-8" /> 永久性引荐佣金
+													<input type="text" class="input-small" value="1"> % (以团队购物金额为准)
+												</div>
+												<br />
+												粉丝自动升级为代理商是否需要经过厂家审核：<input type="radio" name="shenhe" checked />需要 <input type="radio" name="shenhe" />不需要
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" checked>
+												<span>启用手动引荐机制(仅向厂家引荐)</span><br />
+												<span style="word-break: break-all;">当厂家手动把某一代理商或粉丝的直属下级粉丝设置为厂家的直属代理商时，
+													按以下方式给予原上级粉丝或代理商相应的引荐佣金：
+												</span>
+												<div>
+													<input type="radio" name="form-field-radio-8" checked /> 一次性引荐奖励 
+													<input type="text" class="input-small" value="0"> 元
+												<!--<br />-->
+												</div>
+												<div style="margin-top: 5px;">
+													<input type="radio" name="form-field-radio-8" /> 永久性引荐奖励
+													<input type="text" class="input-small" value="0"> % (以团队购物金额为准)
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">粉丝分享返佣规则设置</td>
+											<td>
+												<span>返佣对象:</span>
+												<br />
+												<input name="fanyong" type="radio"  checked />
+												<span> 指定层级 :</span>
+												<input type="text" class="input-small" value="4">
+												<span>级 (请输入能够获取现金的级数，可分级设置返现比例,最多支持5000级)</span>
+												<div style="margin-top: 5px;">
+													<span>返现比例总和:</span>
+													<input type="text" class="input-small" value="60">
+													<span>% <input type="radio" name="fxbl" > 粉丝未分完归厂家 <input type="radio" name="fxbl" checked> 粉丝未分完归代理 </span>
+												</div>
+												<div class="col-md-5">
+													<div class="table-header" style="background-color: #F1F1F1;color: #707070;">返现比例</div>
+													<table class="table table-striped table-bordered table-hover" style="table-layout: fixed;">
+														<tr>
+															<td>厂家</td>
+															<td class="center"><i class="fa fa-4x fa-circle" style="color: #62B38A;"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td>分享者</td>
+															<td class="center"><i class="fa fa-3x fa-circle" style="color: #EDCA8A;"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td>分享者</td>
+															<td class="center"><i class="fa fa-3x fa-circle" style="color: #EDCA8A;"></i></td>
+															<td>
+																<input type="text" class="input-small" value="10"> %
+															</td>
+														</tr>
+														<tr>
+															<td>分享者</td>
+															<td class="center"><i class="fa fa-3x fa-circle" style="color: #EDCA8A;"></i></td>
+															<td>
+																<input type="text" class="input-small" value="20"> %
+															</td>
+														</tr>
+														<tr>
+															<td>分享者</td>
+															<td class="center"><i class="fa fa-3x fa-circle" style="color: #EDCA8A;"></i></td>
+															<td>
+																<input type="text" class="input-small" value="30"> %
+															</td>
+														</tr>
+														<tr>
+															<td>购买者</td>
+															<td class="center"><i class="fa fa-4x fa-circle" style="color: #EB7B7B;"></i></td>
+															<td>
+																<input type="text" class="input-small" value="0"> %
+															</td>
+														</tr>
+													</table>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">提现周期</td>
+											<td>
+												<input type="radio" name="txzq" checked />
+												<span>即时提现</span>
+												<input type="radio" name="txzq"  />
+												<span>指定天数:</span>
+												<input type="text" class="input-small" value="30">
+												<span>天 (以订单付款时间为准)</span>
+												<input type="radio" name="txzq">
+												<span>手动审核</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">最低提现金额</td>
+											<td>
+												<input type="text" class="input-small" value="0">
+												<span>元</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">分销佣金提取</td>
+											<td>
+												<input type="radio" name="fxtq" checked  />
+												<span>全部提取</span>
+												<input type="radio" name="fxtq">
+												<span>本人购买金额达到</span>
+												<input type="text" class="input-small">
+												<span>元即可提取</span>
+											</td>
+										</tr>
+										<tr>
+											<td>是否启用退款,退货</td>
+											<td>
+												<input type="radio" name="tkth" checked  />
+												<span>不启用</span>
+												<input type="radio" name="tkth">
+												<span>启用  佣金冻结期(天)</span>
+												<input type="text" class="input-small" value="7">
+												<span>(启用后请关闭佣金自动审核)</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">分享来源显示</td>
+											<td>
+												<input type="radio" name="fxxs" />
+												<span>是</span>
+												<input type="radio" name="fxxs" checked />
+												<span>否</span>
+												<span>(注：粉丝关注后是否还显示)</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">底部技术支持</td>
+											<td>
+												<span>显示信息</span>
+												<input type="text">
+												<span>电话号码</span>
+												<input type="text">
+											</td>
+										</tr>
+										<tr>
+											<td class="col-md-3">是否开启显示上级</td>
+											<td>
+												<input type="radio" name="xssj" checked />
+												<span>不开启</span>
+												<input type="radio" name="xssj">
+												<span>开启</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2" class="center">
+												<button class="btn btn-white">保存</button>
+												<span>(本页面所有操作保存后才生效)</span>
+												<button class="btn btn-white">取消</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="center" colspan="2">
+												<a href="http://www.saic.gov.cn/zcfg/xzfggfxwj/200509/t20050915_45927.html">《禁止传销条例》</a>
+												<a href="http://www.mofcom.gov.cn/aarticle/bh/200511/20051100743941.html">《直销管理条例》</a>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<div class="hidden">
+									<button data-target="#sidebar2" data-toggle="collapse" type="button" class="pull-left navbar-toggle collapsed">
+										<span class="sr-only">Toggle sidebar</span>
+
+										<i class="ace-icon fa fa-dashboard white bigger-125"></i>
+									</button>
+
+									<div id="sidebar2" class="sidebar h-sidebar navbar-collapse collapse">
+										<ul class="nav nav-list">
+											<li class="hover">
+												<a href="#" class="dropdown-toggle">
+													<i class="menu-icon fa fa-list"></i>
+													<span class="menu-text"> 微管家  </span>
+						
+													<b class="arrow fa fa-angle-down"></b>
+												</a>
+						
+												<b class="arrow"></b>
+						
+												<ul class="submenu">
+													<li class="">
+														<a href="tables.html">
+															粉丝管理
+														</a>
+						
+														<b class="arrow"></b>
+													</li>
+						
+													<li class="">
+														<a href="jqgrid.html">
+															收到信息
+														</a>
+						
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="jqgrid.html">
+															推送消息
+														</a>
+						
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="jqgrid.html">
+															菜单管理
+														</a>
+						
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="jqgrid.html">
+															素材管理
+														</a>
+						
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="jqgrid.html">
+															关注回复
+														</a>
+						
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="jqgrid.html">
+															关键字
+														</a>
+						
+														<b class="arrow"></b>
+													</li>
+												</ul>
+											</li>
+											<li class="hover">
+												<a href="#" class="dropdown-toggle">
+													<i class="menu-icon fa fa-pencil-square-o"></i>
+													<span class="menu-text">微官网 </span>
+						
+													<b class="arrow fa fa-angle-down"></b>
+												</a>
+						
+												<b class="arrow"></b>
+						
+												<ul class="submenu">
+													<li class="">
+														<a href="form-elements.html">
+															官网信息
+														</a>
+						
+														<b class="arrow"></b>
+													</li>
+						
+													<li class="">
+														<a href="form-elements-2.html">
+															菜单管理
+														</a>
+						
+														<b class="arrow"></b>
+													</li>
+						
+													<li class="">
+														<a href="form-wizard.html">
+															幻灯片
+														</a>
+						
+														<b class="arrow"></b>
+													</li>
+												</ul>
+											</li>
+											<li class="hover">
+												<a href="#" class="dropdown-toggle">
+													<i class="menu-icon fa fa-list-alt"></i>
+													<span class="menu-text"> 微购物 </span>
+													<b class="arrow fa fa-angle-down"></b>
+												</a>
+						
+												<b class="arrow"></b>
+												<ul class="submenu">
+													<li class="">
+														<a href="">
+															<i class=""></i>
+															商品列表
+														</a>
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="#">
+															<i class=""></i>
+															会员列表
+														</a>
+													</li>
+													<li class="">
+														<a href="#">
+															<i class=""></i>
+															订单列表
+														</a>
+													</li>
+													<li class="">
+														<a href="#">
+															<i class=""></i>
+															商城设置
+														</a>
+													</li>
+													<li class="">
+														<a href="#">
+															<i class=""></i>
+															支付方式
+														</a>
+													</li>
+												</ul>
+											</li>
+											<li class="hover">
+												<a href="wsq_bk.html" class="dropdown-toggle">
+													<i class="menu-icon fa fa-comment"></i>
+													<span class="menu-text">微社区</span>
+													<b class="arrow fa fa-angle-down"></b>
+												</a>
+												<b class="arrow"></b>
+												<ul class="submenu">
+													<li class="">
+														<a href="wsq_bk.html">
+															板块管理
+														</a>
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="wsq_ht.html">
+															话题管理
+														</a>
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="wsq_tz.html">
+															帖子管理
+														</a>
+														<b class="arrow"></b>
+													</li>
+												</ul>
+											</li>
+											<li class="hover">
+												<a href="yfx_gz.html" class="dropdown-toggle">
+													<i class="menu-icon glyphicon glyphicon-list"></i>
+													<span class="menu-text">云分销</span>
+													<b class="arrow fa fa-angle-down"></b>
+												</a>
+												<b class="arrow"></b>
+												<ul class="submenu">
+													<li class="">
+														<a href="yfx_gz.html">
+															分销规则设置
+														</a>
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="yfx_fs.html">
+															粉丝管理
+														</a>
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="yfx_fy.html">
+															粉丝佣金
+														</a>
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="yfx_dy.html">
+															代理佣金
+														</a>
+														<b class="arrow"></b>
+													</li>
+													<li class="">
+														<a href="yfx_dl.html">
+															<span class="menu-text">代理管理</span>
+															<b class="arrow"></b>
+														</a>
+														<b class="arrow"></b>
+													</li>
+												</ul>
+											</li>
+											<li class="">
+												<a href="gl_zh.html">
+													<i class="menu-icon glyphicon glyphicon-user"></i>
+													<span class="menu-text">管理账号</span>
+												</a>
+												<b class="arrow"></b>
+											</li>
+										</ul><!-- /.nav-list -->
+									</div><!-- .sidebar -->
+									
+								</div>
+								
+								<div class="hidden-sm hidden-xs">
+									<button type="button" class="sidebar-collapse btn btn-white btn-primary" data-target="#sidebar2">
+										<i class="ace-icon fa fa-angle-double-up" data-icon1="ace-icon fa fa-angle-double-up" data-icon2="ace-icon fa fa-angle-double-down"></i>
+										简化导航
+									</button>
+								</div>
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<!-- #section:basics/footer -->
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Ace</span>
+							Application &copy; 2013-2014
+						</span>
+
+						&nbsp; &nbsp;
+						<span class="action-buttons">
+							<a href="#">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							</a>
+						</span>
+					</div>
+
+					<!-- /section:basics/footer -->
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='../assets/js/jquery.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='../assets/js/jquery1x.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
+		<script src="../assets/js/bootstrap.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!-- ace scripts -->
+		<script src="../assets/js/ace/elements.scroller.js"></script>
+		<script src="../assets/js/ace/elements.colorpicker.js"></script>
+		<script src="../assets/js/ace/elements.fileinput.js"></script>
+		<script src="../assets/js/ace/elements.typeahead.js"></script>
+		<script src="../assets/js/ace/elements.wysiwyg.js"></script>
+		<script src="../assets/js/ace/elements.spinner.js"></script>
+		<script src="../assets/js/ace/elements.treeview.js"></script>
+		<script src="../assets/js/ace/elements.wizard.js"></script>
+		<script src="../assets/js/ace/elements.aside.js"></script>
+		<script src="../assets/js/ace/ace.js"></script>
+		<script src="../assets/js/ace/ace.ajax-content.js"></script>
+		<script src="../assets/js/ace/ace.touch-drag.js"></script>
+		<script src="../assets/js/ace/ace.sidebar.js"></script>
+		<script src="../assets/js/ace/ace.sidebar-scroll-1.js"></script>
+		<script src="../assets/js/ace/ace.submenu-hover.js"></script>
+		<script src="../assets/js/ace/ace.widget-box.js"></script>
+		<script src="../assets/js/ace/ace.settings.js"></script>
+		<script src="../assets/js/ace/ace.settings-rtl.js"></script>
+		<script src="../assets/js/ace/ace.settings-skin.js"></script>
+		<script src="../assets/js/ace/ace.widget-on-reload.js"></script>
+		<script src="../assets/js/ace/ace.searchbox-autocomplete.js"></script>
+		<!--自创-->
+		<script src="js/public.js"></script>
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+			jQuery(function($) {
+			   $('#sidebar2').insertBefore('.page-content');
+			   
+			   $('.navbar-toggle[data-target="#sidebar2"]').insertAfter('#menu-toggler');
+			   
+			   
+			   $(document).on('settings.ace.two_menu', function(e, event_name, event_val) {
+				 if(event_name == 'sidebar_fixed') {
+					 if( $('#sidebar').hasClass('sidebar-fixed') ) {
+						$('#sidebar2').addClass('sidebar-fixed');
+						$('#navbar').addClass('h-navbar');
+					 }
+					 else {
+						$('#sidebar2').removeClass('sidebar-fixed')
+						$('#navbar').removeClass('h-navbar');
+					 }
+				 }
+			   }).triggerHandler('settings.ace.two_menu', ['sidebar_fixed' ,$('#sidebar').hasClass('sidebar-fixed')]);
+			});
+			jQuery(function($){
+				$("#addOne").click(function(){
+					var li;
+					li = document.createElement('tbody');
+					$("#fygz").append(li);
+					li.innerHTML='<td><input type="text" class="input-small"></td><td><input type="text" class="input-small"></td><td><input type="text" class="input-small">%</td><td><input type="text" class="input-small">元</td><td><a href="#">删除</a></td>';
+				})
+			})
+		</script>
+
+		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
+		<link rel="stylesheet" href="../assets/css/ace.onpage-help.css" />
+		<link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css" />
+
+		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+		<script src="../assets/js/ace/elements.onpage-help.js"></script>
+		<script src="../assets/js/ace/ace.onpage-help.js"></script>
+		<script src="../docs/assets/js/rainbow.js"></script>
+		<script src="../docs/assets/js/language/generic.js"></script>
+		<script src="../docs/assets/js/language/html.js"></script>
+		<script src="../docs/assets/js/language/css.js"></script>
+		<script src="../docs/assets/js/language/javascript.js"></script>
+	</body>
+</html>

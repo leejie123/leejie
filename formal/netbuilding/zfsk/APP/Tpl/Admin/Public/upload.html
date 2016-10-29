@@ -1,0 +1,38 @@
+<script type="text/javascript" src="__STYLE__/js/jquery.js"></script>
+<script type="text/javascript" src="__STYLE__/js/swfupload.js"></script>
+<script type="text/javascript" src="__STYLE__/js/handlers.js"></script>
+<link href="__STYLE__/css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var swfu;
+window.onload = function () {
+swfu = new SWFUpload({
+upload_url: "__PUBLIC__/upload/image/real",
+post_params: {"PHPSESSID": "<?php echo session_id();?>"},
+file_size_limit : "2 MB",
+file_types : "*.jpg;*.png;*.gif;*.bmp",
+file_types_description : "JPG Images",
+file_upload_limit : "10",
+file_queue_error_handler : fileQueueError,
+file_dialog_complete_handler : fileDialogComplete,
+upload_progress_handler : uploadProgress,
+upload_error_handler : uploadError,				//文件上传错误的时候执行的方法
+upload_success_handler : uploadSuccess,			//文件上传成功以后执行的方法
+upload_complete_handler : uploadComplete,   	//文件上传完成以后执行的方法
+button_image_url : "__STYLE__/images/upload.png",
+button_placeholder_id : "spanButtonPlaceholder",
+button_width: 113,
+button_height: 33,
+button_text : '',
+button_text_style : '.spanButtonPlaceholder { font-family: Helvetica, Arial, sans-serif; font-size: 14pt;} ',
+button_text_top_padding: 0,
+button_text_left_padding: 0,
+button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+button_cursor: SWFUpload.CURSOR.HAND,
+flash_url : "__STYLE__/swf/swfupload.swf",
+custom_settings : {
+upload_target : "divFileProgressContainer"
+},
+debug: false
+});
+};
+</script>

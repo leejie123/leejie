@@ -1,0 +1,875 @@
+/** @license MyFonts Webfont Build ID 2903011, 2014-10-16T04:43:46-0400  The fonts listed in this notice are subject to the End User License Agreement(s) entered into by the website owner. All other parties are  explicitly restricted from using the Licensed Webfonts(s).  You may obtain a valid license at the URLs below.  Webfont: SwiftC-Regular by ParaType URL: http://www.myfonts.com/fonts/paratype/swift/regular/ Licensed pageviews: 200,000  Webfont: SwiftC-Bold by ParaType URL: http://www.myfonts.com/fonts/paratype/swift/bold/ Licensed pageviews: 100,000  Webfont: SwiftC-Italic by ParaType URL: http://www.myfonts.com/fonts/paratype/swift/italic/ Licensed pageviews: 150,000   License: http://www.myfonts.com/viewlicense?type=web&buildid=2903011 Webfonts copyright: Copyright (c) Heidelberg (Linotype Library) and/or its subsidiaries and Gerard Unger, 1995. All rights reserved. This recorded material and the data recorded thereon are licensed from and are the property of Heidelberg (Linotype Library) or its licensors   © 2014 MyFonts Inc
+*/
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("http://hello.myfonts.net/count/2c4be3");
+
+@font-face { font-family: 'Swift';
+ font-style: normal;
+ font-weight: 400;
+ src: url("http://hy/magazine/common/font/Swift-Regular.eot");
+ src: url("http://hy/magazine/common/font/Swift-Regular.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Swift-Regular.woff2") format("woff2"), url("http://hy/magazine/common/font/Swift-Regular.woff") format("woff"), url("http://hy/magazine/common/font/Swift-Regular.ttf") format("truetype");
+ }
+@font-face { font-family: 'Swift';
+ font-style: normal;
+ font-weight: 700;
+ src: url("http://hy/magazine/common/font/Swift-Bold.eot");
+ src: url("http://hy/magazine/common/font/Swift-Bold.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Swift-Bold.woff2") format("woff2"), url("http://hy/magazine/common/font/Swift-Bold.woff") format("woff"), url("http://hy/magazine/common/font/Swift-Bold.ttf") format("truetype");
+ }
+@font-face { font-family: 'Swift';
+ font-style: italic;
+ font-weight: 400;
+ src: url("http://hy/magazine/common/font/Swift-Italic.eot");
+ src: url("http://hy/magazine/common/font/Swift-Italic.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Swift-Italic.woff2") format("woff2"), url("http://hy/magazine/common/font/Swift-Italic.woff") format("woff"), url("http://hy/magazine/common/font/Swift-Italic.ttf") format("truetype");
+ }
+
+
+/* ************************************************************
+    hys magazine 0.1v 
+************************************************************ */
+
+
+/* normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* ========================================================================== HTML5 display definitions ========================================================================== */
+/** Correct `block` display not defined in IE 8/9. */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block;
+ }
+
+/** Correct `inline-block` display not defined in IE 8/9. */
+audio, canvas, video { display: inline-block;
+ }
+
+/** Prevent modern browsers from displaying `audio` without controls. Remove excess height in iOS 5 devices. */
+audio:not([controls]) { display: none;
+ height: 0;
+ }
+
+/** Address styling not present in IE 8/9. */
+[hidden] { display: none;
+ }
+
+/* ========================================================================== Base ========================================================================== */
+/** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+html { font-family: sans-serif;
+ /* 1 */ -webkit-text-size-adjust: 100%;
+ /* 2 */ -ms-text-size-adjust: 100%;
+ /* 2 */ }
+
+/** Remove default margin. */
+body { margin: 0;
+ }
+
+/* ========================================================================== Links ========================================================================== */
+/** Address `outline` inconsistency between Chrome and other browsers. */
+a:focus { outline: thin dotted;
+ }
+
+/** Improve readability when focused and also mouse hovered in all browsers. */
+a:active, a:hover { outline: 0;
+ }
+
+/* ========================================================================== Typography ========================================================================== */
+/** Address variable `h1` font-size and margin within `section` and `article` contexts in Firefox 4+, Safari 5, and Chrome. */
+h1 { font-size: 2em;
+ margin: 0.67em 0;
+ }
+
+/** Address styling not present in IE 8/9, Safari 5, and Chrome. */
+abbr[title] { border-bottom: 1px dotted;
+ }
+
+/** Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
+b, strong { font-weight: bold;
+ }
+
+/** Address styling not present in Safari 5 and Chrome. */
+dfn { font-style: italic;
+ }
+
+/** Address differences between Firefox and other browsers. */
+hr { -moz-box-sizing: content-box;
+ box-sizing: content-box;
+ height: 0;
+ }
+
+/** Address styling not present in IE 8/9. */
+mark { background: #ff0;
+ color: #000;
+ }
+
+/** Correct font family set oddly in Safari 5 and Chrome. */
+code, kbd, pre, samp { font-family: monospace, serif;
+ font-size: 1em;
+ }
+
+/** Improve readability of pre-formatted text in all browsers. */
+pre { white-space: pre-wrap;
+ }
+
+/** Set consistent quote types. */
+q { quotes: "\201C" "\201D" "\2018" "\2019";
+ }
+
+/** Address inconsistent and variable font size in all browsers. */
+small { font-size: 80%;
+ }
+
+/** Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+sub, sup { font-size: 75%;
+ line-height: 0;
+ position: relative;
+ vertical-align: baseline;
+ }
+
+sup { top: -0.5em;
+ }
+
+sub { bottom: -0.25em;
+ }
+
+/* ========================================================================== Embedded content ========================================================================== */
+/** Remove border when inside `a` element in IE 8/9. */
+img { border: 0;
+ }
+
+/** Correct overflow displayed oddly in IE 9. */
+svg:not(:root) { overflow: hidden;
+ }
+
+/* ========================================================================== Figures ========================================================================== */
+/** Address margin not present in IE 8/9 and Safari 5. */
+figure { margin: 0;
+ }
+
+/* ========================================================================== Forms ========================================================================== */
+/** Define consistent border, margin, and padding. */
+fieldset { border: 1px solid #c0c0c0;
+ margin: 0 2px;
+ padding: 0.35em 0.625em 0.75em;
+ }
+
+/** 1. Correct `color` not being inherited in IE 8/9. 2. Remove padding so people aren't caught out if they zero out fieldsets. */
+legend { border: 0;
+ /* 1 */ padding: 0;
+ /* 2 */ }
+
+/** 1. Correct font family not being inherited in all browsers. 2. Correct font size not being inherited in all browsers. 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome. */
+button, input, select, textarea { font-family: inherit;
+ /* 1 */ font-size: 100%;
+ /* 2 */ margin: 0;
+ /* 3 */ }
+
+/** Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet. */
+button, input { line-height: normal;
+ }
+
+/** Address inconsistent `text-transform` inheritance for `button` and `select`. All other form control elements do not inherit `text-transform` values. Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+. Correct `select` style inheritance in Firefox 4+ and Opera. */
+button, select { text-transform: none;
+ }
+
+/** 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls. 2. Correct inability to style clickable `input` types in iOS. 3. Improve usability and consistency of cursor style between image-type `input` and others. */
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button;
+ /* 2 */ cursor: pointer;
+ /* 3 */ }
+
+/** Re-set default cursor for disabled elements. */
+button[disabled], html input[disabled] { cursor: default;
+ }
+
+/** 1. Address box sizing set to `content-box` in IE 8/9. 2. Remove excess padding in IE 8/9. */
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box;
+ /* 1 */ padding: 0;
+ /* 2 */ }
+
+/** 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome. 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof). */
+input[type="search"] { -webkit-appearance: textfield;
+ /* 1 */ -moz-box-sizing: content-box;
+ -webkit-box-sizing: content-box;
+ /* 2 */ box-sizing: content-box;
+ }
+
+/** Remove inner padding and search cancel button in Safari 5 and Chrome on OS X. */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none;
+ }
+
+/** Remove inner padding and border in Firefox 4+. */
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0;
+ padding: 0;
+ }
+
+/** 1. Remove default vertical scrollbar in IE 8/9. 2. Improve readability and alignment in all browsers. */
+textarea { overflow: auto;
+ /* 1 */ vertical-align: top;
+ /* 2 */ }
+
+/* ========================================================================== Tables ========================================================================== */
+/** Remove most spacing between table cells. */
+table { border-collapse: collapse;
+ border-spacing: 0;
+ }
+
+/*
+ * Base
+ */
+html { font-size: 16px;
+ line-height: 1.5;
+ font-family: "Swift", "Georgia", serif;
+ text-rendering: optimizeLegibility;
+ -webkit-font-smoothing: antialiased;
+ }
+html[lang="ja"] { font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+ font-size: 14px;
+ line-height: 1.79;
+ }
+
+body { background-color: white;
+ color: black;
+ border-top: 44px solid transparent;
+ }
+
+@media (max-width: 767px) {
+    body {
+        border-top-width: 24px;
+        
+    }
+    [data-mobile-view="true"] body {
+        border-top-width: 0;
+        
+    }
+    [data-mobile-view="true"] #globalheader {
+        position: relative;
+        
+    }
+}
+
+html, body { height: 100%;
+ }
+
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, ol, ul, dl, dd { margin: 0;
+ }
+
+ol, ul { padding: 0;
+ }
+
+li { list-style-type: none;
+ }
+
+a { color: inherit;
+ text-decoration: none;
+ }
+
+abbr[title] { border-bottom-width: 0;
+ }
+
+img { vertical-align: middle;
+ }
+
+table { margin: 0;
+ }
+
+fieldset { border: 0;
+ margin: 0;
+ padding: 0;
+ }
+
+label { cursor: pointer;
+ }
+
+::-moz-selection { background-color: #888888;
+ text-shadow: none;
+ }
+
+::selection { background-color: #888888;
+ text-shadow: none;
+ }
+
+/*
+ * @font-face
+ */
+@font-face { font-family: "Nobel";
+ font-style: normal;
+ font-weight: 300;
+ src: url("http://hy/magazine/common/font/Nobel-Light.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-Light.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-Light.ttf") format("truetype"), url("http://hy/magazine/common/font/Nobel-Light.svg#Nobel-Light") format("svg");
+ }
+
+@font-face { font-family: "Nobel";
+ font-style: normal;
+ font-weight: normal;
+ src: url("http://hy/magazine/common/font/Nobel-Book.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-Book.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-Book.ttf") format("truetype"), url("http://hy/magazine/common/font/Nobel-Book.svg#Nobel-Book") format("svg");
+ }
+
+@font-face { font-family: "Nobel";
+ font-style: normal;
+ font-weight: 500;
+ src: url("http://hy/magazine/common/font/Nobel-Regular.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-Regular.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-Regular.ttf") format("truetype"), url("http://hy/magazine/common/font/Nobel-Regular.svg#Nobel-Regular") format("svg");
+ }
+
+@font-face { font-family: "Nobel";
+ font-style: normal;
+ font-weight: bold;
+ src: url("http://hy/magazine/common/font/Nobel-Bold.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-Bold.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-Bold.ttf") format("truetype"), url("http://hy/magazine/common/font/Nobel-Bold.svg#Nobel-Bold") format("svg");
+ }
+
+/*@font-face { font-family: "Nobel-ExtraLight";
+font-style: normal;
+font-weight: normal;
+src: url("/magazine/common/font/Nobel-ExtraLight.eot?#iefix") format("embedded-opentype"), url("/magazine/common/font/Nobel-ExtraLight.woff") format("woff"), url("/magazine/common/font/Nobel-ExtraLight.ttf") format("truetype");
+}*/
+@font-face { font-family: "Nobel-Light";
+font-style: normal;
+font-weight: normal;
+src: url("http://hy/magazine/common/font/Nobel-Light.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-Light.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-Light.ttf") format("truetype");
+}
+@font-face { font-family: "Nobel-LightItalic";
+font-style: normal;
+font-weight: normal;
+src: url("http://hy/magazine/common/font/Nobel-LightItalic.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-LightItalic.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-LightItalic.ttf") format("truetype");
+}
+@font-face { font-family: "Nobel-Regular";
+font-style: normal;
+font-weight: normal;
+src: url("http://hy/magazine/common/font/Nobel-Regular.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-Regular.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-Regular.ttf") format("truetype");
+}
+@font-face { font-family: "Nobel-RegularItalic";
+font-style: normal;
+font-weight: normal;
+src: url("http://hy/magazine/common/font/Nobel-RegularItalic.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-RegularItalic.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-RegularItalic.ttf") format("truetype");
+}
+@font-face { font-family: "Nobel-Book";
+font-style: normal;
+font-weight: normal;
+src: url("http://hy/magazine/common/font/Nobel-Book.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-Book.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-Book.ttf") format("truetype");
+}
+@font-face { font-family: "Nobel-BookItalic";
+font-style: normal;
+font-weight: normal;
+src: url("http://hy/magazine/common/font/Nobel-BookItalic.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-BookItalic.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-BookItalic.ttf") format("truetype");
+}
+@font-face { font-family: "Nobel-Bold";
+font-style: normal;
+font-weight: normal;
+src: url("http://hy/magazine/common/font/Nobel-Bold.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/Nobel-Bold.woff") format("woff"), url("http://hy/magazine/common/font/Nobel-Bold.ttf") format("truetype");
+}
+@font-face { font-family: "ArrrowsRegular";
+font-style: normal;
+font-weight: normal;
+src: url("http://hy/magazine/common/font/arrrows-regular-webfont.eot?#iefix") format("embedded-opentype"), url("http://hy/magazine/common/font/arrrows-regular-webfont.woff") format("woff"), url("http://hy/magazine/common/font/arrrows-regular-webfont.ttf") format("truetype"), url("http://hy/magazine/common/font/arrrows-regular-webfont.svg#ArrrowsRegular") format("svg");
+}
+/*
+ * Icons
+ */
+.contents-title:after, .contents-nav.expanded .flip-nav-prev, .contents-nav.expanded .flip-nav-next { background-image: url("../../issue1/common/img/sprites%402x.png");
+ background-repeat: no-repeat;
+ background-size: 110px auto;
+ display: inline-block;
+ line-height: 0;
+ vertical-align: top;
+ }
+.no-backgroundsize .contents-title:after, .no-backgroundsize .contents-nav.expanded .flip-nav-prev, .contents-nav.expanded .no-backgroundsize .flip-nav-prev, .no-backgroundsize .contents-nav.expanded .flip-nav-next, .contents-nav.expanded .no-backgroundsize .flip-nav-next { background-image: url("../../issue1/common/img/sprites.png");
+ }
+
+.contents-title:after { background-position: -50px -60px;
+ width: 10px;
+ height: 7px;
+ }
+
+.expanded .contents-title:after { background-position: -60px -60px;
+ width: 10px;
+ height: 7px;
+ }
+
+.contents-nav.expanded .flip-nav-prev { background-position: 0 -70px;
+ width: 39px;
+ height: 195px;
+ }
+
+.contents-nav.expanded .flip-nav-next { background-position: -40px -70px;
+ width: 39px;
+ height: 195px;
+ }
+
+/*
+ * Typography
+ */
+
+.article-title,
+.article-tagline,
+.body-h2,
+.body-h2-sub,
+.body-h3 { font-family: "Nobel", "Avenir Next", "Corbel", sans-serif;
+ }
+
+.article-title,
+.article-tagline,
+.article-lead,
+.body-h2,
+.body-h2-sub,
+.body-h3 { text-transform: uppercase;
+ }
+
+.article-title { font-size: 20px;
+ line-height: 1.2;
+ letter-spacing: 0.15em;
+ font-weight: bold;
+ text-align: center;
+ }
+
+.article-tagline { font-size: 28px;
+ line-height: 1.29;
+ letter-spacing: 0.15em;
+ font-weight: bold;
+ text-align: center;
+ }
+
+.article-lead { font-size: 14px;
+ line-height: 1.72;
+ letter-spacing: 0.08em;
+ text-align: center;
+ }
+html[lang="ja"] .article-lead { font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+ }
+
+.hr-large { display: inline-block;
+ border-top: 2px solid;
+ margin-left: auto;
+ margin-right: auto;
+ width: 30px;
+ }
+.hr-small { display: inline-block;
+ border-top: 1px solid;
+ width: 15px;
+ }
+
+/* One, Element, Five */
+.body-copy { text-align: justify;
+ }
+
+/* Intelligence, Ten */
+.body-copy-small { font-size: 14px;
+ text-align: justify;
+ }
+.body-h2 { font-size: 14px;
+ line-height: 1.29;
+ margin-bottom: 0.22em;
+ letter-spacing: 0.08em;
+ font-weight: bold;
+ }
+.body-h2-sub { font-size: 12px;
+ letter-spacing: 0.09em;
+ font-weight: normal;
+ }
+.body-h3 { font-size: 14px;
+ line-height: 1.29;
+ margin-bottom: 0.22em;
+ letter-spacing: 0.08em;
+ }
+
+
+.contents-nav-item .description { font-size: 14px;
+ line-height: 1.29;
+ }
+html[lang="ja"] .contents-nav-item .description, .contents-nav-item html[lang="ja"] .description { font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+ font-size: 12px;
+ line-height: 1.4;
+ }
+
+.contents-nav-item .title { font-size: 14px;
+ line-height: 1.29;
+ letter-spacing: 0.08em;
+ font-family: "Nobel", "Avenir Next", "Corbel", sans-serif;
+ font-weight: bold;
+ text-transform: uppercase;
+ }
+html[lang="ja"] .contents-nav-item .title, .contents-nav-item html[lang="ja"] .title { font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+ }
+
+.contents-title, .contents-nav-item .overlay-text { font-size: 12px;
+ line-height: 1.5;
+ letter-spacing: 0.09em;
+ font-family: "Nobel", "Avenir Next", "Corbel", sans-serif;
+ text-transform: uppercase;
+ }
+
+[role="main"] { min-width: 1024px;
+ min-height: 650px;
+ /*overflow: hidden;
+ */ position: relative;
+ }
+/*.no-cssanimations [role="main"] { overflow: visible;
+ }*/
+
+/*
+ * Grids
+ */
+.grid-row-5:before, .grid-row-8:before, .grid-row-12:before, .grid-row-5:after, .grid-row-8:after, .grid-row-12:after { content: " ";
+ display: table;
+ }
+.grid-row-5:after, .grid-row-8:after, .grid-row-12:after { clear: both;
+ }
+
+.grid-row-5 [class^="grid-column-"], .grid-row-5 [class*=" grid-column-"], .grid-row-8 [class^="grid-column-"], .grid-row-8 [class*=" grid-column-"], .grid-row-12 [class^="grid-column-"], .grid-row-12 [class*=" grid-column-"] { float: left;
+ }
+
+.grid-row-5 { padding-left: 12px;
+ padding-right: 12px;
+ }
+.grid-row-5 [class^="grid-column-"], .grid-row-5 [class*=" grid-column-"] { margin-left: 10px;
+ margin-right: 10px;
+ }
+.grid-row-5 .grid-column-1 { width: 180px;
+ }
+.grid-row-5 .grid-column-2 { width: 380px;
+ }
+.grid-row-5 .grid-column-3 { width: 580px;
+ }
+.grid-row-5 .grid-column-4 { width: 780px;
+ }
+.grid-row-5 .grid-column-5 { width: 980px;
+ }
+
+.grid-row-8 { padding-left: 12px;
+ padding-right: 12px;
+ }
+.grid-row-8 [class^="grid-column-"], .grid-row-8 [class*=" grid-column-"] { margin-left: 10px;
+ margin-right: 10px;
+ }
+.grid-row-8 .grid-column-1 { width: 105px;
+ }
+.grid-row-8 .grid-column-2 { width: 230px;
+ }
+.grid-row-8 .grid-column-3 { width: 355px;
+ }
+.grid-row-8 .grid-column-4 { width: 480px;
+ }
+.grid-row-8 .grid-column-5 { width: 605px;
+ }
+.grid-row-8 .grid-column-6 { width: 730px;
+ }
+.grid-row-8 .grid-column-7 { width: 855px;
+ }
+.grid-row-8 .grid-column-8 { width: 980px;
+ }
+
+.grid-row-12 { padding-left: 14px;
+ padding-right: 14px;
+ }
+.grid-row-12 [class^="grid-column-"], .grid-row-12 [class*=" grid-column-"] { margin-left: 8px;
+ margin-right: 8px;
+ }
+.grid-row-12 .grid-column-1 { width: 67px;
+ }
+.grid-row-12 .grid-column-2 { width: 150px;
+ }
+.grid-row-12 .grid-column-3 { width: 233px;
+ }
+.grid-row-12 .grid-column-4 { width: 316px;
+ }
+.grid-row-12 .grid-column-5 { width: 399px;
+ }
+.grid-row-12 .grid-column-6 { width: 482px;
+ }
+.grid-row-12 .grid-column-7 { width: 565px;
+ }
+.grid-row-12 .grid-column-8 { width: 648px;
+ }
+.grid-row-12 .grid-column-9 { width: 731px;
+ }
+.grid-row-12 .grid-column-10 { width: 814px;
+ }
+.grid-row-12 .grid-column-11 { width: 897px;
+ }
+.grid-row-12 .grid-column-12 { width: 980px;
+ }
+
+.clearfix { *zoom: 1;
+ }
+.clearfix:before,
+.clearfix:after { display: table;
+ content: "";
+ line-height: 0;
+ }
+.clearfix:after { clear: both;
+ }
+
+/* ************************************************************
+    loading
+************************************************************ */
+
+#loading-wrap { 
+  position: fixed;
+   
+  top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   
+  background-color: #f4f1e9;
+   color: #444444;
+   
+  z-index: 20;
+   
+  -webkit-transition  : opacity 0.5s 0.5s;
+   
+  transition          : opacity 0.5s 0.5s;
+   
+}
+#loading-wrap.done { opacity: 0;
+ }
+
+#loading { background-position: 0 0;
+ background-image: url("../images/loading%402x.png");
+ background-repeat: repeat;
+ background-size: 100px 4300px;
+ font-family: "Nobel", "Avenir Next", "Corbel", sans-serif;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ margin-top: -50px;
+ margin-left: -50px;
+ width: 100px;
+ height: 62px;
+ padding-top: 38px;
+ text-align: center;
+ }
+.no-backgroundsize #loading { background-image: url("../images/loading.png");
+ }
+.at-home #loading { background-image: url(../images/tachometer.png);
+ background-size: auto;
+ width: 170px;
+ height: 170px;
+ padding-top: 0;
+ margin-top: -85px;
+ margin-left: -85px;
+ text-indent: -9999px;
+ overflow: hidden;
+ }
+
+
+/*
+ * Contents Controll Infomation 
+*/
+
+#loading-wrap #operate { 
+    position: absolute;
+    
+    width   : 400px;
+     height  : 400px;
+     
+    left    : 50%;
+     top     : 50%;
+     
+    margin-top: -270px;
+     margin-left: -200px;
+     
+    text-align: center;
+    
+    font-size: 15px;
+    
+    letter-spacing: 0.3em;
+    
+    text-transform: uppercase;
+    
+    font-family: "Nobel", "Avenir Next", "Corbel", sans-serif;
+    
+    cursor: pointer;
+    
+}
+
+#loading-wrap #operate p { 
+    position: relative;
+    
+    margin-top: 90px;
+    
+    display: none;
+    
+}
+
+#operate-summary { 
+    font-weight: bold;
+    
+}
+
+#operate-line { 
+    position: absolute;
+    
+    left: 50%;
+     top: 18px;
+     
+    margin-left: -37px;
+    
+}
+
+
+/* ***************************************************************************************************************************************
+    * alarm-scroll
+*************************************************************************************************************************************** */
+
+#alarm-scroll       { position: fixed;
+ left: 50%;
+ margin-left: -20px;
+  width: 40px;
+ height: 40px;
+ z-index: 1}
+#alarm-scroll-wrap  { position: absolute;
+ left:0;
+ top:0;
+}
+.alarm-direct-up    { top : 60px;
+}
+.alarm-direct-down  { bottom: 60px;
+}
+.scroll-arr-shape   { position: absolute;
+ left:50%;
+ margin-left: -8px;
+  top: 50%;
+ margin-top: -5px;
+}
+
+
+/* ************************************************************
+    Magazine Footer
+************************************************************ */
+#magazine-footer {
+    position: fixed;
+    
+    width: 100%;
+     height: 100%;
+     
+    left: 0;
+     top: 100%;
+     
+    z-index: 10;
+    
+
+    background-image: url(../images-renewal/magazine-footer-bg.png);
+    
+
+    font-family: "Nobel", "Avenir Next", "Corbel", sans-serif;
+    
+    color:#fff;
+    
+    letter-spacing: 0.15em;
+    
+    font-size: 12px;
+    
+}
+
+
+#magazine-footer .magazine-footer-link {
+    position: absolute;
+    
+    width: 100%;
+    
+    height: 175px;
+    
+    background-color: #111;
+    
+    bottom: -175px;
+    
+    text-align: center;
+    
+}
+
+#magazine-footer .magazine-footer-link-back {
+    position: absolute;
+    
+    width: 100%;
+    
+    background: #1f2631;
+    
+    bottom: 0px;
+    
+}
+
+#magazine-footer .magazine-footer-title {
+    position: relative;
+    
+    margin-top: 30px;
+    
+    margin-bottom: 30px;
+    
+    height: 40px;
+    
+    ;
+    
+}
+
+#magazine-footer .magazine-footer-link p {
+    margin-top : 15px;
+    
+}
+
+#magazine-footer .magazine-footer-link-back p{
+    position: relative;
+    
+    color : #eee;
+    
+    text-transform: uppercase;
+    
+    text-align: center;
+    
+    top:100%;
+    
+    margin-top: -30px;
+    
+}
+
+#magazine-footer .magazine-footer-area{
+    position: absolute;
+    
+    width: 100%;
+     height: 100%;
+     
+    cursor: pointer;
+    
+}
+
+#magazine-footer .magazine-footer-back {
+    position: absolute;
+    
+    left: 50%;
+     top:50%;
+     
+    margin-left: -75px;
+     margin-top: -100px;
+     
+    width:150px;
+     height: 44px;
+     
+    white-space: nowrap;
+    
+    text-align: center;
+    
+    cursor: pointer;
+    
+}
+
+#magazine-footer .magazine-footer-back p{
+    margin-top: 15px;
+    
+}
+
+#magazine-footer .magazine-footer-tab {
+    position: absolute;
+    
+    width: 100%;
+     height: 55px;
+     
+    text-align: center;
+    
+    background-color: #000;
+    
+    cursor: pointer;
+    
+    overflow: hidden;
+    
+    top: 0px;
+    
+    /*background-image: url(/magazine/common/images-renewal/magazine-footer-bg.png);
+    */
+}
+
+#magazine-footer .magazine-footer-tab p {
+    margin-top: 12px;
+    
+}
+

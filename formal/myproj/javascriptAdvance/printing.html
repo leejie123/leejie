@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this is printing </title>
+	<meta charset="utf-8">
+</head>
+<body>
+<div id="xx"></div>
+<script type="text/javascript">
+	var Printing = (function(){
+		var Print = function() {
+			this.writing = 'liduanjie this is abeautiful city;';
+			this.string = 'somestr in the world';
+			this.string_result = 'result';
+		};
+		Print.prototype = {
+			init:function() {
+				document.write(this.writing);
+			},
+			// setWord:function(words) {
+			// 	this.writing = words;
+			// },
+			print:function() {
+				var _self = this;
+					// for(var i=0;i<_self.writing.length;i++) {
+					// 	setInterval((function() {
+					// 		document.write(_self.writing[i]);
+					// 	})(i), 3000)
+					// }
+					var count = 0;
+					function type() {
+						if(count<_self.writing.length) {
+							document.getElementById('xx').innerHTML = (_self.writing.substring(0, count));
+							count++;
+						} else {
+							clearInterval(setInterval)
+						}
+					}
+					var setInterval = window.setInterval(type, 200)
+			},
+			matching: function(reg) {
+				var reg = new RegExp(reg);
+				var temp = this.string.match(reg);
+				var arr = temp.splice(',');
+				console.log(arr)
+			},
+			test_replace: function(re, new_str) {
+				var re1 = new RegExp(re);
+				console.log(re1);
+				var temp = this.string.replace(re1, new_str);
+				return temp;
+			},
+			test_split:function(re) {
+				var xx = this.string.split(re);
+				return xx;
+			}
+		}
+		return Print;
+	})()
+	var xx = new Printing();	
+	console.log(xx.test_split(/\s/))
+</script>
+</body>
+</html>

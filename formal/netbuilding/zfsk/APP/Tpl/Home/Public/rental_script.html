@@ -1,0 +1,430 @@
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=9ecca9dc76785ba421921a9e1fd43f04"></script>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $('.button1').click(function(){
+      $('.format1').css('display','block');
+    })
+
+
+    $('.sure').click(function(e){
+      e.preventDefault();
+      var str = "";
+      $('.format1').css('display','none')
+      var num = $(".checkbox input[name=supporting]:checked").length;
+      $(".checkbox input[name=supporting]:checked").each(function(){
+        str  = $(this).parent().find('span').html();
+        $('.button1 > span').html(' 您选择了' + num +'个');
+        $('.receive').html();
+      })
+  })
+    $('.sure1').click(function(e){
+      e.preventDefault();
+       $('.button1 > span').html('配套');
+       $('.format1').css('display','none');
+    })
+  })  // 珠江新城下拉
+
+$('.equipment').click(function(e){
+  e.perventDefault();
+  alert('a');
+})
+
+var cluster, geolocation;
+var markers= [];
+
+var defaultlng = 113.321228;
+var defaultlat = 23.123153;
+var mapContainerId = 'mapContainer';
+var lng = $('#' + mapContainerId).data('lng');
+var lat = $('#' + mapContainerId).data('lat');
+var district_name = $('#' + mapContainerId).data('name');
+var maplng = lng ? lng : defaultlng;
+var maplat = lat ? lat : defaultlat;
+district_name = district_name ? district_name : '';
+//地图初始化&向地图随机加点
+var map = new AMap.Map(mapContainerId,{
+  resizeEnable: true,
+  //二维地图显示视口
+  view: new AMap.View2D({
+    center: new AMap.LngLat(maplng, maplat),
+    zoom:19 
+  })
+  
+});
+
+function init(){
+    // alert(lng);
+  if(lng && lat && district_name){
+      var marker = addMarker(lng, lat, district_name);
+      markers.push(marker);
+      addCluster();
+  }
+}
+
+    init();
+map.setLang('zh_en');
+
+map.plugin('AMap.Geolocation', function () {
+  geolocation = new AMap.Geolocation({
+    enableHighAccuracy: true,//是否使用高精度定位，默认:true
+    timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+    maximumAge: 0,           //定位结果缓存0毫秒，默认：0
+    convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+    showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
+    showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
+    panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
+    zoomToAccuracy:true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+  });
+  map.addControl(geolocation);
+});
+// console.log(AMap.event);
+
+
+  
+  // 随机向地图添加500个标注点
+  var mapBounds = map.getBounds();
+  var sw = mapBounds.getSouthWest();
+  var ne = mapBounds.getNorthEast();
+  var lngSpan = Math.abs(sw.lng - ne.lng);
+  var latSpan = Math.abs(ne.lat - sw.lat);
+
+
+  map.plugin(["AMap.MapType"], function() {
+    var type = new AMap.MapType({defaultType:0});//初始状态使用2D地图
+    map.addControl(type);
+  });
+
+  function createInfoWindow(data){
+    return "<div>" + data.district_name + "</div>";
+  }
+
+  function panTo(lng, lat){
+        map.setZoomAndCenter(19, [lng, lat]);
+        // map.panTo([lng, lat]);
+  };
+
+
+  function clearPropertyList(){
+    map.clearMap();
+    $('.property-list').html('');
+  }
+
+  function addMarker(lng, lat, district_name){
+    var markerPosition = new AMap.LngLat(lng, lat);
+    var marker = new AMap.Marker({
+      //基点位置
+      position:markerPosition, 
+      //marker图标，直接传递地址url
+      icon:"/Public/image/house.png", 
+      //相对于基点的位置
+      offset:{x:-8, y:-34},
+      title  : district_name,
+      clickable: true
+    });
+    // console.log(markerPosition);
+
+    AMap.event.addListener(marker, 'click', function(event){
+      // console.log(event);
+        //实例化信息窗体
+      inforWindow = new AMap.InfoWindow({
+          isCustom:true,
+          content:createInfoWindow(v),
+          size:new AMap.Size(300,300),
+      });
+      inforWindow.open(map, markerPosition);
+    });
+
+    return marker;
+  }
+
+  function addProperty(data){
+
+    var container = $('.property-list');
+
+      // <div class="scr-block">
+      //     <div class="scr-img background-image oneone" style="background-image:url(__PUBLIC__/image/f2.jpg);"></div>
+      //     <div class="wenben-con">
+      //         <div class="wenben-con-1"><span>130</span>万</div>
+      //         <div class="wenben-con-cent"><span>两室一厅</span><span>69m<sup>2</sup></span><span class="no-border">低层/18层</span></div>
+      //         <div class="wenben-con-3"><span>楼盘</span><span>小区</span></div>
+      //     </div>
+      //     <div class="clear"></div>
+      // </div>
+    var propertyImage;
+
+    if(!data.images){
+      propertyImage = 'http://pic14.nipic.com/20110520/7367585_064451937000_2.jpg';
+    }else{
+      propertyImage = '/Public/upload/image/real/' + data.images[0]['property_url'];
+    }
+
+    var wrapper = $('<div></div>').attr('data-lng', data.lng).attr('data-lat', data.lat).attr('data-id', data.id).addClass('properties goto');
+    var propertyImage = $("<div></div>").addClass('scr-img background-image oneone').css('background-image', 'url(' + propertyImage + ')').appendTo(wrapper);
+
+    var propertyContainer = $('<div></div>').addClass('wenben-con');
+    var propertyName = $('<div></div>').addClass('wenben-con-1').html(data.district_name).appendTo(propertyContainer);
+    var propertyDesc = $('<div></div>').addClass('wenben-con-cent').html(data.place_name).appendTo(propertyContainer);
+    var propertyCounts = $('<div></div>').addClass('wenben-con-3').html('共有房源' + data.count + '套').appendTo(propertyContainer);
+
+    var clear = $("<div></div>").addClass('clear');
+    // var name = $('<a></a>').attr('data-lng', data.lng).addClass('goto').attr('data-lat', data.lat).html(data.district_name).appendTo(wrapper);
+
+    var marker = addMarker(data.lng, data.lat, data.district_name);
+console.log(marker);
+    markers.push(marker);
+
+    propertyContainer.appendTo(wrapper);
+
+    clear.appendTo(wrapper);
+
+    container.append(wrapper);
+  }
+  //添加点聚合
+  function addCluster(tag)
+  {
+
+      map.plugin(["AMap.MarkerClusterer"],function(){
+        cluster = new AMap.MarkerClusterer(map,markers);
+console.log(cluster);
+      });
+
+  }
+
+  $(document).on('mouseover', '.goto', function(){
+    var lng = $(this).data('lng'),
+        lat = $(this).data('lat');
+
+    panTo(lng, lat);
+  })
+
+  $(document).on('click', '.goto', function(){
+    var id = $(this).data('id');
+    location.href = '/index.php?s=/Real/xiaoquneiye/id/' + id;
+  })
+
+      //输入提示
+    function autoSearch() {
+        var keywords = document.getElementById("keyword").value;
+        var auto;
+        //加载输入提示插件
+        AMap.service(["AMap.Autocomplete"], function() {
+            var autoOptions = {
+                city: "广州市" //城市，默认全国
+            };
+            auto = new AMap.Autocomplete(autoOptions);
+            //查询成功时返回查询结果
+            if (keywords.length > 0) {
+                auto.search(keywords, function(status, result) {
+                    autocomplete_CallBack(result);
+                });
+            }
+            else {
+                document.getElementById("result1").style.display = "none";
+            }
+        });
+    }
+
+    function keydown(event) {
+        var key = (event || window.event).keyCode;
+        var result = document.getElementById("result1")
+        var cur = result.curSelect;
+        if (key === 40) {
+            if (cur + 1 < result.childNodes.length) {
+                if (result.childNodes[cur]) {
+                    result.childNodes[cur].style.background = '';
+                }
+                result.curSelect = cur + 1;
+                result.childNodes[cur + 1].style.background = '#CAE1FF';
+                document.getElementById("keyword").value = result.tipArr[cur + 1].name;
+            }
+        } else if (key === 38) {
+            if (cur - 1 >= 0) {
+                if (result.childNodes[cur]) {
+                    result.childNodes[cur].style.background = '';
+                }
+                result.curSelect = cur - 1;
+                result.childNodes[cur - 1].style.background = '#CAE1FF';
+                document.getElementById("keyword").value = result.tipArr[cur - 1].name;
+            }
+        } else if (key === 13) {
+            var res = document.getElementById("result1");
+            if (res && res['curSelect'] !== -1) {
+                selectResult(document.getElementById("result1").curSelect);
+            }
+        } else {
+            autoSearch();
+        }
+    }
+
+    //定位选择输入提示关键字
+    function focus_callback() {
+        if (navigator.userAgent.indexOf("MSIE") > 0) {
+            document.getElementById("keyword").onpropertychange = autoSearch;
+        }
+    }
+    document.getElementById("keyword").onkeyup = keydown;
+
+    //输出输入提示结果的回调函数
+    function autocomplete_CallBack(data) {
+        var resultStr = "";
+        var tipArr = data.tips;
+        if (tipArr && tipArr.length > 0) {
+            for (var i = 0; i < tipArr.length; i++) {
+// console.log(tipArr[i]);
+                resultStr += "<div id='divid" + (i + 1) + "' class='poi-select' style=\"font-size: 13px;cursor:pointer;padding:5px 5px 5px 5px;\"" + "data-name=" + tipArr[i].name + " data-adcode='" + tipArr[i].adcode + "''>" + tipArr[i].name + "<span style='color:#C1C1C1;'>" + tipArr[i].district + "</span></div>";
+            }
+        }
+        else {
+            resultStr = " π__π 亲,人家找不到结果!<br />要不试试：<br />1.请确保所有字词拼写正确<br />2.尝试不同的关键字<br />3.尝试更宽泛的关键字";
+        }
+        document.getElementById("result1").curSelect = -1;
+        document.getElementById("result1").tipArr = tipArr;
+        document.getElementById("result1").innerHTML = resultStr;
+        document.getElementById("result1").style.display = "block";
+    }
+
+    $(document).on('click', '.poi-select', function(){
+        if (navigator.userAgent.indexOf("MSIE") > 0) {
+            document.getElementById("keyword").onpropertychange = null;
+            document.getElementById("keyword").onfocus = focus_callback;
+        }
+        document.getElementById("result1").style.display = "none";
+      $name = $(this).data('name');
+      $adcode = $(this).data('adcode');
+
+      $('#keyword').val($name).attr('data-adcode', $adcode);
+    })
+
+    $('.map-search').click(function(){
+      $keyword = $('#keyword').val();
+
+      var options = {
+        city: 440100,
+        type: "商务住宅"
+      }
+
+      map.plugin(["AMap.PlaceSearch"], function(options) {
+          var msearch = new AMap.PlaceSearch();  //构造地点查询类
+          AMap.event.addListener(msearch, "complete", placeSearch_CallBack); //查询成功时的回调函数
+
+          msearch.setCity(440100);
+
+          msearch.search($keyword);  //关键字查询查询
+
+      });
+    })
+
+
+    //输出关键字查询结果的回调函数
+    function placeSearch_CallBack(data) {
+        //清空地图上的InfoWindow和Marker
+        
+        windowsArr = [];
+        marker = [];
+        map.clearMap();
+        var resultStr1 = "";
+        var poiArr = data.poiList.pois;
+        var resultCount = poiArr.length;
+        // console.log(resultCount);
+        for (var i = 0; i < resultCount; i++) {
+            resultStr1 += "<div id='divid" + (i + 1) + "' onmouseover='openMarkerTipById1(" + i + ",this)' onmouseout='onmouseout_MarkerStyle(" + (i + 1) + ",this)' style=\"font-size: 12px;cursor:pointer;padding:0px 0 4px 2px; border-bottom:1px solid #C1FFC1;\"><table><tr><td><img src=\"http://webapi.amap.com/images/" + (i + 1) + ".png\"></td>" + "<td><h3><font color=\"#00a6ac\">名称: " + poiArr[i].name + "</font></h3>";
+            resultStr1 += createContent(poiArr[i].type, poiArr[i].address, poiArr[i].tel) + "</td></tr></table></div>";
+            addmarker(i, poiArr[i]);
+        }
+        map.setFitView();
+        var bounds = map.getBounds();
+        console.log(bounds);
+        getPropertyList(bounds);
+    }
+
+        //添加查询结果的marker&infowindow
+    function addmarker(i, d) {
+        var lngX = d.location.getLng();
+        var latY = d.location.getLat();
+        var markerOption = {
+            map: map,
+            icon:"/Public/image/poi.png",
+            position: [lngX, latY]
+        };
+        var mar = new AMap.Marker(markerOption);
+        marker.push([lngX, latY]);
+
+        var infoWindow = new AMap.InfoWindow({
+            content: "<h3><font color=\"#00a6ac\">  " + (i + 1) + ". " + d.name + "</font></h3>" + createContent(d.type, d.address, d.tel),
+            size: new AMap.Size(300, 0),
+            autoMove: true,
+            offset: new AMap.Pixel(0, -30)
+        });
+        windowsArr.push(infoWindow);
+        var aa = function(e) {
+            infoWindow.open(map, mar.getPosition());
+        };
+        mar.on( "mouseover", aa);
+    }
+
+    function createContent(type, address, tel) {  //窗体内容
+        type=parseStr(type);
+        address=parseStr(address);
+        tel=parseStr(tel);
+        var s=[];
+        s.push("地址：" +address);
+        s.push("电话：" +tel);
+        s.push("类型：" +type);
+        return s.join("<br>");
+    }
+
+        //infowindow显示内容
+    function parseStr(p){
+        if(!p || p == "undefined" || p == " undefined"||p=="tel"){
+            p="暂无";
+        }
+        return p;
+    }
+
+    function getPropertyList(Bounds){
+
+      var data = {
+        neLat: Bounds.northeast.lat, 
+        neLng: Bounds.northeast.lng, 
+        swLat: Bounds.southwest.lat, 
+        swLng: Bounds.southwest.lng
+      };
+
+      $.getJSON('/Property/getPropertiesForLBS.html', data, function(json){
+
+        if(json.status){
+          clearPropertyList();
+          if(json.data){
+            $.each(json.data, function(k,v){
+
+              addProperty(v);
+            })
+            addCluster(0);
+          }else{
+// console.log(json.data);
+            $('.property-list').html('对不起, 暂时没有找到相关结果。')
+          }
+
+        }
+        // console.log(json);
+
+      })
+    }
+
+</script>
+
+<script type="text/javascript">
+$("#result1").css("display","none");
+$('#keyword').keyup(function(){
+  if($('#keyword').val())
+    {
+        $('.form-inline').css('display','none');
+    }
+    else{
+      $('.form-inline').css('display','block');
+    }
+})
+
+  
+</script>

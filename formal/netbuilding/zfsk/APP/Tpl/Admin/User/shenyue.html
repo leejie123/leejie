@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+  <head>
+  <include file="Public:head" />
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"> -->
+  </head>
+  <!--
+  BODY TAG OPTIONS:
+  =================
+  Apply one or more of the following classes to get the
+  desired effect
+  |---------------------------------------------------------|
+  | SKINS         | skin-blue                               |
+  |               | skin-black                              |
+  |               | skin-purple                             |
+  |               | skin-yellow                             |
+  |               | skin-red                                |
+  |               | skin-green                              |
+  |---------------------------------------------------------|
+  |LAYOUT OPTIONS | fixed                                   |
+  |               | layout-boxed                            |
+  |               | layout-top-nav                          |
+  |               | sidebar-collapse                        |
+  |               | sidebar-mini                            |
+  |---------------------------------------------------------|
+  -->
+  <body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+    <!-- head -->
+    <include file="Public:header" />
+    <!-- sidebar -->
+    <include file="Public:sidebar" />
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            更改负责人
+          </h1>
+        </section>
+ <!-- |---------------------------------------------------------| -->
+        <!-- Main content -->
+        <section class="content">
+          
+
+ <!-- |---------------------------------------------------------| -->
+  <form class="form-horizontal"  action="{:U('User/shenyue')}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label class=" control-label" for="button1id"></label>
+           <input value="{$trial.id}" type="hidden" name="id">
+        </div>
+       <fieldset>
+          <table class="table table-striped">
+                <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" >分配租赁专家</label>  
+                <select style="margin: 0px 14px; padding: 4px; font-size: 12px;" name="staff_id" id="staff_id">
+                  <volist name="staff" id="staff">
+                    <option style="padding: 0px 9px; font-size: 13px;" value="{$staff.id}">{$staff.truename}</option>
+                  </volist>
+                 
+                   <option style="padding: 0px 9px; font-size: 13px;" value="">取消分配</option>
+                </select>
+              </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" >身份证正面</label>  
+                  <div class="col-md-1">
+                    <a href="__PUBLIC__/upload/image/user/{$trial.identification_image_positive}"><i class="fa fa-file-image-o"></i></a>
+                  </div>
+                   <label class="col-md-2 control-label" >身份证背面</label>  
+                  <div class="col-md-1">
+                    <a href="__PUBLIC__/upload/image/user/{$trial.identification_image_back}"><i class="fa fa-file-image-o"></i></a>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" >账号</label>  
+                  <div class="col-md-4">
+                   <input id="username" name="username" class="form-control input-md"  type="text" value="{$trial.username}" readonly="">
+                  </div>
+                </div>
+                 <div class="form-group">
+                  <label class="col-md-4 control-label" >昵称</label>  
+                  <div class="col-md-4">
+                    <input id="nickname" name="nickname" class="form-control input-md"  type="text" value="{$trial.nickname}">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="col-md-4 control-label" >真实姓名</label>  
+                  <div class="col-md-4">
+                    <input id="name" name="name" class="form-control input-md"  type="text" value="{$trial.name}">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" >性别</label>  
+                  <div class="col-md-4">
+                    <input id="sex" name="sex" class="form-control input-md"  type="text" value="{$trial.sex}">
+                  </div>
+                </div>  
+                <div class="form-group">
+                  <label class="col-md-4 control-label" >身份证号码</label>  
+                  <div class="col-md-4">
+                    <input id="identification_card_num" name="identification_card_num" class="form-control input-md"  type="text" value="{$trial.identification_card_num}">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" >微信号</label>  
+                  <div class="col-md-4">
+                    <input id="wechat" name="wechat" class="form-control input-md"  type="text" value="{$trial.wechat}">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" >住址</label>  
+                  <div class="col-md-4">
+                     <input id="adress" name="adress" class="form-control input-md"  type="text" value="{$trial.adress}">
+                  </div>
+                </div> 
+                <div class="form-group">
+                  <label class="col-md-4 control-label" >工作</label>  
+                  <div class="col-md-4">
+                     <input id="operation_post" name="operation_post" class="form-control input-md"  type="text" value="{$trial.operation_post}">
+                  </div>
+                </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label" >固话</label>  
+                  <div class="col-md-4">
+                     <input id="fixed_telephone" name="fixed_telephone" class="form-control input-md"  type="text" value="{$trial.fixed_telephone}">
+                  </div>
+               </div>   
+                <div class="form-group">
+                  <label class="col-md-4 control-label" >状态</label>  
+                  <div class="col-md-4">
+                  <input id="fixed_telephone" name="fixed_telephone" class="form-control input-md"  type="text" value="{$trial.group|searchDict="IS_MEMBER","value"}" readonly="">
+                  </div>
+                </div>   
+                
+                <div class="form-group">
+                  <label class="col-md-4 control-label" >操作</label>  
+                  <div class="col-md-4">
+                  <button id="button1id" name="button1id" class="btn btn-success">审阅</button>
+                  </div>
+                 </div> 
+               </tr>
+            
+          </table>
+       </fieldset>
+   </form>       
+
+ <!-- |---------------------------------------------------------| -->
+
+
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+<!--  |---------------------------------------------------------| -->
+
+      <!-- footer -->
+      <include file="Public:footer" />
+    </div><!-- ./wrapper -->
+
+    <include file="Public:script" />
+    <script src="__PUBLIC__/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#example').dataTable( {
+        } );
+
+    });
+    </script>
+  </body>
+</html>

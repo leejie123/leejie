@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+  <head>
+  <include file="Public:head" />
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"> -->
+  </head>
+  <!--
+  BODY TAG OPTIONS:
+  =================
+  Apply one or more of the following classes to get the
+  desired effect
+  |---------------------------------------------------------|
+  | SKINS         | skin-blue                               |
+  |               | skin-black                              |
+  |               | skin-purple                             |
+  |               | skin-yellow                             |
+  |               | skin-red                                |
+  |               | skin-green                              |
+  |---------------------------------------------------------|
+  |LAYOUT OPTIONS | fixed                                   |
+  |               | layout-boxed                            |
+  |               | layout-top-nav                          |
+  |               | sidebar-collapse                        |
+  |               | sidebar-mini                            |
+  |---------------------------------------------------------|
+  -->
+  <body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+    <!-- head -->
+    <include file="Public:header" />
+    <!-- sidebar -->
+    <include file="Public:sidebar" />
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            客户投诉与建议列表
+          </h1>
+        </section>
+ <!-- |---------------------------------------------------------| -->
+        <!-- Main content -->
+        <section class="content">
+          
+
+ <!-- |---------------------------------------------------------| -->
+  <form class="form-horizontal">
+       <fieldset>
+          <div class="form-group">
+           <label class="col-md-4 control-label">投诉人</label>
+           <div class="col-md-4">
+              <input placeholder="产品名称" class="form-control input-md" type="text" value="{$complaint_detail.user.username}" readonly>
+           </div>
+        </div>
+
+        <div class="form-group">
+           <label class="col-md-4 control-label">投诉人联系电话</label>
+           <div class="col-md-4">
+              <input placeholder="产品名称" class="form-control input-md" type="text" value="{$complaint_detail.user.phone}" readonly>
+           </div>
+        </div>
+
+        <div class="form-group">
+           <label class="col-md-4 control-label">提交时间</label>
+           <div class="col-md-4">
+              <input placeholder="产品名称" class="form-control input-md" type="text" value="{$complaint_detail.create_time|date='Y-m-d H:i:s',###}" readonly>
+           </div>
+        </div>
+
+        <div class="form-group" >
+             <label class="col-md-4 control-label">投诉与建议内容</label>
+             <div class="col-md-4" >
+                  <textarea type="text" class="form-control" style="width:465px;height:235px;" readonly>{$complaint_detail.content}</textarea>
+             </div>
+        </div>
+       </fieldset>
+   </form>       
+
+ <!-- |---------------------------------------------------------| -->
+
+
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+<!--  |---------------------------------------------------------| -->
+
+      <!-- footer -->
+      <include file="Public:footer" />
+    </div><!-- ./wrapper -->
+
+    <include file="Public:script" />
+    <script src="__PUBLIC__/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#example').dataTable( {
+        } );
+
+    });
+    </script>
+  </body>
+</html>
+
+

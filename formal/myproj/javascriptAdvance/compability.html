@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ie compability testing</title>	
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+</head>
+<body>
+<label class="xx">
+	<input type="checkbox" name="">
+	<i></i>
+</label>
+
+<p>hello world</p>
+<script type="text/javascript">
+$(function() {
+	console.log($)
+	console.log($('p'));
+	var xx = $('.xx > input').on('change', function() {
+		alert($(this).prop('checked'));
+		$(this).prop('checked', false);
+	})
+	$('p').html('some on like you')
+		var Hello = function () {
+		}
+
+		Hello.prototype = {
+			init: function(params) {
+				this.name = params.name;
+				this.age = params.age;
+			},
+			show: function() {
+				console.log(this.name, this.age)
+			}
+		}
+
+		var xx = new Hello();
+		xx.init({
+			name: 'ldiosiod',
+			age: 1212
+		})
+		xx.show()
+})
+</script>
+</body>
+</html>

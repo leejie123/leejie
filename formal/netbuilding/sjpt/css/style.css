@@ -1,0 +1,235 @@
+
+/*内容*/
+.lg_1{
+	padding: 0;
+	/*border-bottom: 1px solid rgb(109,192,255);*/
+}
+.lg_2{
+	border-bottom: 1px solid rgb(109,192,255);
+}
+.buyact li{
+    padding: 18px 20px;
+}
+.nav-tabs > li.active > a,.nav-tabs > li > a,.nav-tabs > li.active > a:hover{
+    border-style: none;
+}
+.nav > li > a:focus, .nav > li > a:hover{
+    background: none;
+}
+.navbar-left{
+	background: rgb(109,192,255);
+	padding: 10px 50px;
+	font-size: 20px;
+	color: #fff;
+}
+.navbar-left_1{
+	padding: 13px 0px;
+	font-size: 15px;
+	color: #000;
+}
+.navbar-text {
+	margin-left: 0;
+	margin-right: 0;
+	
+}
+.navbar-right .navbar-link{
+	border: 1px solid rgb(109,192,255);
+	font-size: 33px;
+	padding: 0px 25px;
+    text-decoration: none;
+}
+.col-sm-3 >.nav > li > a {
+	padding: 1px 15px;
+}
+.col-sm-3{
+	background: #fff;
+}
+.col_1{
+	border: 1px solid #DBDBDB;
+	text-align: center;
+    padding: 0;
+}
+.col_2{
+	border: 1px solid rgb(248, 246, 246);
+	background: #fff;
+}
+.tupian_1{
+	width: 100%;
+	height: 400px;
+	background-size: cover;
+	background-position: center center;
+}
+.tupian_2{
+	width: 100%;
+    border-right: 1px solid #E6E6E6;
+    padding: 10px 15px;
+    height: 270px;
+    overflow: hidden;
+}
+.tupian_2 p {
+    color: #F60;
+    height: 18px;
+    overflow: hidden;
+}
+.tupian_2 b {
+    color: #F33;
+}
+.tupian_2 del {
+    color: #BBB;
+    margin-left: 15px;
+}
+
+.tupian_5 img{
+	width: 100%;
+	height: 300px;
+}
+.knowledge {
+    height: 169px;
+    padding: 10px 10px 0px;
+    overflow: hidden;
+    background-color: #7663E9;
+}
+.knowledge .knowledge-title {
+    display: block;
+    width: 202px;
+    height: 24px;
+    padding: 0px 0px 6px 8px;
+    border-bottom: 1px solid;
+    color: #FFF;
+    border-color: #806EEE;
+}
+.knowledge .knowledge-list {
+    width: 208px;
+    height: 104px;
+    margin-top: 11px;
+    padding-left: 2px;
+    overflow: hidden;
+}
+.knowledge .knowledge-list li {
+    width: 202px;
+    height: 26px;
+    overflow: hidden;
+}
+.knowledge .knowledge-list li span.dot {
+    display: inline-block;
+    width: 5px;
+    height: 4px;
+    margin: 6px;
+    line-height: 26px;
+    font-size: 0px;
+    vertical-align: middle;
+}
+.knowledge .knowledge-list li a {
+    color: #FFF;
+}
+
+
+
+
+
+.floor_ad {
+    float: left;
+    width: 480px;
+    height: 230px;
+    border-right: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    position: relative;
+}
+.floor_ad ul li {
+    width: 480px;
+    height: 230px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+}
+
+.flpro_list{
+    padding: 0;
+}
+.flpro_list li {
+    width: 160px;
+    height: 230px;
+    border-right: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    float: left;
+    position: relative;
+}
+.flpro_list li a {
+    width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 12px;
+}
+.flpro_list li img {
+    display: block;
+    margin: 10px 0px 5px;
+}
+.flpro_list li h4 {
+    margin: 0px 9px;
+    height: 36px;
+    overflow: hidden;
+}
+.flpro_list li h4 p {
+    margin: 0px;
+}
+.flpro_list li p {
+    margin: 3px 4px;
+    overflow: hidden;
+}
+.orange {
+    color: #F60;
+}
+.flpro_list li p b {
+    color: #F33;
+}
+.flpro_list li p del {
+    color: #BBB;
+    margin-left: 15px;
+}
+
+.flpro_list_one li {
+    width: 213px;
+    height: 230px;
+    border-right: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    float: left;
+    position: relative;
+}
+.flpro_list_one li a {
+    width: 213px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 12px;
+}
+.flpro_list_one li img {
+    display: block;
+    margin: 10px 30px 5px;
+}
+.flpro_list_one li h4 {
+    margin: 0px 32px;
+    height: 36px;
+    overflow: hidden;
+}
+.flpro_list_one li h4 p {
+    margin: 0px;
+}
+.flpro_list_one li p {
+    margin: 3px  28px;
+}
+
+.media-heading {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+.media-body em{
+    color: #F33;
+}
+.clear-fix {
+    clear: both;
+}

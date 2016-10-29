@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+    <title>手机页面框架</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/gonggong.css">
+<link rel="stylesheet" href="css/guowuche.css">
+
+</head>
+<body>
+<!-- 头部 -->
+<nav class="navbar">
+    <div class="container">
+        <h1>手机平台</h1>
+        <form class="navbar-form  hidden-xs" role="search" style="text-align: center;">
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" style="width: 380px;">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"style="padding-left: 25px; padding-right: 25px;color: #FFF;background: #32A5E9;"><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+            </div>
+            <div class="nav navbar-nav navbar-right"> <button class="btn btn-default" type="button"style="padding: 10px;background: #F3F3F3;"><i class="glyphicon glyphicon-calendar"style="color: rgb(50, 165, 233);"></i> 我的购物车 ></button></div>
+        </form>       
+         <div class="clear"></div>
+    </div>
+</nav>
+<div class="container">
+    <div class="main">
+        <menu class="car_top">
+            <p class="sel" style="z-index:9; width:34%;">1.我的购物车<i></i></p>
+            <p style="z-index:8;">2.填写核对订单信息<i></i></p>
+            <p>3.成功提交订单</p>
+            <div class="clear"></div>
+        </menu>
+        <div class="nologin-tip">
+            <span class="wicon"></span>
+            您还没有登录！登录后购物车的商品将保存到您账号中
+            <a class="btn-1 ml10" href="/login.html">立即登录</a>
+        </div> 
+        <table class="car_list">
+            <tbody>
+                <tr style="border: 1px solid #e3e3e3;">
+                  <th colspan="3">商品信息</th>
+                  <th>单价</th>
+                  <th>数量</th>
+                  <th>合计</th>
+                  <th>操作</th>
+                </tr>
+                <tr style="height:5px;">
+                    <th colspan="7" style="background: #ffffff;"></th>
+                </tr>
+                <tr class="carborderbot" style="background: #fff4e8;" id="">
+                    <td width="20"><input checked="checked" class="check_bool" value="" type="checkbox"></td>
+                    <td width="110"><a href="" target="_blank"><img src="http://img2015.yaya.cn/upload/201508/12/201508121433053657.png" width="100"></a></td>
+                    <td style="text-align:left;" width="400">
+                        <a href="" target="_blank">三星SAMSUNG Galaxy S6 盖世6 电信定制版G9209-黑色-32G</a>      
+                    </td>
+                    <td class="red">￥<span class="decimal_format">4,620.00</span></td>
+                    <td class="num" width="150">
+                        <a href="javascript:void(0)" onclick="addCartNum(1);" class="jianOne"> + </a>
+                        <input id="product_quantity" class="text" name="product_quantity" value="1" onblur="" onkeypress="" type="text">
+                        <a href="javascript:void(0)" onclick="addCartNum(-1);" class="addOne"> - </a>
+                    </td>
+                    <td class="red">￥<span class="decimal_format">4,620.00</span></td>
+                    <td><a onclick="" href="">删除</a></td>
+                </tr>
+                <tr style="height:3px;">
+                    <th colspan="7" style="background: #ffffff;"></th>
+                </tr>
+                <tr>
+                    <td width="20"></td>
+                    <td colspan="2" style="text-align:left;"><span class="mr20"><a class="c9" id="" href="">全选</a></span><span class="mr20"><a class="c9" id="" href="">取消全选</a></span><!--<a class="c9" href="#">删除选中的商品</a>--></td>
+                    <td colspan="4" style="text-align:right; font-size:16px; line-height:35px;">
+                        已选择<span class="fc fw-b">1</span>件商品&nbsp;&nbsp;
+                        商品总计（不含运费）：<span class="fc fw-b">￥<b class="decimal_format">4,620.00</b></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table> 
+        <div class="car_btn">
+            <a class="ml20 fc" href="">继续购物</a>
+            <a class="sub" href="">去结算</a>
+        </div>      
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="font">
+            <div class="col-lg-3 promise">
+                <div class="dl">
+                    <div class="icon p1"><a href="Index-bangzhu_a.html" ></a></div>
+                     <h4><a href="Index-bangzhu_a.html" >假一赔十</a></h4>
+                    <p><a href="Index-bangzhu_a.html" >品质护航，购物优选</a></p>
+                </div>
+            </div>
+            <div class="col-lg-3 promise">
+                <div class="dl">
+                    <div class="icon p1"><a href="Index-bangzhu_a.html" ></a></div>
+                     <h4><a href="Index-bangzhu_a.html" >假一赔十</a></h4>
+                    <p><a href="Index-bangzhu_a.html" >品质护航，购物优选</a></p>
+                </div>
+            </div>
+            <div class="col-lg-3 promise">
+                <div class="dl">
+                    <div class="icon p1"><a href="Index-bangzhu_a.html" ></a></div>
+                     <h4><a href="Index-bangzhu_a.html" >假一赔十</a></h4>
+                    <p><a href="Index-bangzhu_a.html" >品质护航，购物优选</a></p>
+                </div>
+            </div>
+            <div class="col-lg-3 promise">
+                <div class="dl">
+                    <div class="icon p1"><a href="Index-bangzhu_a.html" ></a></div>
+                     <h4><a href="Index-bangzhu_a.html" >假一赔十</a></h4>
+                    <p><a href="Index-bangzhu_a.html" >品质护航，购物优选</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="foot_help">
+
+            <dl>
+                <dt>新手指南</dt>
+                <dd>
+                    <a href="Index-bangzhu_a.html">购物流程</a>
+                    <a href="Index-bangzhu_a.html">手机百科</a>
+                    <a href="Index-bangzhu_a.html">积分计划</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>付款方式</dt>
+                <dd>
+                    <a href="Index-bangzhu_a.html">支付方式</a>
+                    <a href="Index-bangzhu_a.html">分期付款</a>
+                    <a href="Index-bangzhu_a.html">网银在线支付</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>配送方式</dt>
+                <dd>
+                    <a href="Index-bangzhu_a.html">到店自提</a>
+                    <a href="Index-bangzhu_a.html">送货上门</a>
+                    <a href="Index-bangzhu_a.html">自提点自提</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>售后服务</dt>
+                <dd>
+                    <a href="Index-bangzhu_a.html">手机保修条例</a>
+                    <a href="Index-bangzhu_a.html">硬件维修及报价</a>
+                    <a href="Index-bangzhu_a.html">延保/意外保服务</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="Index-bangzhu_a.html">常见问题解答</a>
+                    <a href="Index-bangzhu_a.html">4G热点问题解答</a>
+                    <a href="Index-bangzhu_a.html">交易条款</a>
+                </dd>
+            </dl>
+             <dl>
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="Index-bangzhu_a.html">常见问题解答</a>
+                    <a href="Index-bangzhu_a.html">4G热点问题解答</a>
+                    <a href="Index-bangzhu_a.html">交易条款</a>
+                </dd>
+            </dl>           
+        </div>
+    </div>
+    <div  id="footer-2014">
+        <div class="links">
+            <a  href="Index-bangzhu_a.html">关于我们</a>|<a href="Index-bangzhu_a.html">联系我们</a>|<a  href="Index-bangzhu_a.html">商家入驻</a>|<a  href="Index-bangzhu_a.html">营销中心</a>|<a href="Index-bangzhu_a.html">手机</a>|<a  href="Index-bangzhu_a.html">友情链接</a>|<a target="_blank" href="Index-bangzhu_a.html">销售联盟</a>|<a href="Index-bangzhu_a.html" >手机社区</a>|<a href="Index-bangzhu_a.html" target="_blank">手机公益</a>|<a href="Index-bangzhu_a.html" >English Site</a>|<a href="Index-bangzhu_a.html">Contact Us</a>
+        </div>
+        <div class="copyright">各门店营业时间：周一至周日 09:00-21:30 &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a target="_blank" href="Index-bangzhu_a.html"> 工作时间：周一至周日 09:00-21:30</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>
+        <a rel="nofollow" href="Index-bangzhu_a.html" target="_blank">网站ICP备案号：滇ICP备06002001号 </a>&nbsp;&nbsp;|&nbsp;&nbsp;电信业务经营许可证：滇B2-20110012号&nbsp;&nbsp;|&nbsp;&nbsp;   云南网警ICP备案 53010303402252  <br>旗下网站：<a target="_blank" href="Index-bangzhu_a.html">360TOP</a>&nbsp;&nbsp;<a href="Index-bangzhu_a.html" target="_blank">拍拍网</a>&nbsp;&nbsp;<a href="Index-bangzhu_a.html" target="_blank">网银在线</a></div>
+        
+        <div class="authentication">
+            <a rel="nofollow" target="_blank" href="Index-bangzhu_a.html">
+                <img alt="经营性网站备案中心" src="http://img12.360buyimg.com/da/jfs/t535/349/1185317137/2350/7fc5b9e4/54b8871eNa9a7067e.png" class="err-product" height="32" width="103">
+            </a>
+            
+            <a rel="nofollow" target="_blank" id="urlknet" tabindex="-1" href="Index-bangzhu_a.html">
+                <img   src="http://img11.360buyimg.com/da/jfs/t643/61/1174624553/2576/4037eb5f/54b8872dNe37a9860.png" class="err-product" border="true" height="32" width="103">
+            </a>
+            <a rel="nofollow" target="_blank" href="Index-bangzhu_a.html">
+                <img src="http://img11.360buyimg.com/da/jfs/t559/186/1172042286/2795/7d90b036/54b8874bN694454a5.png" class="err-product" height="32" width="103">
+            </a>
+            <a rel="nofollow" target="_blank" href="Index-bangzhu_a.html">
+                <img src="http://img11.360buyimg.com/da/jfs/t451/173/1189513923/1992/ec69b14a/54b8875fNad1e0c4c.png" class="err-product" height="32" width="103">
+            </a>
+            <a target="_blank" href="Index-bangzhu_a.html">
+                <img src="http://img10.360buyimg.com/da/jfs/t520/303/1151687373/1180/2f8340fc/54b8863dN8d2c61ec.png" class="err-product" height="32" width="185">
+            </a>
+        </div>
+    </div>   
+</div>
+</body>
+</html>
+<script type="text/javascript">  
+$(document).ready(function(){  
+var curVal = $("#product_quantity");  
+var temp; //得到文本框当前的数据  
+var tipMsg = $(".mark_tip"); //提示信息  
+$(".addOne").click(function(){  
+    temp = curVal.val()  
+    if(temp<=1){  
+        tipMsg.text("").css("color","#F30")  
+        return false;  
+    }  
+    if(testNum(temp)){  
+         curVal.val(--temp); //数量减1  
+    }else{  
+        curVal.val(1)  
+}  
+});  
+$(".jianOne").click(function(){  
+    temp = curVal.val()  
+    if(testNum(temp)){  
+        curVal.val(++temp); //数量加1  
+ 
+    }else{  
+        curVal.val(0)  
+    }  
+});  
+doDashed();  
+//得到购买数量，并判断是否是正确格式  
+function testNum(tempNum){  
+    if(/^[0-9]+$/.test(tempNum)){  
+        tipMsg.text("").css("color","#03F")  
+        return true;  
+    }  
+    tipMsg.text("").css("color","#F30")  
+    return false;  
+}  
+});  
+//处理点击链接时的虚线框  
+function doDashed(){  
+    $('a').focus(function(){  
+        if(this.blur){  
+             this.blur();  
+         }  
+    });  
+}   
+</script> 

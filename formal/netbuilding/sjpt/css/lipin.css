@@ -1,0 +1,609 @@
+body, div, dl, dt, dd, ul, ol, li, h2, h3, h4, h5, h6, form, fieldset, legend, input, button, textarea, p, th, td { margin: 0; padding: 0 }
+/* jf_rank */
+.rank-box{
+    display: inline;
+    float: right;width: 100%;
+}
+.rank-box-min{
+    width: 620px;
+}
+.rank-box-min .rank_div_thetop{
+    width: 565px;
+}
+.rank { 
+    height: 98px;
+     border: 1px solid #ccc;
+      position: relative;
+ }
+.rank span { 
+    display: block; 
+    width: 28px; 
+    height: 68px; 
+    background: url(../images/jf_ico.png) no-repeat; 
+    cursor: pointer; 
+    position: absolute; 
+}
+span.btn_l {
+ background-position: -154px -143px;
+  left: 0; top: 14px;
+}
+span.btn_l:hover{ 
+    background-position: -154px -193px;
+}
+span.btn_r { 
+    background-position: -174px -143px;
+     right: 0; top: 14px;
+ }
+span.btn_r:hover{ 
+    background-position: -174px -193px;
+}
+.rank ul { 
+    position: absolute; 
+    left: 0px ; 
+    top: 14px;
+    overflow: hidden; 
+    width: 9000px;
+}
+.rank .J_thetop li { 
+    float: left; 
+    margin-right: 6px; 
+}
+.rank ul li.last{ 
+    margin-right: 0; 
+}
+.rank_div_thetop { 
+    overflow: hidden; 
+    width: 1075px; 
+    position: relative; 
+    height: 98px; 
+    left: 32px;
+}
+.team { 
+    overflow: hidden; 
+    position: relative; 
+}
+.team img { 
+    width: 68px; 
+    height: 68px; 
+    float: left; 
+    margin-right: 5px; 
+    background-color: #ccc; 
+}
+.team .nub { 
+    display: block; 
+    width: 16px; 
+    height: 25px; 
+    line-height: 18px; 
+    text-align: center; 
+    background-position: -28px -166px; 
+    position: absolute; left: 0; 
+    top: 0; 
+    color: #fff; 
+}
+.team .txt { 
+    padding-top: 5px; 
+    line-height: 18px; 
+}
+.team .price { 
+    position: absolute; 
+    left: 72px; 
+    bottom: 5px; 
+}
+.price { 
+    font-size: 14px; 
+    font-weight: bold; 
+    color: #f43499; 
+}
+.price em { 
+    margin-right: 2px; 
+    font-size: 16px; 
+    font-weight: bold; 
+}
+.past_price { 
+    margin-left: 10px; 
+    font-size: 14px; 
+    color: #7a7a7a; 
+    text-decoration: line-through;
+}
+/* jf_list */
+.list_hd { 
+    overflow: hidden; 
+    width:100%; 
+    height: 55px; 
+    line-height: 50px; 
+    margin-top: 35px; 
+    border-bottom: 2px solid #f10180; 
+ }
+.list_hd h3 { 
+    margin-right: 10px; 
+    font-size: 24px; 
+    color: #000; 
+    float: left; 
+}
+.list_hd i { 
+    display: inline-block; 
+    width: 48px; 
+    height: 48px; 
+    background: url(jf_ico.png) no-repeat; 
+    vertical-align: middle; 
+}
+.list_hd_ph{ 
+    border-bottom:none;
+}
+.list_hd_ph h3{ 
+    font-weight:100;
+}
+i.tit_jf { 
+    background-position: -14px -14px; 
+}
+i.tit_xn { 
+    background-position: -218px -14px; 
+}
+i.tit_sp { 
+    background-position: -80px -9px; 
+    height:50px; 
+}
+i.tit_lq { 
+    background-position: -155px -14px; 
+}
+.list_hd p { 
+    float: left; 
+    font-size: 16px; 
+    color: #7a7a7a; 
+}
+.list_hd .more { 
+    float: right; 
+    color: #7a7a7a; 
+ 
+}
+.list_hd .more:hover{ 
+    color: #F10180;
+}
+.list_oper { 
+    padding-top: 20px; 
+    text-align: center;
+    font-size: 12px; 
+}
+.pre a { 
+    margin: 0 10px;
+    color: #666;
+    font-size: 12px;
+}
+.pre_input { 
+    width: 48px; 
+    height: 18px; 
+    line-height: 18px; 
+    margin: 0 5px; 
+    border: 1px solid #999; 
+    vertical-align:middle;
+}
+.pre_input:hover{ 
+    border: 1px solid #F10180;
+}
+.pre_inqur { 
+    border:none; 
+    margin-left: 10px; 
+    width: 65px; height: 22px; 
+    line-height: 22px; 
+    text-align: center; 
+    cursor: pointer; 
+    vertical-align:middle;
+    border: 1px solid #C9C9C9;
+    border-radius: 2px;
+}
+.pre_inqur:hover{ 
+    background-position: -66px -142px; 
+    color: #F10180;
+}
+.oper { 
+    margin-left: 20px; 
+}
+.list_cn { 
+    clear:both; 
+    overflow: hidden; 
+    zoom:1; 
+    margin-top: 20px; 
+    padding: 14px; 
+    border: 1px solid #ccc; 
+}
+.list_cn ul { 
+    clear: both; 
+    overflow: hidden; 
+    margin-bottom:30px; 
+}
+.list_cn ul.last { 
+    margin-bottom: 0px;
+}
+
+
+.list_cn ul li { 
+    float: left; 
+    margin-right: 76px;
+    margin-top: 15px; 
+}
+.list_cn ul li.last { 
+    margin-right: 0; 
+}
+.jq { 
+    clear:both; 
+    overflow:hidden; zoom:1; 
+    padding: 20px 43px; 
+}
+.jq ul{ 
+    margin-bottom:0px; 
+}
+.jq ul li { 
+    margin-right: 43px; 
+}
+.list .team { 
+    width:174px; 
+    border: 1px solid #e1dee1; 
+    overflow: hidden; 
+    position: relative; 
+    cursor: pointer;
+}
+.list .team:hover{ 
+    border: 1px solid #F10180;
+}
+.jf_team { 
+    width:220px; 
+    border: 1px solid #e5e5e5; 
+    cursor: pointer; 
+}
+.jf_team:hover{ 
+    border: 1px solid #F10180;
+}
+.jf_team img { 
+    display: block;
+     width: 218px;
+      height: 275px; 
+      background-color: #ccc; 
+  }
+.jf_team h5 { 
+    margin: 10px; 
+    height: 44px; 
+    font-size: 14px; 
+}
+.jf_team p { 
+    padding: 10px;
+     zoom: 1; 
+     clear: both;
+ }
+.jf_team .btn { 
+    display: block; 
+    padding: 0 14px; 
+    float: right; 
+    background-color: #ff8a5b;  
+    color: #fff; 
+    text-align: center; 
+}
+.jf_team .btn:hover{ 
+    background-color: #ff9c75;
+}
+
+/* jfhead */
+.jfhead { 
+    overflow: hidden; 
+    padding: 20px 0;
+     background-color: #f0f0f0; 
+ }
+.user { 
+    width: 204px; 
+    line-height: 22px;
+}
+.user .tips { 
+    color: #f10180;
+}
+.user_infor { 
+    border: 2px solid #ddd; 
+    height: 88px; 
+    padding: 20px 14px; 
+    background-color: #fff;
+    box-sizing: initial; 
+}
+.user_infor a { 
+    text-decoration: underline; 
+}
+.user_txt { 
+    text-align: center; 
+    margin-top: 10px; 
+}
+.username { 
+    font-size: 14px; 
+    font-weight: bold; 
+    letter-spacing: 1px; 
+}
+.reg_btn { 
+    display: block; 
+    width: 164px; 
+    height: 28px; 
+    line-height: 28px; 
+    margin: 10px auto 0;
+     background:#F0488F no-repeat 0 -31px; 
+     color: #fff; 
+     text-align: center;
+     border-radius: 5px; 
+ }
+a.reg_btn { 
+    text-decoration: none; 
+}
+.reg_btn:hover, .more_btn:hover { 
+    color: #fff; 
+}
+.more_btn { 
+    display: inline-block; 
+    width: 134px; 
+    height: 30px; 
+    line-height: 30px; 
+    margin-left: 20px;
+    background: rgb(231,59,143) no-repeat; 
+    color: #fff; 
+    text-align: center; 
+    border-radius: 4px;
+}
+.user_li {
+     margin-top: 5px; 
+     line-height: 50px; 
+ }
+.user_li li { 
+    margin-bottom: 2px; 
+    padding-left: 30px; 
+    height:50px; 
+    background-color: #fff; 
+}
+.user_li i { 
+    display: inline-block; 
+    width: 34px; 
+    height: 34px; 
+    vertical-align: middle; 
+    margin-right: 5px; 
+    background: url(../images/jf_ico.png) no-repeat;
+}
+i.ico_lp { 
+    background-position: -19px -87px; 
+}
+i.ico_jq { 
+    background-position: -90px -92px; 
+}
+i.ico_jf { 
+    background-position: -161px -90px; 
+}
+
+
+
+/* jf_oper */
+.site { 
+    padding-top: 20px;
+    font-size: 12px;
+    color: #666;
+}
+.cur_jf a {
+    color: #EB3790;
+}
+a.cur_selected {
+    background-position: -190px -120px;
+    color: #EB3790;
+}
+.jf_oper { 
+    margin-top: 10px; 
+    padding-bottom: 20px; 
+    line-height: 34px; 
+    border-bottom: 2px solid #f10180;
+    font-size: 12px;
+}
+.jf_oper_btn a { 
+    margin-right: 14px; 
+    padding: 3px 20px; 
+    text-align: center; 
+    border: 1px solid #999; 
+}
+.jf_oper {
+     margin-top: 10px; 
+     padding-bottom: 20px; 
+     line-height: 34px; 
+     border-bottom: 2px solid #f10180; 
+ }
+.jf_oper_btn a { 
+    margin-right: 14px; 
+    padding: 3px 20px; 
+    text-align: center; 
+    border: 1px solid #999;
+    color: #666; 
+}
+.jf_oper_btn a.cur{ 
+    border: 1px solid #f10180; 
+    color: #f10180;
+}
+.ico_up, .ico_down {
+    width: 11px;
+    height: 16px;
+    background-position: -63px -171px;
+    vertical-align: middle;
+}
+.ico_star, .ico_tips, .ico_up, .ico_down {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+    background: transparent url("../images/jf_ico.png") no-repeat scroll -65px -171px;
+}
+
+
+
+
+.infor {
+    overflow: hidden;
+    padding: 10px 40px 10px 306px;
+    line-height: 40px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    border: 1px solid #EBEBEB;
+}
+.infor_pic {
+    width: 266px;
+    height: 336px;
+    float: left;
+    margin: 0px 40px 0px -296px;
+    background-color: #DDD;
+}
+
+.infor_pic img {
+    width: 266px;
+    height: 336px;
+}
+
+.infor h2 {
+    font-size: 24px;
+    color: #000;
+}
+.infor .past_price em {
+    font-size: 18px;
+    font-weight: 100;
+}
+.infor .past_price {
+    margin-left: 0px;
+}
+em, i, address {
+    font-style: normal;
+}
+.price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #F43499;
+}
+.infor .price {
+    font-size: 14px;
+}
+.price em {
+    margin-right: 2px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.infor .price em {
+    font-size: 28px;
+}
+
+.number {
+    margin-top: 8px;
+    padding-top: 10px;
+    border-top: 1px dotted #DDD;
+}
+
+.nub_selcet {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    vertical-align: middle;
+}
+.nub_selcet span {
+    display: block;
+    float: left;
+}
+.nub_selcet .del, .nub_selcet .add {
+    width: 28px;
+    height: 28px;
+    background: transparent url("/tpl/vipshop/images/common/nub_selcet.png") no-repeat scroll 0% 0%;
+    cursor: pointer;
+}
+.nub_selcet .del {
+    background-position: 0px 0px;
+}
+.nub {
+    width: 32px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.dh {
+    margin-top: 40px;
+}
+.dh_btn_n, .dh_btn_y {
+    border: medium none;
+    width: 150px;
+    height: 40px;
+    background: red;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+    color: #FFF;
+}
+.dh_btn_y {
+    background-position: 0px -101px;
+    cursor: pointer;
+}
+
+.inf {
+    clear: both;
+    overflow: hidden;
+}
+.inf .list_hd {
+    margin: 10px 0px 20px;
+    height: 34px;
+    line-height: 34px;
+}
+
+
+
+.nub_selcet .text {
+    width: 35px;
+    border: 1px solid #DDD;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    display: block;
+    height: 30px;
+    background-color: #FFF;
+}
+.nub_selcet  a {
+    display: inline-block;
+    border: 1px solid #CCC;
+    padding: 0px 10px;
+    line-height: 28px;
+    font-size: 14px;
+    float: left;
+    background-color: rgb(242, 242, 242);
+}
+
+
+.examples_bg{
+    width: 20%;
+}
+.examples{
+    width: 80%;
+}
+.item, .carousel-inner > .item > img{
+    height: 293px;
+}
+.carousel-control {
+    top: 40%;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 25px;
+    color: #FFF;
+    text-align: center;
+    background: #222 none repeat scroll 0% 0%;
+    border: 3px solid #FFF;
+    border-radius: 23px;
+    opacity: 0.5;
+    position: absolute;
+}
+.carousel-control.right {
+    right: 15px;
+    left: auto;
+}
+.carousel-caption {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.75) none repeat scroll 0% 0%;
+    font-size: 12px;
+}
+
+
+

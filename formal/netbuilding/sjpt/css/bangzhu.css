@@ -1,0 +1,133 @@
+/*侧边栏*/
+a:hover{
+	color:#666666;
+	text-decoration:underline;
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;clear:both;
+	visibility:hidden
+}
+
+/* ny_zb */
+.ny_zb{
+	width:205px;
+	overflow:hidden;
+	border-left:1px solid #dddddd;
+	border-right:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+}
+.ny_zbbt{
+	background-color:#32A5E9;
+	height:40px;
+	line-height:40px;
+	overflow:hidden;
+}
+.ny_zbbt span{
+	padding-left:30px;
+	font-size:16px;
+	color:#fff;
+	line-height:40px;
+}
+.ny_zblb1{
+	padding:10px 10px 20px 0px;
+}
+
+.ny_zblb1 li{
+	line-height:33px;
+	font-size:14px;
+	color:#333;
+	float:left;
+	width:100%;
+}
+.ny_zblb1 li a{
+	display:block;
+	padding-left:30px;
+	text-decoration:none;
+	color:#333;
+	background:url(04.gif) no-repeat right;
+}
+.ny_zblb1 li a.cur{
+	color:rgb(50,165,233);
+	font-weight:bold;
+	background:url(04_h.gif) no-repeat right;
+	text-decoration:none;
+}
+
+.ny_zblb1 li ul{
+	display:none;
+	color:#666;
+	padding:5px 0 5px 30px;
+}
+.ny_zblb1 li ul li{
+	float:none;
+	background-image:none;
+	height:26px;
+	line-height:26px;
+	margin-top:0px;
+	font-size:12px;
+}
+.ny_zblb1 li ul li a{
+	padding-left:30px
+	;display:block;
+	background:url(05.gif) no-repeat left;
+}
+.ny_zblb1 li ul a:hover{
+	color:rgb(50,165,233);
+}
+
+
+/*右边栏*/
+.weizhi {
+    height: 40px;
+    line-height: 35px;
+    color: #999;
+    border-bottom: 1px solid #E8E8E8;
+   }
+.weizhi strong {
+    font-size: 14px;
+    padding-left: 20px;
+    color: #1E1E1E;
+    font-weight: 400;
+}
+/*a*/
+.help-detail .detail-title {
+    padding: 30px 0px 20px;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px dashed #E6E6E6;
+    color: #000;
+}
+.help-detail .detail-content {
+    overflow: hidden;
+    width: 680px;
+    padding: 0px 30px 40px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+/*b*/
+.help_arc p {
+    line-height: 30px;
+    text-align: left;
+}
+/*c*/
+#help-cate-current {
+    margin: 10px;
+    padding: 10px 15px;
+    background: #F7F7F7 none repeat scroll 0% 0%;
+    border: 1px solid #EEE;
+}
+#help-cate-current ul {
+    overflow: hidden;
+}
+#help-cate-current li {
+    float: left;
+    width: 25%;
+    margin: 5px 0px;
+    
+}
+#help-cate-current li a{
+	color: #08C;
+}

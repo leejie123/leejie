@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{$xiaoqu.district_name}</title>
+    <include file="Public:head" />
+    <include file="Public:script" />
+<link rel="stylesheet" href="global.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/xiaoquneiye.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/zhujiangxincheng.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/zhujiangxinchengneiye.css">
+</head>
+<body>
+<include file="Public:header" />
+<include file="Public:carousel1" />
+
+
+
+<section>
+   <div class="container">
+   <div class="zhonghai">
+     <p><b>{$xiaoqu.district_name}</b><br><i class="fa fa-map-marker"></i>{$xiaoqu.place_name}</p>
+     <div class="clear"></div>
+   </div>
+   </div>
+</section>
+
+
+<section class="beijingse">
+    <div class="container xiaqu">
+        <div class="col-md-5">
+            <div class="row">
+                <a href="#"><div class="background-image guankantu" style="background-image:url('__PUBLIC__/upload/image/real/{$tupian.0.property_url}');"></div></a>
+                <div class="ribbon verified"></div>
+                <div class="tuwen-zi">
+                     <p>小区名：{$xiaoqu.district_name}</p>
+                     <p>所在版块：{$xiaoqu.area.name}</p>
+                     <p>地址：{$xiaoqu.place_name}</p>
+                     <p>开发商：{$xiaoqu.developers}</p>
+                     <p>物业公司：{$xiaoqu.property}</p>
+                     <p>物业类型：{$xiaoqu.property_type}</p>
+                     <p>物业费用：{$xiaoqu.property_charges}元/平方米.月</p>
+                     <p>总建面：{$xiaoqu.total_area}平方米</p>
+                     <p>总户数：{$xiaoqu.total_households}(户)</p>
+                     <p>建造年代：{$xiaoqu.construction_time|date='Y-m',###}</p>
+                     <p>容积率：{$xiaoqu.volume_ratio}</p>
+                     <p>停车位：{$xiaoqu.parking_space}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 fff">
+            <div class="row">
+              <ul>
+                <volist name="tupian" id="tupian">
+                  <if condition="$key eq 0">
+                    <a><li><div class="background-image yibai biansek" style="background-image:url('__PUBLIC__/upload/image/real/{$tupian.property_url}');"></div></li></a>
+                  <else />
+                    <a><li><div class="background-image yibai" style="background-image:url('__PUBLIC__/upload/image/real/{$tupian.property_url}');"></div></li></a>
+                  </if>
+                </volist>
+              </ul>
+            </div>
+            <div class="expert-info-btn">
+                     <a href="{:U('User/intention',array('property_id'=>$xiaoqu['id'],'user_id' => $userId['id']))}" class="jfsk-btn large block yellow">意向租此楼盘</a>
+            </div>
+        </div>
+            <div class="col-md-4">
+              <volist name="staff" id="staffs">
+                <if condition="$staffs.has_xiaoqu eq true">
+                      <div class="row xiaqu">
+                          <div class="bak">联系租赁专家</div>
+                          <div class="content-one-1">
+                                <ul>
+                                    <li><div class="content-one-1-1 background-image zhuanjiaxiang" style="background-image:url('__PUBLIC__/upload/image/real/{$staffs.top_image}');"></div></li>
+                                    <li>
+                                         <div class="content-one-1-2">
+                                              <ul>
+                                                  <li class="zi">{$staffs.truename}</li>
+                                                  <li class="num">{$staffs.phone}</li>
+                                                  <li class="poe"><i class="fa fa-phone-square"></i></li>
+                                                  <div class="clear"></div>
+                                              </ul>
+                                              <p>手头房源：租房（{$staffs.unitQuantity}）</p>
+                                              <p>熟悉小区：<volist name="staffs['property_id']" id="id">{$id.district_name}、</volist></p>
+                                         </div>
+                                    </li>
+                                    <div class="clear"></div>
+                                </ul>
+                          </div>
+                          <div class="content-one-2">
+                              <ul>
+                                   <li><a href="{:U('Userstaff/detail',array('id' => $staffs['id']))}"><i class="fa fa-user"></i>了解我</a></li>
+                                   <li><a href="{:U('Userstaff/detail',array('id' => $staffs['id']))}"><i class="fa fa-map-marker"></i>看房源</a></li>
+                                   <li class="li-2w"><a href="{:U('Userstaff/detail',array('id' => $staffs['id']))}"><i class="fa fa-star"></i>评价</a></li>
+                                   <div class="clear"></div>
+                              </ul>
+                          </div>
+                      </div>
+                  </if>
+              </volist>
+                
+            </div>
+    </div>
+
+</section>
+
+<section>
+     <div class="container txt">
+          {$xiaoqu.description}
+           <a href="#" class="jfsk-btn yellow">周边状况</a> 
+     </div>
+</section>
+
+
+
+
+<!-- 地图 -->
+<section class="section3">
+    <div style="height:500px;">
+          <div id="mapContainer" data-lng="{$xiaoqu.lng}" data-lat="{$xiaoqu.lat}" data-name="{$xiaoqu.district_name}"></div>
+</section>
+
+<section>
+    <div class="container">
+         <a class="jfsk-btn yellow" href="#">出租屋搜索</a>
+         <div class="sousuo">
+            <form class="form-inline" action="{:U('Real/chazhao')}" method="get"> 
+            <ul class="pos">
+                <li class="ul-li">
+                  <select name="leixing">
+                    <option value="0">类型不限</option>
+                    <volist name="cate" id="cate">
+                      <option value="{$cate.id}">{$cate.name}</option>
+                    </volist>
+                  </select>
+                </li>
+                <li class="ul-li">
+                  <select name="huxing">
+                    <option value="0">户型不限</option>
+                    <option value="1">一居</option>
+                    <option value="2">二居</option>
+                    <option value="3">三居</option>
+                    <option value="4">四居以上</option>
+                  </select>
+                </li>
+                <li class="ul-li">
+                  <select name="zujin">
+                    <option value="0">租金不限</option>     
+                    <option value="1000">1000元以下</option>
+                    <option value="1000-2000">1000-2000元</option>
+                    <option value="2000-3000">2000-3000元</option>
+                    <option value="3000-5000">3000-5000元</option>
+                    <option value="5000-8000">5000-8000元</option>
+                    <option value="8000-12000">8000-12000元</option>
+                    <option value="12000-20000">12000-20000元</option>
+                    <option value="20000">20000元以上</option>
+                  </select>
+                </li>
+                <li class="ul-li">
+                  <a class="button1 btn"><span class="zujin">配套</span></a>
+                  <div class="format1 nick">
+                    <ul>
+                      <volist name="supporting" id="vo">
+                        <li>
+                          <div  class="checkbox">
+                            <input type="checkbox" class="ab ba" name="supporting[]" value="{$vo.name}">
+                            <span>{$vo.name}</span>
+                          </div>
+                        </li>
+                      </volist>
+                      <div class="clear"></div>
+                    </ul>
+                     <p class="kk queding">
+                          <button class="sure btn btn-default an" >确定</button>
+                          <button class="sure1 btn btn-default an" >取消</button>
+                      </p>
+                      <input type="hidden"  class="receive">
+                  </div>
+                </li>
+                <li class="ul-li"><button type="submit" class="btn btn-default anniu">按条件搜索</button></li>
+                <div class="clear"></div>
+            </ul>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-8 hiddenX"><div class="background-image dmax" style="background-image:url('__PUBLIC__/image/z-32.png');"></div></div>
+            <div class="col-md-3">
+                 <div class="sidebarr">
+                      <div class="sidebarr rightt">
+                           <p class="tjfx">推荐房型</p>
+                             <volist name="realsuiji" id="realsuiji"> 
+                                  <a href="{:U('Real/real_neiye',array('id' => $realsuiji['id']))}"><div class="background-image frr magi" style="background-image:url('__PUBLIC__/upload/image/real/{$realsuiji.real_images.0.image_url}');">
+                                   <if condition="$realsuiji['status'] eq 0">
+                                             <div class="ribbon yizu"></div>
+                                      <else />
+                                          <if condition="$realsuiji[status] eq 1">
+                                           <div class="ribbon daishen"></div>
+                                          <else />
+                                             <div class="ribbon verified"></div>
+                                          </if>   
+                                      </if>  
+                                    <div class="bjt"><p>{$realsuiji.place_name}<span>{$realsuiji.area}m<sup>2</sup></span></p></div></div></a>
+                             </volist>  
+                      </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 多图区 -->
+<section>
+  <div class="container">
+        <a class="jfsk-btn yellow" href="#">推介房源</a>
+        <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-10 colimage">
+                <volist name="real" id="real">
+                  <div class="col-md-4">
+                      <div class="imagebox">
+                            <a href="{:U('Real/real_neiye', array('id' => $real['id']))}"><if condition="$real['recommend'] eq 1">
+                                <div class="tui_jian"><img src="__PUBLIC__/image/tuijian.png"></div>
+                            </if><div class="background-image small" style="background-image:url('__PUBLIC__/upload/image/real/{$real.real_images.0.image_url}');">
+                                <if condition="$real['status'] eq 0">
+                                       <div class="ribbon yizu"></div>
+                                <else />
+                                    <if condition="$real[status] eq 1">
+                                     <div class="ribbon daishen"></div>
+                                    <else />
+                                       <div class="ribbon verified"></div>
+                                    </if>   
+                                </if>
+                           
+                            </div></a>
+                             <if condition="$real['recommend'] eq 1">
+                                <div class="tui_jian"><img src="__PUBLIC__/image/tuijian.png"></div>
+                            </if>
+                            <div class="onimage-content">
+                               <ul>
+                                    <li>
+                                       <p>
+                                          <span><i class="fa fa-map-marker"></i> {$real.place_name}&nbsp;<span>{$real.area}m<sup>2</sup></span></span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                      <p><img src="__PUBLIC__/image/a2015-3.png"><br><span>{$real.real_number}房</span></p>
+                                      <p><img src="__PUBLIC__/image/a2015-1.png"><br><span>{$real.hall_number}厅</span></p>
+                                      <p><img src="__PUBLIC__/image/a2015-2.png"><br><span>{$real.toilet}卫</span></p>
+                                      <p><img src="__PUBLIC__/image/a2015-4.png"><br><span>{$real.balcony}阳</span></p>
+                                      <div style="clear:both"></div>
+                                    </li>
+                                    <li class="li-div">
+                                       <div class="li-div-sum"><a href="#">{$real.price}元</a></div>
+                                    </li>
+                              </ul>
+                            </div> 
+                        </div>
+                  </div>
+               </volist>
+                  
+</section>
+
+
+<!-- 三张图片 -->
+<section class="section1">
+   <div class="container">
+        <a class="jfsk-btn yellow" href="#">小区特色详情</a>
+        <div class="row">
+            <div class="col-md-4">
+                  <div class="three-image">
+                      <!-- <div class="img-circle" style="background:url('__PUBLIC__/image/f2015-12.png');background-size:cover;background-position:center;height:200px;"></div> -->
+                      <div class="img-circle" style="background:url('__PUBLIC__/image/z-33.png');background-size:cover;background-position:center;height:200px;width:200px;"></div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                  <div class="three-image">
+                    <div class="img-circle" style="background:url('__PUBLIC__/image/z-34.png');background-size:cover;background-position:center;height:200px;width:200px;"></div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                  <div class="three-image">
+                    <div class="img-circle" style="background:url('__PUBLIC__/image/z-35.png');background-size:cover;background-position:center;height:200px;width:200px;"></div>
+                  </div>
+            </div>
+        </div>
+        <div class="suibian">
+              <p><span>居</span>{$xiaoqu.live}</p>
+              <p><span>行</span>{$xiaoqu.travel}</p>
+              <p><span>购</span>{$xiaoqu.purchase}</p>
+              <p><span>食</span>{$xiaoqu.food}</p>
+              <p><span>玩</span>{$xiaoqu.play}</p>
+        </div>
+   </div>
+</section>
+
+<!-- 页脚 -->
+<include file="Public:footer2" />
+<include file="Public:footer" />
+<include file="Public:script" />
+<include file="Public:rental_script" />
+</body>
+</html> 

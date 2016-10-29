@@ -1,0 +1,382 @@
+.news-list h3 {
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    border-bottom: 2px solid #E3E3E3;
+}
+.news-list h4 a{
+    color: #000;
+}
+.news-list h3 b {
+    border-bottom: 2px solid #F44623;
+    display: inline-block;
+    height: 35px;
+}
+.news-list dl {
+    border-bottom: 1px solid #E3E3E3;
+    padding: 15px 0px;
+    overflow: hidden;
+}
+.news-list dl dt {
+    width: 150px;
+    height: 120px;
+    float: left;
+    position: relative;
+}
+.news-list dl dt img {
+    width: 160px;
+    height: 120px;
+}
+.news-list dl dd {
+    margin-left: 175px;
+}
+.news-list dl dd p {
+    height: 36px;
+    overflow: hidden;
+    color: #999;
+    margin: 5px 0px;
+}
+.news-list dl dd .btn span {
+    margin-right: 20px;
+    color: #999;
+    font-size: 12px;
+}
+.news-list dl dd .btn a {
+    margin-right: 20px;
+    display: inline-block;
+    padding: 0px 8px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+.sider-title {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 2px solid #E3E3E3;
+}
+
+.sider-title b {
+    font-size: 16px;
+    border-bottom: 2px solid #F44623;
+    display: inline-block;
+    height: 28px;
+}
+.hot-sider ul {
+    width: 300px;
+    overflow: hidden;
+    padding: 0;
+}
+.hot-sider ul li {
+    width: 130px;
+    height: 150px;
+    float: left;
+    margin: 10px 20px 0px 0px;
+}
+.hot-sider ul li a {
+    display: block;
+    color: #666;
+}
+.hot-sider ul li a p {
+    margin-top: 5px;
+    height: 36px;
+    overflow: hidden;
+    font-size: 12px;
+}
+.cur {
+    border-color: #F60 #F60 -moz-use-text-color;
+    border-bottom: 0px none;
+}
+.other-sider ul{
+	padding: 0;
+}
+.other-sider ul li {
+    margin-top: 15px;
+    height: 18px;
+    overflow: hidden;
+    list-style: inside none disc;
+    font-size: 12px;
+    color: #666;
+    
+}
+.other-sider ul li a{
+    color: #666;
+}
+
+
+
+/**/
+.news-title {
+    margin-top: 20px;
+}
+.news-title h2 {
+    font-size: 24px;
+    color: #333;
+    line-height: 50px;
+}
+.news-info {
+    padding-bottom: 10px;
+    height: 30px;
+}
+.news-info .btn span {
+    margin-right: 20px;
+    color: #999;
+}
+.news-info .btn i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: transparent url("../images/news_icon.png") no-repeat scroll 0% 0%;
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+    margin-right: 5px;
+}
+.news-info .btn i.time {
+    background-position: 0px -80px;
+}
+.news-info .btn a {
+    margin-right: 20px;
+    display: inline-block;
+    padding: 0px 8px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+.news-info .btn i.zan {
+    background-position: -16px -80px;
+}
+.news-info .btn i.com {
+    background-position: -32px -80px;
+}
+
+.news-detail {
+    margin-top: 20px;
+}
+.news-updown {
+    border-top: 1px solid #E3E3E3;
+    margin-top: 20px;
+    padding: 20px 0px;
+    overflow: hidden;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.news-comment h3 {
+    font-size: 18px;
+    color: #F44623;
+}
+.news-comment h3 em {
+    color: #999;
+    font-size: 12px;
+}
+.comment-input {
+    border: 1px solid #45A1DE;
+}
+.comment-input textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px 0px;
+    text-indent: 8px;
+    border: 0px none;
+    outline: medium none;
+}
+.comment-input .btn {
+    border-top: 1px solid #DADADA;
+    padding: 5px;
+    overflow: hidden;
+    background: #F9F9F9 none repeat scroll 0% 0%;
+    display: inherit;
+}
+.comment-input button {
+    background: #45A1DE none repeat scroll 0% 0%;
+    color: #FFF;
+    border: 0px none;
+    border-radius: 3px;
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+}
+.comment-list dl {
+    border-bottom: 1px solid #E3E3E3;
+    padding: 20px -1px;
+}
+.comment-list dl dt {
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+.comment-list dl dt img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+.comment-list dl dd {
+    margin-left: 50px;
+}
+.comment-list dl dd h4 span {
+    color: #45A1DE;
+    font-size: 12px;
+}
+.comment-list dl dd h4 em {
+    color: #999;
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+
+
+.news_sub_left {
+    width: 202px;
+}
+.sub_gg {
+    background: #EAEAEA none repeat scroll 0% 0%;
+    padding-bottom: 1px;
+}
+.sub_gg_tit {
+    border-top: 2px solid #81A6D7;
+    height: 31px;
+    line-height: 31px;
+    color: #828282;
+    padding-left: 10px;
+    font-size: 16px;
+    background: transparent url("../images/icon10.png") no-repeat scroll 180px center;
+    margin-top: 0;
+}
+.sub_gg_ul {
+    display: block;
+    background: #FFF none repeat scroll 0% 0%;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.sub_gg_ul li {
+    line-height: 29px;
+    padding-left: 15px;
+}
+
+.xg_news {
+    border: 1px solid #DBDBDB;
+    margin-top: 10px;
+}
+.xg_tit {
+    height: 30px;
+    background: transparent url("../images/xg_tit_bg.png") no-repeat scroll center bottom;
+    line-height: 5px;
+    padding-left: 9px;
+    font-size: 14px;
+}
+.xg_tit strong {
+    color: #39F;
+}
+.xg_pro_ul {
+    width: auto;
+    padding-bottom: 12px;
+}
+.bandan_ul li {
+    display: block;
+    height: 75px;
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid #EBEBEB;
+    margin-top: 7px;
+}
+.xg_pro_ul li {
+    width: 194px;
+    border-bottom: 1px dashed #E8E8E8;
+}
+.bandan_ul li img {
+    float: left;
+}
+.bandan_ul li h6 {
+    line-height: 18px;
+    padding-top: 7px;
+    height: 39px;
+    overflow: hidden;
+}
+.bandan_ul li h6 a {
+    color: #024293;
+}
+.bandan_ul li p {
+    color: #999;
+    font-size: 12px;
+}
+.bandan_ul li p strong {
+    color: #F33;
+    font-size: 14px;
+}
+.bandan_ul li p font {
+    font-size: 12px;
+    color: #024293;
+}
+.weizhi {
+    height: 35px;
+    line-height: 30px;
+    color: #999;
+    border-bottom: 1px solid #E8E8E8;
+}
+.weizhi strong {
+    font-size: 14px;
+    background: transparent url("../images/icon11.png") no-repeat scroll left center;
+    padding-left: 20px;
+    color: #1E1E1E;
+    font-weight: 400;
+}
+.sub_lb_ul li {
+    display: block;
+    height: 120px;
+    border-bottom: 1px dashed #E8E8E8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.sub_lb_ul li img {
+    padding: 1px;
+    border: 1px solid #DEDEDE;
+    background: #FFF none repeat scroll 0% 0%;
+    float: left;
+    margin-right: 10px;
+}
+.sub_lb_ul li h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0048A3;
+    line-height: 30px;
+    height: 30px;
+    margin-top: 0;
+}
+.sub_lb_ul li p {
+    color: #666;
+    line-height: 25px;
+    margin-top: 5px;
+}
+.nextpages {
+    height: 45px;
+    padding-top: 35px;
+    text-align: right;
+    color: #48B9EF;
+    border-top: 2px solid #DCDCDC;
+    margin-top: 50px;
+}
+.nextpages span {
+    padding-right: 10px;
+    color: #666;
+}
+.nextpages a {
+    color: #666;
+    padding: 4px 7px;
+    border: 1px solid #F7F7F7;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.nextpages a#curPage {
+    text-decoration: none;
+    color: #FFF;
+    background: #32A5E9;
+}

@@ -1,0 +1,54 @@
+*{
+	color: #fff;
+}
+
+
+/*构件圆形*/
+.round{
+	display: inline-block;
+	border-radius: 50%;
+	background: rgb(204,198,166);
+	line-height: 20px;
+	line-height: 50px;
+	text-align: center;
+	color: rgb(17,16,11);
+	width: 50px;
+	height:50px;
+}
+
+
+.map{
+	text-align: center;
+	margin-bottom: 4%;
+}
+
+.map div:nth-child(2){
+	width: 62%;
+	margin: 0px auto;
+}
+
+address{
+	text-align: center;
+	margin-bottom: 4%;
+	color: #fff;
+}
+
+.phone{
+	text-align: center;
+	color: #fff;
+	margin-bottom: 4%;
+
+
+}
+
+.statement{
+	text-align: center;
+	color: #fff;
+	margin-bottom: 4%;
+}
+
+.mg-b-2{
+	margin-bottom: 2%;
+}
+
+

@@ -1,0 +1,83 @@
+<html>
+<head>
+	<title>产品页</title>
+	<meta charset="utf-8">
+  <include file="default/Public/groble_link"/>
+	<link rel="stylesheet" type="text/css" href="Home/contract.css">
+	<link rel="stylesheet" type="text/css" href="Home/nav.css">
+</head>
+<body style="background:url('Home/img/index_bg.png');position: relative;background-size: cover;background-position:top center;">
+	
+	<!-- #include file="Home/public/top.html" -->
+  	<!-- 内容 -->
+  	<section class="page-body">
+  		<div class="container"> 
+  		  <include file="default/Public/nav" />
+
+  			<!-- 内容开始 -->
+  			<div class="map">
+  				<div class="round width-100 mg-b-2">位置</div>
+  				<!-- <div style="background:url('Home/img/map1.jpg');background-position:center;background-size:cover;height:350px;background:#000;"> -->
+          <!-- 地图 -->
+            <div id="mapContainer" style="width:706px;height:350px;"></div>
+            <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=94e1a2abcdaf0c2fa70f47f192514562"></script>
+            <script type="text/javascript">
+              (function(exports){
+                var map = new AMap.Map('mapContainer', {
+                  //resizeEnable: true,
+                  //rotateEnable: true,
+                  //dragEnable: true,
+                  //zoomEnable: true,
+                  //设置可缩放的级别
+                  //zooms: [3,18],
+                  //传入2D视图，设置中心点和缩放级别
+                  view: new AMap.View2D({
+                    center: new AMap.LngLat(118.781626,25.387486),
+                    zoom: 12
+                  }),
+                });   
+                var marker = new AMap.Marker({ //创建自定义点标注                 
+                  map:map,                 
+                  position: new AMap.LngLat(118.781626,25.387486),                 
+                  offset: new AMap.Pixel(-10,-34),                 
+                  icon: "http://www.haotu.net/up/3205/32/google-maps.png"                 
+                });    
+              })(window);
+            </script>
+          </div>
+  			</div>
+  			<address>
+  				<div class="round width-100 mg-b-2">地址</div>
+  				<p>福建省莆田市仙游县榜头镇尚坤村莆永高速山坪大桥往坝下方向过200米</p>
+  			</address>
+  			<div class="phone">
+  				<div class="round width-100 mg-b-2">联系</div>
+  				<p>服务电话：4008839990 13860979990</p>
+  				<p>服务传真：400 6981 163 转 36020</p>
+  				<p>企业邮箱：ohmyday@vip.163.com</p>
+  			</div>
+  			<div class="statement">
+  				<div class="round width-100 mg-b-2">声明</div>
+  				<p><沉香阁>国内无任何分点，若于他处产生纠纷，本阁概不承担法律责任</p>
+  				<p>香友请认准：①手机13860979990②网站www.uooou.netsan③阁主本人面谈交流</p>
+  				<p>除此三条渠道，《沉香阁》不对其他来源负任何法律责任</p>
+  			</div>
+  			
+  			
+  			
+  		</div>
+  	</section>
+  	<include file="default/Public/footer"/>
+	</section>
+<script type="text/javascript">
+		// 大图片
+		var b=$('.big_pic>ul>li>div').width();
+		console.log(b);
+		var c=b/4*3;
+		$('.big_pic>ul>li>div').css('height',c);
+		
+	})
+</script>
+
+</body>
+</html>

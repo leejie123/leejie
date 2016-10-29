@@ -1,0 +1,1042 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0px;
+    padding: 0px;
+}
+fieldset, img {
+    border: 0px none;
+}
+.profile .nav {
+    border: 1px solid #DBD6D0;
+    background: #F8F6F4 none repeat scroll 0% 0%;
+    width: 202px;
+}
+.profile .nav, .content .filter a {
+    float: left;
+}
+.profile .nav .notice {
+    padding: 10px;
+    background: #FFF none repeat scroll 0% 0%;
+    overflow: hidden;
+    line-height: 1.8;
+}
+.profile .nav a {
+    border-bottom: 1px solid #DBD6D0;
+    border-top: 1px solid #FFF;
+    padding-left: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    display: block;
+    color:
+     #666;
+}
+.nav a:last-child {
+    border-bottom: 0px none;
+}
+.nav .notice img {
+    margin-right: 10px;
+    height: 48px;
+    width: 48px;
+    float: left;
+}
+.nav .notice p {
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.nav .notice .nickname {
+    font-size: 14px;
+    color: #ED145B;
+}
+.nav .notice .uid {
+    border-bottom: 1px dashed #CCC;
+    margin-bottom: 10px;
+    line-height: 32px;
+    margin-right: 2px;
+    clear: both;
+}
+.nav .notice .uid {
+    border-bottom: 0px none;
+}
+.profile .nav h2 {
+    box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #CCC;
+    font-weight: 400;
+    background: #EDE7E1 none repeat scroll 0% 0%;
+    padding-left: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    margin-top: -1px;
+    color: #333;
+}
+.nav h2 b {
+    background: transparent url("../images/nav_title_bg.png") no-repeat scroll 0px 0px;
+    margin-left: -47px;
+    position: absolute;
+    vertical-align: top;
+    height: 50px;
+    width: 40px;
+}
+.nav h2 + .selected {
+    margin-top: 1px;
+}
+.profile .nav h2 + a {
+    border-top: 0px none;
+}
+.nav a:hover, .profile .nav .selected {
+    background-color: #FFF;
+    text-decoration: none;
+}
+.profile .nav .selected {
+    margin-right: -1px;
+    color: #EC1A5B;
+}
+.nav a b {
+    background: transparent url("/templates/jumei/images/account/left_nav_icons.png") no-repeat scroll 0% 0%;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 10px;
+    height: 25px;
+    width: 25px;
+}
+
+
+/*开始index-jifen*/
+.jf_huiyuan{
+    line-height: 25px;
+    padding: 10px;
+    margin: 20px 0;
+    background:#fff9f5;
+    border: 1px solid #FFCEAE;
+}
+.jf_huiyuan b{
+    color:#f33;
+}
+.jf_huiyuan a{
+    padding: 3px 5px;
+    background: #F7A38D;
+    color: #fff;
+    margin: 0 10px;
+    text-transform: none;
+}
+.detail .masthead {
+    background-color: #F1F1F1;
+    border-width: 1px 0px;
+    border-color: #E3E3E3;
+    border-style: solid;
+    color: #999;
+}
+.detail .masthead span {
+    display: block;
+    float: left;
+    border-right: 1px solid #E3E3E3;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    overflow: hidden;
+}
+.detail .why {
+    width: 360px;
+}
+.detail .what {
+    width: 210px;
+    text-align: center;
+}
+.detail .when {
+    width: 200px;
+    text-align: center;
+}
+.detail .notes {
+    width: 153px;
+    padding-left: 15px;
+}
+ .detail .item-list {
+    margin-top: 12px;
+    border-top: 1px solid #F1F1F1;
+}
+ .detail .item {
+    padding: 20px 0px;
+    border-bottom: 1px solid #F1F1F1;
+}
+ .detail .item div {
+    float: left;
+    overflow: hidden;
+}
+.detail .why .img {
+    float: left;
+    display: block;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    text-align: center;
+    margin: 0px 10px 0px 20px;
+}
+/*结束index-jifen*/
+
+
+
+/*开始index-wxfw*/
+.mt20 {
+    margin-top: 20px;
+}
+h4.fix_tit {
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+}
+.checkpro ul {
+    overflow: hidden;
+    border-top: 1px solid #EEE;
+}
+.checkpro ul li {
+    border-bottom: 1px solid #EEE;
+    padding: 10px 0px;
+    overflow: hidden;
+}
+.checkpro ul li .fixp_check {
+    padding-top: 18px;
+    width: 50px;
+    text-align: center;
+}
+.left {
+    float: left;
+}
+.checkpro ul li .fixp_box {
+    width: 700px;
+}
+.fix_pro dt {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.fix_pro dd {
+    margin-left: 60px;
+    padding-top: 5px;
+}
+.fixp_box h5 {
+    font-size: 100%;
+    font-weight: 400;
+}
+.fix_pro dd p {
+    color: #999;
+}
+.imeiinfo {
+    clear: both;
+    margin-left: 62px;
+}
+.chuzhen {
+    margin-top: 20px;
+    border-top: 1px dotted #E3E3E3;
+    padding-top: 10px;
+    display: none;
+}
+.chuzhen select {
+    margin-right: 15px;
+}
+.fix_miaoshu textarea {
+    width: 100%;
+    height: 90px;
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+.fix_chuli label {
+    height: 30px;
+    line-height: 30px;
+    margin-right: 30px;
+    font-weight: bold;
+}
+.fix_chuli label input {
+    margin-right: 5px;
+}
+.fixreport input {
+    vertical-align: middle;
+    outline: medium none;
+}
+.fix_chuli label em {
+    color: #999;
+    font-weight: normal;
+    margin-left: 10px;
+    font-style: normal;
+}
+
+.fuser_info dl {
+    line-height: 22px;
+}
+.fuser_info dl dt {
+    width: 70px;
+    float: left;
+    color: #999;
+    font-size: 12px;
+}
+.fuser_info dl dd {
+    margin-left: 70px;
+}
+.fuser_info dl dd input[type="text"] {
+    width: 240px;
+    height: 26px;
+    text-indent: 5px;
+    border: 1px solid #CCC;
+}
+.fixreport input {
+    vertical-align: middle;
+    outline: medium none;
+}
+.fuser_info dl dd em {
+    color: #999;
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+}
+.fuser_info dl dd label {
+    margin-right: 15px;
+}
+.iptlab {
+    display: inline-block;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding: 1px 4px 0px;
+    cursor: pointer;
+    background: #EEE none repeat scroll 0% 0%;
+    vertical-align: middle;
+    color: #666;
+    font-size: 12px;
+}
+.fuser_info dl dd label input {
+    margin-right: 5px;
+}
+a.button {
+    display: inline-block;
+    color: #007AC5;
+    border: 1px solid #B6CCDB;
+    border-radius: 3px;
+    padding: 3px 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    background: #E7E7E7 none repeat scroll 0% 0%;
+    vertical-align: middle;
+}
+
+/*结束index-wxfw*/
+
+
+
+/*开始index-grzl  index-shdz Index-xgmm*/
+.myself_tab {
+    margin-left: 3%;
+    float: left;
+}
+.myself_tab th, .myself_tab td {
+    line-height: 35px;
+    font-weight: 400;
+    vertical-align: top;
+    padding-top: 20px;
+}
+.myself_tab th {
+    text-align: right;
+}
+.red, a.red {
+    color: #E83928;
+}
+.myself_tab th, .myself_tab td {
+    line-height: 35px;
+    font-weight: 400;
+    vertical-align: top;
+    padding-top: 20px;
+}
+input.text {
+    border: medium none;
+    width: 100%;
+    background: transparent none repeat scroll 0% 0%;
+}
+.myself_tab .text {
+    width: 100%;
+    text-indent: 1em;
+    border: 1px solid #DDD;
+    height: 33px;
+    line-height: 33px;
+}
+.myself_tab select {
+    height: 30px;
+}
+.sub {
+    border: medium none;
+    width: 100%;
+    background: transparent none repeat scroll 0% 0%;
+    cursor: pointer;
+}
+.sub {
+    display: block;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    color: #FFF;
+    font-size: 16px;
+    border-radius: 3px;
+    background: #F80 none repeat scroll 0% 0%;
+}
+.Validform_checktip {
+    margin-left: 8px;
+    line-height: 20px;
+    height: 20px;
+    overflow: hidden;
+    color: #999;
+    font-size: 12px;
+}
+.Validform_wrong {
+    color: #F00;
+    padding-left: 20px;
+    white-space: nowrap;
+    background: transparent url("valid_icons.png") no-repeat scroll -20px -40px;
+}
+.passwordStrength b, .passwordStrength span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 16px;
+    height: 25px;
+}
+.passwordStrength b {
+    font-weight: normal;
+    display: inline-block;
+    margin: 0px 8px;
+    color: #F27F02;
+}
+.passwordStrength span {
+    width: 50px;
+    text-align: center;
+    background-color: #D0D0D0;
+    border-right: 1px solid #FFF;
+    padding: 5px;
+}
+.attention_tab {
+    width: 94%;
+    margin: 20px auto;
+}
+.attention_tab th {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+}
+.address_tab th {
+    border-bottom: 1px solid #EEE;
+}
+.attention_tab td {
+    border-top: 1px solid #EEE;
+    text-align: center;
+    padding: 20px 0px;
+}
+.address_tab td {
+    border: medium none;
+}
+.address_line {
+    width: 94%;
+    margin: 0px auto;
+    height: 1px;
+    border-bottom: 1px solid #EEE;
+}
+/*结束index-grzl  index-shdz*/
+
+
+
+
+
+/*开始wddd*/
+
+.mymember_info02 table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.mymember_info02 tr {
+    border: 1px solid #EEE;
+}
+.mymember_info02 th {
+    background: #F5F5F5 none repeat scroll 0% 0%;
+    line-height: 35px;
+    font-weight: 400;
+    text-align: left;
+    padding: 0px 5px;
+    color: #333;
+    font-size: 12px;
+}
+.mymember_infotab_tit01 th {
+    background: #E7E7E7 none repeat scroll 0% 0%;
+    text-align: center;
+}
+.mymember_info02 td {
+    border-left: 1px solid #EEE;
+    border-right: 1px solid #EEE;
+    padding: 20px 5px;
+    text-align: center;
+    font-size: 12px;
+    position: relative;
+}
+
+.mymember_info02 td.td001 {
+    border-right: medium none;
+    text-align: left;
+}
+.mymember_info02 td.td001 a {
+    display: block;
+    width: 334px;
+    height: 50px;
+    margin: 4px 3px;
+    overflow: hidden;
+}
+.mymember_info02 td.td001 a img {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.mymember_info02 td.td003 p, .mymember_info02 td.td003 a {
+    color: #989898;
+    display: inline-block;
+    margin: 0px 3px;
+}
+.mymember_info02 td h4 {
+    color: #FF1000;
+    font-size: 12px;
+
+}
+.mymember_infotab_show {
+    background: transparent url("../images/mymember/arrow05.gif") no-repeat scroll right center;
+    display: inline-block;
+    padding-right: 15px;
+}
+.mymember_info_show {
+    display: none;
+    position: absolute;
+    z-index: 50;
+    right: 78px;
+    top: 10px;
+    background: #FFF none repeat scroll 0% 0%;
+    border: 1px solid #DDD;
+    width: 600px;
+    padding: 15px;
+    text-align: left;
+}
+
+/*结束wddd*/
+
+
+/*开始index-wdsc*/
+.content {
+    overflow: hidden;
+    padding: 0px 15px;
+    margin: 15px 0px;
+    position: relative;
+    height: auto;
+}
+.notice_content {
+    border: 1px solid #EFE68B;
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    background: #FEFFE5 none repeat scroll 0% 0%;
+}
+/* .filter {
+    border-bottom: 1px solid #DBD6D0;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+ .nav, .content .filter a {
+    float: left;
+}
+ .filter a {
+    border-radius: 3px 3px 0px 0px;
+    border-width: 1px 1px 0px;
+    border-style: solid solid none;
+    border-color: #DBD6D0 #DBD6D0 -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    text-decoration: none;
+    white-space: nowrap;
+    background: #F8F6F4 none repeat scroll 0% 0%;
+    margin-right: -1px;
+    overflow: visible;
+    min-width: 80px;
+    padding: 0px 20px;
+    color: #666;
+}
+ .filter .curr {
+    padding-bottom: 1px;
+    margin-bottom: -1px;
+    position: relative;
+    background: #FFF none repeat scroll 0% 0%;
+    color: #ED145B;
+}
+ .filter + * {
+    border-top: 0px none;
+}
+#fav_product_list, .fav_product_list, .maybe_like {
+    margin: 0px auto;
+    border: 1px solid #D9D9D9;
+    padding-top: 1px;
+}
+.fav_product_container {
+    padding: 20px;
+}
+.fav_product_head {
+    padding: 10px 0px;
+    overflow: hidden;
+}
+.fav_product_head .fph_tit {
+    font-size: 16px;
+    float: left;
+    display: inline;
+}
+.pink {
+    color: #ED145B;
+}
+.head_page {
+    float: right;
+    display: inline;
+    color: #999;
+    height: 20px;
+    line-height: 20px;
+}
+.head_page a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent url("http://images.jumei.com//templates/jumei/images/favbg.jpg") repeat scroll 0% 0%;
+}
+.head_page a.hp_prev {
+    background-position: 0px -148px;
+}
+.head_page a.hp_next {
+    background-position: -25px -168px;
+}
+.clear {
+    clear: both;
+    height: 0px;
+    overflow: hidden;
+}*/
+.attention_tab td.td01 a {
+    color: #0070B7;
+    font-size: 14px;
+}
+.attention_tab a.a1 {
+    background: #F80;
+    border-radius: 3px;
+    color: #FFF;
+    padding: 0px 10px 0px 18px;
+    line-height: 30px;
+    margin-top: 5px;
+    display: inline-block;
+}
+.attention_tab i{
+    font-size: 15px;
+}
+.pt10 {
+    padding-top: 10px;
+    font-size: 12px;
+}
+/*结束index-wdsc*/
+
+
+/*huiyundengji*/
+
+.level > div {
+    font-family: "Microsoft YaHei",SimHei;
+    line-height: 30px;
+}
+.level_step > div {
+    width: 153px;
+    float: left;
+}
+.level_step > div .icon_step {
+    position: relative;
+    height: 5px;
+    margin-bottom: 15px;
+    background: #F6F6F6 none repeat scroll 0% 0%;
+    margin-left: 30px;
+    border-width: 5px 0px;
+    border-style: solid none;
+    border-color: #EDEDED -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+}
+.level_step .point {
+    border: 3px solid #EDEDED;
+    background: #EDEDED none repeat scroll 0% 0%;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    border-radius: 33px;
+    color: #333;
+    display: inline-block;
+    left: -33px;
+    top: -16px;
+    width: 33px;
+    z-index: 1;
+    height: 33px;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 700;
+}
+.level_step .point sub {
+    font-style: normal;
+}
+.level > div span {
+    color: #399FD9;
+}
+.level_step .line {
+    width: 0px;
+    height: 5px;
+    background: #39F none repeat scroll 0% 0%;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+}
+.level_step .cur .line {
+    background: #39F none repeat scroll 0% 0%;
+}
+.tip_box {
+    border: 1px solid #E1DFE0;
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 1px 1px 3px #F7F7F7;
+    position: absolute;
+    top: -70px;
+    left: 0px;
+    width: 120px;
+    background: #F6F6F6 none repeat scroll 0% 0%;
+    z-index: 99;
+    word-wrap: break-word;
+    word-break: break-all;
+    line-height: 20px;
+}
+.level_step .cur p {
+    color: #39F;
+}
+.level_step .cur .tip_box span {
+    color: #999;
+    display: inline-block;
+}
+.level_step .cur .point {
+    background: #39F none repeat scroll 0% 0%;
+    color: #FFF;
+}
+
+
+
+.level > div.info h4 {
+    font-weight: 700;
+    padding-top: 20px;
+    border-bottom: 1px solid #DDD;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.level > div.info div {
+    text-indent: 2em;
+    line-height: 25px;
+}
+.level > div.info div.tequan {
+    text-indent: 0px;
+}
+.tequan a {
+    display: inline-block;
+    width: 85px;
+    margin: 7px 2.5px 0px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    height: 70px;
+}
+.tequan a i {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin-left: 10px;
+    background: transparent url("http://img2.ch999img.com/vipclub/images/icon_vip.png?v=3") no-repeat scroll 0% 0%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.tequan a span {
+    color: #FFF;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+.level > div span {
+    color: #399FD9;
+}
+.tequan a i.te1 {
+    background-position: 0px -69px;
+}
+.tequan a i.te2 {
+    background-position: -64px -69px;
+}
+.tequan a i.te7 {
+    background-position: -576px -69px;
+}
+.tequan a i.te10 {
+    background-position: -320px -69px;
+}
+
+
+/*Index-pingjia*/
+.with_nav{
+    font-size: 12px;
+}
+.profile .content_head {
+    padding: 10px;
+    overflow: hidden;
+}
+.profile {
+    font-family: Arial;
+    line-height: 1.5;
+    font-size: 12px;
+    color: #666;
+}
+.service_rating {
+    margin: 5px 0px;
+}
+.service_rating label {
+    width: 80px;
+    float: left;
+}
+.spark {
+    vertical-align: baseline;
+    display: inline-block;
+    padding-right: 4px;
+    color: #ED415B;
+}
+.service_rating .rating {
+    float: left;
+    line-height: 16px;
+    background: transparent url("../images/rating.png") repeat-x scroll 0px -16px;
+    width: 85px;
+    height: 16px;
+}
+.service_rating .rating.editable {
+    cursor: pointer;
+}
+.service_rating .rating .value {
+    height: 16px;
+    background: transparent url("../images/rating.png") repeat-x scroll 0px 0px;
+}
+
+.comment_tip
+{
+    margin-top: 10px;
+}
+.text_pink
+{
+    color: #ed145b;
+}
+.radio_group
+{
+    float:left;
+    line-height: 20px;
+}
+.lbl_rating
+{
+    line-height: 20px;
+}
+.product_info
+{
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.product_img{
+    width:60px;
+    height:60px;
+    float:left;
+}
+.name_merchant
+{
+    float: left;
+    width: 600px;
+    height: 60px;
+}
+.product_name
+{
+    height:20px;
+    font-size: 16px;
+    color: #000;
+    margin-top: 10px;
+}
+.product_merchant
+{
+    height:20px;
+    color : #666;
+    font-size: 14px;
+}
+.product_name span, .product_merchant span
+{
+    padding-left: 20px;
+    
+}
+.comment_order_detail
+{
+    border-top: 1px solid #dbd6d0;
+    margin-top: 20px;
+}
+.h3_title_order_tetail
+{
+    margin-top: 10px;
+}
+.comments_notif
+{
+    float: left;
+    padding-top: 143px;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #ed145b;
+}
+.td_product_name {
+width: 657px;
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+}
+.product_name {
+text-overflow: ellipsis;
+width: 100%;
+white-space: nowrap;
+overflow: hidden;
+}
+    .service_rating label{
+  width: 94px;
+  float:left;
+}
+
+
+/*Index-ddxx*/
+.mymember_info {
+    position: relative;
+    width: 100%;
+    padding: 20px 0px 0px;
+    background: #FFF none repeat scroll 0% 0%;
+    margin-bottom: 20px;
+}
+.mymember_info04 dl {
+    position: relative;
+    display: block;
+    width: 90%;
+    padding: 15px 2%;
+    margin: 25px auto 70px;
+    background: #FFF9F5;
+    border: 1px solid #FFCEAE;
+}
+.mymember_info04 dt {
+    font-size: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 10px;
+    color: #333;
+}
+.mymember_green {
+    width: 450px;
+    position: relative;
+    margin: 0px auto;
+}
+.mymember_green p {
+    float: left;
+    margin: 0px 20px;
+    font-size: 12px;
+    position: relative;
+    width: 70px;
+    color: #999;
+    text-align: center;
+}
+.mymember_green p.mysel {
+    color: #32A5E9;
+}
+.mymember_green p i {
+    display: block;
+    position: absolute;
+    top: -40px;
+    left: 22px;
+    z-index: 10;
+    border-radius: 50%;
+    border: 4px solid #DDD;
+    height: 30px;
+    background: #FFF none repeat scroll 0% 0%;
+    width: 30px;
+}
+.mymember_green p.mysel i {
+    border: 4px solid #32A5E9;
+}
+.mymember_green p b {
+    display: block;
+    position: absolute;
+    top: -30px;
+    left: -70px;
+    width: 95px;
+    height: 8px;
+    background: #32A5E9;
+}
+.mymember_green p.mysel b {
+    background:#32A5E9;
+}
+.h30 {
+    overflow: hidden;
+    height: 30px;
+}
+.mymember_info04 h3 {
+    position: relative;
+    width: 94%;
+    margin: 0px auto 20px;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.mymember_info04 table {
+    width: 94%;
+    margin: 0px auto 30px;
+    border-collapse: collapse;
+}
+.mymember_info04 th {
+    background: #F5F5F5 none repeat scroll 0% 0%;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 400;
+    color: #999;
+    font-size: 12px;
+}
+.mymember_info04 td {
+    line-height: 20px;
+    padding: 10px 0px;
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+}
+.mymember_sq_tab th {
+    background: transparent none repeat scroll 0% 0%;
+    line-height: 20px;
+    padding: 10px 0px;
+}
+.mymember_sq_tab td {
+    text-align: left;
+    padding: 10px;
+}
+.mymember_order_search {
+    width: 100%;
+    line-height: 30px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.mymember_order_search a.a001 {
+    color: #F80;
+    font-size: 18px;
+    float: left;
+    margin-left: 3%;
+}

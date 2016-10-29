@@ -1,0 +1,22 @@
+[
+	{
+		"parent":{
+			"ldiuanjie": 1
+		},
+		"child":{
+			"erjifenlei1": 1,
+			"erjifenlei2": 2,
+			"erjifenlei3": 3
+		}
+	},
+	{
+		"parent":{
+			"ldiuanjie": 1
+		},
+		"child":{
+			"erjifenlei1": 1,
+			"erjifenlei2": 2,
+			"erjifenlei3": 3
+		}
+	},
+]

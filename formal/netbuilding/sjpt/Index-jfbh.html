@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+    <title>手机页面框架</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/gonggong.css">
+<link rel="stylesheet" href="css/lipin.css">
+<!-- <link rel="stylesheet" href="style_1.css"> -->
+</head>
+<body>
+<!-- 头部 -->
+<nav class="navbar">
+    <div class="container">
+        <h1>手机平台</h1>
+        <form class="navbar-form  hidden-xs" role="search" style="text-align: center;">
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" style="width: 380px;">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"style="padding-left: 25px; padding-right: 25px;color: #FFF;background: #32A5E9;"><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+            </div>
+            <div class="nav navbar-nav navbar-right"> <button class="btn btn-default" type="button"style="padding: 10px;background: #F3F3F3;"><i class="glyphicon glyphicon-calendar"style="color: rgb(50, 165, 233);"></i> 我的购物车 ></button></div>
+        </form>       
+         <div class="clear"></div>
+    </div>
+</nav>
+
+<!-- 导航栏 -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="padding-left: 48px; padding-right: 48px;">积分商城首页</a>  
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="">积分礼品 <span class="sr-only">(current)</span></a></li>
+         <li><a href="">积分换劵 <span class="sr-only">(current)</span></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- 内容 -->
+<div class="container">
+    <div class="site">
+        <span>您现在的位置是：</span>
+        <a href="/">积分商城首页</a>
+        &gt;&gt; <span class="font_grey">积分礼品</span>
+    </div>
+    <div class="infor">
+        <div class="infor_pic">
+           <img src="http://a.vpimg3.com/upload/presents/virtualCard/2015/08/06/201508061013239975.jpg" alt="139邮箱 20张4R照片冲印券" height="336" width="266">
+        </div>
+        <h2>139邮箱 20张4R照片冲印券</h2>
+        <p><span class="past_price">市场价：<em>￥10.<span class="font_litter">00</span></em></span></p>
+        <p>兑换积分：<span class="price"><em class="J_goods_price">100</em>分</span></p>
+        <div class="number">
+            兑换数量：
+            <div class="nub_selcet">
+                <a href="javascript:void(0)" onclick="addCartNum(1);" class="jianOne"> + </a>
+                    <input id="product_quantity" class="text" name="product_quantity" value="1" onblur="" onkeypress="" type="text">
+                <a href="javascript:void(0)" onclick="addCartNum(-1);" class="addOne"> - </a>
+            </div>
+        </div>
+        <div class="dh">
+            <input name="" id="" class="dh_btn_y"  type="button" value="兑换">
+        </div>
+    </div>
+    <div class="inf">
+        <div class="list_hd">
+            <h3>商品信息</h3>
+        </div>
+        <div>
+            温馨提示：<br>1、兑换券码以短信形式发送到指定手机号码上，也可通过登陆唯品会在站内信查看。<br>2、本优惠券有效期截止至2015年8月30日，请尽快使用！<br><p><br><img src="http://a.vpimg2.com/upload/merchandise/270491/jifen-XN00022-1.jpg" height="626" width="495"><br><img alt="" src=" http://a.vpimg2.com/upload/merchandise/270491/jifen-XN00022-6.jpg"></p><br><br>兑换的礼品不提供免费送货服务，您兑换到的礼品可以随您的新订单一起配送也可以单独发货。如您需要单独发货，需支付10元配送费用，礼品不能随唯品团、品牌直发订单发货。积分兑换礼品，如非质量问题，不支持退换货。 
+        </div>
+    </div>  
+</div>
+
+<!-- 页脚 -->
+<div class="footer">
+    <div  id="footer-2014">
+        <div class="links">
+            <a  href="">关于我们</a>|<a href="">联系我们</a>|<a  href="">商家入驻</a>|<a  href="">营销中心</a>|<a href="">手机</a>|<a  href="">友情链接</a>|<a target="_blank" href="">销售联盟</a>|<a href="" >手机社区</a>|<a href="" target="_blank">手机公益</a>|<a href="" >English Site</a>|<a href="">Contact Us</a>
+        </div>
+        <div class="copyright">各门店营业时间：周一至周日 09:00-21:30 &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a target="_blank" href=""> 工作时间：周一至周日 09:00-21:30</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>
+        <a rel="nofollow" href="" target="_blank">网站ICP备案号：滇ICP备06002001号 </a>&nbsp;&nbsp;|&nbsp;&nbsp;电信业务经营许可证：滇B2-20110012号&nbsp;&nbsp;|&nbsp;&nbsp;   云南网警ICP备案 53010303402252  <br>旗下网站：<a target="_blank" href="">360TOP</a>&nbsp;&nbsp;<a href="" target="_blank">拍拍网</a>&nbsp;&nbsp;<a href="" target="_blank">网银在线</a></div>
+        
+        <div class="authentication">
+            <a rel="nofollow" target="_blank" href="">
+                <img alt="经营性网站备案中心" src="http://img12.360buyimg.com/da/jfs/t535/349/1185317137/2350/7fc5b9e4/54b8871eNa9a7067e.png" class="err-product" height="32" width="103">
+            </a>
+            
+            <a rel="nofollow" target="_blank" id="urlknet" tabindex="-1" href="">
+                <img   src="http://img11.360buyimg.com/da/jfs/t643/61/1174624553/2576/4037eb5f/54b8872dNe37a9860.png" class="err-product" border="true" height="32" width="103">
+            </a>
+            <a rel="nofollow" target="_blank" href="">
+                <img src="http://img11.360buyimg.com/da/jfs/t559/186/1172042286/2795/7d90b036/54b8874bN694454a5.png" class="err-product" height="32" width="103">
+            </a>
+            <a rel="nofollow" target="_blank" href="">
+                <img src="http://img11.360buyimg.com/da/jfs/t451/173/1189513923/1992/ec69b14a/54b8875fNad1e0c4c.png" class="err-product" height="32" width="103">
+            </a>
+            <a target="_blank" href="">
+                <img src="http://img10.360buyimg.com/da/jfs/t520/303/1151687373/1180/2f8340fc/54b8863dN8d2c61ec.png" class="err-product" height="32" width="185">
+            </a>
+        </div>
+    </div>   
+</div>
+</body>
+</html>
+<script type="text/javascript">  
+$(document).ready(function(){  
+var curVal = $("#product_quantity");  
+var temp; //得到文本框当前的数据  
+var tipMsg = $(".mark_tip"); //提示信息  
+$(".addOne").click(function(){  
+    temp = curVal.val()  
+    if(temp<=1){  
+        tipMsg.text("").css("color","#F30")  
+        return false;  
+    }  
+    if(testNum(temp)){  
+         curVal.val(--temp); //数量减1  
+    }else{  
+        curVal.val(1)  
+}  
+});  
+$(".jianOne").click(function(){  
+    temp = curVal.val()  
+    if(testNum(temp)){  
+        curVal.val(++temp); //数量加1  
+ 
+    }else{  
+        curVal.val(0)  
+    }  
+});  
+doDashed();  
+//得到购买数量，并判断是否是正确格式  
+function testNum(tempNum){  
+    if(/^[0-9]+$/.test(tempNum)){  
+        tipMsg.text("").css("color","#03F")  
+        return true;  
+    }  
+    tipMsg.text("").css("color","#F30")  
+    return false;  
+}  
+});  
+//处理点击链接时的虚线框  
+function doDashed(){  
+    $('a').focus(function(){  
+        if(this.blur){  
+             this.blur();  
+         }  
+    });  
+}   
+</script> 

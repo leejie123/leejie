@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>珠江新城</title>
+    <include file="Public:head" />
+    <link rel="stylesheet" href="__PUBLIC__/css/zhujiang.css">
+    <style type="text/css">
+    .onimage-content ul li:nth-child(2) p {
+      text-align: left;
+      background: none;
+      display: inline-block;
+      width: 24%;
+      float: none;
+   }
+    </style>
+ 
+</head>
+<body>
+ <include file="Public:header" />
+
+ <include file="Public:carousel1" />
+<!-- 三张图片 -->
+<section class="section1">
+   <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                  <div class="three-image">
+                      <!-- <div class="img-circle" style="background:url('__PUBLIC__/image/f2015-12.png');background-size:cover;background-position:center;height:200px;"></div> -->
+                      <div class="img-circle" style="background:url('__PUBLIC__/image/f2015-12.png');background-size:cover;background-position:center;height:200px;width:200px;"></div>
+                      <p>珠江新城的设计者和建设者追求自然、环境与人的和谐统一，倡导人性化的生活空间，要求享受都市繁华的同时又有郊野的环境质量。</p>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                  <div class="three-image">
+                    <div class="img-circle" style="background:url('__PUBLIC__/image/f2015-13.png');background-size:cover;background-position:center;height:200px;width:200px;"></div>
+                      <p>楼盘内部的绿化，相邻楼盘间的组团绿化，道路的带状绿化，以及作为区域绿化的珠江公园等构成了全方位、多层次的绿化系统。</p>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                  <div class="three-image">
+                    <div class="img-circle" style="background:url('__PUBLIC__/image/f2015-14.png');background-size:cover;background-position:center;height:200px;width:200px;"></div>
+                      <p>江畔的绿化带，是整个珠江新城与珠江新城，如名门大夏、南天广场，远洋明珠、星汇园、丽锦华庭、漾晴居等。新大夏、漾晶居100平方米左右的户型在租赁市场非常抢手。</p>
+                  </div>
+            </div>
+        </div>
+   </div>
+</section>
+
+<!-- 大图 -->
+<section class="section3">
+    <div class="background-image" style="background-image:URL('__PUBLIC__/image/2015-8-11.jpg');height:350px;"></div>
+    </div>
+        <div class="maximage-div">
+                  
+                  <div class="i-b-div">
+                        <input type="text" class="form-control" id="keyword" placeholder="请输入小区楼盘具体名称" name="district_name">
+                        <button type="submit" class="map-search btn btn-default">小区楼盘搜索</button>
+                  </div>
+            <!-- </form> -->
+            <div id="result1" name="result1"></div>
+
+            <form class="form-inline" action="{:U('Real/chazhao')}" method="get"> 
+              <ul>
+                  <li class="ul-li">
+                    <select name="leixing">
+                      <option value="0">类型不限</option>
+                      <volist name="cate" id="cate">
+                        <option value="{$cate.id}">{$cate.name}</option>
+                      </volist>
+                    </select>
+                  </li>
+                  <li class="ul-li">
+                    <select name="huxing">
+                      <option value="0">户型不限</option>
+                      <option value="1">一居</option>
+                      <option value="2">二居</option>
+                      <option value="3">三居</option>
+                      <option value="4">四居以上</option>
+                    </select>
+                  </li>
+                  <li class="ul-li">
+                    <select name="zujin">
+                      <option value="0">租金不限</option>
+                      <option value="1000">1000元以下</option>
+                      <option value="1000-2000">1000-2000元</option>
+                      <option value="2000-3000">2000-3000元</option>
+                      <option value="3000-5000">3000-5000元</option>
+                      <option value="5000-8000">5000-8000元</option>
+                      <option value="8000-12000">8000-12000元</option>
+                      <option value="12000-20000">12000-20000元</option>
+                      <option value="20000">20000元以上</option>
+                    </select>
+                  </li>
+                  <li class="ul-li">
+                    <a class="button1 btn"><span class="zujin">配套</span></a>
+                    <div class="format1 nick">
+                      <ul>
+                          <volist name="supporting" id="vo">
+                            <li>
+                              <div class="checkbox">
+                                <input type="checkbox" name="supporting[]" value="{$vo.name}">
+                                <span>{$vo.name}</span>
+                              </div>
+                            </li>
+                          </volist>
+                        <div class="clear"></div>
+                      </ul>
+                       <p class="kk queding">
+                            <button class="sure btn btn-default " >确定</button>
+                            <button class="sure1 btn btn-default " >取消</button>
+                        </p>
+                        <input type="hidden"  class="receive">
+                    </div>
+                  </li>
+                 <button type="submit" class="btn btn-default li-btn">按条件搜索</button>
+                  <div class="clear"></div>
+              </ul>
+            </form>
+        </div>
+</section>
+
+<!-- 地图 -->
+<div style="width:100%;">
+  <section class="stn-1" style="height:500px;width:70%;display:inline-block">
+         <div>
+            <div id="mapContainer"></div>
+          </div>
+         
+  </section>
+  <div style="width:29%;height:500px;overflow:scroll;display:inline-block" class="property-list">
+    
+  </div>
+</div>
+
+
+<!-- 多图区 -->
+<section>
+  <div class="container">
+        <div class="someimage-t">
+            <h2>高端推介楼盘</h2>
+           
+          <p><a href="#">更多</a></p>
+          <div class="clear"></div>
+        </div>
+        <div class="row">
+            <div class="paixu toleft1">
+                  <if condition="$prams['gaodi'] eq 'gaodi'">
+                         <a href="{:U('Real/district_zhujiang',array('digao' => digao))}" class="jfsk-btn ylw-block">按价格低到高排序</a>    
+                      <else />
+                          <if condition="$prams['digao'] eq 'digao'">
+                              <a href="{:U('Real/district_zhujiang',array('gaodi' => gaodi))}" class="jfsk-btn ylw-block">按价格高到低排序</a>   
+                          <else />
+                              <a href="{:U('Real/district_zhujiang',array('digao' => digao))}" class="jfsk-btn ylw-block">按价格低到高排序</a> 
+                          </if>   
+                      </if>
+                    
+                <if condition="$prams['jiuxin'] eq 'jiuxin'">
+                      <a href="{:U('Real/district_zhujiang',array('xinjiu' => xinjiu))}" class="jfsk-btn ylw-block">按时间新到旧排序</a>
+                <else />
+                      <if condition="$prams['xinjiu'] eq 'xinjiu'">    
+                        <a href="{:U('Real/district_zhujiang',array('jiuxin' => jiuxin))}" class="jfsk-btn ylw-block">按时间旧到新排序</a>
+                      <else />
+                        <a href="{:U('Real/district_zhujiang',array('xinjiu' => xinjiu))}" class="jfsk-btn ylw-block">按时间新到旧排序</a>
+                      </if>
+                </if>
+            </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-10 colimage">
+                <volist name="property" id="property">
+                  <div class="col-md-4 mbtm">
+                      <div class="imagebox">
+                            <a href="{:U('Real/xiaoquneiye', array('id' => $property['id']))}">
+                              <div class="background-image small" style="background-image:url('__PUBLIC__/upload/image/real/{$property.images.0.property_url}')">
+                              </div>
+                   
+                            </a>
+                            <div class="onimage-content">
+                               <ul>
+                                    <li>
+                                       <p>
+                                          <span><i class="fa fa-map-marker"></i> {$property.district_name|mb_substr=0,15,'utf-8'}</span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                      <div class="tet-box">
+                                           <p>所在版块：{$property.area.name}</p>
+                                           <p>地址：{$property.place_name}</p>
+                                           <p>物业公司：{$property.property}</p>
+                                           <p>物业类型：{$property.property_type}</p>
+                                           <p>物业费用：{$property.property_charges}元/平方米.月</p>
+                                           <p>总建面：{$property.total_area}平方米</p>
+                                           <p>总户数：{$property.total_households}(户)</p>
+                                           <p>停车位：{$property.parking_space}</p>
+                                      </div>
+                                    </li>
+                              </ul>
+                            </div>
+                            <if condition="$property['recommend'] eq 1"> 
+                              <div class="tui_jian"><img src="__PUBLIC__/image/tuijian.png"></div>
+                            </if>
+                        </div>
+                  </div>
+                </volist>  
+
+              </div>    
+         </div>          
+          <div class="div03">
+              <ul class="ul03">
+                 {$page}
+              </ul>
+         </div>     
+
+</section>
+
+
+   <!-- 页脚 -->
+<include file="Public:footer2" />
+<include file="Public:footer" />
+<include file="Public:script" />
+<include file="Public:rental_script" />
+</body>
+</html>  

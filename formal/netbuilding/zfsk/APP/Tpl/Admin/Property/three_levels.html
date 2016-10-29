@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+  <head>
+  <include file="Public:head" />
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"> -->
+  </head>
+  <!--
+  BODY TAG OPTIONS:
+  =================
+  Apply one or more of the following classes to get the
+  desired effect
+  |---------------------------------------------------------|
+  | SKINS         | skin-blue                               |
+  |               | skin-black                              |
+  |               | skin-purple                             |
+  |               | skin-yellow                             |
+  |               | skin-red                                |
+  |               | skin-green                              |
+  |---------------------------------------------------------|
+  |LAYOUT OPTIONS | fixed                                   |
+  |               | layout-boxed                            |
+  |               | layout-top-nav                          |
+  |               | sidebar-collapse                        |
+  |               | sidebar-mini                            |
+  |---------------------------------------------------------|
+  -->
+  <body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+    <!-- head -->
+    <include file="Public:header" />
+    <!-- sidebar -->
+    <include file="Public:sidebar" />
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            小区列表
+          </h1>
+        </section>
+ <!-- |---------------------------------------------------------| -->
+        <!-- Main content -->
+        <section class="content">
+          
+
+ <!-- |---------------------------------------------------------| -->
+  <div class="container">
+      <form class="form-horizontal" action="{:U('Property/addLevels')}" method="post">
+          <fieldset>
+          <input type="hidden" value="{$property.id}" name="id">
+
+            <div class="form-group">
+                <volist name="staff" id="staff">
+                   <div class="col-md-2">
+                      <label class="checkbox-inline" for="checkboxes-0">
+                      <input name="staff_id[]"  value="{$staff.id}" type="checkbox" {$staff['ccc']?'checked':''}>{$staff.truename}
+
+                      </label>
+                   </div>
+                </volist>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="button1id"></label>
+              <div class="col-md-8">
+              <button id="button1id" name="button1id" class="btn btn-success" type="submit">保存添加</button>
+              </div>
+            </div>
+          </fieldset>
+       </form> 
+    </div>         
+
+ <!-- |---------------------------------------------------------| -->
+
+
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+<!--  |---------------------------------------------------------| -->
+
+      <!-- footer -->
+      <include file="Public:footer" />
+    </div><!-- ./wrapper -->
+
+    <include file="Public:script" />
+    <script src="__PUBLIC__/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.datatable').DataTable({
+          "language": {
+                "url": "__PUBLIC__/js/Chinese.json"
+            }
+        });
+    });
+    </script>
+  </body>
+</html>
