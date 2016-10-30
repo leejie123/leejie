@@ -178,7 +178,7 @@ service.prototype.getProject = function(id) {
 			"protime": "2015-8",
 			"proname": "sjpt",
 			"prointro": "手机商城网站,页面的逻辑比较复杂。包括填写地址，送货信息，类型的选择（这一部分逻辑比较复杂），评价，质检等。配合另外的前端做页面",
-			"prolink": tips,
+			"prolink": "http://leejie123.github.io/leejie/formal/netbuilding/sjpt/Index-chanpin.html",
 			"protech":"【技术】1、ajax加载商品，2、bootstrap框架，3、选择不同类型的手机，并展示在页面，4、定义手机外壳",
 			"prodetail":'【项目细节】',
 			"prodoc": "【前端文档】",
