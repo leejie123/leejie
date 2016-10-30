@@ -45,3 +45,10 @@ http://www.infoq.com/cn/articles/rest-introduction
 移动端开发技巧，
 http://ljinkai.github.io/2015/06/06/mobile-web-skill/，
 less，sass
+
+
+
+我遇到的最坑爹的是sublime里面被坑了。就是没有看是否保存结果丢失文件。
+
+- 需要把文件夹的文件整理一下。
+你必须学会规划不同阶段，测试，开发，这些时候必须埋下开关等待。

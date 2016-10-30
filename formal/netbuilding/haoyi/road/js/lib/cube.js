@@ -1,7 +1,5 @@
 /**
- * 2013.12.16
  * css3 Cube
- * make by heowongeun
  */
 (function(){
     CUBE = function(wrap,planes,size,option){
