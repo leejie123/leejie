@@ -39,12 +39,15 @@ http://www.infoq.com/cn/articles/rest-introduction
 
 有一个开关时可以控制debug的。
 
-接下来的目标是，
+接下来的目标是，	
 微信开发，
 模仿ace后台制作一套一样的后台，
 移动端开发技巧，
 http://ljinkai.github.io/2015/06/06/mobile-web-skill/，
 less，sass
+
+- [2016-11-6] 增加皮肤可以切换皮肤
+- 
 
 
 
