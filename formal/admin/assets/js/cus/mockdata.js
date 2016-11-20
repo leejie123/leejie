@@ -326,7 +326,7 @@ service.prototype.getProject = function(id) {
 			"protime": "2016-",
 			"proname": "bbs",
 			"prointro": "这个项目是bbs论坛。流程比较规范，产品经理通过需求分析，做出原型，然后交付ui，然后就给前端做页面。总的有三大板块，视频区，发帖，发布作品。公司是b2b做电商平台，培训那些商家用自己做的软件。",
-			"prolink": self.isavailable? 'https://github.com/leejie123/leejie/formal/netbuilding/bbs/index1.html':tips,
+			"prolink": self.isavailable? 'http://leejie123.github.io/leejie/formal/netbuilding/bbs/index1.html':tips,
 			"protech":"【技术】定义一套css，js框架。",
 			"prodetail":'【项目细节】',
 			"prodoc": "【前端文档】",
@@ -403,7 +403,7 @@ service.prototype.getProject = function(id) {
 			"data": [
 				// projects[1], projects[2], projects[6], projects[7]
 				projects[6],projects[9], projects[12], projects[13], projects[14], 
-				projects[15], projects[16], projects[18]
+				projects[15], projects[18]
 			]
 		},
 		{
