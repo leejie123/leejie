@@ -368,14 +368,14 @@ service.prototype.getProject = function(id) {
 			"protime": "2015",
 			"proname": "app",
 			"prointro": "这是h5前端页面",
-			"prolink": self.isavailable ? 'http://leejie123.github.io/leejie/formal/netbuilding/App/account.html': tips,
+			"prolink": self.isavailable ? 'https://github.com/leejie123/leejie/tree/gh-pages/formal/netbuilding/App' : tips,
 			"protech": "【技术】",
 			"prodetail": "【技术细节】",
 			"prodoc": "【前端文档】",
 			"proimages": [
 				"avatar1.jpg","avatar1.jpg","avatar1.jpg"
 			],
-			"tags": ["app", "手机", "mobile", "demo"]
+			"tags": ["app", "手机", "html5", "mobile", "demo"]
 		}
 	];
 	var mockData = [
