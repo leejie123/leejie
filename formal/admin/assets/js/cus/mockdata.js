@@ -242,7 +242,7 @@ service.prototype.getProject = function(id) {
 		{
 			"protime": "2015-9",
 			"proname": "lehuo",
-			"prointro": "该项目是杂志手机客户端，可以看杂志。模仿乐活做的客户端。你可以通过下面两个链接下载安装android程序。<a href='http://leejie123.github.io/leejie123/formal/yedadou/lehuo/LH-arm.apk'>LH-arm(乐活app android版)</a> or <a href='http://leejie123.github.io/leejie123/formal/yedadou/lehuo/LH-x86.apk'>LH_x86.apk(乐活app android版)</a>",
+			"prointro": "该项目是杂志手机客户端，可以看杂志。模仿乐活做的客户端。你可以通过下面两个链接下载安装android程序。<a href='http://leejie123.github.io/leejie/formal/yedadou/lehuo/LH-arm.apk'>LH-arm(乐活app android版)</a> or <a href='http://leejie123.github.io/leejie/formal/yedadou/lehuo/LH-x86.apk'>LH_x86.apk(乐活app android版)</a>",
 			"prolink": self.isavailable? 'http://leejie123.github.io/leejie/formal/yedadou/lehuo/www/index.html' : tips,
 			"protech":"【技术】1、angularjs + ionic，2、用codova打包app",
 			"prodetail":'【项目细节】',
