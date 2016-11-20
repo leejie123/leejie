@@ -1,0 +1,244 @@
+.sidebar > .comment {
+	border: 1px solid #eaeaea;
+	background-color: #fff;
+}
+
+.comment {
+	margin-bottom: 12px;
+}
+
+.comment > .post {
+
+}
+.comment > .post > .title {
+	height: 40px;
+	line-height: 40px;
+	background-color: #fafafa;
+	font-size: 16px;
+	color: #333;
+	text-align: center;
+}
+
+.comment > .post > .textareaWrap {
+
+}
+.comment > .post > .textareaWrap > textarea {
+	overflow-y: auto;
+	resize: none;
+	border: 1px solid #eaeaea;
+	border-left: 0px;
+	border-right: 0px;
+	padding: 10px;
+	height: 110px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.comment > .post > .comment-button {
+	height: 60px;
+	line-height: 60px;
+	padding: 0px 9px;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.comment > .post > .comment-button > button {
+	width: 100px;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #3D9BF2;
+	border: 0px;
+	cursor: pointer;
+	float: right;
+	display: inline-block;
+	margin-top: 16px;
+}
+
+.comment > .post > .comment-button > span {
+	float:left;
+	color: #999;
+}
+
+.comment > .post > .comment-button > span > em {
+	color: #FA5551;
+}
+
+.comment > .list {
+	/*border: 1px solid #eaeaea;*/
+	border-bottom: 1px solid #eaeaea;
+	padding: 18px;
+}
+
+.comment > .list > .list-item {
+	border-bottom: 1px dashed #eaeaea;
+}
+
+.comment > .list > .list-item > .img {
+	margin-bottom: 9px;
+	float: left;
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+}
+
+.comment > .list > .list-item > .title {
+	margin-bottom: 9px;
+	color: #666;
+	font-size: 14px;
+	margin-left: 40px;
+	line-height: 28px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.comment > .list > .list-item > .detail {
+	display: block;
+	clear: both;
+	color: #666;
+	font-size: 14px;
+	line-height: 18px;
+	margin-bottom: 9px;	
+} 
+
+.comment > .list > .list-item > .replyBtn:after{
+	display: table;
+	clear: both;
+	content: '';
+}
+
+.comment > .list > .list-item > .replyBtn {
+	margin-bottom: 12px;
+}
+
+.comment > .list > .list-item > .replyBtn > span {
+	float: left;
+	color: #999;
+}
+
+.comment > .list > .list-item > .replyBtn > a {
+	color: #666;
+	float:right;
+}
+
+.comment > .list > .list-item > .reply {
+	display: block;
+	clear: both;
+}
+
+.comment > .list > .list-item > .reply > textarea {
+	overflow-y:auto;
+	width: 100%;
+	height: 108px;
+	border: 1px solid #eaeaea;
+	resize: none;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.comment > .list > .list-item > .reply > p {
+	height: 42px;
+	line-height: 42px;
+	text-align:right;
+}
+
+.comment > .list > .list-item > .reply > p > button {
+	width: 50px;
+	border: 1px solid #ddd;
+	background-color: #f3f3f3;
+	height: 24px;
+	line-height: 24px;
+	cursor: pointer;
+}
+
+.comment > .list > .comment-page{
+	height: 64px;
+	line-height: 64px;
+}
+
+.comment > .list > .comment-page > span {
+
+}
+
+.comment > .list > .comment-page > div {
+	display: inline-block;
+	float: right;
+
+}
+
+.comment > .list > .comment-page > div > a {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #eaeaea;
+	border-radius: 50%;
+	text-align: center;
+	background-color: #3D9BF2;
+}
+
+.intro {
+    padding: 0px 36px;
+    border-bottom: 1px solid #eaeaea;
+    background-color: #fafafa;
+}
+
+.intro > h3 > a {
+    display: inline-block;
+    font-size: 24px;
+    color: #48A3FE;
+    font-weight: bold;
+    margin-top: 34px;
+    margin-bottom: 20px;
+}
+
+.intro > .postInfo {
+	color: #999;
+	font-size: 12px;
+	margin-bottom: 12px;
+}
+
+.intro > .postInfo i {
+	font-style: normal;
+}
+
+.intro > .sort {
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 9px;
+}
+
+.intro > .sort i {
+	font-style: normal;
+}
+
+.intro > .btns {
+	width: 100px;
+	float: right;
+	text-align: right;
+	margin-top: 34px;
+	margin-right: 36px
+}
+
+.intro > .btns > .demo {
+	display: inline-block;
+	border: #ddd;
+	width: 130px;
+	line-height: 34px;
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.intro > .btns > .datas {
+	position: relative;
+	bottom: -30px;
+}
+
+.contentWrap > .imageDemo {
+	padding: 18px 40px;
+	background-color: #fff;
+}

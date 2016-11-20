@@ -1,0 +1,381 @@
+<div>
+			<link rel="stylesheet" type="text/css" href="image/index/css/index.css">
+			<link rel="stylesheet" type="text/css" href="image/index/css/ico.css">
+			<style type="text/css">
+				#BOBOWEB_PAGE_home{
+					background-color: #fff;
+				}
+				body {
+					width: 100%!important;
+				}
+
+				.info > div.row:first-child {
+					color: #333;
+				}
+
+				.timeline-item .info>div:nth-child(2) {
+					float: left!important;
+				}
+
+				.timeline-item .info>div:last-child {
+					float: right!important;
+				}
+			</style>
+			<div id="BOBOWEB_PAGE_home">
+				<!-- add -->
+				<div class="slider-box" style="border-bottom:0px;">
+					<div id="slider" class="swipe">
+						<div class="swipe-wrap" id="swipe-wrap" style="height:200px;">
+						</div>
+					</div>
+					<ul id="home_slidePosition">
+						<li class="on"></li>
+						<li ></li>
+						<li ></li>
+					</ul>
+				</div>
+				<div class="mods"></div>
+				<div class="radioResult">
+					<div class="radio">
+						<img src="image/radio.jpg" alt="">
+					</div>
+					<div class="tip">
+						<!-- <a href="">恭喜<span class="user">xxx</span>获得cxxxxcvxvcxcv</a> -->
+					</div>
+				</div>
+				<div class="hotProitem clearfix">
+					<div class="title">
+						<a href="#" class="over hotbtn">立即揭晓</a>
+						<a href="#" class="hotbtn">人气</a>
+						<a href="#" class="hotbtn">最新<div id="hotTipC"></div></a>
+						<a href="#" class="hotbtn" style="background-image: url(image/indexsort.jpg)">总需人次</a>
+					</div>
+					<div id="mainContianer" class="clearfix">
+					</div>
+				</div>
+				<script type="text/html" style="display:none" id="tpl">
+				[: if (this.slide !== undefined) {:]
+				    [: for (var i=0;i<slide.length;i++) { :]
+				        <div>
+				        	<a href="[:=slide[i].link:]">	
+				        		<img src="[:=slide[i].pic_url:]">
+				        	</a>
+				        </div>
+				    [:}:]
+				[:}:]
+				</script>
+				<script type="text/html" id="goods_tpl">
+				[: if (this.data !== undefined) { :]
+					[: for (var i=0;i<data.length;i+=2) {:]
+				    <div class="item clearfix">	
+						<div>
+							<div id="img-13" class="img" style="background-image: url([:=data[i].image:])" onclick="window.location.href='[:=data[i].link:]';">
+								<div class="tip" style="background-image: url(image/tip10.png)"></div>
+							</div>
+							<div class="title">[:=data[i].title:]</div>
+							<div class="tip">
+								<div class="full">
+									<div class="tipTitle">价值：￥[:=data[i].price:]</div>
+									<div class="progress">
+									      <div class="progress-bar" data-to="[:=data[i].buyed:]/[:=data[i].needed:]" style="width: 0%;"></div>
+									</div>
+									<div class="status">
+										<div>[:=data[i].buyed:]<span class="divtip">已买</span></div><div>[:=data[i].needed:]<span class="divtip">总需</span></div><div>[:=data[i].left:]<span class="divtip">剩余</span></div>
+									</div>
+								</div>
+							</div>
+							<div class="tipBtn">
+								<div class="addBtn">
+									<a data-id="13" data-can="1" class="buyToCart" href="[:=data[i].link:]"><i class="yiyuan-icon"></i></a>
+								</div>
+								<div class="tipLeft">
+									<a href="[:=data[i].buyLink:]" class="goBuy">立即一元抢购</a>
+								</div>
+							</div>
+						</div>
+						[: if (data[i+1]) { :]
+						<div>
+							<div id="img-13" class="img" style="background-image: url([:=data[i+1].image:])" onclick="window.location.href='[:=data[i+1].link:]';">
+								<div class="tip" style="background-image: url(image/tip[:=data[i+1].singlePrice:].png)"></div>
+								
+							</div>
+							<div class="title">[:=data[i+1].title:]</div>
+							<div class="tip">
+								<div class="full">
+									<div class="tipTitle">价值：￥[:=data[i+1].price:]</div>
+									<div class="progress">
+									      <div class="progress-bar" data-to="[:=data[i+1].buyed:]/[:=data[i+1].needed:]" style="width: 0%;"></div>
+									</div>
+									<div class="status">
+										<div>[:=data[i+1].buyed:]<span class="divtip">已买</span></div><div>[:=data[i+1].needed:]<span class="divtip">总需</span></div><div>[:=data[i+1].left:]<span class="divtip">剩余</span></div>
+									</div>
+								</div>
+							</div>
+							<div class="tipBtn">
+								<div class="addBtn">
+									<a data-id="13" data-can="1" class="buyToCart" href="#"><i class="yiyuan-icon"></i></a>
+								</div>
+								<div class="tipLeft">
+									<a href="[:=data[i+1].buyLink:]" class="goBuy">立即一元抢购</a>
+								</div>
+							</div>
+						</div>
+						[:}:]
+				    </div>
+					[:}:]
+				[:}:] 
+				</script>
+			</div>
+		</div>
+		<script>function(){  //注：<script>和function 之间不要换行]
+			
+
+			var THIS=this;
+			THIS.ROOT=null;//指向B   系统会自动给他附值   注：如果需要获得加载它所在的js范围 可以使用：THIS.ROOT.MainJS
+			var B,$,MainJS;
+			var ParentID;//系统会自动给他附值，设置唯一的id号
+			var $CurrentPage;//当前页面的$引用
+			THIS.ParentID=ParentID;
+			THIS.$CurrentPage=$CurrentPage;
+			//获得需要预加载的资源
+			this.BOBOLIB_page_PreloadResources=function(){
+				var arrTest=[];  //如果需要预加载，请把它们写在这里面,如：var arrTest=["1.jpg","2.jpg"..];
+				return arrTest;
+			}
+			//初始化,页面加载好，会自动调用这个方法。
+			this.BOBOLIB_page_init=function(){
+				window.console.log("page_init..");
+				B=THIS.ROOT;
+				$=THIS.ROOT.$;
+				MainJS=THIS.ROOT.MainJS;
+				$CurrentPage=THIS.$CurrentPage; 
+				// add
+
+				B.seajsRequire.async(['$', '../image/index/js/swipe.min.js'],function() {
+					//幻灯
+					MainJS.Service.getApi('indexSlide',null,function(data,msg){
+						var tpl = $('#tpl').html();
+						var render = B.template(tpl, data.data);
+						$(render).appendTo('#swipe-wrap');
+						var $dullets=$('#home_slidePosition>li');
+						var slider=Swipe(document.getElementById('slider'), {
+						    auto: 2000,
+						    continuous: true,	
+						    callback: function(pos) {
+						      var i = $dullets.length;
+						      while (i--) {
+						      	$dullets.eq(i).removeClass('on');
+						      }
+						      $dullets.eq(home_slidePosition).addClass('on');
+						    }
+						 });
+
+						//广播
+						var arrRadio=[];
+						var $radioContainer=$('.radioResult .tip');
+						$.each(data.data.hit,function(index, value) {
+							if (value) {
+								var tip = '<a href="' + value.pic_url + '">恭喜<span class="user">' + value.hit_nick + '</span>获得' + value.goods_title + '</a>'
+								arrRadio.push(tip);
+							}
+						})
+						var arrRadioC=arrRadio.length;
+						$radioIndex=0;
+						$radioContainer.html(arrRadio[$radioIndex]);
+						setInterval(function(){
+							$radioIndex++;
+							if($radioIndex>=arrRadioC){
+								$radioIndex=0;
+							}
+							setTimeout(function(){
+								$radioContainer.find('a').css('top','-30px');
+								setTimeout(function(){
+									$radioContainer.html(arrRadio[$radioIndex]);
+								},2000)
+							},300);
+						},4000);//end 广播
+
+					},//end sucess
+					function(data,msg,type){
+					});//end MainJS.Service.getApi
+
+					var $cartProductCount=$('#cartProductCount');
+					// console.log($cartProductCount)
+					// B.getSeajsRequire().extendAsync(['bobowebpath/BFlyToTarget', 'bobowebpath/Utility'], function(a,b) {
+				    B.getSeajsRequire().async(['boboweb/BFlyToTarget','boboweb/Utility'],function(a,b){
+
+					        var xx = a.extend(B);
+						    b.extend(B);
+							$window=$(window);
+							// if(parseInt($cartProductCount.text())==0) $cartProductCount.hide();
+							var targetW=$window.width()*0.2;
+							var targetLeft=targetW*3;
+							var BFly=new B.BFlyToTarget($cartProductCount,targetW,targetW,targetLeft);
+
+							//addchart
+							function initBuyToCart($targetData){
+								// console.log($targetData.find('.buyToCart'));
+								$targetData.find('.buyToCart').each(function(){
+									$that=$(this);
+									var url=$that.attr('href');
+									var id=$that.data('id');
+									var canBuy=$that.data('can');
+									if(canBuy=='0') return;
+									var $proimg=$targetData.find('#img-'+id);
+									$that.attr('href','#');
+									$that.click(function(e){
+										e.preventDefault();
+										$THAT = $(this);
+										//app.popupWait();
+										MainJS.Service.getApi('addCart', {id: id}, function(data, msg) {
+											if (data.error) {
+												return;
+											}
+											if (data.success) {
+												// alert(data.msg);
+												var count=data.successParam||0;
+												$cartProductCount.show();
+												$cartProductCount.text(count);
+												// window.location.href = data.url;
+											}
+											BFly.fly($THAT.parents('div.tipBtn').parent('div').find('div.img'));
+										},function (data, msg, type) {
+
+										})		
+									});
+
+								});
+							}
+
+							doPage(function($data){
+								initBuyToCart($data);	
+							});
+					})
+
+					
+
+					// loadgoods
+					function doPage(loadendDo){
+						// var urlPageList='handle.php?t=1';
+						var $container=$('#mainContianer');
+						var currentType=1;
+						
+						$btns=$('.hotbtn');
+						var currentType=1;
+						$btns.click(function(e){
+							e.preventDefault();
+							var $this=$(this);
+							var type=$this.index()+1;
+							if(type!=4&&currentType==type) return;
+							if(currentType==5){
+								$btns.eq(3).removeClass('over');
+							}else{
+								$btns.eq(currentType-1).removeClass('over');
+							}
+							if(type==4){
+								if(currentType==4) type=5;
+								if(currentType==5) type=4;
+							}
+							currentType=type;
+							if(currentType==5){
+								$btns.eq(3).addClass('over');
+							}else{
+								$btns.eq(currentType-1).addClass('over');
+							}
+							if(currentType==4) $btns.eq(3).css('background-image','url(image/indexsort.jpg)');
+							if(currentType==5) $btns.eq(3).css('background-image','url(image/indexsort-2.jpg)');
+							// this is the param
+							currentPage=1;
+							$container.empty();
+							isLoadList=true;
+							isPageEnd=false;
+							getGoods(currentPage, type);
+							// 异步加载														
+						})
+						function getGoods(page_no, type) {
+							isLoadList=true;
+							currentPage=page_no;
+							page_no? page_no: 1;
+							type? type : 1;
+
+							MainJS.Service.getApi('goods_tpl', {page_no: page_no, t: type }, function(data, msg) {
+								if (!data.success) {
+									isLoadList=true;
+									alert(data.msg);
+									return;
+								}
+
+								if (data.success) {
+									if(data.pageEnd) {
+										alert(data.msg);
+										return;
+									}
+									if (!data.pageEnd) {
+										isLoadList = false;
+										var tpl = $('#goods_tpl').html();
+										var goodTpl = B.template(tpl, data);
+										var $goodTpl = $(goodTpl);
+
+										//buy btn
+										// initBuyToCart($goodTpl);
+
+										//process bar
+										$goodTpl.find('.progress-bar').each(function(){
+											var $this=$(this);
+											var width=parseInt($this.attr('data-to'))+"%";
+											$this.css('width',width);
+										});
+										if(loadendDo) loadendDo($goodTpl);
+										$container.append($goodTpl);
+									}
+								}
+								// console.log(isLoadList)
+							},
+							function(data, meg, type) { 
+								isLoadList = false;
+							})//good_tpl end
+						}
+
+						getGoods(1,1);
+						var isLoadList=true;
+						var isPageEnd=false;
+
+						window.onscroll=function(){
+							//变量t就是滚动条滚动时，到顶部的距离
+							var windowScrollEndy=document.documentElement.scrollHeight||document.body.scrollHeight;
+							windowScrollEndy-=30;
+							var viewHeight=document.documentElement.clientHeight||document.body.clientHeight;
+							var t =document.documentElement.scrollTop||document.body.scrollTop;
+							t+=viewHeight;
+							if( t >=windowScrollEndy) {
+								// if(isPageEnd) app.close();
+								// console.log(isLoadList, isPageEnd);
+								if(isLoadList||isPageEnd){
+									return;
+								}
+								getGoods(currentPage+1, currentType);
+								// console.log(currentPage+1, currentType);
+							}
+						}//end window scroll
+						var isLoadList=true;
+						var isPageEnd=false;
+					}
+
+					
+				});
+				// add
+			}
+			//离开该页面需要处理的一些事件
+			this.BOBOLIB_page_remove=function(){
+				window.console.log("page_remove..");
+				window.onscroll.onscroll = null;
+
+			}
+			//设置宽高
+			this.BOBOLIB_setWH=function(w,h){
+				
+			}
+			//
+			//自定方法-----开始-----------------------------------
+		}();
+		</script>

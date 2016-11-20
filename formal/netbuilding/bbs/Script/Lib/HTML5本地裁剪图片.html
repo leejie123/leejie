@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://jellybool.com/post/crop-image-local-using-html5-canvas -->
+<html class="no-js" lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="baidu-site-verification" content="173oOEe7Tg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="html5,javascript">
+    <meta name="description" content="先上效果图：
+我们首先需要创建一个index.html文件，里面写上一些简单的html和css代码：
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;HTML5 Crop Image&lt;/title&gt;
+&lt;/head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body{text-align:center;}
+#label{border:1px solid #ccc;background-color:#fff;text-align:center;height:300px; width:300px;margin:20px auto;position:relative;}
+#get_image{position:absolute;}
+#edit_pic{position:absolute;display:none;background:#000;}
+#cover_box{position: absolute;z-index: 9999;display:none">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="HTML5本地裁剪图片">
+    <meta property="og:description" content="先上效果图：
+我们首先需要创建一个index.html文件，里面写上一些简单的html和css代码：
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;HTML5 Crop Image&lt;/title&gt;
+&lt;/head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body{text-align:center;}
+#label{border:1px solid #ccc;background-color:#fff;text-align:center;height:300px; width:300px;margin:20px auto;position:relative;}
+#get_image{position:absolute;}
+#edit_pic{position:absolute;display:none;background:#000;}
+#cover_box{position: absolute;z-index: 9999;display:none">
+    <meta property="og:url" content="https://jellybool.com/post/crop-image-local-using-html5-canvas">
+    <meta property="og:site_name" content="JellyBool">
+                <meta property="article:tag" content="html5">
+            <meta property="article:tag" content="javascript">
+                <meta property="article:section" content="PHP">
+    <meta property="article:published_time" content="2015-07-15T18:28:50+08:00">
+    <meta property="article:modified_time" content="2015-07-18T17:46:49+08:00">
+    <meta property="og:updated_time" content="2015-07-18T18:28:50+08:00">
+    <link rel="canonical" href="./HTML5本地裁剪图片_files/HTML5本地裁剪图片.html">
+    <title>HTML5本地裁剪图片</title>
+    <link rel="stylesheet" href="./HTML5本地裁剪图片_files/all-36d7be58.css" type="text/css" media="all">
+    <link rel="shortcut icon" href="https://jellybool.com/images/logo.ico">
+    <script async="" src="./HTML5本地裁剪图片_files/analytics.js"></script><script type="text/javascript" src="./HTML5本地裁剪图片_files/all-c3e324a3.js"></script>
+<script type="text/javascript" async="" src="./HTML5本地裁剪图片_files/embed.js" charset="UTF-8"></script><link type="text/css" rel="stylesheet" href="./HTML5本地裁剪图片_files/embed.bluebox.css"></head>
+<body>
+
+<div id="wrapper">
+
+    <div id="page" class="container">
+<div class="main group at-post">
+    <section class="content">
+
+        <div class="pad group">
+
+            <article>
+
+                <div class="post-inner at-post">
+                    <h1 class="post-title pad at-post"> HTML5本地裁剪图片</h1>
+                    <div class="post-content pad">
+                        <div class="entry">
+                        <h2>先上效果图：</h2>
+<p><img src="./HTML5本地裁剪图片_files/a08ff4d5-9228-4a31-b4d5-50b447f73b5e.gif" alt="替代文字"></p>
+<p>我们首先需要创建一个<code>index.html</code>文件，里面写上一些简单的<code>html</code>和<code>css</code>代码：</p>
+<pre><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>HTML5 Crop Image<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span><span class="css">
+<span class="hljs-tag">body</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;}</span>
+<span class="hljs-id">#label</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"><span class="hljs-number">1px</span> solid <span class="hljs-hexcolor">#ccc</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#fff</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">300px</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">300px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">20px</span> auto</span></span>;<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value">relative</span></span>;}</span>
+<span class="hljs-id">#get_image</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value">absolute</span></span>;}</span>
+<span class="hljs-id">#edit_pic</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value">absolute</span></span>;<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;<span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"><span class="hljs-hexcolor">#000</span></span></span>;}</span>
+<span class="hljs-id">#cover_box</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;<span class="hljs-rule"><span class="hljs-attribute">z-index</span>:<span class="hljs-value"> <span class="hljs-number">9999</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;<span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"><span class="hljs-number">0px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"><span class="hljs-number">0px</span></span></span>;}</span>
+<span class="hljs-id">#show_edit</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span> auto</span></span>;<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">inline-block</span></span>;}</span>
+<span class="hljs-id">#show_pic</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">100px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">100px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"><span class="hljs-number">2px</span> solid <span class="hljs-hexcolor">#000</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value">hidden</span></span>;<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">0</span> auto</span></span>;<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">inline-block</span></span>; }</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"file"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"file"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"post_file"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"save_button"</span>&gt;</span>SAVE<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"label"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">canvas</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"get_image"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">canvas</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">canvas</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"cover_box"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">canvas</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">canvas</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"edit_pic"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">canvas</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"show_edit"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"show_pic"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">""</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/js.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>以上的三个<code>&lt;canvas&gt;</code>标签都是用来处理跟图片相关的内容的，详细的处理会在后续的js代码中给出。而<code>id</code>为<code>show_edit</code> 和<code>id</code>为<code>show_pic</code>这两个是为了图片的预览和查看最后的图片生成结果。做完html和css的布局之后，我们就可以进入js代码，实现本节课的图片裁剪功能。</p>
+<h2>实现图片裁剪的init函数：</h2>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> postFile = { 
+        init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">var</span> t = <span class="hljs-keyword">this</span>;
+        t.regional = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'label'</span>);
+        t.getImage = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'get_image'</span>);
+        t.editPic = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'edit_pic'</span>);
+        t.editBox = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'cover_box'</span>);
+        t.px = <span class="hljs-number">0</span>;    <span class="hljs-comment">//background image x</span>
+        t.py = <span class="hljs-number">0</span>;    <span class="hljs-comment">//background image y</span>
+        t.sx = <span class="hljs-number">15</span>;    <span class="hljs-comment">//crop area x</span>
+        t.sy = <span class="hljs-number">15</span>;    <span class="hljs-comment">//crop area y</span>
+        t.sHeight = <span class="hljs-number">150</span>;    <span class="hljs-comment">//crop area height</span>
+        t.sWidth = <span class="hljs-number">150</span>    <span class="hljs-comment">//crop area width</span>
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'post_file'</span>).addEventListener(<span class="hljs-string">"change"</span>, t.handleFiles, <span class="hljs-literal">false</span>);
+    },
+
+}
+</code></pre>
+<p>我们将所有的函数和变量都是封装在<code>postFile</code>这个对象里面的，上面的<code>init</code>方法主要是设置一些初始值</p>
+<pre><code class="hljs">t.px = 0;    
+t.py = 0;    
+t.sx = 15;   
+t.sy = 15;   
+t.sHeight = 150;    
+t.sWidth = 150   
+</code></pre>
+<p>以上的<code>t.px</code> <code>t.py</code>分别表示在实时预览区域的背景图片的坐标；<code>t.sx</code>，<code>t.sy</code>， <code>t.sHeight</code>， <code>t.sWidth</code>分别表示图片的横纵坐标和宽高。</p>
+<p>并且我们通过<code>document.getElementById</code>获取了多个稍后需要操作的元素，注意到：</p>
+<pre><code class="hljs javascript"><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'post_file'</span>).addEventListener(<span class="hljs-string">"change"</span>, t.handleFiles, <span class="hljs-literal">false</span>);
+</code></pre>
+<p>我们通过监听<code>id</code>为<code>post_file</code>的<code>input</code>表单的<code>change</code>事件来处理用户上传的文件，在这我们交给了<code>handleFiles</code>函数来处理，所以下面我们就来实现<code>handleFiles</code>函数。</p>
+<h2>实现handleFiles，获取文件，读取文件并生成url</h2>
+<pre><code class="hljs javascript"> handleFiles: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">var</span> fileList = <span class="hljs-keyword">this</span>.files[<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">var</span> oFReader = <span class="hljs-keyword">new</span> FileReader();
+        oFReader.readAsDataURL(fileList);
+        oFReader.onload = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(oFREvent)</span> </span>{ 
+            postFile.paintImage(oFREvent.target.result);
+        };
+    },
+</code></pre>
+<p>上面这几行代码就可以基本实现<code>handleFiles</code>的处理功能，我们在这里就使用了HTML5的File API，首先通过<code>new FileReader()</code>来实例化一个<code>FileReader</code>对象<code>oFReader</code>，再调用其<code>readAsDataURL()</code>方法将文件的内容读取出来并处理成base64编码的格式。</p>
+<p>如果你对<code>var fileList = this.files[0];</code>有疑问，不妨在在这里打印出来看看：</p>
+<pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.files);
+</code></pre>
+<p>你将会看到类似于这样的打印输出：</p>
+<p><img src="./HTML5本地裁剪图片_files/c07413b1-bacb-408f-b4e3-b734bccedc90.png" alt="替代文字"></p>
+<p>最后，当文件读取完毕并完成加载的时候，我们通过<code>postFile.paintImage(oFREvent.target.result)</code>处理我们读取到的图片，说白了就是将读取到的图片数据重新绘画到浏览器上。</p>
+<p>关于<code>oFREvent</code>究竟是什么东西，你可以通过<code>console.log(oFREvent)</code>来查看。你还可以查看这里的链接来获取更多的FileReader的知识：</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader">https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader</a></p>
+<h2>实现paintImage函数</h2>
+<pre><code class="hljs javascript"> paintImage: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(url)</span> </span>{
+        <span class="hljs-keyword">var</span> t = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">var</span> createCanvas = t.getImage.getContext(<span class="hljs-string">"2d"</span>);
+        <span class="hljs-keyword">var</span> img = <span class="hljs-keyword">new</span> Image();
+        img.src = url;
+        img.onload = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+
+            <span class="hljs-keyword">if</span> ( img.width &lt; t.regional.offsetWidth &amp;&amp; img.height &lt; t.regional.offsetHeight) {
+                t.imgWidth = img.width;
+                t.imgHeight = img.height;
+
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">var</span> pWidth = img.width / (img.height / t.regional.offsetHeight);
+                <span class="hljs-keyword">var</span> pHeight = img.height / (img.width / t.regional.offsetWidth);
+                t.imgWidth = img.width &gt; img.height ? t.regional.offsetWidth : pWidth;
+                t.imgHeight = img.height &gt; img.width ? t.regional.offsetHeight : pHeight;
+            }
+            t.px = (t.regional.offsetWidth - t.imgWidth) / <span class="hljs-number">2</span> + <span class="hljs-string">'px'</span>;
+            t.py = (t.regional.offsetHeight - t.imgHeight) / <span class="hljs-number">2</span> + <span class="hljs-string">'px'</span>;
+
+            t.getImage.height = t.imgHeight;
+            t.getImage.width = t.imgWidth;
+            t.getImage.style.left = t.px;
+            t.getImage.style.top = t.py;
+
+            createCanvas.drawImage(img,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,t.imgWidth,t.imgHeight);
+            t.imgUrl = t.getImage.toDataURL();
+            t.cutImage(); 
+            t.drag();
+        };
+    },
+</code></pre>
+<p>以上最重要的就是根据容器的大小使用canvas绘制图片。在上一步使用File API的FileReader已经得到了需要上传图片的地址了(<code>oFREvent.target.result</code>这个值)，接下来需要使用canvas把这个图片绘制出来。我们首先使用到<code>getImage.getContext</code>来获取<code>&lt;canvas id="get_image"&gt;&lt;/canvas&gt;</code>的2d内容，简单理解就是图像内容，然后利用<code>new Image()</code>来得到一个<code>&lt;img&gt;</code>标签，设置<code>src属</code>性的值，如果你<code>console.log(img)</code>,得到的大概是这样的结果：</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"images/background.png"</span> &gt;</span>
+</code></pre>
+<p>在<code>img.onload</code>函数里，我们的主要目的是为了将图片按照原大小等比例地重画出来，所以才有if条件判断，最后我们通过<code>createCanvas.drawImage(img,0,0,t.imgWidth,t.imgHeight);</code>这一行代码来实现真正的绘画图片，效果大概是这样的：</p>
+<p><img src="./HTML5本地裁剪图片_files/7c002e9b-1a79-421e-ad23-c333f56a56bf.png" alt="替代文字"></p>
+<p>这里为什么不直接插入img而用canvas重新绘制呢，这不是多此一举了吗？其实不然。如果用img直接插入页面，就无法自适应居中了，如果使用canvas绘制图片，不但能使图片自适应居中以及能等比例缩放，并且方便把图片的坐标，尺寸大小传给后来的遮罩层(<code>id</code>为<code>label</code>的div)，这样能根据图片的坐标以及图片的尺寸大小来绘制遮罩层。</p>
+<p>如果你对drawImage()有任何疑问，点击下面的链接进行详细的了解：</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/drawImage">https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/drawImage</a></p>
+<p>到这里，前期的一小半工作其实已经完成了，我们按照上面的思路，接下来就把<code>cutImage</code>和<code>drag</code>这两个方法实现就可以了。</p>
+<h2>实现cutImage方法</h2>
+<p>在上一张图片中，我们其实很清楚地看到了两个明暗不一的层，这是因为我们根据背景图的坐标和尺寸来绘制遮罩层覆盖在背景上面，并且使用canvas的<code>clearRect</code>方法清空出一块裁剪区域，使之与不裁剪的地方做明暗对比，这样的目的一个是为了更好地看到对比，一个就是为了用户体验：</p>
+<pre><code class="hljs javascript">cutImage: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> t = <span class="hljs-keyword">this</span>;
+
+    <span class="hljs-comment">//绘制遮罩层：</span>
+    t.editBox.height = t.imgHeight;
+    t.editBox.width = t.imgWidth;
+    t.editBox.style.display = <span class="hljs-string">'block'</span>;
+    t.editBox.style.left = t.px;
+    t.editBox.style.top = t.py;
+
+    <span class="hljs-keyword">var</span> cover = t.editBox.getContext(<span class="hljs-string">"2d"</span>);
+    cover.fillStyle = <span class="hljs-string">"rgba(0, 0, 0, 0.5)"</span>;
+    cover.fillRect (<span class="hljs-number">0</span>,<span class="hljs-number">0</span>, t.imgWidth, t.imgHeight);
+    cover.clearRect(t.sx, t.sy, t.sHeight, t.sWidth);
+
+    <span class="hljs-comment">//预览图片</span>
+
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'show_edit'</span>).style.background = <span class="hljs-string">'url('</span> + t.imgUrl + <span class="hljs-string">')'</span> + -t.sx + <span class="hljs-string">'px '</span> + -t.sy + <span class="hljs-string">'px no-repeat'</span>;
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'show_edit'</span>).style.height = t.sHeight + <span class="hljs-string">'px'</span>;
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'show_edit'</span>).style.width = t.sWidth + <span class="hljs-string">'px'</span>;
+},
+</code></pre>
+<p>以上的<code>cutImage</code>方法主要是负责两个事情，一个是制造遮罩层，一个是利用css的<code>background</code>属性将选中的裁剪区域实时预览。</p>
+<p><code>但是需要注意的是，这里的遮罩层仅仅是用来做显示效果，并没有做裁剪图片的工作。</code></p>
+<h2>编写drag方法</h2>
+<p>在很多web应用中，使用截图上传头像功能时我们希望能裁剪到满意的图片，所以裁剪框就需要不停的变动才得以裁剪出完美的图片。前几步已经把裁剪图片的基本功能做出来了，所以现在需要做的就是裁剪框跟进鼠标的移动来实时裁剪图片</p>
+<p>先来一张预览图片：</p>
+<p><img src="./HTML5本地裁剪图片_files/5d81ad36-fea1-4c0d-bff2-e8b3d00378a4.gif" alt="替代文字"></p>
+<pre><code class="hljs javascript">
+ drag: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">var</span> t = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">var</span> draging = <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">var</span> startX = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">var</span> startY = <span class="hljs-number">0</span>;
+
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'cover_box'</span>).onmousemove = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+            <span class="hljs-keyword">var</span> pageX = e.pageX - ( t.regional.offsetLeft + <span class="hljs-keyword">this</span>.offsetLeft );
+            <span class="hljs-keyword">var</span> pageY = e.pageY - ( t.regional.offsetTop + <span class="hljs-keyword">this</span>.offsetTop );
+
+            <span class="hljs-keyword">if</span> ( pageX &gt; t.sx &amp;&amp; pageX &lt; t.sx + t.sWidth &amp;&amp; pageY &gt; t.sy &amp;&amp; pageY &lt; t.sy + t.sHeight ) {
+                <span class="hljs-keyword">this</span>.style.cursor = <span class="hljs-string">'move'</span>;
+
+                <span class="hljs-keyword">this</span>.onmousedown = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+                    draging = <span class="hljs-literal">true</span>;
+
+                    t.ex = t.sx;
+                    t.ey = t.sy;
+
+                    startX = e.pageX - ( t.regional.offsetLeft + <span class="hljs-keyword">this</span>.offsetLeft );
+                    startY = e.pageY - ( t.regional.offsetTop + <span class="hljs-keyword">this</span>.offsetTop );
+
+                }
+                <span class="hljs-built_in">window</span>.onmouseup = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+                    draging = <span class="hljs-literal">false</span>;
+                }
+
+                <span class="hljs-keyword">if</span> (draging) {
+
+                    <span class="hljs-keyword">if</span> ( t.ex + (pageX - startX) &lt; <span class="hljs-number">0</span> ) {
+                        t.sx = <span class="hljs-number">0</span>;
+                    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( t.ex + (pageX - startX) + t.sWidth &gt; t.imgWidth) {
+                        t.sx = t.imgWidth - t.sWidth;
+                    } <span class="hljs-keyword">else</span> {
+                        t.sx = t.ex + (pageX - startX);
+                    };
+
+                    <span class="hljs-keyword">if</span> (t.ey + (pageY - startY) &lt; <span class="hljs-number">0</span>) {
+                        t.sy = <span class="hljs-number">0</span>;
+                    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( t.ey + (pageY - startY) + t.sHeight &gt; t.imgHeight ) {
+                        t.sy = t.imgHeight - t.sHeight;
+                    } <span class="hljs-keyword">else</span> {
+                        t.sy = t.ey + (pageY - startY);
+                    }
+
+                    t.cutImage();
+                }
+            } <span class="hljs-keyword">else</span>{
+                <span class="hljs-keyword">this</span>.style.cursor = <span class="hljs-string">'auto'</span>;
+            }
+        };
+    }
+</code></pre>
+<p>这个方法里要理解一下几个主要的点：</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> pageX = e.pageX - ( t.regional.offsetLeft + <span class="hljs-keyword">this</span>.offsetLeft );
+<span class="hljs-keyword">var</span> pageY = e.pageY - ( t.regional.offsetTop + <span class="hljs-keyword">this</span>.offsetTop );
+</code></pre>
+<p>我们通过上面两行代码来获取<code>鼠标距离背景图片的距离</code>，<code>e.pageX</code>代表鼠标到浏览器左边缘的距离，<code>t.regional.offsetLeft + this.offsetLeft</code>可以计算出图片到浏览器的左边边缘的距离。上边的距离同理可得。</p>
+<pre><code class="hljs javascript">
+ <span class="hljs-keyword">if</span> ( pageX &gt; t.sx &amp;&amp; pageX &lt; t.sx + t.sWidth &amp;&amp; pageY &gt; t.sy &amp;&amp; pageY &lt; t.sy + t.sHeight )
+</code></pre>
+<p>在理解了<code>鼠标距离背景图片的距离</code>距离之后，这个应该很容易理解：就是判断鼠标是否在图片的区域内部。</p>
+<pre><code class="hljs javascript">
+t.ex = t.sx; 
+t.ey = t.sy;
+
+startX = e.pageX - ( t.regional.offsetLeft + <span class="hljs-keyword">this</span>.offsetLeft );
+startY = e.pageY - ( t.regional.offsetTop + <span class="hljs-keyword">this</span>.offsetTop );
+</code></pre>
+<p>这两段代码也是要拿出来说说的，头两行是为了记录上一次截图时候的坐标（没有上一次就是初始化的时候的坐标）；后两行记录鼠标按下时候的坐标。你都可以通过<code>console.log()</code>来分别查看这几个值。</p>
+<pre><code class="hljs javascript">
+<span class="hljs-keyword">if</span> (draging) {
+
+    <span class="hljs-keyword">if</span> ( t.ex + (pageX - startX) &lt; <span class="hljs-number">0</span> ) {
+        t.sx = <span class="hljs-number">0</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( t.ex + (pageX - startX) + t.sWidth &gt; t.imgWidth) {
+        t.sx = t.imgWidth - t.sWidth;
+    } <span class="hljs-keyword">else</span> {
+        t.sx = t.ex + (pageX - startX);
+    };
+
+    <span class="hljs-keyword">if</span> (t.ey + (pageY - startY) &lt; <span class="hljs-number">0</span>) {
+        t.sy = <span class="hljs-number">0</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( t.ey + (pageY - startY) + t.sHeight &gt; t.imgHeight ) {
+        t.sy = t.imgHeight - t.sHeight;
+    } <span class="hljs-keyword">else</span> {
+        t.sy = t.ey + (pageY - startY);
+    }
+
+    t.cutImage();
+}
+</code></pre>
+<p>上面这一行代码就是说：如果实在拖动的情况下，我们需要根据坐标的变化来实时更新<code>t.sx</code>和<code>t.sy</code>的值,并且实时调用<code>cutImage</code>方法实现预览。</p>
+<p><code>移动时裁剪区域的坐标 = 上次记录的定位 + (当前鼠标的位置 - 按下鼠标的位置)</code></p>
+<h2>最后，将裁剪的图片进行保存</h2>
+<p>从一开始，我们就有一个save按钮在页面上，我们的目的就是在用户点击save按钮的时候，将裁剪出来的图片保存到预览右边的方框内，于是，我们在<code>init</code>方法里面添加下面的代码：</p>
+<pre><code class="hljs javascript">
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'save_button'</span>).onclick = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    t.editPic.height = t.sHeight;
+    t.editPic.width = t.sWidth;
+    <span class="hljs-keyword">var</span> ctx = t.editPic.getContext(<span class="hljs-string">'2d'</span>);
+    <span class="hljs-keyword">var</span> images = <span class="hljs-keyword">new</span> Image();
+    images.src = t.imgUrl;
+
+    images.onload = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        ctx.drawImage(images,t.sx, t.sy, t.sHeight, t.sWidth, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, t.sHeight, t.sWidth); 
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'show_pic'</span>).getElementsByTagName(<span class="hljs-string">'img'</span>)[<span class="hljs-number">0</span>].src = t.editPic.toDataURL();
+    }
+
+}
+</code></pre>
+<p>跟实现<code>painImage</code>方法类似，首先监听save按钮的点击事件，然后我们将选中区域的图片利用<code>drawImage</code>方法绘制出来，最后利用<code>toDataURL</code>方法转换成base64编码格式并将该值赋予<code>show_pic</code>下<code>img</code>的<code>src</code>属性，这样就完成了图片的裁剪保存。效果如图：</p>
+<h2>调用init方法</h2>
+<p>最后别忘了在开始之前调用<code>init</code>方法，在js文件的最后一行加上：</p>
+<pre><code class="hljs">postFile.init();
+</code></pre>
+<p>最后的代码布局应该时这样的：</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> postFile = {
+
+    init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//codes</span>
+        },
+
+    handleFiles: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//codes</span>
+        },
+
+    <span class="hljs-comment">//...methods</span>
+}
+postFile.init();</code></pre>
+<p><strong>Happy Hacking</strong></p>
+
+                            <div class="article-license mb10 mt20 alert alert-info">
+                                <div class="license-item license-sa">
+                                    本文由 <a href="https://jellybool.com/post/about-jellybool" class="alert-link">JellyBool</a> 创作，采用
+                                    <a href="http://creativecommons.org/licenses/by-nc/2.5/cn/" target="_blank" class="alert-link">
+                                        署名-非商业性使用 2.5 中国大陆</a> 进行许可。<br>转载、引用前需联系作者，并署名作者且注明文章出处。
+                                </div>
+                            </div>
+
+
+                        </div><!--/.entry-->
+                    </div><!--/.post-content-->
+
+                </div><!--/.post-inner-->
+
+            </article><!--/.post-->
+            <ul class="post-nav group">
+
+
+                <li class="previous">
+                                        <a href="https://jellybool.com/post/develope-a-game-using-html5-canvas" rel="prev"><i class="fa fa-chevron-left"></i><strong>上一篇</strong><span>  用HTML5开发一个小游戏</span> </a>
+                                    </li>
+                <li class="next">
+                    
+                        <a href="https://jellybool.com/post/simple-vue-but-powerful-js" rel="next"><i class="fa fa-chevron-right"></i><strong>下一篇</strong> <span>  Simple Vue But Powerful JS</span></a>
+                                    </li>
+            </ul>
+           <div class="texr-center">
+               <div class="ds-share flat" data-thread-key="39" data-title="HTML5本地裁剪图片" data-images="" data-content="先上效果图：
+我们首先需要创建一个index.html文件，里面写上一些简单的html和css代码：
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;HTML5 Crop Image&lt;/title&gt;
+&lt;/head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body{text-align:center;}
+#label{border:1px solid #ccc;background-color:#fff;text-align:center;height:300px; width:300px;margin:20px auto;position:relative;}
+#get_image{position:absolute;}
+#edit_pic{position:absolute;display:none;background:#000;}
+#cover_box{position: absolute;z-index: 9999;display:none" data-url="https://jellybool.com/post/crop-image-local-using-html5-canvas" id="ds-share">
+                   <div class="ds-share-inline" id="ds-reset">
+                       <ul class="ds-share-icons-16">
+                           <li data-toggle="ds-share-icons-more"><a class="ds-more flat" href="javascript:void(0);">分享到：</a></li>
+                           <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                           <li><a class="ds-qq flat" href="javascript:void(0);" data-service="qq">QQ</a></li>
+                           <li><a class="ds-qzone flat" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+                           <li><a class="ds-qqt flat" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+                           <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                           <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                           <li><a class="ds-facebook flat" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
+                           <li><a class="ds-twitter flat" href="javascript:void(0);" data-service="twitter">Twitter</a></li>
+                       </ul>
+                       <div class="ds-share-icons-more" style="display: none;"><div class="ds-share-icons"> <div class="ds-share-icons-inner"> <ul class="ds-share-icons-16">  <li> <a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">新浪微博</a> </li>  <li> <a class="ds-qzone flat" href="javascript:void(0);" data-service="qzone">QQ空间</a> </li>  <li> <a class="ds-sohu flat" href="javascript:void(0);" data-service="sohu">搜狐微博</a> </li>  <li> <a class="ds-renren flat" href="javascript:void(0);" data-service="renren">人人网</a> </li>  <li> <a class="ds-netease flat" href="javascript:void(0);" data-service="netease">undefined</a> </li>  <li> <a class="ds-qqt flat" href="javascript:void(0);" data-service="qqt">腾讯微博</a> </li>  <li> <a class="ds-kaixin flat" href="javascript:void(0);" data-service="kaixin">开心网</a> </li>  <li> <a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣网</a> </li>  <li> <a class="ds-qq flat" href="javascript:void(0);" data-service="qq">QQ</a> </li>  <li> <a class="ds-meilishuo flat" href="javascript:void(0);" data-service="meilishuo">undefined</a> </li>  <li> <a class="ds-mogujie flat" href="javascript:void(0);" data-service="mogujie">undefined</a> </li>  <li> <a class="ds-baidu flat" href="javascript:void(0);" data-service="baidu">百度</a> </li>  <li> <a class="ds-taobao flat" href="javascript:void(0);" data-service="taobao">undefined</a> </li>  <li> <a class="ds-google flat" href="javascript:void(0);" data-service="google">谷歌</a> </li>  <li> <a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a> </li>  <li> <a class="ds-diandian flat" href="javascript:void(0);" data-service="diandian">undefined</a> </li>  <li> <a class="ds-huaban flat" href="javascript:void(0);" data-service="huaban">undefined</a> </li>  <li> <a class="ds-duitang flat" href="javascript:void(0);" data-service="duitang">undefined</a> </li>  <li> <a class="ds-youdao flat" href="javascript:void(0);" data-service="youdao">undefined</a> </li>  <li> <a class="ds-pengyou flat" href="javascript:void(0);" data-service="pengyou">undefined</a> </li>  <li> <a class="ds-facebook flat" href="javascript:void(0);" data-service="facebook">Facebook</a> </li>  <li> <a class="ds-twitter flat" href="javascript:void(0);" data-service="twitter">Twitter</a> </li>  <li> <a class="ds-linkedin flat" href="javascript:void(0);" data-service="linkedin">Linkedin</a> </li>  <li> <a class="ds-msn flat" href="javascript:void(0);" data-service="msn">undefined</a> </li>  </ul> </div> <div class="ds-share-icons-footer">多说分享插件</div></div></div>
+                   </div>
+               </div>
+           </div>
+        </div><!--/.pad-->
+
+
+        <!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="39" data-title="HTML5本地裁剪图片" data-url="https://jellybool.com/post/crop-image-local-using-html5-canvas" id="ds-thread"><div id="ds-reset"><div class="ds-comments-info"><div class="ds-sort"><a class="ds-order-desc">最新</a><a class="ds-order-asc ds-current">最早</a><a class="ds-order-hot">最热</a></div><ul class="ds-comments-tabs"><li class="ds-tab"><a class="ds-comments-tab-duoshuo ds-current" href="javascript:void(0);">0评论</a></li>  </ul></div><ul class="ds-comments"><li class="ds-post ds-post-placeholder">深度评论，虚位以待</li></ul><div class="ds-paginator" style="display: none;"><div class="ds-border"></div><a data-page="1" href="javascript:void(0);" class="ds-current">1</a></div><a name="respond"></a><div class="ds-login-buttons"><p>社交帐号登录:</p><div class="ds-social-links"><ul class="ds-service-list"><li><a href="https://jellybool.duoshuo.com/login/weixin/" rel="nofollow" class="ds-service-link ds-weixin">微信</a></li><li><a href="https://jellybool.duoshuo.com/login/weibo/" rel="nofollow" class="ds-service-link ds-weibo">微博</a></li><li><a href="https://jellybool.duoshuo.com/login/qq/" rel="nofollow" class="ds-service-link ds-qq">QQ</a></li><li><a href="https://jellybool.duoshuo.com/login/renren/" rel="nofollow" class="ds-service-link ds-renren">人人</a></li><li><a class="ds-more-services" href="javascript:void(0)">更多»</a></li></ul><ul class="ds-service-list ds-additional-services"><li><a href="https://jellybool.duoshuo.com/login/douban/" rel="nofollow" class="ds-service-link ds-douban">豆瓣</a></li><li><a href="https://jellybool.duoshuo.com/login/kaixin/" rel="nofollow" class="ds-service-link ds-kaixin">开心</a></li><li><a href="https://jellybool.duoshuo.com/login/baidu/" rel="nofollow" class="ds-service-link ds-baidu">百度</a></li><li><a href="https://jellybool.duoshuo.com/login/google/" rel="nofollow" class="ds-service-link ds-google">谷歌</a></li></ul></div></div><div class="ds-replybox"><a class="ds-avatar" href="javascript:void(0);" onclick="return false"><img src="./HTML5本地裁剪图片_files/187066.jpg" alt=""></a><form method="post"><input type="hidden" name="thread_id" value="1353671437117817119">
+<input type="hidden" name="parent_id" value="">
+<input type="hidden" name="nonce" value="5774cd686f97b"><div class="ds-textarea-wrapper ds-rounded-top"><textarea name="message" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea><pre class="ds-hidden-text"></pre></div><div class="ds-post-toolbar"><div class="ds-post-options ds-gradient-bg"><span class="ds-sync"></span></div><button class="ds-post-button" type="submit">发表评论</button><div class="ds-toolbar-buttons"><a class="ds-toolbar-button ds-add-emote" title="插入表情"></a></div></div></form></div><p class="ds-powered-by"><a href="http://duoshuo.com/" target="_blank" rel="nofollow">@JellyBool正在使用多说</a></p></div></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    var duoshuoQuery = {short_name:"jellybool"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+    </section><!--/.content-->
+
+
+</div>
+</div>
+<div id="fixedTools" class="hidden-xs hidden-sm">
+    <a id="backtop" class="border-bottom" href="https://jellybool.com/post/crop-image-local-using-html5-canvas#">回顶部</a>
+    <div class="qrcodeWraper">
+        <a href="https://jellybool.com/rss" target="_blank"><span class="fa fa-rss-square"></span></a>
+    </div>
+</div>    <nav class="nav-container group" id="nav-footer">
+    <div class="nav-text">2014 -- 2016 JellyBool 蜀ICP备15005290号-4</div>
+    <div class="nav-wrap"><ul class="nav container group">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-758">
+                <p class="social-link"> <a class="github" href="https://github.com/JellyBool" target="_blank">
+                        <i class="fa fa-github"></i>
+                    </a></p></li>
+
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-758">
+
+                <a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">Copyright © 2014 --
+                    2016 JellyBool,蜀ICP备15005290号-4</a>
+
+            </li>
+            <li id="menu-item-758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-758">
+                <p class="social-link"> <a class="weibo" href="http://weibo.com/u/2830973920" target="_blank">
+                        <i class="fa fa-weibo"></i>
+                    </a></p></li>
+
+        </ul></div>
+</nav>
+</div>
+<div data-remodal-id="modal">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <h1>Search using ElasticSearch...</h1>
+    <form method="GET" action="https://jellybool.com/search" accept-charset="UTF-8">
+    <div class="form-group" style="margin-top: 20px">
+        <input class="form-control" autofocus="true" name="query" id="query" type="text">
+    </div>
+    </form>
+
+</div>
+    <!--/#header-->
+    <!--/#wrapper-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            hljs.initHighlightingOnLoad();
+        });
+        (function(){
+
+
+            var typing = $('#site-description');
+
+            typing.typed(
+                    {
+                        replaceBaseText: true,
+                        strings: [
+                            "A Web Developer"
+                        ],
+                        showCursor: false,
+                        typeSpeed: 120,
+                        backSpeed: 120,
+                        backDelay: 500
+                    }
+            );
+            $(document).on('keypress', function(event) {
+                if( event.which === 83 && event.shiftKey ) {
+                    var inst = $('[data-remodal-id=modal]').remodal();
+                    inst.open();
+                }
+            });
+            $("#backtop").click(function(){return $("body,html").animate({scrollTop:0}),!1});
+
+        })();
+    </script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-50339427-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body></html>

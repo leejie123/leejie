@@ -1,0 +1,105 @@
+.main {
+	width:1200px;
+	margin:0 auto;
+}
+
+.contentWrap {
+	border: 1px solid #eaeaea;
+	background-color: #fff;
+	width: 1200px;
+	margin-bottom: 90px;
+}
+
+.asking-form {
+	padding: 30px 36px;
+}
+
+.asking-form > .input-con {
+	margin-bottom: 30px;
+}
+
+.asking-form > .input-con > .inputWrap {
+	height: 40px;
+	padding: 0px 18px;
+	padding-top: 10px;
+	border: 1px solid #dcdcdc;
+	display: inline-block;
+	width: 425px;
+	box-sizing: border-box;
+
+}
+
+.asking-form > .input-con > .inputWrap > input {
+	border: 0px;
+	width: 100%;
+	font-family: "MicroSoft Yahei"
+}
+.asking-form > .input-con > label {
+	display: inline-block;
+	width: 108px;
+	text-align: left;
+	vertical-align: top;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	color: #333;
+}
+.asking-form > .input-con > label > span:after {
+	content: '*';
+	margin-left: 3px;
+	color: #ff6237;
+	position: relative;
+	top: 0px;
+}
+
+.asking-form > .input-con > .selectWrap  {
+	padding: 0px 18px;
+	display: inline-block;
+	border: 1px solid #ddd;
+	width: 220px;
+	height: 40px;
+	/*background-image: url('http://placehold.it/200x200');*/
+	background-position: left center;
+	box-sizing: border-box;
+}
+
+.asking-form > .input-con > .selectWrap > select {
+	border: 0px;
+	height: 100%;
+	width: 100%;
+	font-family: "MicroSoft Yahei";
+	color: #999;
+}
+.asking-form > .input-con > .textareaWrap {
+	display: inline-block;
+}
+.asking-form > .input-con > .textareaWrap > textarea {
+	overflow: auto;
+	resize:none;
+	width: 1016px;
+	height: 600px;
+	border: 1px solid #dcdcdc;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.asking-form > .form-button {
+	display: block;
+	margin-left: 108px;
+}
+.asking-form > .form-button > button.submit {
+	background-color: #46A1F4;
+	color: #fff;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	border: 0px;
+	cursor: pointer;
+	font-family: "MicroSoft Yahei"
+}
+
+.asking-form .tips {
+	color: #FF6336;
+	margin-right: 16px;
+	display: none;
+}

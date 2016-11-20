@@ -1,0 +1,183 @@
+
+.	banner {
+	background-image: url('../../Images/bg2.gif');
+	background-size:auto 100% ;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 330px;	
+}
+
+.contentWrap {
+	background-color: #fff;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.contentWrap > .subTab{
+	height: 80px;
+	padding-top: 20px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #eaeaea;
+	text-align: center;
+}
+
+.contentWrap > .subTab > ul {
+	display: inline-block;
+	margin: 0 auto
+}
+
+.contentWrap > .subTab > ul > li{
+	display: inline-block;
+	height: 60px;
+	line-height: 60px;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 0px 18px;
+	margin-top: -4px;
+	border-bottom:  4px solid transparent;	
+}
+
+.contentWrap > .subTab > ul > li > a {
+	display: block;
+}
+
+.contentWrap > .subTab > ul > li.active {
+	border-bottom: 4px solid #44a2f8;
+}
+
+.contentWrap > .subTab > ul > li.active > a {
+	color: #44a2f8;
+}
+
+.contentWrap > .subTab > ul > li:hover {
+	border-bottom: 4px solid #44a2f8;
+}
+
+.contentWrap > .subTab > ul > li:hover > a {
+	color: #44a2f8;
+}
+
+.contentWrap > .subTab > ul > li{
+	float: left;
+}
+
+.contentWrap > .subTab > ul:after {
+	display: table;
+	content: '';
+	clear:both;
+}
+
+.contentWrap > .subTab > .tags {
+	height: 76px;
+	line-height: 76px;
+}
+
+.contentWrap > .videoList > .videoItem {
+	border-bottom: 1px solid #eaeaea;
+	margin: 0px 94px;
+}
+.contentWrap > .videoList > .videoItem > h3{
+	height: 74px;
+	line-height: 74px;
+	font-size: 16px;
+	color: #333;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	font-weight: 500;
+}
+
+.contentWrap > .videoList > .videoItem:last-child {
+	border-bottom: 0px;
+}
+
+.contentWrap > .videoList > .videoItem > h3:hover > a > span {
+	color: #43A2F6;
+}
+
+.contentWrap > .videoList > .videoItem > h3:before {
+	display: inline-block;
+	width: 30px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	text-align: center;
+	border-radius: 2px;
+	margin-right: 10px;
+}
+
+.contentWrap > .videoList > .videoItem > h3.video:before{
+	content: '视频';
+	color: #FCB54B;
+	border: 1px solid #FCB54B;
+}
+
+.contentWrap > .videoList > .videoItem > h3.posting:before{
+	content: '帖子';
+	color:#44a2f8;
+	border:1px solid #44a2f8;
+}
+
+.contentWrap > .videoList > .videoItem > h3.video > a > i {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-size: 85%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url('../../Images/clock.png');
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-left: 16px;
+}
+
+.contentWrap > .videoList > .videoItem > h3 .time {
+	color: #999;
+	font-size: 12px;
+}
+
+.contentWrap > .videoList > .videoItem > h3:hover .time {
+	color: #999;
+}
+
+.tags {
+	height: 76px;
+	line-height: 76px;
+	text-align: center;
+	border-bottom: 1px solid #eaeaea;
+	margin: 0px 94px;
+}
+
+.tags >  label {
+	display: inline-block;
+	vertical-align: top;
+	color: #989898;
+}
+
+.tags >  ul {
+	display: inline-block;
+}
+
+.tags > ul > li {
+	float: left;
+}
+
+.tags > ul > li > a {
+	display: inline-block;
+	padding: 0px 16px;
+	border-right: 1px solid #999;
+	line-height: normal;
+	color: #646464;
+}
+
+.tags > ul > li.active > a {
+	color: #44a2f8;
+}
+
+.tags > ul > li:hover > a {
+	color: #44a2f8;
+}
+
+.tags > ul > li:last-child > a {
+	border-right: 0px;
+}

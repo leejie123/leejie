@@ -1,0 +1,138 @@
+.main {
+	width:1200px;
+	padding-left: 90px;
+	padding: 40px;
+	margin: 0 auto;
+}
+
+.update-panel {
+	border:1px solid #ebebeb;
+	margin-bottom: 20px;
+	width: 860px;
+}
+
+.update-panel > .panel-header {
+	background-color:#fafafa;
+	height:80px;
+	/*padding-left:80px;*/
+	padding-left: 40px;
+	position:relative;
+	cursor: pointer;
+}
+
+.update-panel > .panel-header > h3{
+	font-size:16px;
+	font-weight:bold;
+	color:#656565;
+	line-height:80px;
+}
+
+.update-panel > .panel-header > h3 > i{
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:20px;
+	width:40px;
+	height:40px;
+	background-image: url('../../Images/update.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+}
+
+.update-panel > .panel-header > a.control{
+	line-height:normal;
+	display:inline-block;
+	color: #b4b4b4;
+	font-size:14px;
+	position:absolute;
+	right:30px;
+	width: 50px;
+	display: inline-block;
+	top:30px;
+	cursor: pointer;
+}
+
+.update-panel > .panel-header > a.control > span.up:after{
+	position: relative;
+	top: -12px;
+	left: 6px;
+	content: '';
+	border-bottom:6px solid #b4b4b4;
+	border-left:6px solid transparent;
+	border-right:6px solid transparent;
+}
+
+.update-panel > .panel-header > a.control > span.down:after{
+	position: relative;
+	top: 12px;
+	left: 6px;
+	content: '';
+	border-top:6px solid #b4b4b4;
+	border-left:6px solid transparent;
+	border-right:6px solid transparent;
+}
+
+.update-panel > .panel-body {
+	padding: 40px;
+	padding-top: 20px;
+	background-color:#fff;
+	display: none;
+}
+
+.update-panel > .panel-body > div {
+	font-size: 14px;
+	line-height: 20px;
+	word-break: break-all;
+}
+
+.update-panel > .panel-body img {
+	width: 100%;
+}
+
+.update-list {
+	width:260px;
+	float:right;
+}
+
+.update-list > h3{
+	font-weight:bold;
+	font-size:18px;
+	color:#808080;
+	margin-bottom: 24px;
+}
+
+.update-list > h3 >i{
+	display:inline-block;
+	width:18px;
+	height:18px;
+	background-image:url('../../Images/clock.png');
+	vertical-align:middle;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+	position: relative;
+	top: -2px;
+}
+
+.update-list > ul {
+	padding-left: 26px;
+}
+.update-list > ul > li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	color: #b4b4b4;
+}
+
+.update-list > ul > li > a {
+	display: block;
+	color: #808080;
+}
+
+.update-list > ul > li.active > a{
+	color: #44a2f8
+}
+
+.mg-b {
+	margin-bottom:40px;
+}

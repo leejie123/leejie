@@ -1,0 +1,505 @@
+﻿* {
+	padding: 0;
+	margin: 0;
+}
+a,a:active,a:hover{
+	text-decoration: none;
+	color: #000;
+}
+.clearfix { 
+  *zoom: 1; 
+} 
+.clearfix:before, 
+.clearfix:after { 
+  display: table; 
+  line-height: 0; 
+  content: ""; 
+} v
+.clearfix:after { 
+  clear: both; 
+} 
+.nowrap{white-space:nowrap;}
+.row{
+	width: 100%;
+}
+.row>.col1,.row>.col2,.row>.col3,.row>.col4,.row>.col5,.row>.col6,.row>.col7,.row>.col8,.row>.col9,.row>.col60,.row>.col70,.row>.col76{float: left;display: block;}
+.col1{8.33333333%;}
+.col2{width:50%;}
+.col3{width:33.3333333%;}
+.col4{width:25%;}
+.col5{width:20%;}
+.col6{width:16.6666667%;}
+.col7{width:14.2857143%;}
+.col8{width:12.5%;}
+.col9{width:11.1111111%;}
+.col60{width:60%;}
+.col70{width:70%;}
+.col76{width:76%;}
+.pull-right{float: right !important;}
+.text-center{text-align: center;}
+.text-right{text-align: right;}
+.padding2{padding: 2px;}
+.red{color: #db3652 !important;}
+.red1{color:#d93651 !important;}
+.yellow{color: #f60 !important;}
+.blue{color:#0475d5 !important;}
+.img100{
+	width: 100%;
+	height: auto;
+}
+.img98{
+	width: 98%;
+	height: auto;
+}
+.BOBOLIB_BImage{
+	position: absolute;left: 0;top: 0;
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size:100% 100%;
+	overflow: hidden;
+}
+.BOBOLIB_cssWidthHeight100{
+	height:auto!important; //for ie6 bug and ie7+,moz,webkit 正确
+	height:100%; //修复IE6,all browser
+	min-height:100%; //for ie6 bug and ie7+,moz,webkit 正确
+	background-repeat: no-repeat;
+	background-position:topleft;
+	background-size:100%,auto;
+	display: block;
+	clear: both;
+}
+/*******底部*******/
+body{
+	background-color: #f7f7f7;
+	color:#676767;
+}
+.more{
+	display: block;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	padding: 10px 0;
+	margin-bottom: 0;
+	color: #f60;
+}
+footer .cart-product-count {
+    position: absolute;
+    top: 7px;
+}
+footer .label-danger {
+    background-color: #f60;
+}
+footer .label {
+    position: absolute;
+    display: block;
+    margin-left: 60px;
+    margin-top: -10px;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+footer{
+	position: fixed;
+	bottom: 0px;
+	height: 60px;
+	width: 100%;
+	background-color: #000;
+}
+footer nav{
+	display:-webkit-box;
+	display:-moz-box;
+	display:box;
+	width: 100%;
+	height: 50px;
+}
+footer nav a{
+	display: block;
+	-moz-box-flex:1; 
+	-webkit-box-flex:1;
+	color: #fff;
+	/*font-size: 14px;*/
+    text-align: center;
+    /*padding-top: 10px;*/
+    width: 25%;
+}
+footer nav a:hover{
+	color: #fff;
+}
+footer nav a>i{
+	color: #fff;
+	display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+    /*font-size: 23px;*/
+    /*margin-bottom: 5px;*/
+}
+
+
+.topNav{
+	border-bottom: 1px solid #dedede;
+	background-color: #fff;
+}
+.topNav>a{
+		display: block;
+		width: 24.6%;
+		text-align: center;
+		background-color: #fff;
+		float: left;
+		font-size: 12px;
+		color:#5b5b5b;
+		height: 30px;
+    	padding-top: 15px;
+}
+.topNav>a+a{
+	border-left: 1px solid #dedede;
+}
+.topNav>.select{
+	border-bottom: 2px solid #ea3059;
+	color: #ed305a;
+}
+.topSubNav{
+	background-color: #fff;
+}
+.topSubNav>a:first-child{
+	width: 85px;
+	border-right: 1px solid #dedede;
+	float: left;
+	display: block;
+	font-size: 12px;
+	text-align: center;
+    padding-top: 10px;
+}
+.topSubNav>.select{
+	color: #5b5b5b;
+	background-color: #fff;
+}
+.topSubNav>a:first-child>i{
+	position: relative;
+    top: -12px;
+    left: 68px;
+    display: block;
+    font-weight: bold;
+	transform:rotate(270deg);
+	-ms-transform:rotate(270deg);
+	-moz-transform:rotate(270deg);
+	-webkit-transform:rotate(270deg);
+	-o-transform:rotate(270deg);
+}
+.topSubNav .iselect{
+	position: relative;
+    top: -12px;
+    left: 68px;
+    display: block;
+    font-weight: bold;
+	transform:rotate(90deg) !important;
+	-ms-transform:rotate(90deg) !important;
+	-moz-transform:rotate(90deg) !important;
+	-webkit-transform:rotate(90deg) !important;
+	-o-transform:rotate(90deg) !important;
+}
+.topSubNav>div{
+	margin-left: 85px;
+	border-bottom: 1px solid #dedede;
+	background-color: #eeeeee;
+}
+.topSubNav>div>a{
+    height: 20px;
+    display: block;
+    width: 24.6%;
+    text-align: center;
+    float: left;
+    font-size: 12px;
+    color: #5b5b5b;
+    padding-top: 10px;
+}
+.topSubNav .count{
+	/*position: relative;
+	left: -10px;*/
+}
+.topSubNav .count>i{
+	position: relative;
+    top: -12px;
+    left: 56px;
+    display: block;
+    font-weight: bold;
+    transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+}
+
+.topSubNavListContainer{
+	position: absolute;
+	width: 100%;
+	display: none;
+	z-index: 100000;
+}
+
+.topSubNavList{
+	border-bottom: 1px solid #dedede;
+	background-color: #fff;
+}
+.topSubNavList>div+div,.topSubNavList>div:first-child{
+	border-bottom: 1px solid #dedede;
+}
+.topSubNavList>div:last-child{
+	border-bottom: 0 solid #dedede;
+}
+.topSubNavList>div>a,.topSubNavList>div>a:hover{
+    height: 25px;
+    display: block;
+    width: 33.1%;
+    text-align: center;
+    float: left;
+    font-size: 12px;
+    color: #5b5b5b;
+    padding-top: 15px;
+    color: #91959f;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+}
+.topSubNavList>div>a>img{
+    width: 20px;
+    position: relative;
+    top: -5px;
+    left: -5px;
+}
+
+.ball-spin-fade-loader > div {
+    background-color: #db3652 !important;
+}
+
+
+/*导航中心*/
+.topNavCenter{
+		position: fixed;
+	    right: -5px;
+	    bottom: 80px;
+	    width: 40px;
+	    height: 35px;
+	    padding-top: 13px;
+	    padding-left: 10px;
+	    padding-right: 2px;
+	    padding-bottom: 0;
+	    border-radius: 5px;
+	    color: #fff;
+	}
+	.topNavCenter>i{
+		font-size: 23px;
+		background-color: #000;
+		filter:alpha(opacity=80);
+		-moz-opacity:0.8;
+		-khtml-opacity: 0.8;
+		opacity: 0.8;
+		border-radius: 5px;
+	    padding: 10px
+	}
+	.topNavCenter>nav{
+		width: 120px;
+	    position: absolute;
+	    top: -170px;
+	    right: 5px;
+	    color: #fff;
+	    background-color: #000;
+		filter:alpha(opacity=70);
+		-moz-opacity:0.8;
+		-khtml-opacity: 0.8;
+		opacity: 0.8;
+		border-radius: 5px;
+		display: none;
+	}
+	.topNavCenter>nav>a{
+		display: block;
+	    padding: 10px 0;
+	    margin: 0 8px;
+	    margin-right: 18px;
+	    color: #fff;
+
+	}
+	.topNavCenter>nav>a:first-child{
+		border-bottom: 1px solid #666;
+	}
+	.topNavCenter>nav>a+a{
+		border-bottom: 1px solid #666;
+		height: 20px;
+	}
+	.topNavCenter>nav>a>i{
+		margin-right: 3px;
+	}
+/*提示加关注*/
+	#chkInWiexin{
+		height: 50px;
+	    color: #ffffff;
+	    width: 100%;
+	    padding: 8px 30px;
+	    background-color: rgba(0,0,0,0.5);
+	    font-size: 12px;
+	    position: fixed;
+	    z-index: 1000;
+	    top: 0;
+	}
+	#chkInWiexin>div{
+		color: #eee;
+		text-align: center;
+		padding-top: 6px;
+		padding-left:10px;
+	}
+	#chkInWiexin>button{
+		float: right;
+	    display: block;
+	    height: 35px;
+	    width: 90px;
+	    font-size: 14px;
+	    border-radius: 3px;
+	    border: 1px solid #00AC00;
+	    padding: 5px;
+	    margin-right: 40px;
+	    background: #00AC00;
+	}
+	#chkInWiexin .userico{
+		position: absolute;
+	    height: 45px;
+	    width: auto;
+	    left: -5px;
+	    top: -5px;
+	}
+/*飞入购物车*/
+.BFlyToTarget-defaultTransition{
+	-webkit-transition: 0.4s linear;
+    -moz-transition: 0.4s linear;
+    -o-transition: 0.4s linear;
+    transition: 0.4s linear;
+    -webkit-transition-property: width,height,left,top;
+    -moz-transition-property: width,height,left,top;
+    -o-transition-property: width,height,left,top;
+    transition-property: width,height,left,top;
+}
+
+
+footer .cart-product-count {
+    position: absolute;
+    top: 7px;
+}
+footer .label-danger {
+    background-color: #f60;
+}
+footer .label {
+    position: absolute;
+    display: block;
+    margin-left: 40px;
+    margin-top: -10px;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+footer{
+	border-top: 1px solid #e5e5e5;
+	position: fixed;
+	bottom: 0px;
+	/*height: 60px;*/
+	width: 100%;
+	background-color: #fff;
+	
+	height:52px;
+}
+footer nav{
+	display:-webkit-box;
+	display:-moz-box;
+	display:box;
+	width: 100%;
+	height: 50px;
+}
+footer nav a{
+	display: block;
+	-moz-box-flex:1; 
+	-webkit-box-flex:1;
+	color: #999999;
+	font-size: 10px;
+    text-align: center;
+    padding-top: 5px;
+    width: 20%;
+    position:relative;
+    /*top:5px;*/
+    height: 100%;
+}
+footer nav a:hover{
+	color: #999;
+}
+footer nav a>i{
+	color: #999;
+	display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 23px;
+    margin-bottom: 3px;
+    
+    width: 26px;
+    height: 26px;
+    background-size: 26px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+footer nav a.over {
+    background: #f7f7f7;
+    color:#db3855;
+}
+footer nav a.over>i {
+    background-position: top center;
+}
+
+/*复选框*/
+.checkbox {
+    width: 25px;
+    float: left;
+    position: relative;
+    top: 30px;
+    left: 2px;
+}
+.checkbox label {
+	cursor: pointer;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	top: -35px !important;
+  	left: 0;
+	background: #eee;
+	border:1px solid #ddd;
+}
+.checkbox label:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 6px;
+	left: 7px;
+	border: 3px solid #f60;
+	border-top: none;
+	border-right: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.checkbox input[type=checkbox] + label:after {
+	opacity: 0;
+}
+.checkbox input[type=checkbox]:checked + label:after {
+	opacity: 1;
+}

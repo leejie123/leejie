@@ -1,0 +1,126 @@
+<div>
+	<style type="text/css">
+		#BOBOWEB_PAGE_systemAlert{
+					
+		}
+
+		#BOBOWEB_PAGE_systemAlert ul{
+			margin: 0;padding: 0;
+		}
+		    
+		#BOBOWEB_PAGE_systemAlert li{
+			list-style: none;
+		    border: 1px solid #ccc;
+		    margin: 5px auto;
+		    width: 80%;
+		    border-radius: 5px;
+		}
+		#BOBOWEB_PAGE_systemAlert li a,#BOBOWEB_PAGE_systemAlert li a:link,#BOBOWEB_PAGE_systemAlert li a:visited,#BOBOWEB_PAGE_systemAlert li a:hover,#BOBOWEB_PAGE_systemAlert li a:active{
+			display: block;
+		    text-align: center;
+		    color: #666;
+		    font-size: 30px;
+		    padding-top: 5px;
+		}
+		
+	</style>
+	<div id="BOBOWEB_PAGE_systemAlert">
+		<ul>
+			<li><a href="#home">返回</a></li>
+			<li><a href="#">notification.alert</a></li>
+			<li><a href="#">notification.confirm</a></li>
+			<li><a href="#">notification.beep</a></li>
+			<li><a href="#">inappbrowser:baidu.com</a></li>
+			<li><a href="#">Service api test(jsonp)</a></li>
+			<li><a href="#">ajax测试是否可以跨域</a></li>
+			<li><a href="#">扫码</a></li>
+		</ul>
+	</div>
+</div>
+		<script>function(){  //注：<script>和function 之间不要换行
+			var THIS=this;
+			THIS.ROOT=null;//指向B   系统会自动给他附值   注：如果需要获得加载它所在的js范围 可以使用：THIS.ROOT.MainJS
+			var B,$,MainJS;
+			var ParentID;//系统会自动给他附值，设置唯一的id号
+			var $CurrentPage;//当前页面的$引用
+			THIS.ParentID=ParentID;
+			THIS.$CurrentPage=$CurrentPage;
+			//获得需要预加载的资源
+			this.BOBOLIB_page_PreloadResources=function(){
+				var arrTest=[];
+				return arrTest;
+			}
+			//初始化,页面加载好，会自动调用这个方法。
+			this.BOBOLIB_page_init=function(){
+				B=THIS.ROOT;
+				$=THIS.ROOT.$;
+				MainJS=THIS.ROOT.MainJS;
+				$CurrentPage=THIS.$CurrentPage;
+				//console.log(MainJS.Device);
+				//生成列表
+				$('#BOBOWEB_PAGE_systemAlert a').click(function(e){
+					var $this=$(this);
+					var index=$this.parent().index();
+					switch(index){
+						case 1:
+							MainJS.Device.alert('alert test..',null,'alert','好的');
+							break;
+						case 2:
+							MainJS.Device.confirm('是否要删除',function(buttonIndex){
+								MainJS.Device.alert('选择的为：'+buttonIndex,null,'confirm tip','好的');
+							},'你确定');
+							break;
+						case 3:
+							MainJS.Device.beep(3);
+							break;
+						case 4:
+							MainJS.Device.popupWebUrl('百度','http://www.baidu.com');
+							break;
+						case 5:
+							var url='Basic';//http://aote114/testEnv/testJsonp.php
+							MainJS.Service.getApi(url,{p1:'abc',p2:123},
+								function(data,msg){
+									console.log(data);
+								},
+								function(data,msg,type){
+
+							});
+							/*$.ajax({
+						        url:"",
+						        dataType:'jsonp',
+						        data:'http://1034.w.zhj.test.yedadou.cn/yiyuan/AppApi/Basic', 
+								type:'post',
+						        success:function(result) {
+						            console.log(result);
+						        }
+						    });*/
+							break;
+						case 6:
+							var url='http://1034.w.zhj.test.yedadou.cn/yiyuan/AppApi/Basic?app_id=3&nonce_str=asdfasdfasdfasdf&timestamp=1461809738&sign=2807ED9839DA9C6B399F1CE778137996 ';
+							MainJS.Service.ajax(url,
+								{
+								data:{p1:'abc',p2:123},
+								success:function(data,msg){
+									console.log(data);
+								},
+								error:function(data,msg,type){
+								}
+							});
+							break;
+						case 7:
+							MainJS.Device.QR();
+							break;
+					}
+				});
+				
+			}
+			//离开该页面需要处理的一些事件
+			this.BOBOLIB_page_remove=function(){
+				window.console.log("page_remove..");
+			}
+			//设置宽高
+			this.BOBOLIB_setWH=function(w,h){
+			}
+			//
+		}();
+		</script>

@@ -1,0 +1,82 @@
+body {
+	background-color: #fff;
+}
+
+.handleWrap {	
+	width:100%;
+	height:830px;
+	overflow:hidden;
+	text-align: center;
+}
+
+.handleWrap > img {
+    position: relative;
+    width: 3000px;
+}
+
+.handleWrap > .textWrap {
+	display:inline-block;
+	z-index:1000;
+	position:absolute;
+	background-color:#fff;
+	font-size:24px;
+	font-weight:bold;
+	color:#666;
+	top: 532px;
+	left: 0px;
+	letter-spacing: 1px;
+	width: 100%;
+}
+
+.handleWrap > .textWrap > p {
+	display: inline-block;
+}
+
+.handleWrap > .textWrap > p > span{
+	color: #f76647;
+}
+
+.handleWrap > .textWrap > p > a{
+	color: #338ae7;
+}
+
+.status401 {
+    left: -200px;
+    top: -626px;
+}
+
+.status404 {
+	top: -1460px;
+	right: 170px;
+}
+
+.status504 {
+    top: -2295px;
+	right: 170px;
+}
+
+.status502 {
+    top: -3120px;
+	right: 170px;
+}
+
+/*right*/
+.status403 {
+	right: 1625px;
+	top: -626px;
+}
+
+.status503 {
+	right: 1625px;
+	top: -1460px;
+}
+
+.status500 {
+	right: 1625px;
+    top: -2295px;
+}
+
+.mending {
+	right: 1625px;
+    top: -3130px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8"/>
+<meta content="yedadou.com" name="Copyright" />
+<meta content="451231623@qq.com" name="Author">
+<meta content="描述" name="Description">
+<meta content="关键字" name="Keywords">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="lib/normalize.css">
+<link rel="stylesheet" type="text/css" href="image/public.css ">
+<link rel="stylesheet" type="text/css" href="image/pub1.css ">
+<link rel="stylesheet" href="lib/normalize.css" type="text/css" media="all" />
+<link rel="stylesheet" href="image/boboui.css" type="text/css" media="all" />
+<style type="text/css">
+/*  黑背景+loading条
+#loadingTip{
+	width: 32px;height: 50px;display: block;padding: 0;margin: 0;position: absolute; text-align: center;
+}
+#loadTipP{text-align: center;color: #fff;width: 100%;}
+body{background-color:#000;}
+*/
+#pageContainer{display: absolute;}
+#loadingTip{
+	width: 100px;height: 80px;display: block;padding: 0;margin: 0;position: absolute; text-align: center;
+}
+#loadTipP{text-align: center;color: #000;width: 100%;}
+body{background-color:#fff;}
+
+/*首页幻灯片*/
+#iSlider-wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+#iSlider-wrapper ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+#iSlider-wrapper li {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    list-style: none;
+}
+#iSlider-wrapper li img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.islider-btn-outer {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 99px;
+}
+.islider-btn-inner {
+    height: 30%;
+    width: 30%;
+    margin-top: 34%;
+}
+.islider-btn-outer.left .islider-btn-inner {
+    margin-left: 40%;
+}
+.islider-btn-outer.right .islider-btn-inner {
+    margin-right: 40%;
+}
+</style>
+<title>我的App</title>
+<body>
+<div id="loadingTip"><img src="image/index/loadingbar_white_bak.gif"><div id="loadTipP">加载..</div></div>
+<div id="pageContainer">
+</div>
+
+<footer id="footerNav" style="display: none;">
+    <nav>
+        <a href="#" class="over"><i class="" style="background-image:url('image/index/images/btn_home.png')"></i>首页</a>
+        <a href="#" class=""><i style="background-image:url('image/index/images/btn_zxjx-.png')"></i>最新揭晓</a>
+        <a href="#" class=""><i style="background-image:url('image/index/images/btn_bask.png')"></i>晒单</a>
+        <a href="#" class=""><i style="background-image:url('image/index/images/btn_shoppingcart.png')" ></i>购物车
+                <span id="cartProductCount" class="label label-danger cart-product-count" >4</span></a>
+        <a href="#" class=""><i style="background-image:url('image/index/images/btn_my.png')"></i>我</a>
+    </nav>
+</footer>
+<div id="appVersion" style="position: fixed;background: #ccc;font-size: 12px;opacity: .5;right: 0;top:0;">v0.01 4-27-3</div>
+<a href="#testList" style="display:block;position: fixed;background: #ccc;font-size: 12px;opacity: .5;left: 0;top:0;">testList</div>
+<script>
+var loadingTip_id="loadingTip";
+var loadingTip_width=100;
+var loadingTip_height=80;
+function getWindowW(){return window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth}function getWindowH(){return window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}var w=getWindowW();var h=getWindowH();var body=document.getElementsByTagName("body")[0];body.style.width=w+"px";body.style.height=h+"px";var loadingTip=document.getElementById(loadingTip_id);loadingTip.style.top=((h-loadingTip_width)/2)+"px";loadingTip.style.left=((w-loadingTip_height)/2)+"px";
+var ServerURL='data/testInitConfig.txt';
+</script>
+<script type="text/javascript" src="cordova.js"></script>
+<script src="lib/sea.js"></script>
+<script src="lib/md5.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

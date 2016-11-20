@@ -1,0 +1,151 @@
+<div>
+	<style type="text/css">
+		#BOBOWEB_PAGE_testList{
+					
+	}
+	#menu{
+		border-bottom: 1px solid #dcdcdc;	
+	}
+	#menu>nav>a,#menu>nav>a:hover{
+		text-align: center;
+		padding: 10px 0;
+		font-size: 1.2em;
+		color:#676767;
+		text-decoration: none;
+	}
+	#menu>nav>.select{
+		text-align: center;
+		padding: 10px 0;
+		font-size: 1.2em;
+		color: #f60;
+		border-bottom: 2px solid #f60;
+	}
+	#menu>nav>a>.line{
+		width: 1px;
+	    height: 30px;
+	    right: 50%;
+	    top: 5px;
+	    position: fixed;
+	    border-right: 2px solid #dcdcdc;
+	}
+	#mainContianer>div{
+		margin: 5px 5px;
+	}
+	.arrow-right {
+	    position: relative;
+	    right: 21px;
+	    top: 0;
+	}
+	.arrow-right:before {
+	    position: absolute;
+	    display: inline-block;
+	    border-top: 10px solid transparent;
+	    border-left: 10px solid #a9a9a9;
+	    border-bottom: 10px solid transparent;
+	    border-right-color: rgba(0, 0, 0, 0.2);
+	    right: 1px;
+	    top: -22px;
+	    content: '';
+	}
+	.arrow-right:after {
+	    position: absolute;
+	    display: inline-block;
+	    border-top: 7px solid transparent;
+	    border-left: 9px solid #fff;
+	    border-bottom: 7px solid transparent;
+	    right: 3px;
+	    top: -19px;
+	    content: '';
+	}
+	.menu{
+		width: 96%;
+	    margin: 5px auto;
+	    background-color: #fff;
+	    border-radius: 5px;
+	    border: 1px solid #d5d5d5;
+	}
+	.menu>a{
+		display: block;
+	    width: 96%;
+	    height: 50px;
+	    border-top: 1px solid #d5d5d5;
+	    padding-left: 15px;
+	    padding-top: 5px;
+	    color: #909090;
+	    font-weight: bold;
+	    text-decoration: none;
+	}
+	.menu>a:first-child{
+		display: block;
+	    width: 96%;
+	    height: 50px;
+	    border-top: 0px solid #d5d5d5;
+	    padding-left: 15px;
+	    padding-top: 5px;
+	    color: #909090;
+	    font-weight:bold;
+	    text-decoration: none;
+	}
+	.menu>a>.title{
+		margin-top: 15px;
+	    margin-left: 0px;
+	    width: 80%;
+	}
+	.menu>a>img{
+		border-radius: 100%;
+	    display: block;
+	    position: absolute;
+	}
+	</style>
+	<div id="BOBOWEB_PAGE_testList">
+	 <nav class="menu clearfix">
+		<a href="">
+			<div class="title"></div>
+			<div class="arrow-right"></div>
+		</a>
+	</nav>
+
+	</div>
+</div>
+		<script>function(){  //注：<script>和function 之间不要换行
+			var THIS=this;
+			THIS.ROOT=null;//指向B   系统会自动给他附值   注：如果需要获得加载它所在的js范围 可以使用：THIS.ROOT.MainJS
+			var B,$,MainJS;
+			var ParentID;//系统会自动给他附值，设置唯一的id号
+			var $CurrentPage;//当前页面的$引用
+			THIS.ParentID=ParentID;
+			THIS.$CurrentPage=$CurrentPage;
+			//获得需要预加载的资源
+			this.BOBOLIB_page_PreloadResources=function(){
+				var arrTest=[];
+				return arrTest;
+			}
+			//初始化,页面加载好，会自动调用这个方法。
+			this.BOBOLIB_page_init=function(){
+				B=THIS.ROOT;
+				$=THIS.ROOT.$;
+				MainJS=THIS.ROOT.MainJS;
+				$CurrentPage=THIS.$CurrentPage;
+				//生成列表
+				var arr=[];
+				arr.push(['系统弹框','#systemTest']);
+				var $menu=$CurrentPage.find('.menu');
+				var $item=$menu.children()
+				$menu.empty();
+				$.each(arr,function(index,item){
+					var temItem=$item.clone();
+					temItem.attr('href',item[1]);
+					temItem.find('.title').html(item[0]);
+					$menu.append(temItem);
+				});
+			}
+			//离开该页面需要处理的一些事件
+			this.BOBOLIB_page_remove=function(){
+				window.console.log("page_remove..");
+			}
+			//设置宽高
+			this.BOBOLIB_setWH=function(w,h){
+			}
+			//
+		}();
+		</script>

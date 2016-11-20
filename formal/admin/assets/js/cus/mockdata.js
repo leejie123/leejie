@@ -278,14 +278,14 @@ service.prototype.getProject = function(id) {
 			"proimages": [
 				"avatar1.jpg","avatar1.jpg","avatar1.jpg"
 			],
-			"tags": ["ydd", "2016-12", "电商", "拼团"]
+			"tags": ["ydd", "yiyuangou", "2016-12", "电商", "拼团"]
 		},
 		/* 12 */
 		{
 			"protime": "2016-",
 			"proname": "yddPay",
 			"prointro": "该项目是支付系统的后台，接入微信支付，前端业务逻辑简单",
-			"prolink": tips,
+			"prolink": self.isavailable?"https://github.com/leejie123/leejie/tree/gh-pages/formal/yedadou/yiyuangou":tips,
 			"protech":"【技术】借助pure定义一套css框架",
 			"prodetail":'【项目细节】',
 			"prodoc": "【前端文档】",
@@ -298,35 +298,35 @@ service.prototype.getProject = function(id) {
 			"protime": "2016-",
 			"proname": "重构一元购",
 			"prointro": "之前的一元购有几套模板，可以切换模板。这个项目是增加一套ui模板，业务逻辑基本不变。在php的原有代码修改结构，把原来跳转页面变为异步加载。",
-			"prolink": tips,
+			"prolink": self.isavailable?"https://github.com/leejie123/leejie/tree/gh-pages/formal/yedadou/yiyuangou":tips,
 			"protech":"【技术】",
 			"prodetail":'【项目细节】',
 			"prodoc": "【前端文档】 ",
 			"proimages": [
 				"avatar1.jpg","avatar1.jpg","avatar1.jpg"
 			],
-			"tags": ["ydd","重构", "一元购", "电商", "wechat"]
+			"tags": ["ydd","重构", "yiyuangou", "一元购", "电商", "wechat"]
 		},
 		/* 14 */
 		{
 			"protime": "2016-",
 			"proname": "一元购app",
 			"prointro": "把微信的客户端做成app，hybrid app。",
-			"prolink": self.isavailable? 'http://leejie123.github.io/leejie/formal/netbuilding/':tips,
+			"prolink": self.isavailable? 'https://github.com/leejie123/leejie/tree/gh-pages/formal/yedadou/yiyuan-app':tips,
 			"protech":"【技术】1、grunt，2、requirejs等",
 			"prodetail":'【项目细节】',
 			"prodoc": "【前端文档】",
 			"proimages": [
 				"avatar1.jpg","avatar1.jpg","avatar1.jpg"
 			],
-			"tags": ["ydd","重构", "一元购", "电商", "app", "mobile", "requirejs", "grunt"]
+			"tags": ["ydd","yiyuangou", "重构", "一元购", "电商", "app", "mobile", "requirejs", "grunt"]
 		},
 		/* 15 */
 		{
 			"protime": "2016-",
 			"proname": "bbs",
 			"prointro": "这个项目是bbs论坛。流程比较规范，产品经理通过需求分析，做出原型，然后交付ui，然后就给前端做页面。总的有三大板块，视频区，发帖，发布作品。公司是b2b做电商平台，培训那些商家用自己做的软件。",
-			"prolink": self.isavailable? 'http://leejie123.github.io/leejie/formal/netbuilding/':tips,
+			"prolink": self.isavailable? 'https://github.com/leejie123/leejie/formal/netbuilding/bbs/index1.html':tips,
 			"protech":"【技术】定义一套css，js框架。",
 			"prodetail":'【项目细节】',
 			"prodoc": "【前端文档】",
@@ -402,7 +402,8 @@ service.prototype.getProject = function(id) {
 			"id": 8,
 			"data": [
 				// projects[1], projects[2], projects[6], projects[7]
-				projects[6],projects[9], projects[14], projects[15], projects[16], projects[18]
+				projects[6],projects[9], projects[12], projects[13], projects[14], 
+				projects[15], projects[16], projects[18]
 			]
 		},
 		{

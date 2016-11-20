@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../output/lib/md5.js"></script>
+	<script type="text/javascript">
+	function YedadouSign(){
+		var THIS=this;
+		var randomString=function(len) {
+		　　len = len || 32;
+		　　var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+		　　var maxPos = $chars.length;
+		　　var pwd = '';
+		　　for (i = 0; i < len; i++) {
+		　　　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+		　　}
+		　　return pwd;
+		}
+		this.getSign=function(appid,key){
+			var nonce_str=randomString();//1
+			var timestamp=Math.round(new Date().getTime()/1000);//1235
+			var arr=[];
+			arr.push("app_id="+appid);
+			arr.push("nonce_str="+nonce_str);
+			arr.push("timestamp="+timestamp);
+			arr=arr.sort();
+			var stringA=arr.join('&');
+			//console.log(stringA);
+			stringA=stringA+"&key="+key;
+			//console.log('join:'+stringA);
+			//console.log('testdata:app_id=3&nonce_str=1&timestamp=1235&key=MD5');
+			stringA=hex_md5(stringA);
+			//console.log('md5:'+stringA);
+			stringA=stringA.toUpperCase();
+			//console.log('app_id='+appid);
+			//console.log('nonce_str='+nonce_str);
+			//console.log('timestamp='+timestamp);
+			//console.log(stringA);
+			//console.log('testdata:7F856615DB26BCF5C6A9366CFDBBE28A')
+			//stringA="appid="+appid+"&nonce_str="+nonce_str+"&time="+time;
+			//stringSignTemp=stringA+"&key="+key; 
+			return stringA;
+		}
+	}
+	var YS=new YedadouSign();
+	appid=3;
+	key='MD5';
+	var sign=YS.getSign(appid,key);
+	console.log(sign);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

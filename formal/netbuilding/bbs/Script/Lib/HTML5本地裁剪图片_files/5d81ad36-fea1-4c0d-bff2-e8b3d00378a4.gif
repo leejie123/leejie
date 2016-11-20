@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>AccessDenied</Code>
+  <Message>AccessDenied</Message>
+  <RequestId>579D78DA800DFB434523D998</RequestId>
+  <HostId>wt-prj.oss.aliyuncs.com</HostId>
+  <BucketName>wt-prj</BucketName>
+</Error>

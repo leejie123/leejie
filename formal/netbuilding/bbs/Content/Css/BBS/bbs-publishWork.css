@@ -1,0 +1,200 @@
+.main {
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 0px;
+	margin-top: 40px;
+	border: 1px solid #eaeaea;
+}
+
+.import {
+	height: 100px;
+	line-height: 100px;
+	padding:0px 36px;
+	border-bottom: 1px dotted #eaeaea;
+	background-color: #fff;
+	color: #999;
+}
+
+.import > .importBtn {
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #fff;
+	width: 200px;
+	border: 0px;
+	background-color: #44A2F9;
+	margin-right: 20px;
+}
+
+.publish-form {
+	padding: 30px 32px;
+	background-color: #fff;
+}
+
+
+.publish-form {
+	padding: 30px;
+}
+
+.publish-form > .input-con {
+	margin-bottom: 30px;
+}
+
+.publish-form > .input-con > .inputWrap {
+	height: 40px;
+	padding: 0px 30px;
+	padding-top: 10px;
+	border: 1px solid #ddd;
+	display: inline-block;
+	width: 425px;
+	box-sizing: border-box;
+}
+
+.publish-form > .input-con > .selectPlan {
+	position:relative;
+    height: 40px;
+    padding: 0px 30px;
+    border: 1px solid #ddd;
+    line-height: 40px;
+    display: inline-block;
+    box-sizing: border-box;
+    width:218px;
+	cursor: pointer;
+	color: #666;
+}
+
+.publish-form > .input-con > .selectPlan >.dropdown {
+	width:216px;
+	position:absolute;
+	left:-1px;
+	top:39px;
+	border:1px solid #ddd;
+	border-top:0px;
+	background-color: #fff;
+	display: none;
+	cursor: pointer;
+}
+
+.publish-form > .input-con > .selectPlan:hover > .dropdown {
+	display: block;
+}
+.publish-form > .input-con > .selectPlan >.dropdown > label{
+	display:block;
+	padding:0px 20px;
+}
+
+.publish-form > .input-con > .selectPlan >.dropdown > label:hover {
+	background-color: #eaeaea;
+}
+
+.publish-form > .input-con > .selectPlan >.dropdown > label > input{
+	position: relative;
+	top: 2px;
+	margin-right: 16px;
+}
+
+.publish-form > .input-con > .textareaWrap {
+	height:200px;
+	display: block;
+}
+
+.publish-form > .input-con > .textareaWrap > textarea {
+	height:200px;
+	resize:none;
+	overflow-y: auto;
+	border: 1px solid #eaeaea;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.publish-form > .input-con > .inputWrap > input {
+	border: 0px;
+	width: 100%;
+}
+.publish-form > .input-con > label {
+	display: inline-block;
+	width: 100px;
+	text-align: left;
+	vertical-align: top;
+	height: 30px;
+	line-height: 30px;
+}
+.publish-form > .input-con > label > span:after {
+	content: '*';
+	font-size: 12px;
+	margin-left: 3px;
+	color: #FF6336;
+}
+
+.publish-form > .input-con > .selectWrap  {
+	display: inline-block;
+	border: 1px solid #ddd;
+	width: 220px;
+	height: 40px;
+	background-image: url('http://placehold.it/200x200');
+	background-position: left center;
+	box-sizing: border-box;
+}
+
+.publish-form > .input-con > .selectWrap > select {
+	border: 0px;
+	height: 100%;
+	width: 100%;
+}
+.publish-form > .input-con > .textareaWrap {
+	display: inline-block;
+}
+
+.publish-form > .input-con > .textareaWrap > textarea {
+	width: 1016px;
+	height: 600px;
+}
+.publish-form > .form-button {
+	display: block;
+	margin-left: 100px;
+}
+
+
+.publish-form > .input-con > .uploadBtn {
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    height: 30px;
+    width: 138px;
+    border: 1px solid #ddd;
+    line-height: 30px;
+    text-align: center;
+    background-color: #f5f5f5
+}
+
+.publish-form > .input-con > .uploadBtn > input{
+	position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+
+.publish-form > .form-button > button.submit {
+	background-color: #46A1F4;
+	color: #fff;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	border: 0px;
+}
+
+.publish-form .tips {
+	color: #FF6336;
+	margin-right: 16px;
+	display: none;
+}
+
+
+
+

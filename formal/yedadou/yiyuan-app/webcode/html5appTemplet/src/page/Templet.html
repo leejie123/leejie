@@ -1,0 +1,44 @@
+<div>
+			<style type="text/css">
+				#BOBOWEB_PAGE_这里写上唯一的标识{
+					background-color: #fff;
+				}
+			</style>
+			<div id="BOBOWEB_PAGE_这里写上唯一的标识">
+			</div>
+		</div>
+		<script>function(){  //注：<script>和function 之间不要换行
+			var THIS=this;
+			THIS.ROOT=null;//指向B   系统会自动给他附值   注：如果需要获得加载它所在的js范围 可以使用：THIS.ROOT.MainJS
+			var B,$,MainJS;
+			var ParentID;//系统会自动给他附值，设置唯一的id号
+			var $CurrentPage;//当前页面的$引用
+			THIS.ParentID=ParentID;
+			THIS.$CurrentPage=$CurrentPage;
+			//获得需要预加载的资源
+			this.BOBOLIB_page_PreloadResources=function(){
+				var arrTest=[];  //如果需要预加载，请把它们写在这里面,如：var arrTest=["1.jpg","2.jpg"..];
+				return arrTest;
+			}
+			//初始化,页面加载好，会自动调用这个方法。
+			this.BOBOLIB_page_init=function(){
+				window.console.log("page_init..");
+				B=THIS.ROOT;
+				$=THIS.ROOT.$;
+				MainJS=THIS.ROOT.MainJS;
+				$CurrentPage=THIS.$CurrentPage;
+				//
+				
+			}
+			//离开该页面需要处理的一些事件
+			this.BOBOLIB_page_remove=function(){
+				window.console.log("page_remove..");
+			}
+			//设置宽高
+			this.BOBOLIB_setWH=function(w,h){
+				
+			}
+			//
+			//自定方法-----开始-----------------------------------
+		}();
+		</script>

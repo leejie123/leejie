@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta property="qc:admins" content="21020713756362116375636" />
+    <meta name="baidu-site-verification" content="IvLW4NW4qJ" />
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="装修设计效果图、装修设计软件、房屋设计软件、家具设计、家居设计" />
+    <meta name="description" content="三维家云设计，是最专业最迅速、最智能的3D在线装修设计软件，房屋设计软件，可让用户自行家居设计，家具设计，快速渲染装修设计效果图。" />
+    <meta name="author" content="" />
+    <meta name="Copyright" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="renderer" content="webkit" /> 
+    <title>互联网3D云设计平台_三维家</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <!-- header common.css, base.css -->
+    <link href='Content/css/BBS/public.css' rel="stylesheet" />
+    <script src="Script/Lib/jquery.js"></script>
+    <!-- <script src="Script/Lib/jquery.js"></script> -->
+
+	<link rel="stylesheet" type="text/css" href="Content/Css/BBS/bbs-common.css">
+	<link rel="stylesheet" type="text/css" href="Content/Css/BBS/bbs-postingDetail.css">
+	
+</head>
+<body>
+    <!-- 广告位 end -->
+    <div id="advertising"></div>
+    <!-- 广告位 start -->
+
+
+    <!-- 头部 start -->
+    <!-- header start 未登录状态-->
+    <div class="header">
+        <div class="mainBav">
+            <div class="nav container12">
+                <div class="loginBar fr">
+                    <a href="/Account/Login?returnUrl=/home/index" onclick='SetEventClick("1","首页_登录_按钮","登录","/home/index")'>登录</a>
+                    <a href="/Register/Index?returnUrl=/home/index" class="active" onclick='SetEventClick("1","首页_注册_按钮","注册","/home/index")'>体验</a>
+                </div>
+                <h1 class="logo fl"><a href="/home/index" title="返回首页"><img src="/Content/images/index_images/logo.png?v=1.0.0.0.20160707.1" alt="装修设计软件_三维家"></a></h1>
+                <ul class="clearfix">
+                    <li class="active"><a href="/home/index" >首页</a></li>
+                    <li class="navFind">
+                        <a href="/DesignArtifact/I3D">设计神器<i class="index_drop dropIcon"></i></a>
+                        <div class="navFindList toolList">
+                            <a href="/DesignArtifact/I3D"><i class="TY index_drop"></i>3D通用</a>
+                            <a href="/DesignArtifact/Cabinet"><i class="CG index_drop"></i>橱柜</a>
+                            <a href="/DesignArtifact/Wardrobe"><i class="YG index_drop"></i>衣柜</a>
+                            <a href="/DesignArtifact/Ceiling"><i class="DD index_drop"></i>吊顶</a>
+                            <a href="/DesignArtifact/BrickPaving"><i class="PZ index_drop"></i>铺砖</a>
+                        </div>
+                    </li>
+                    <li><a href="/PMC/Scheme/Panorama">VR全景</a></li>
+                    <li><a href="http://bbs.3vjia.com/">培训与学习</a></li>
+                    <li class="navFind">
+                        <a href="/PMC/Decorate/index">发现<i class="index_drop dropIcon"></i></a>
+                        <div class="navFindList">
+                            <a href="/PMC/Scheme/SScheme">方案</a>
+                            <a href="/PMC/building/Index">找我家</a>
+                            <a href="/PMC/Decorate/Index">找装修</a>
+                            <a href="/PMC/Store/Index">找店铺</a>
+                        </div>
+                    </li>
+                    <li><a href="/About/Index">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- header end 未登录状态-->
+
+    <script type="text/javascript">
+        $(function () {
+            if ("False" == "True") {
+                //判断当前用户是否具有领取VR眼镜的条件
+                $(function () {
+                    $.post("/Home/GetVR", {}, function (data) {
+                        if (data == true) {
+                            $(".receiveBtn").show();
+                            $(".receiveBtn").attr("href", "http://admin.3vjia.com/mnmnh/common/VRGlassesRechargeList.aspx");
+                        }
+                        else {
+                            $(".receiveBtn").hide();
+                            $(".receiveBtn").attr("href", "javascript:;");
+                        }
+                    }, "json")
+                    .error(function () {
+                        $(".receiveBtn").hide();
+                    })
+                });
+
+                $(function () {
+                    $.post("/Member/Store/UserProfile", {}, function (data) {
+                        if (data == null) {
+                            //登录出错清理所有Cookie
+                            $.post("/Account/Logout",{}, function () {
+                                location.href = "/home/index"
+                            });  
+                            return;
+                        }
+
+                        var domain = data.Domain;
+                        var AccountType = $('#h_userType').text();
+                        if (AccountType == 1) {
+                            //店铺主页为空是跳转手而已
+                            if (domain == "" || domain == null) {
+                                domain = "/home/index";
+                            }
+                            $("#h_shopHomePage").attr("href", domain);
+                        }
+                    }, "json")
+                    .error(function () {
+                        //$.post("/Account/Logout");  //登录出错清理所有Cookie
+                    })
+                })
+                //$("#h_btnExit").click(function () { QC.Login.signOut(); });
+            }
+        });
+
+        //用于统计登录后对应链接点击数量， 一种是全网点击数量，一种是只在首页点击数量
+        $(function () {
+            var pathUrl = location.href;
+            var para1 = pathUrl.replace("http://www" + ".3vjia.com", "");
+            var para2 = para1 == "" ? "/home/index" : para1;
+            $("#3DCenter").click(function () {
+                SetEventClick("1", "导航条_登录_进入3D云设计_按钮", "开始设计", para2);
+                if (para2.toLowerCase().indexOf("/home/index") != -1) {
+                    SetEventClick("1", "首页_登录_进入3D云设计_按钮", "开始设计", "/home/index");
+                }
+            })
+
+            $("#MerchantCenter").click(function () {
+                SetEventClick("1", "导航条_登录_商家管理中心_按钮", "商家管理中心", para2)
+                if (para2.toLowerCase().indexOf("/home/index") != -1) {
+                    SetEventClick("1", "首页_登录_商家管理中心_按钮", "商家管理中心", "/home/index");
+                }
+            })
+
+            $("#h_shopHomePage").click(function () {
+                SetEventClick("1", "导航条_登录_店铺主页_按钮", "店铺主页", para2)
+                if (para2.toLowerCase().indexOf("/home/index") != -1) {
+                    SetEventClick("1", "首页_登录_店铺主页_按钮", "店铺主页", "/home/index");
+                }
+            })
+
+            $("#h_collectNum").click(function () {
+                SetEventClick("1", "导航条_登录_我的收藏_按钮", "我的收藏", para2)
+                if (para2.toLowerCase().indexOf("/home/index") != -1) {
+                    SetEventClick("1", "首页_登录_我的收藏_按钮", "我的收藏", "/home/index");
+                }
+            })
+            $("#h_btnExit").click(function () {
+                SetEventClick("1", "导航条_登录_退出_按钮", "退出", para2)
+                if (para2.toLowerCase().indexOf("/home/index") != -1) {
+                    SetEventClick("1", "首页_登录_退出_按钮", "退出", "/home/index");
+                }
+            })
+
+            $("#updatePwd").click(function () {
+                updatePwd();
+                //SetEventClick("1", "导航条_登录_马上修改_气泡", "马上修改", para2)  //目前气泡只能在首页有，其他页面暂时不统计
+                if (para2.toLowerCase().indexOf("/home/index") != -1) {
+                    SetEventClick("1", "首页_登录_马上修改_气泡", "马上修改", "/home/index");
+                }
+            })
+        });
+    </script>
+    <!-- 头部 end -->
+
+	<!-- 内容 start	 -->
+
+	<div class="main">
+		<div class="sidebar">
+			<div class="search">
+				<button></button>
+				<div class="inputWrap">
+					<input type="" name="" placeholder="输入您想找的内容">
+				</div>
+			</div>
+			<div class="ask">
+				<a href="posting.html">
+					<i class="askicon"></i>
+					我要提问
+				</a>
+			</div>
+			<a class="ad1">
+				<img src="Content/Images/bug.png">
+			</a>
+			<div class="panel1">
+				<div class="panel-header">
+					<i class="navicon"></i>
+					便捷导航
+				</div>
+				<div class="panel-body">
+					<ul class="easyNav">
+						<li class=""><a href="">教学课程</a></li>
+						<li class=""><a href="">设计作品</a></li>
+						<li class=""><a href="">求助专区</a></li>
+						<li class=""><a href="">求助专区</a></li>
+						<li class="divider"></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="panel">
+				<div class="panel-header line">
+					推荐热帖
+				</div>
+				<div class="panel-body">
+					<ul class="dot">
+						<li><a href="askingDetail.html">发表了设计案例《乔鑫·汇悦台》</a></li>
+						<li><a href="askingDetail.html">发表了求助帖子《如何安装门》</a></li>
+						<li><a href="askingDetail.html">发表了设计案例《乔鑫·汇悦台》</a></li>
+						<li><a href="askingDetail.html">发表了求助帖子《如何安装门》</a></li>
+						<li><a href="askingDetail.html">发表了设计案例《乔鑫·汇悦台》</a></li>
+						<li><a href="askingDetail.html">发表了求助帖子《如何安装门》</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="panel">
+				<div class="panel-header line">
+					最近观看教程
+				</div>
+				<div class="panel-body">
+					<ul class="dot">
+						<li class="active"><a href="teachVideoDetail.html">观看了《如何使用快捷键》</a></li>
+						<li><a href="teachVideoDetail.html">观看了《如何从零到一画一个客舱听》</a></li>
+						<li><a href="teachVideoDetail.html">发表了设计案例《乔鑫·汇悦台》</a></li>
+						<li><a href="teachVideoDetail.html">发表了求助帖子《如何安装门》</a></li>
+						<li><a href="teachVideoDetail.html">发表了设计案例《乔鑫·汇悦台》</a></li>
+						<li><a href="teachVideoDetail.html">发表了求助帖子《如何安装门》</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div style="width:880px;">
+			<!-- article  -->
+			<div class="articleDetail">
+				<div class="bread">
+					<div>
+						<span href="index1.html">培训与学习</span> >
+						<a href="askingList.html">求助答疑区</a> > 
+						<span class="present">查看内容</span>
+					</div>
+				</div>
+				<!-- article start -->
+				<div class="article" >
+					<h3>我想预约设计一个红色U型的沙发元素</h3>
+					<div class="articleInfo">
+						<div class="author">
+							<span>作者：张三</span>
+							<span>时间：2016-04-27</span>
+						</div>
+						<div class="more">
+							<span>
+								<i class="eyeicon"></i> 
+								456
+							</span>
+							<span>
+								<i class="commonicon"></i> 
+								456
+							</span>
+						</div>
+					</div>
+					<div class="content">
+						<p>
+							您好！我是xx家具装饰公司的设计师，我最近在做一套家装设计方案，里面需要一款红色U型沙发，维多利亚风格！麻烦哪位大神有相应的设计素材？？或者麻烦三维家的设计师吧，帮忙预约设计一款，Email：3vjia@SJ.com
+						</p>
+					</div>
+					<div class="answer">
+						<textarea placeholder="快来帮小伙伴门回答吧..."></textarea>
+						<p>
+							<!-- <div>你的评论太少，最少输入10字</div> -->
+							<span>你还可以输入 <i>600</i>个字符</span>
+							<button class="">评论</button>
+						</p>
+					</div>
+				</div>
+				<!-- article end -->
+			</div>
+
+			<!-- latest-common start-->
+			<div class="latest-command">
+				<h3>最新评论</h3>
+				<!-- 1 -->
+				<div class="commandList">
+					<div class="imageWrap">
+						<img src="Content/Images/useravtar.png">
+					</div>
+					<div class="info">
+						<p class="posting-info">
+							<span class="user">三维家-06设计师</span>
+							<span class="post-time">6天前</span>
+						</p>
+						<p class="reply">有个问题要请教一下...像进度条怎么让程序实现出像进度条怎么让程序实现出像进度条怎么让程序实现出像......</p>
+						<p class="content">第二页第二章朦胧福利...大大，话说镜头的最佳光圈是比最大光圈的小脸蛋，大大，话说镜头的最佳光圈是比最大光圈的小脸蛋， <a href="" class="showmore">......显示更多</a> </p>
+						<p class="reply-btn">
+							<a href="" class="replyBtn">回复</a>
+						</p>
+					</div>
+				</div>
+				<!-- 1 -->
+
+				<!-- 2 -->
+				<div class="commandList">
+					<div class="imageWrap">
+						<img src="Content/Images/useravtar.png">
+					</div>
+					<div class="info">
+						<p class="posting-info">
+							<span class="user">三维家-06设计师</span>
+							<span class="post-time">6天前</span>
+						</p>
+						<p class="content">第二页第二章朦胧福利...大大，话说镜头的最佳光圈是比最大光圈的小脸蛋，大大，话说镜头的最佳光圈是比最大光圈的小脸蛋，</p>
+						<p class="reply-btn">
+							<a href="" class="replyBtn">回复</a>
+						</p>
+					</div>
+				</div>
+				<!-- 2 -->
+
+				<!-- 3 -->
+				<div class="commandList">
+					<div class="imageWrap">
+						<img src="Content/Images/useravtar.png">
+					</div>
+					<div class="info">
+						<p class="posting-info">
+							<span class="user">三维家-06设计师</span>
+							<span class="post-time">6天前</span>
+						</p>
+						<p class="content">第二页第二章朦胧福利...大大，话说镜头的最佳光圈是比最大光圈的小脸蛋，大大，话说镜头的最佳光圈是比最大光圈的小脸蛋，</p>
+						<p class="reply-btn">
+							<a href="" class="replyBtn">回复</a>
+						</p>
+					</div>
+				</div>
+				<!-- 3 -->
+
+				<!-- pagination -->
+				<div class="page-foot" style="height:110px;padding-top:40px;box-sizing:border-box;padding-right:40px;">
+					<div class="jump">
+						<span>到第</span>
+						<input type="text" name="">
+						<span>页</span>
+						<button >确定</button>
+					</div>
+					<div id="pagination"></div>
+				</div>
+			</div>
+			<!-- latest-common end-->
+		</div>
+	</div>
+
+	<!-- 内容 end	 -->
+	<!--footer start-->
+    
+    <div class="footer">
+	    <div class="footerInner container1200 clearfix">
+	        <div class="footerItem fl">
+	            <p class="footerTitle">产品和服务</p>
+	            <ul>
+	                <li><a href="/DesignArtifact/I3D">3D通用云设计</a></li>
+	                <li><a href="/DesignArtifact/Cabinet">橱柜云设计</a></li>
+	                <li><a href="/DesignArtifact/Wardrobe">衣柜云设计</a></li>
+	                <li><a href="/DesignArtifact/Ceiling">吊顶云设计</a></li>
+	                <li><a href="/DesignArtifact/BrickPaving">铺砖云设计</a></li>
+	            </ul>
+	        </div>
+	        <div class="footerItem fl">
+	            <p class="footerTitle">关于我们</p>
+	            <ul>
+	                <li><a href="/About/Index">三维家介绍</a></li>
+	                <li><a href="/About/Index">三维家团队</a></li>
+	                <li><a href="/About/Index">新闻中心</a></li>
+	            </ul>
+	        </div>
+	        <div class="footerItem fl">
+	            <p class="footerTitle">相关链接</p>
+	            <ul>
+	                <li><a href="/PMC/Scheme/SScheme">方案</a></li>
+	                <li><a href="/PMC/Scheme/Panorama">VR全景</a></li>
+	                <li><a href="/PMC/articles/Soft ">3D云设计客户端</a></li>
+	            </ul>
+	        </div>
+	        <div class="footerItem fl">
+	            <p class="footerTitle">联系我们</p>
+	            <ul>
+	                <li>全国统一客服热线：<span>400-8090-630</span></li>
+	                <li>咨询QQ：<span>4008090630</span></li>
+	                <li>公司地址：广州天河软件园管委会软件路15号9楼三维家</li>
+	                <li>公司总机：020-38844660</li>
+	            </ul>
+	        </div>
+	        <div class="footerCode fl">
+	            <p>关注我们</p>
+	            <img src="http://www.3vjia.com/Content/images/carts.png?v=1.0.0.0.20160225" alt="二维码-三维家3D家装设计导购网">
+	            <p>互联网3D云设计平台_三维家</p>
+	            <p>微信公众号：lv-3vjia </p>
+	            <p>随手扫一扫 了解最新资讯</p>
+	        </div>
+	    </div>
+	    <p class="copyRight">@2012～2016 All rights reserved广东三维家信息科技有限公司 版权所有粤ICP备14070053号-2</p>
+	</div>
+</body>
+</html>
+	<script type="text/javascript" src="Script/Lib/jquery.twbsPagination.min.js"></script>
+
+	<script type="text/javascript">
+	$(function() {
+		var $search = $('.search');
+		$search.find('button').bind('click', function() {
+			var keyword = $search.find('input').val();
+			window.location.href = 'searchResult.html?' + keyword;
+		})
+
+		// 分页调用
+		$('#pagination').twbsPagination({
+            totalPages: 6,
+            visiblePages: 6,
+            // href: '?page={{number}}'，
+            onPageClick: function (event, page) {
+		    }
+        });
+
+		// 统计字数
+		var $textarea = $('textarea');
+		$.each($textarea, function() {
+			var $this = $(this);
+			var	maxLen = 10;
+			var leftlen;
+			var $remainCon = $(this).closest('div').find('i');
+
+			$remainCon.html(maxLen);
+			$this.bind('keyup', function() {
+				var strLen = $(this).val().length;
+
+				leftLen = maxLen - strLen;
+				$remainCon.html(leftLen)
+				if (strLen >= maxLen) {
+					alert('您书写的已经超过字数')
+					return;
+				}
+			})
+		})
+
+		// 回复按钮
+		function Reply($elem) {
+			this.template = '<div class="reply">' +
+								'<textarea placeholder="快来帮助小伙伴们回答吧..."></textarea>' +
+								'<p>' +
+									'<span>您还可输入 <i>60</i>个字符</span>' +
+									'<button class="postComment" data-id="1">评论</button>' +
+								'</p>' +
+							'</div>';
+			this.template1 = '<div class="commandList">' + 
+					'<div class="imageWrap">' +
+						'<img src="#avatar#">' +
+					'</div>' +
+					'<div class="info">' +
+						'<p class="posting-info">' +
+							'<span class="user">#name#</span>' +
+							'<span class="post-time">#pubTime#</span>' +
+						'</p>' +
+						'<p class="reply">#question#</p>' +
+						'<p class="content">#answer#<a href="" class="showmore">......显示更多</a> </p>' +
+						'<p class="reply-btn">' +
+							'<a href="" class="replyBtn">回复</a>' +
+						'</p>' +
+					'</div>'
+				'<div class="reply" style="display: block;"><textarea placeholder="快来帮助小伙伴们回答吧..."></textarea><p><span>您还可输入 <i>6</i>个字符</span><button class="postComment" data-id="1">评论</button></p></div></div>'
+			this.ajaxResult = {};
+			this.$replyBtn = $elem;
+			this.first = true;
+		}
+		Reply.prototype = {
+			main:function() {
+				var _self = this;
+				_self.$commandList = _self.$replyBtn.closest('.commandList');
+
+				_self.$replyBtn.bind('click', function (e) {
+					e.preventDefault();
+
+					// 开关
+					if(_self.first) {
+						_self.$result = $(_self.template).css({
+							'display': 'block'  
+						})
+
+						// postComment
+						_self.$result.find('.postComment').bind('click', function() {
+							var recomment = _self.$result.find('textarea').val();
+							if (recomment == '') {
+								alert('评论不能为空');
+								return;
+							}
+
+							// 异步返回的数据
+							_self.ajaxResult = {
+								success: true,
+								data: {
+									name: '三维家-xx设计师',
+									pubTime: '6天前',
+									question: 'to be or not to be , its a question',
+									answer: 'to live or to die, its up to you.',
+									avatar: 'Content/Images/useravtar.png'
+								}
+							}
+
+							_self.ajaxLoad();
+
+							if (returnResule) {
+								//判断result的信息是否全面
+
+
+								// 初始化click
+							}
+
+							$.ajax({
+								url: '',
+								data: {
+
+								},
+								type: 'post',
+								successs: function(data) {
+
+								}, 
+								fail: function(err) {
+
+								}
+							})
+						})
+
+						//统计字数
+						var	maxLen = 10;
+						var leftlen;
+						$textarea = _self.$result.find('textarea');
+						var $remainCon = _self.$result.find('i');
+
+						$remainCon.html(maxLen);
+						$textarea.bind('keyup', function() {
+							var strLen = $(this).val().length;
+
+							leftLen = maxLen - strLen;
+							$remainCon.html(leftLen)
+							if (strLen >= maxLen) {
+								alert('您书写的已经超过字数')
+								return;
+							}
+						})
+
+						_self.$result.appendTo(_self.$commandList);
+						_self.first = false;
+					} else {
+						_self.$result.remove();
+						_self.first = true;
+					}
+
+				})
+			},
+			ajaxLoad: function() {
+				/** 
+				 * 异步加载模块
+				 * 重新绑定事件初始化
+				**/
+				var _self = this;
+				var xx = _self.template1.replace('#name#', _self.ajaxResult.data.name)
+										.replace('#avatar#', _self.ajaxResult.data.avatar)
+										.replace('#pubTime#', _self.ajaxResult.data.pubTime)
+										.replace('#answer#', _self.ajaxResult.data.answer)
+										.replace('#question#', _self.ajaxResult.data.question);
+				var $tpl = $(xx);
+				var reply1 = new Reply($tpl.find('.replyBtn'));
+				reply1.main();
+				$('.latest-command').find('h3').after($tpl);
+			}
+		}
+
+		//初始化评论框
+		var $replyBtn = $('.replyBtn');
+		$.each($replyBtn, function() {
+			var reply1 = new Reply($(this));
+			reply1.main();
+		})
+		// $.each($replyBtn, function() {
+		// 	$(this).bind('click', function(e) {
+		// 		e.preventDefault();
+
+		// 		$template = $(template);
+		// 		if (result) {
+		// 			$template.css({
+		// 				'display': 'block'
+		// 			}).appendTo($commandList);
+		// 			result = false;
+		// 		}
+		// 		$template.show();
+
+		// 	})
+
+		// 	$reply.find('.postComment').bind('click', function() {
+		// 		var recomment = $reply.find('textarea').val();
+		// 		var id = $(this).data('id');
+		// 		alert(recomment, id)
+		// 		$.ajax({
+		// 			url: '',
+		// 			data: {
+
+		// 			},
+		// 			type: 'post',
+		// 			successs: function(data) {
+
+		// 			}, 
+		// 			fail: function(err) {
+
+		// 			}
+		// 		})
+		// 	})
+		// })
+	})
+			
+	</script>
