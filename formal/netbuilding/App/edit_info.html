@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>编辑资料</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="author" content="BenWeng,wengjunbin@sina.com" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/common.css?v=20160527" />
+        <style>
+			html {background-color:#ebeaf0;}
+			.pageWrap.has_h {padding-top:0;}
+        	.pageWrap .header {display:none;background:#f08c3e;}
+			.pageWrap .header h1 {color:#fff;}
+			.linkBox_large span.f_fr img {background:none no-repeat center center;background-size:auto 30%;}
+        </style>
+    </head>
+    
+    <body>
+    
+    	<div class="pageWrap has_h">
+
+            <div class="header f_pf">
+                <div class="l_part f_pa"><a href="javascript:;" class="s6_ico s6_ico_txt js_back">返回</a></div>
+                <h1>编辑资料</h1>
+            </div>
+            
+    
+            <div class="body">
+            
+            
+            	<script id="settingInfo" type="text/html">
+                    <div class="accountHead">
+                        <span class="f_db u_file f_pr" style="background-image:url({{ d.UserHeadIcoPath=="" || d.UserHeadIcoPath=="." ? 'images/default_head.png' : cutPic(d.UserHeadIcoPath,"") }})">
+							<input type="file" id="head" accept="image/*" />
+						</span>
+                        <label class="f_db f_tac" for="head">点击修改头像</label>
+                    </div>
+                    <div class="linkBox">
+                        <a href="javascript:;" class="f_cf f_db" id="modify_nickName">
+                            <span class="f_fl">姓名</span>
+                            <span class="f_fr" id="nickName">{{ d.Name=="" ? "未设置" : d.Name }}</span>
+                        </a>
+
+						<!--bind_mobile.html-->
+                        <a href="javascript:;" class="f_cf f_db" id="modify_tel">
+                            <span class="f_fl">手机</span>
+                            <span class="f_fr color1" id="tel">{{ d.Mobile=="" ? "未设置" : d.Mobile.substr(0,4)+"***"+d.Mobile.substr(7,d.Mobile.length) }}</span>
+                        </a>
+                    </div>
+					<div class="linkBox linkBox_large">
+						<a href="javascript:;" class="f_cf f_db">
+							<span class="f_fl show_faq" data-tip="上传清晰的店主名片正面照片">店主名片正面</span>
+							<span class="f_fr f_pr"><img src="{{ $.trim(d.UserCardFront)!="" ? cutPic(d.UserCardFront,"") : "images/grey.jpg" }}" />
+							<input type="file" id="upload1" onchange="uploadPic2(this)"/>
+							</span> 
+							
+						</a>
+						<a href="javascript:;" class="f_cf f_db">
+							<span class="f_fl show_faq" data-tip="上传清晰的店主名片背面照片">店主名片背面</span>
+							<span class="f_fr f_pr"><img src="{{ $.trim(d.UserCardBack)!="" ? cutPic(d.UserCardBack,"") : "images/grey.jpg" }}" />
+							<input type="file" id="upload2" onchange="uploadPic3(this)"/>
+							</span>
+						</a>
+					</div>
+                </script>
+                <div class="accountPage" id="accountPage"></div>
+                <input type="button" value="退出账号" class="business_center_logout f_db"/>
+            </div>
+    
+    
+            <div class="footer accountPage_f f_pf"></div>
+    
+    		<!--
+            	<a href="javascript:;" class="f_cf f_db" id="modify_sex">
+                    <span class="f_fl">性别</span>
+                    <span class="f_fr" id="sex">{{ d.Sex=="" ? "未设置" : d.Sex }}</span>
+                </a>
+            -->
+    
+        </div>
+        
+        
+        
+        <div class="modify_nickName">
+            <div class="modify_nickName_inner f_cf">
+                <input type="text" class="f_fl u_ipt" />
+                <a href="javascript:;" class="f_fl sure f_tac">确定</a>
+            </div>
+        </div>
+        
+        
+        
+        <div class="modify_tel">
+            <div class="modify_tel_inner f_cf">
+                <input type="text" class="f_fl u_ipt" />
+                <a href="javascript:;" class="f_fl sure f_tac">确定</a>
+            </div>
+        </div>
+        
+<!--        <div class="modify_nickName">
+            <div class="modify_nickName_inner">
+                <p class="title f_tac">编辑手机号码</p>
+                <input type="text" class="f_db u_ipt" />
+                <div class="btn_grounp f_cf">
+                    <a href="javascript:;" class="f_fl cancel f_tac">取消</a>
+                    <a href="javascript:;" class="f_fl sure f_tac">确定</a>
+                </div>
+            </div>
+        </div>-->
+        
+        
+        <div class="modify_sex">
+            <div class="modify_sex_inner">
+                <p class="title f_tac">性别修改</p>
+                <ul class="sex_list">
+                    <li class="f_tac">男</li>
+                    <li class="f_tac">女</li>
+                    <li class="f_tac">保密</li>
+                </ul>
+                <a href="javascript:;" class="f_db cancel f_tac">取消</a>
+            </div>
+        </div>
+        
+        
+    
+        <script src="js/common.js?v=20160527"></script>
+        <script src="js/ResizeImg.js?v=20160527"></script>
+        <script src="js/edit_info.js?v=20160527"></script>
+        
+
+    </body>
+</html>

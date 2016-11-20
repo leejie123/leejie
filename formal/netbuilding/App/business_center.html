@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>商家中心</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="author" content="BenWeng,wengjunbin@sina.com" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/common.css?v=20160527" />
+        <style>
+			html {background-color:#ebeaf0;}
+			.pageWrap.has_h {}
+        	.pageWrap .header {display:none;background:#f08c3e;}
+			.pageWrap .header h1 {color:#fff;}
+        </style>
+    </head>
+    
+    <body>
+    
+    	<div class="pageWrap has_h">
+
+            <div class="header f_pf">
+                <div class="l_part f_pa"><a href="javascript:;" class="s6_ico s6_ico_txt js_back">返回</a></div>
+                <h1>商家中心</h1>
+            </div>
+            
+            <div class="new_header f_pf">
+            	<ul class="f_cf top_nav top_nav2">
+                	<li class="f_fl" data-position="0">全景</li>
+                    <li class="f_fl" data-position="0">方案</li>
+                    <li class="f_fl" data-position="0">商品</li>
+                    <div class="f_pa index"><a href="index.html" class="f_db">首页</a></div>
+                </ul>
+                <a href="business_center.html" class="f_pa member_center f_db">&emsp;</a>
+            </div> 
+            
+    
+            <div class="body">
+            
+            	<script type="text/html" id="memberPage">
+					<div class="accountLink">
+                        <a href="edit_info.html" class="f_db f_cf">
+                            <img src="{{ d.HeaderPic!="" ? mosaic(d.HeaderPic) : "images/default_head.png" }}" id="headIco" class="f_fl"/>
+                            <span class="f_fl" id="nickName">{{ d.Name }}</span>
+                            <span class="f_fr">编辑资料</span>
+                        </a>
+                    </div>              
+                    <div class="linkBox">
+                        <a href="message_center.html" class="f_cf f_db">
+                            <img src="images/business_center/n_ico1.png" class="f_fl"/>
+                            <span class="f_fl">消息中心</span>
+                            <em class="f_fr new_color" id="message_num" {{ d.recorsMsg==0 ? "style='display:none;'" : null }}>{{ d.recorsMsg }}</em>
+                        </a>
+                        <a href="book_me.html" class="f_cf f_db">
+                            <img src="images/business_center/n_ico2.png" class="f_fl"/>
+                            <span class="f_fl">预约我的</span>
+                            <em class="f_fr new_color" id="book_num"{{ d.recordsCus==0 ? "style='display:none;'" : null }}>{{ d.recordsCus }}</em>
+                        </a>
+                    </div> 
+                    <div class="linkBox">
+                        <a href="my_store.html?deptId=" class="f_cf f_db" id="shopId">
+                            <img src="images/business_center/n_ico3.png" class="f_fl"/>
+                            <span class="f_fl">我的店铺</span>
+                        </a>
+                        <a href="my_view.html" class="f_cf f_db">
+                            <img src="images/business_center/n_ico4.png" class="f_fl"/>
+                            <span class="f_fl">我的全景图</span>
+                        </a>
+                        <a href="store_info.html" class="f_cf f_db">
+                            <img src="images/business_center/n_ico5.png" class="f_fl"/>
+                            <span class="f_fl">店铺资料</span>
+                            <span class="f_fr" id="info_num">{{ d.ZLWZD }}%完整度</span>
+                        </a>
+                    </div>
+                    <div class="linkBox">
+                        <a href="my_focus2.html" class="f_cf f_db">
+                            <img src="images/business_center/n_ico6.png" class="f_fl"/>
+                            <span class="f_fl">我的关注</span>
+                            <em class="f_fr no_color" id="focus_num">{{ d.FavoriesNume }}</em>
+                        </a>
+                        <a href="my_collect2.html" class="f_cf f_db">
+                            <img src="images/business_center/n_ico7.png" class="f_fl"/>
+                            <span class="f_fl">我的收藏</span>
+                            <em class="f_fr no_color" id="collect_num">{{ d.LikeNume }}</em>
+                        </a>
+                        <a href="more.html" class="f_cf f_db">
+                            <img src="images/business_center/n_ico8.png" class="f_fl"/>
+                            <span class="f_fl">更多管理</span>
+                        </a>
+                    </div>
+				</script>
+                <div class="memberPage"></div>
+            
+            </div>
+    
+        </div>
+    
+        <script src="js/common.js?v=20160527"></script>
+        <script src="js/business.js?v=20160527"></script>
+
+    </body>
+</html>

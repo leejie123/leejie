@@ -6,6 +6,8 @@
  * 下面实现了两个数据库引擎，但是都是查询而已，js语言还做不到写文件，除非用另外localsotrage，或者cookie，但是存储都不是很大。除非能够写入到文件中。
 **/
 var service  = function () {
+	this.isavailable = false;
+	this.ROOT_URL = "";
 	//global config暴露了公共的属性不好，不过暂时做一个开关。
 	// this.islocked = false;
 
@@ -16,7 +18,18 @@ var service  = function () {
 	//权限是通过用户和来判断的。
 	//需要有等级管理列表。可以有权限判断是否要给下级看到
 	// this.lockedData([7],true);
+	// 两个数据之间还应该做一个层，可见性。
 
+}
+service.prototype.setcontrol = function() {
+	//control layer
+	//can set some projects visible
+	//params commonly is `id`
+	console.log(arguments);
+
+	//set some sort of limitation.and invoke in login.
+	this.isavailable = true;
+	this.islocked = true;
 }
 //控制一部分访问权限，可以控制到返回数据类型等。还可以扩展。但是这个要把这些变量嵌入到代码。可以在每个权限配备一个limitation的字段。
 //注意在另外的地方，logout要清除cookie
@@ -57,7 +70,6 @@ service.prototype.getUser = function() {
 			"username": "root",
 			"password": "root1",
 			"islocked": "true"
-
 		},
 		//权限第二，可以看到一部分作品，
 		{
@@ -88,6 +100,10 @@ service.prototype.getUser = function() {
 }
 
 service.prototype.getProject = function(id) {
+	var self = this;
+	if (id == 8) {
+		self.isavailable = true;
+	} 
 	//这一部分缺少排序的功能。后面补充吧。
 	//projects是元数据 mockdata是让元数据排序等，增加索引
 	//tags用于filter，不过projects数据必须有权限。但是mockdata的数据权限已经设定好。有权限的话可以访问mock。
@@ -96,6 +112,7 @@ service.prototype.getProject = function(id) {
 
 	var tips = "javascript:alert('您现在登录的是测试账户，请联系15112060248或者email：1376342485@qq.com索要其他账户')";
 	var projects = [
+		/* 0 */
 		{
 			"protime": "2015-6",
 			"proname": "mdxsh",
@@ -109,6 +126,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["wb", "wechat", "mdxsh", "2015-6"]
 		},
+		/* 1 */
 		{
 			"protime": "2015-7",
 			"proname": "aymm",
@@ -122,6 +140,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["wb", "wechat", "aymm", "2015-6"]
 		},
+		/* 2 */
 		{
 			"protime": "2015-7",
 			"proname": "xml",
@@ -135,6 +154,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["wb", "desktop", "2015-7", "电商", "论坛", "discuz", "xml"]
 		},
+		/* 3 */
 		{
 			"protime": "2015-7",
 			"proname": "cxg",
@@ -148,6 +168,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["wb", "desktop", "商城", "电商", "cxg", "论坛", "会员等级", "2015-7"]
 		},
+		/* 4 */
 		{
 			"protime": "2015-7",
 			"proname": "gzymca",
@@ -161,6 +182,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["公益项目", "wb", "desktop", "2015-7", "企业展示"]
 		},
+		/* 5 */
 		{
 			"protime": "2015-7",
 			"proname": "gzywca",
@@ -174,6 +196,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["公益项目", "wb", "desktop", "2015-7", "企业展示"]
 		},
+		/* 6 */
 		{
 			"protime": "2015-8",
 			"proname": "sjpt",
@@ -185,8 +208,9 @@ service.prototype.getProject = function(id) {
 			"proimages": [
 				"avatar1.jpg","avatar1.jpg","avatar1.jpg"
 			],
-			"tags": ["wb", "desktop", "手机", "商城", "业务逻辑复杂" ]
+			"tags": ["wb",'sjpt', "desktop", "手机", "商城", "业务逻辑复杂" ]
 		},
+		/* 7 */
 		{
 			"protime": "2015-8",
 			"proname": "haoyi",
@@ -200,6 +224,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["wb", "desktop", "设计", "高大上", "展示网站", "交互效果好", "企业网站", "交互"]
 		},
+		/* 8 */
 		{
 			"protime": "2015-9",
 			"proname": "ypt",
@@ -213,11 +238,12 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["ypt", "wb", "mobile", "电商", "app", "业务逻辑复杂", "framework7"]
 		},
+		/* 9 */
 		{
 			"protime": "2015-9",
 			"proname": "lehuo",
 			"prointro": "该项目是杂志手机客户端，可以看杂志。模仿乐活做的客户端。",
-			"prolink": tips,
+			"prolink": self.isavailable? 'http://leejie123.github.io/leejie/formal/yedadou/lehuo/www/index.html' : tips,
 			"protech":"【技术】1、angularjs + ionic，2、用codova打包app",
 			"prodetail":'【项目细节】',
 			"prodoc": "【前端文档】",
@@ -226,6 +252,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["lehuo", "wb", "mobile", "angularjs", "ionic", "app"]
 		},
+		/* 10 */
 		{
 			"protime": "2015-11",
 			"proname": "sxb",
@@ -239,6 +266,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["desktop", "wb", "电商", "招聘", "后台管理系统"]
 		},
+		/* 11 */
 		{
 			"protime": "2015-11",
 			"proname": "一元购拼团",
@@ -252,6 +280,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["ydd", "2016-12", "电商", "拼团"]
 		},
+		/* 12 */
 		{
 			"protime": "2016-",
 			"proname": "yddPay",
@@ -264,6 +293,7 @@ service.prototype.getProject = function(id) {
 				"avatar1.jpg","avatar1.jpg","avatar1.jpg"
 			]
 		},
+		/* 13 */
 		{
 			"protime": "2016-",
 			"proname": "重构一元购",
@@ -277,11 +307,12 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["ydd","重构", "一元购", "电商", "wechat"]
 		},
+		/* 14 */
 		{
 			"protime": "2016-",
 			"proname": "一元购app",
 			"prointro": "把微信的客户端做成app，hybrid app。",
-			"prolink": tips,
+			"prolink": self.isavailable? 'http://leejie123.github.io/leejie/formal/netbuilding/':tips,
 			"protech":"【技术】1、grunt，2、requirejs等",
 			"prodetail":'【项目细节】',
 			"prodoc": "【前端文档】",
@@ -290,11 +321,12 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["ydd","重构", "一元购", "电商", "app", "mobile", "requirejs", "grunt"]
 		},
+		/* 15 */
 		{
 			"protime": "2016-",
-			"proname": "svj-bbs",
+			"proname": "bbs",
 			"prointro": "这个项目是bbs论坛。流程比较规范，产品经理通过需求分析，做出原型，然后交付ui，然后就给前端做页面。总的有三大板块，视频区，发帖，发布作品。公司是b2b做电商平台，培训那些商家用自己做的软件。",
-			"prolink": tips,
+			"prolink": self.isavailable? 'http://leejie123.github.io/leejie/formal/netbuilding/':tips,
 			"protech":"【技术】定义一套css，js框架。",
 			"prodetail":'【项目细节】',
 			"prodoc": "【前端文档】",
@@ -303,11 +335,12 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["ydd","重构", "一元购", "电商", "app", "mobile", "requirejs", "grunt"]
 		},
+		/* 16 */
 		{
 			"protime": "2016-",
-			"proname": "svj-bbe",
+			"proname": "bbs",
 			"prointro": "这个项目是大后台。业务逻辑复杂，多层级，复杂不容易理清线索。后台用dot net",
-			"prolink": tips,
+			"prolink": self.isavailable?'http://leejie123.github.io/leejie/formal/netbuilding/':tips,
 			"protech":"【技术】",
 			"prodetail":'【项目细节】',
 			"prodoc": "【前端文档】",
@@ -316,6 +349,7 @@ service.prototype.getProject = function(id) {
 			],
 			"tags": ["ydd","重构", "一元购", "电商", "app", "mobile", "requirejs", "grunt"]
 		},
+		/* 17 */
 		{
 			"protime": "2015-",
 			"proname": "zfsk",
@@ -328,11 +362,24 @@ service.prototype.getProject = function(id) {
 				"avatar1.jpg","avatar1.jpg","avatar1.jpg"
 			],
 			"tags": ["ydd","重构", "一元购", "电商", "app", "mobile", "requirejs", "grunt"]
+		},
+		/* 18 */
+		{
+			"protime": "2015",
+			"proname": "app",
+			"prointro": "这是h5前端页面",
+			"prolink": self.isavailable ? 'http://leejie123.github.io/leejie/formal/netbuilding/App/account.html': tips,
+			"protech": "【技术】",
+			"prodetail": "【技术细节】",
+			"prodoc": "【前端文档】",
+			"proimages": [
+				"avatar1.jpg","avatar1.jpg","avatar1.jpg"
+			],
+			"tags": ["app", "手机", "mobile", "demo"]
 		}
 	];
 	var mockData = [
 		//最低权限无xml,sxb(10),aymm
-
 		{
 			"id": 7,
 			"data": [
@@ -354,7 +401,8 @@ service.prototype.getProject = function(id) {
 		{
 			"id": 8,
 			"data": [
-				projects[1], projects[2], projects[6], projects[7]
+				// projects[1], projects[2], projects[6], projects[7]
+				projects[6],projects[9], projects[14], projects[15], projects[16], projects[18]
 			]
 		},
 		{
@@ -381,19 +429,20 @@ service.prototype.getProject = function(id) {
 			    reg = new RegExp(str),
 			    //重新调用自身，获得数据
 			    searchData =  this.getProject(id).data;
-			if(searchMetadata) {
+			if(searchMetadata == true) {
 			    searchData =  projects;
 			}
 			for(var i=0;i<searchData.length;i++) {
-				if(projects[i].tags != undefined && projects[i].tags.length > 0 ) {
-					for(var j=0;j<projects[i].tags.length;j++) {
-						if(reg.test(projects[i].tags[j])) {
-							searchResult.push(projects[i]);
+				if(searchData[i].tags != undefined && searchData[i].tags.length > 0 ) {
+					for(var j=0;j<searchData[i].tags.length;j++) {
+						if(reg.test(searchData[i].tags[j])) {
+							searchResult.push(searchData[i]);
 						}			
 					}
 				}
 			}
 			if(!this.islocked) {
+				console.log(searchResult)
 				return searchResult.data = searchResult;
 			}
 		} else {
@@ -418,6 +467,7 @@ service.prototype.getProject = function(id) {
 }
 //可以设置一些开关，都和一些东西关联。然后关联性也不要太强。容易控制，注意还可以切换模板，以及开关。
 service.prototype.getPopedom = function() {
+	var self = this;
 	this.checkLogin();
 	var getPopedom = "";
 	switch(Tools.getCookie("user_id")) {
@@ -442,8 +492,9 @@ service.prototype.getPopedom = function() {
 
 service.prototype.checkLogin = function() {
 	//get cookie islogin();
-	var path = location.pathname;
-	var islogin = Tools.getCookie("user_id");
+	var path = location.pathname,
+	    islogin = Tools.getCookie("user_id"),
+	    self = this;
 	// console.log(islogin)
 	if(!(/login.html/).test(path)) {
 		if(!islogin) {

@@ -1,0 +1,215 @@
+@charset "utf-8";
+.minwidth {min-width:320px;}
+.yx-setlle{
+    background:url(../images/new_index/post.jpg) center no-repeat;
+    background-size: cover;
+    overflow:hidden;
+}
+.yx-s-box {
+    width:100%;
+    height:600px;
+    margin: 0 auto;
+    padding-bottom:146%;
+    overflow:hidden;
+}
+.yx-s-tip{
+    width:100%;
+    padding:48% 10% 0% 10%;
+}
+.yx-s-tip  div{
+    width:100%;
+    height:auto;
+    padding:2% 0;
+    text-align:center;
+    margin:0 auto;
+    color:#fff;
+    line-height:108%;
+    background:#000;
+    opacity:0.8;
+    border:0;
+}
+.yx-goutong {
+    font-size:20px;
+}
+.yx-lianxi {
+    font-size:16px;
+}
+.yx-s-form {
+    width:100%;
+    padding:0% 10%;
+    color:#fff;
+    font-size:20px;
+    font-family:'Microsoft YaHei';
+}
+.yx-s-c {
+    width:100%;
+    min-height:120px;
+    text-align:center;
+    margin:0 auto;
+    color:#fff;
+    background:#000;
+    opacity:0.7;
+    border:0; 
+}
+.yx-s-form  .who {
+    width:30%;
+    padding:2% 1% 11.6% 0%;
+    text-align:right;
+}
+.yx-s-form  .ids{
+    width:50%;
+    padding-top:2%;
+    text-align:left;
+}
+.yx-s-form  .ids p{
+    cursor:pointer;
+}
+.yx-s-id {
+    display:inline-block;
+    width:20px;
+    height:20px;
+    background:url(../images/new_index/dot.png) center no-repeat;
+    vertical-align: middle;
+    margin:0 4% 0 2%;
+}
+.yx-s-form  .ids .act{
+    background:url(../images/new_index/dash.png) center no-repeat;
+}
+.xxb {
+    width:100%;
+    min-height:230px; 
+    background:#000;
+    opacity:0.7;
+}
+.yx-s-inbox {
+    width:80%;
+    font-family:'Microsoft YaHei'; 
+    border:0; 
+    position:absolute;
+    margin-top:-230px;
+}
+.yx-s-inbox p {
+    padding-bottom:4%;
+}
+.yx-s-inbox  .yx-b-name {
+    width:80%;
+    min-height:58px;
+    margin:0 10%;
+    font-size:18px;
+    padding-left:24%;
+    line-height:44px;
+    background:url(../images/new_index/nbg.jpg) left no-repeat;
+    background-color:#fff;
+    background-size:cover;
+    text-align:left;
+    color:#000;
+    border:0;
+}
+.yx-s-inbox  .yx-b-phone {
+    width:80%;
+    min-height:58px;
+    margin:0 10%;
+    padding-left:24%;
+    font-size:18px;
+    line-height:44px;
+    background:url(../images/new_index/pbg.jpg) left no-repeat;
+    background-color:#fff;
+    background-size:cover;
+    text-align:left;
+    color:#000;
+    border:0;
+}
+.yx-b-btn {
+    width:80%;
+    min-height:58px;
+    margin:0 10%;
+    line-height:44px;
+    background-color:#ff6600;
+    background:url(../images/new_index/dssd.png) center no-repeat;
+    background-size:cover;
+    text-align:center;
+    border:0;
+    border-radius:6px;
+}
+.yx-s-st {
+    width:80%;
+    min-height:350px;
+    margin:0 auto;
+    background:url(../images/new_index/rbg.png) center no-repeat;
+    background-size:cover;
+    font-size:18px;
+    color:#fff;
+    text-align:center;
+    overflow:hidden;
+}
+.yx-s-st  .yx-s-st1{
+    padding:10% 0%;
+}
+.yx-s-st  .yx-s-st2{
+    padding-bottom:10%;
+}
+.yx-s-st  .yx-s-st3{
+    padding-bottom:1%;
+}
+.yx-s-st  .yx-s-st4{
+    padding-bottom:1%;
+}
+.yx-s-st  .yx-s-st5{
+    padding-bottom:1%;
+}
+.ys-waby {
+    width:100%;
+    text-align:center;
+    color:#ff6600;
+    font-size:18px;
+    font-family:'Microsoft YaHei';
+    padding:4% 0;
+}
+.yx-or {
+    width:100%;
+    text-align:center;
+    color:#595757;
+    font-size:18px;
+    font-family:'Microsoft YaHei';
+    padding:4% 0;
+}
+.yx-n-btn {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url(../images/m_index/tubiao1.gif) no-repeat;
+    bottom: 7.06rem !important; 
+    right: 2.2rem !important; 
+    background-size: 100%;
+}
+.swiper-container {
+    width: 100%;
+    margin: 0 auto;
+}
+.swiper-slide {
+    text-align: center;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.kk_company{
+    width:100%;
+    margin:0 auto;
+    font-size: 16px;
+    color:#8D8E8E;
+    display:inline-block;
+    text-align: center;
+    line-height: 60px;
+    height:60px;
+}

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>账号设置</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="author" content="BenWeng,wengjunbin@sina.com" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/common.css?v=20160527" />
+        <style>
+			html {background-color:#f5f5f5;}
+			.pageWrap {}
+        	.pageWrap .header {display:none;}
+        </style>
+    </head>
+    
+    <body>
+    
+    	<div class="pageWrap">
+
+            <div class="header f_pf">
+                <div class="l_part f_pa"><a href="javascript:;" class="s6_ico js_back f_two">返回</a></div>
+                <h1>账号设置</h1>
+            </div>
+            
+    
+            <div class="new_header f_pf">
+            	<ul class="f_cf top_nav top_nav2">
+                	<li class="f_fl" data-position="0">全景</li>
+                    <li class="f_fl" data-position="0">方案</li>
+                    <li class="f_fl" data-position="0">商品</li>
+                    <div class="f_pa index"><a href="index.html" class="f_db">首页</a></div>
+                </ul>
+                <a href="business_center.html" class="f_pa member_center f_db">&emsp;</a>
+            </div>          
+    
+            <div class="body">
+            
+            
+            	<script id="settingInfo" type="text/html">
+                    <div class="accountHead">
+                        <span class="f_db u_file f_pr" style="background-image:url({{ d.HeadIco=="" ? 'images/big_head.png' : d.HeadIco }})">
+							<input type="file" id="head" accept="image/*"/>
+						</span>
+                        <label class="f_db f_tac" for="head">点击修改头像</label>
+                    </div>
+                    <div class="linkBox">
+                        <a href="javascript:;" class="f_cf f_db" id="modify_nickName">
+                            <span class="f_fl">昵称</span>
+                            <span class="f_fr" id="nickName">{{ d.NickName=="" ? "未设置" : d.NickName }}</span>
+                        </a>
+                        <a href="javascript:;" class="f_cf f_db" id="modify_sex">
+                            <span class="f_fl">性别</span>
+                            <span class="f_fr" id="sex">{{ d.Sex=="" ? "未设置" : d.Sex }}</span>
+                        </a>
+						<!--bind_mobile.html-->
+                        <a href="{{ $.trim(d.Mobile)!="" ? "bind_mobile_state.html" : "bind_mobile.html" }}" class="f_cf f_db">
+                            <span class="f_fl">绑定手机号</span>
+                            <span class="f_fr color1">{{ d.Mobile=="" ? "未设置" : d.Mobile.substr(0,4)+"***"+d.Mobile.substr(7,d.Mobile.length) }}</span>
+                        </a>
+                    </div>
+                    <div class="linkBox">
+                        <a href="modify_password.html" class="f_cf f_db">
+                            <span class="f_fl">修改密码</span>
+                        </a>
+                        <a href="setting_address.html" class="f_cf f_db">
+                            <span class="f_fl">设置地址</span>
+                            <span class="f_fr color1  f_toe">{{ (d.Province+d.City+d.Area)=="" ? "未设置" : (d.Province+" "+d.City+" "+d.Area) }}</span>
+                        </a>
+                    </div>
+                    <div class="linkBox f_dn">
+                        <a href="javascript:;" class="f_cf f_db">
+                            <span class="f_fl dot">推荐给微信好友</span>
+                        </a>
+                    </div>
+                </script>
+                <div class="accountPage" id="accountPage"></div>
+            </div>
+    
+    
+            <div class="footer accountPage_f f_pf"><input type="button" value="退出当前账号" class="logout f_db"/></div>
+    
+        </div>
+        
+        
+        
+        <div class="modify_nickName">
+            <div class="modify_nickName_inner f_cf">
+                <input type="text" class="f_fl u_ipt" />
+                <a href="javascript:;" class="f_fl sure f_tac">保存</a>
+            </div>
+        </div>
+        
+        
+        <div class="modify_sex">
+            <div class="modify_sex_inner">
+                <p class="title f_tac">性别修改</p>
+                <ul class="sex_list">
+                    <li class="f_tac">男</li>
+                    <li class="f_tac">女</li>
+                    <li class="f_tac">保密</li>
+                </ul>
+                <a href="javascript:;" class="f_db cancel f_tac">取消</a>
+            </div>
+        </div>
+        
+        
+    
+        <script src="js/common.js?v=20160527"></script>
+        <script src="js/account.js?v=20160527"></script>
+        
+
+    </body>
+</html>

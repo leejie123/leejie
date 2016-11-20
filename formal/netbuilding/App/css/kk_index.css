@@ -1,0 +1,134 @@
+.kk_nav{
+    background:url(../images/kk_index/top.png) no-repeat;
+    height:66px;
+    overflow: hidden;
+    border:1px solid red;
+}
+.kk_join{
+    display: block;
+    position: absolute;
+    width:34.6875%;
+    top:32%;
+    left:32.6875%;
+    z-index:6;
+}
+.kk_div{
+    width:100%;
+    margin:0 auto;
+    height:auto;
+    overflow:hidden;
+    position: relative;
+    background: #FFFFFF;
+}
+.kk_seperator{
+    clear: both;
+    width:100%;
+    height:10px;
+    background:#EBEAF0;
+}
+.kk_company{
+    width:100%;
+    margin:0 auto;
+    font-size: 16px;
+    color:#8D8E8E;
+    display:inline-block;
+    text-align: center;
+    line-height: 60px;
+    height:60px;
+}
+.kk_nav_bar,.kk_nav_content{
+    list-style: none;
+    width:98%;
+    display: block;
+    margin: 0 auto;
+}
+
+.kk_nav_bar li{
+    width:25%;
+    float:left;
+    font-size:22px;
+    color:#B5B5B6;
+    text-align:center;
+    display: inline-block;
+}
+.kk_nav_bar  li.kk_li{
+    border-bottom:2px solid #FF9600;
+    color:#666666;
+}
+.kk_nav_content li{
+    display:none;
+}
+.kk_nav_content  li.kk_li{
+    display:inline-block;
+    width:100%;
+}
+.kk_clear{
+    clear:both;
+    width:100%;
+}
+.pageWrap {
+    padding: 5.5rem 0px 0rem;
+    width: 100%;
+    overflow: hidden;
+}
+html, body {
+    position: relative;
+    height: 100%;
+    padding:0px;
+    margin: 0px;
+}
+.swiper-container {
+        width: 98%;
+        margin:0 auto;
+}
+.swiper-pagination{
+    width:100%;
+    border-bottom:1px solid #ccc;
+}
+.swiper-slide{
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+}
+.swiper-pagination-bullet {
+    width:25%;
+    height: 32px;
+    float:left;
+    font-size:18px;
+    color:#B5B5B6;
+    text-align:center;
+    display: inline-block;
+    background: none;
+    border-radius: 0;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    border-bottom:3px solid #3fa0f3;
+    color:#595757;
+    background: none;
+    border-radius: 0;
+}
+.kk_tip {
+    display: block;
+    z-index: 999999999;
+    left: 5px;
+    max-width: 50rem;
+    top: 150px;
+    width: 38.125%;
+    position: fixed;
+}
+.kk_tip  a{
+    display: block;
+}

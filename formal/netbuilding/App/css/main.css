@@ -1,0 +1,200 @@
+*{font-family: "微软雅黑";margin:0px;padding:0px;}
+.kk{
+	min-width: 320px;
+	max-width: 768px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.row,
+.container-fluid{
+	padding:0px;
+	margin:0px auto;
+	width:100%;
+	clear: both;
+}
+.kk-box-shadow{
+	border-top:1px solid #D0D1D3;
+	border-bottom:1px solid #D0D1D3;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.kk-navs{
+	width: 200%;
+	height:auto;
+	overflow:hidden;
+	box-shadow: 0 0 #005580;}
+.kk-navs > .kk-navs-item{
+	padding:10px;
+	float:left;
+/*	border:1px solid green;*/
+	text-align: center;
+}
+.kk-navs > .kk-navs-item > .kk-nav-img{
+	display: block;
+	margin:0 auto;
+	border-radius: 35px;
+	border:1px solid #CDCED0;
+	width:70px;
+	height: 70px;
+	line-height: 70px;
+}
+.kk-navs > .kk-navs-item > .kk-nav-img >img{
+	width: 40px;
+	margin-top:15px;
+}
+.kk-navs > .kk-navs-item > strong{
+	font-weight:normal;
+	display: block;
+	font-size:16px;
+}
+.kk-navs-contents{
+  width: 98%;
+}
+.kk-navs-contents > .kk-navs-contents-item{
+	width:100%;
+	height: auto;
+	display: none;
+}
+.kk-navs-contents > .kk-navs-contents-item.kk-show{
+	display: block;
+	width: 100%;
+}
+.kk-navs-contents-item .full-img{
+	width: 100%;
+    border-width:0px;
+}
+.kk-sumary{
+	margin-top:15px;
+	background:#fff;
+}
+.kk-sumary > strong{
+	font-size:20px;
+	padding:5px 5px 0px 0px;
+	border-bottom:2px solid #231f10;
+	color:#282828;
+}
+.kk-sumary > ul{
+	clear:both;
+	display:block;
+	width:100%;
+	margin-top:15px;
+	list-style: circle;
+	font-size:14px;
+	color:#717275;
+}
+.kk-titles{
+	width: 100%;
+	clear:both;
+	margin:50px 0px 20px 0px;	
+}
+.kk-titles > .kk-master-title{
+	font-size:22px;
+	padding:5px 5px 0px 0px;
+	display:block;
+}
+.kk-titles > .kk-second-title{
+	font-size:22px;
+	padding:5px 5px 0px 0px;
+	font-size:16px;
+	font-weight: normal;
+	display:block;
+}
+.kk-navs-contents-item > .kk-sumary > .kk-pc{
+	width:90%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top:20px
+}
+.kk-padding-5{
+	padding-left:5px;
+}
+.kk-pc > .full-img{
+	width:60%;
+}
+.kk-pc > .full-kk{
+	width: 100%;
+}
+.kk-navs-contents-item > .kk-content-main{
+	width:94%;
+	margin:0 auto;
+	margin-top:50px;
+	overflow: hidden;
+	color:#2B2B2B;
+}
+.kk-navs-contents-item > .kk-content-main >.kk-content-title{
+  	display: inline-block;
+  	font-size: 27px;
+  	border-bottom:2px solid #000;
+  	margin-bottom: 20px;
+  	padding: 5px;
+  	font-weight: normal;
+}	
+
+.kk-navs-contents-item > .kk-content-main >.kk-content-desc{
+   color:#FC7D27;
+   width: 100%;
+   height: 50px;;
+   line-height: 50px;
+   font-size:18px;
+   padding-left: 20px;
+   background: #FCFAD2;
+   border:2px solid #FCE6B3;
+}
+
+.kk-navs-contents-item > .kk-content-main >.kk-content-detail{
+   padding: 5px;
+   width: 100%;
+   font-size:18px;
+   padding-left:20px;
+}
+.kk-navs-contents-item > .kk-content-main >.kk-content-detail > ul{
+	list-style: none;
+}
+.kk-navs-contents-item > .kk-content-main >.kk-content-detail >h4{
+	font-weight: bold;
+}
+.kk-package-submit{
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ccc;
+  margin-top: 2px;
+  border-radius: 5px;
+  font-size: 22px;
+  text-align: center;
+  color: #fff;
+  background-color: #34a1fe;
+  display: block;
+  line-height:50px;
+  text-decoration: none;
+}
+.kk-package-disable{
+	background-color: gray;
+}
+.kk-ddd {
+    font-size: 14px;
+	padding-top:4px;
+	line-height: 12px;
+    text-align: center;
+    position: fixed;
+    right: 5%;
+    top: 60%;
+    bottom: 10%;
+    z-index: 300;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    margin: 5px;
+    background: #5badf2;
+    color: #fff;	
+}
+.kk-ddd i {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url(../images/yx_index/ruzhu.png) center no-repeat;
+  background-size: 80% 80%;
+}
+
+
+
+

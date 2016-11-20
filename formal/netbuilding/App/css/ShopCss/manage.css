@@ -1,0 +1,103 @@
+#tab {
+  height: 2.25rem;
+  border-bottom: 1px solid #D2D2D2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+#tab div {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #666666;
+  margin-top: 0.8rem;
+}
+#tab div.choose {
+  color: #359ffe;
+}
+#tab div.choose span {
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #359ffe;
+}
+#content {
+  background-color: #F5F5F5;
+}
+/*#content .mt24 {
+  height: 0.6rem;
+}*/
+#content .mt30 {
+  height: 0.75rem;
+}
+
+    #content .mt6 {
+        height: 0.15rem;
+    }
+#content .tip {
+  display: none ;
+  height: 1.15rem;
+  line-height: 1.15rem;
+  background-color: #E6E6E6;
+  font-size: 0.6rem;
+  color: #6EA0D1;
+  text-align: center;
+}
+#content .scheme {
+  width: 14.2rem;
+  /*height: 11.35rem;*/
+  margin: 0 auto 0.6rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  overflow: hidden;
+   position: relative;
+
+}
+.title{
+        display: inline-block;
+        width: 13.5em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .qj{
+        position: absolute;
+            /*right: 1rem;*/
+        right: 0.2rem;
+    /*bottom: 0.2rem;*/
+    top:0.2rem;
+        width: 1.25rem;
+    }
+    .loading{
+        width: 1.6rem;
+        margin: 0 auto;
+    }
+#content h3 {
+  font-size: 0.7rem;
+  color: #353535;
+  font-weight: bolder;
+  margin: 0.5rem 0 0.5rem 0.6rem;
+}
+#content p {
+  font-size: 0.6rem;
+  color: #666666;
+  margin-left: 0.56rem;
+      margin-bottom: 0.5rem;
+}
+#content .loading {
+  display: none;
+}
+#content .cancel {
+  font-size: 0.6rem;
+  color: #359ffe;
+  float: right;
+  margin-right: 0.5rem;
+  font-weight: normal;
+  margin-top: 0.1rem;
+
+ display:block;
+ height:1.2rem;
+ line-height:1.2rem;
+}

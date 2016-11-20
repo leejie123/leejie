@@ -1,0 +1,181 @@
+#banner {
+  width: 100%;
+  height: 6.6rem;
+  background: url("../../images/bannerbg.png") center no-repeat;
+  background-size: cover;
+  display: flex;
+  position: relative;
+  .left {
+    width: 3.8rem;
+    height: 3.8rem;
+    margin: 1.4rem 0.6rem 0 1.05rem;
+    img {
+      border-radius: 50%;
+    }
+  }
+  .center {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-top: 2rem;
+    flex: 1;
+  }
+  .right {
+    margin-right: 0.9rem;
+    line-height: 6.6rem;
+  }
+  .location{
+    position: absolute;
+    right: 0.95rem;
+    bottom: 0.45rem;
+    font-size: 0.6rem;
+    color: white;
+    i{
+      display: inline-block;
+      background: url("../../images/dizhi.png") center no-repeat;
+      background-size: cover;
+      width: 16px;
+      height: 17px;
+      vertical-align: middle;
+    }
+  }
+}
+#nav{
+  display: flex;
+  border-bottom: 1px solid #D2D2D2;
+  a{
+    flex: 1;
+    text-align: center;
+    height: 1.95rem;
+    line-height: 1.95rem;
+    font-size: 0.7rem;
+    color: #666666;
+    position: relative;
+  }
+  a:first-child{
+    color: #359ffe;
+    span{
+      position: absolute;
+      width: 50%;
+      left: 25%;
+      bottom: 0;
+      height: 2px;
+      background-color: #34A0FE;
+    }
+  }
+}
+.page1{
+  display: block;
+}
+
+.page2,.page2,.page3,.page4{
+  display: none;
+  background-color: #e4e4e4;
+  padding-bottom: 5rem;
+}
+//.show{
+//  display: block;
+//}
+.page3 {
+  .btn {
+    width: 14.4rem;
+    height: 1.9rem;
+    line-height: 1.9rem;
+    margin: 1rem auto 0;
+    text-align: center;
+    background-color: #359FFE;
+    font-size: 0.85rem;
+    color: white;
+    .btnIcon {
+      display: inline-block;
+      background: url("../../images/shangchuan.png") center no-repeat;
+      background-size: cover;
+      width: 16px;
+      height: 15px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+}
+#content{
+  .mt24{
+    height: 0.6rem;
+  }
+  .mt30{
+    height: 0.75rem;
+  }
+  background-color: #F5F5F5;
+  .scheme{
+    width: 14.2rem;
+    height: 11.35rem;
+    margin: 0 auto;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  h3{
+    font-size: 0.7rem;
+    color: #333333;
+    font-weight: bolder;
+    margin: 0.5rem 0 0.5rem 0.6rem;
+  }
+  p{
+    font-size: 0.6rem;
+    color: #666666;
+    margin-left: 0.56rem;
+  }
+  .loading{
+    display: none;
+  }
+}
+
+.telIcon{
+  position: fixed;
+  right: 0.65rem;
+  top: 12rem;
+  width: 2.2rem;
+}
+.mask{
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.4);
+  z-index: 10;
+  .main{
+    width: 13.5rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10rem;
+    margin: auto;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    .tel{
+      height: 2.8rem;
+      line-height: 2.8rem;
+      text-align: center;
+      border-bottom: 1px solid #dcdcdc;
+    }
+    .tip{
+      overflow: hidden;
+      a{
+        float: left;
+        width: 50%;
+        height: 1.75rem;
+        line-height: 1.75rem;
+        text-align: center;
+      }
+      a:first-child{
+        color: #c8c8c8;
+        border-right: 1px solid #dcdcdc;
+        box-sizing: border-box;
+      }
+      a:last-child{
+        color: #359ffe;
+      }
+    }
+  }
+}

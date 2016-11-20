@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>下载手机店铺</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="author" content="BenWeng,wengjunbin@sina.com" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/common.css?v=20160527" />
+        <style>
+			html {background-color:#fff;}
+        	.pageWrap .header {background:#000;display:none;}
+			.pageWrap .header h1 {color:#fff;}
+			.pageWrap.has_h {padding-top:0;}
+        </style>
+    </head>
+    
+    <body>
+    
+    	<div class="pageWrap has_h">
+            
+            <div class="header f_pf">
+                <h1>下载手机店铺</h1>
+            </div>
+        
+        	<img src="images/business_center/tip.jpg" width="100%" class="f_pa download_tip"/>
+        	<div class="download_app">
+                <div class="download_link f_pr">
+            		<img src="images/business_center/download.jpg" class="f_db" width="100%"/>
+                    <a href="javascript:;" data-url="http://www.bangbbs.com/download.aspx?id=18439" class="f_pa f_db f_two">IOS版本下载</a>
+                    <a href="javascript:;" data-url="http://www.bangbbs.com/download.aspx?id=18439" class="f_pa f_db f_two">Android版本下载</a>
+                </div>
+                <div class="qrcode">
+                	<img src="images/business_center/qrcode.jpg" class="f_db"/>
+                    <p class="f_tac">手机客户端下载二维码</p>
+                </div>
+            </div>
+
+	    </div>
+
+		<script src="js/common.js?v=20160527"></script>
+        <script>
+			function isWeiXin(){
+				var ua = window.navigator.userAgent.toLowerCase(),state;
+				ua.match(/MicroMessenger/i) == 'micromessenger' ? state=true : state=false;
+				return state;
+			}
+			$(function(){
+				document.ondragstart=function(){return false;};
+				setTimeout(function(){$(".global_load").remove();$(".pageWrap").css("visibility","visible").removeClass("f_dn");},300);
+				$(".download_link").find("a").click(function(e){
+					if(isWeiXin()){$(".download_tip").fadeIn();return false;}
+					else {window.location.href=$(this).attr("data-url");}
+				});
+				$(".download_tip").click(function(){return false;});
+				$(document).on("click",function(){$(".download_tip").fadeOut();});
+			});
+		</script>
+
+    </body>
+</html>

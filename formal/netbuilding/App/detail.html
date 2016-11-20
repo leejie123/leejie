@@ -1,0 +1,189 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <!--<meta name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,target-densitydpi=device-dpi" />
+    <title>店铺中心</title>
+    <link rel="stylesheet" href="css/ShopCss/base.css?v=20160627">
+    <link rel="stylesheet" href="css/ShopCss/common.css?v=20160627">
+    <link rel="stylesheet" href="css/ShopCss/detail.css?v=20160627">
+    <link href="js/ShopJs/MPrewview/normalize.css" rel="stylesheet" />
+    <link href="js/ShopJs/MPrewview/MPreview.mobile.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            background-color: #F7F7F7;
+            color: #414243;
+            font-size: 16px;
+            line-height: 1.7;
+            font-weight: 400;
+            font-family: 'Open Sans','Helvetica Neue',Arial,'Hiragino Sans GB','Microsoft YaHei', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #225d99;
+            text-decoration: none;
+        }
+
+        .title {
+            margin: 0;
+            font-size: 16px;
+            line-height: 44px;
+            text-align: center;
+            font-weight: normal;
+            box-shadow: 0 1px 6px #ccc;
+            background-color: #F7F7F7;
+            height: 44px;
+            padding: 0px 10px;
+        }
+
+        .img-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            .img-list:after {
+                display: table;
+                content: " ";
+            }
+
+            .img-list > li {
+                box-sizing: border-box;
+                padding: 10px;
+                position: relative;
+                float: left;
+                width: 50%;
+            }
+
+                .img-list > li img {
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: top;
+                }
+
+                .img-list > li > a {
+                    display: block;
+                }
+
+                .img-list > li > span {
+                    font-size: 14px;
+                    padding: 0px 10px;
+                    position: absolute;
+                    bottom: 15px;
+                    right: 20px;
+                    border-radius: 3px;
+                    background: rgba(37,37,37,0.6);
+                    color: #fff;
+                }
+
+                .img-list > li:first-child {
+                    padding-right: 5px;
+                }
+
+                .img-list > li:last-child {
+                    padding-left: 5px;
+                }
+
+                .img-list > li:first-child span {
+                    right: 15px;
+                }
+
+        .overlay {
+            background: #000;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            -webkit-transition: all 300ms ease-in 0s;
+            transition: all 300ms ease-in 0s;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translate3d(100%, 0px, 0px);
+            transform: translate3d(100%, 0px, 0px);
+        }
+
+            .overlay.in {
+                -webkit-transform: translate3d(0px, 0px, 0px);
+                transform: translate3d(0px, 0px, 0px);
+            }
+        .ui-MPreview-imgbox .ui-MPreview-imglist li img {
+            display:inline-block;
+            width:100%!important;
+        }
+        .ui-MPreview-pages {
+            display:none;
+        }
+    </style>
+    <script type="text/javascript">
+        //字体自适应
+        document.getElementsByTagName('html')[0].style.display = 'none';
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (clientWidth >= 640) {
+                            clientWidth = 640
+                        }
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                        document.getElementsByTagName('html')[0].style.display = 'block';
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+<div class="header">
+    <span class="cell_arrow" onclick="window.history.go(-1);"></span>
+    <h3>方案预览</h3>
+</div>
+<div id="page">
+    <div class="top">
+        <h3 class=""></h3>
+        <p><span id="area"></span>&ensp;&ensp;<span id="style"></span>&ensp;&ensp;<span id="roomtype"></span></p>
+    </div>
+    <h3 class="state"></h3>
+    <div class="page1">
+        <a href="" class="panorama">
+            <div class="mask"></div>
+            <img src="images/anlie3.jpg" alt="" class="f">
+            <img src="images/720quanjing.png" alt="" class="f f2">
+            <img src="images/720quanjingbofang.png" alt="" class="f f3">
+        </a>
+
+        <img src="images/qitazhanshitu.png" alt="" class="moreEx">
+        <div class="imglist">
+        </div>
+    </div>
+    <div class="page2">
+        <div class="block">
+            <div class="text"></div>
+        </div>
+    </div>
+    <div id="mask">
+        <span class="cell_arrow arrow"></span>
+        <img src="images/anlie1.jpg" alt="">
+    </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+</body>
+<script type="text/javascript" src="js/ShopJs/jquery.min.js?v=20160627"></script>
+<script type="text/javascript" src="js/ShopJs/fastclick.js?v=20160627"></script>
+<script type="text/javascript" src="js/ShopJs/plugin.js?v=20160627"></script>
+<script src="js/ShopJs/touch-0.2.14.min.js"></script>
+<script type="text/javascript" src="js/ShopJs/common.js?v=20160705_1"></script>
+<script type="text/javascript" src="js/ShopJs/detail.js?v=20160627_1"></script>
+<script src="js/ShopJs/MPrewview/MPreview.mobile.min.js"></script>
+<!--<script type="text/javascript" src="js/preview.js"></script>--> 
+</html>

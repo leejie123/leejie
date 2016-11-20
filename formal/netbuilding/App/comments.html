@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>评论</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="author" content="BenWeng,wengjunbin@sina.com" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/common.css?v=20160527" />
+        <style>
+			html {background-color:#f5f5f5;}
+			.pageWrap.has_h {padding-top:0;}
+        	.pageWrap .header {display:none;}
+        </style>
+    </head>
+    
+    <body>
+    
+    	<div class="pageWrap has_h">
+
+            <div class="header f_pf">
+            	<div class="l_part f_pa"><a href="javascript:;" class="s6_ico js_back f_two">返回</a></div>
+            	<h1>评论</h1>
+            </div>
+    
+    
+            <div class="body">
+                <div class="commentsPage">
+                
+                
+                	<form action="" class="commentsForm">
+                    	<textarea class="u_textarea f_db" placeholder="输入对《XXX的》的评论或疑问"></textarea>
+                        <input type="submit" value="发表" class="f_db"/>
+                    </form>
+                
+                
+					<script id="evaluation_box" type="text/html">
+                        {{# for(var i = 0, len = d.length; i < len; i++){ }}
+                            <li>
+                                <p class="f_cf time_addr_name">
+                                    <span class="f_fl addr">{{ d[i].Address }}</span><span class="f_fl">{{ d[i].NickName }}</span>
+                                    <span class="f_fr">{{ d[i].CreateTime==null ? "" : getDateDiff(getDateTimeStamp(d[i].CreateTime)) }}</span>
+                                </p>
+                                <p class="detail">{{ d[i].Content }}</p>
+                            </li>
+                        {{# } }}
+                    </script>
+					<div class="evaluation">
+                    	<p class="title"><span id="evaluation_num" class="f_fl">评价详情(0)</span></p>
+                        <ul id="evaluation" class="evaluation_list"></ul>
+                        <a class="f_db scan_more_evaluation" href="javascript:;">查看更多评论</a>
+					</div>
+                
+                </div>
+            </div>
+            
+	    </div>
+
+		<script src="js/common.js?v=20160527"></script>
+        <script src="js/comments.js?v=20160527"></script>
+        
+
+    </body>
+</html>

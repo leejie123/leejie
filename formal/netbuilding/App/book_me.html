@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>预约我的</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="author" content="BenWeng,wengjunbin@sina.com" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/common.css?v=20160527" />
+        <style>
+			html {background-color:#fff;}
+			.pageWrap.has_h {}
+        	.pageWrap .header {display:none;background:#f08c3e;}
+			.pageWrap .header h1 {color:#fff;}
+        </style>
+    </head>
+    
+    <body>
+    
+    	<div class="pageWrap has_h">
+
+            <div class="header f_pf">
+                <div class="l_part f_pa"><a href="javascript:;" class="s6_ico s6_ico_txt js_back">返回</a></div>
+                <h1>预约我的</h1>
+            </div>
+            
+            
+            <div class="new_header f_pf">
+            	<ul class="f_cf top_nav top_nav2">
+                	<li class="f_fl" data-position="0">全景</li>
+                    <li class="f_fl" data-position="0">方案</li>
+                    <li class="f_fl" data-position="0">商品</li>
+                    <div class="f_pa index"><a href="index.html" class="f_db">首页</a></div>
+                </ul>
+                <a href="business_center.html" class="f_pa member_center f_db">&emsp;</a>
+            </div>  
+    
+    
+            <div class="body">
+            
+                <div class="bookMePage">
+
+                    <div class="u_tab_box">
+                    	<ul class="u_tab_header f_cf li4">
+                        	<li class="on" data-position="0">全部</li>
+                            <li data-position="0">待处理</li>
+                            <li data-position="0">已分配</li>
+                            <li data-position="0">完成</li>
+                        </ul>
+                        <div class="u_tab_content">
+                        	<div class="u_tab_item on">
+								<script id="bookMeList_all" type="text/html">
+                                    {{# for(var i = 0, len = d.length; i < len; i++){ }}
+                                        <li class="f_cf">
+                                            <div class="data_l f_fl">
+                                                <p class="name_addr cf">
+                                                    <span class="f_fl f_pr">{{ d[i].CustomerName }}{{ d[i].isNewCus==true ? "<i></i>" : "" }}</span>
+													<em class="f_vab">{{ d[i].ProvinceName+d[i].CityName }}</em>
+                                                </p>
+                                                <p class="book_case_name f_toe">{{ d[i].SchemeName }}</p>
+                                                <p class="date_time">{{ d[i].CreateTime }}</p>
+                                            </div>
+                                            <div class="data_r {{ d[i].IsDistribution==1 ? "state1" : d[i].IsDistribution==2 ? "state2" : "state3" }} f_fr" onclick="get_customeInfo(this)" data-id="{{ d[i].CustomerId }}"></div>
+                                        </li>
+                                    {{# } }}
+                                </script>
+                            	<ul class="bookMeList" id="bookMeList_all_box" data-show="false"></ul>
+                            </div>
+                            
+                        	<div class="u_tab_item">
+								<script id="bookMeList1" type="text/html">
+                                    {{# for(var i = 0, len = d.length; i < len; i++){ }}
+                                        <li class="f_cf">
+                                            <div class="data_l f_fl">
+                                                <p class="name_addr cf">
+                                                    <span class="f_fl f_pr">{{ d[i].CustomerName }}{{ d[i].isNewCus==true ? "<i></i>" : "" }}</span>
+													<em class="f_vab">{{ d[i].ProvinceName+d[i].CityName }}</em>
+                                                </p>
+                                                <p class="book_case_name f_toe">{{ d[i].SchemeName }}</p>
+                                                <p class="date_time">{{ d[i].CreateTime }}</p>
+                                            </div>
+                                            <div class="data_r state1 f_fr" onclick="get_customeInfo(this)" data-id="{{ d[i].CustomerId }}"></div>
+                                        </li>
+                                    {{# } }}
+                                </script>
+                            	<ul class="bookMeList" id="bookMeList1box" data-show="false"></ul>
+                            </div>
+                        	<div class="u_tab_item">
+								<script id="bookMeList2" type="text/html">
+                                    {{# for(var i = 0, len = d.length; i < len; i++){ }}
+                                        <li class="f_cf">
+                                            <div class="data_l f_fl">
+                                                <p class="name_addr cf">
+                                                    <span class="f_fl f_pr">{{ d[i].CustomerName }}{{ d[i].isNewCus==true ? "<i></i>" : "" }}</span>
+													<em class="f_vab">{{ d[i].ProvinceName+d[i].CityName }}</em>
+                                                </p>
+                                                <p class="book_case_name f_toe">{{ d[i].SchemeName }}</p>
+                                                <p class="date_time">{{ d[i].CreateTime }}</p>
+                                            </div>
+                                            <div class="data_r state2 f_fr" onclick="get_customeInfo(this)" data-id="{{ d[i].CustomerId }}"></div>
+                                        </li>
+                                    {{# } }}
+                                </script>
+                            	<ul class="bookMeList" id="bookMeList2box" data-show="false"></ul>
+                            </div>
+                        	<div class="u_tab_item">
+								<script id="bookMeList3" type="text/html">
+                                    {{# for(var i = 0, len = d.length; i < len; i++){ }}
+                                        <li class="f_cf">
+                                            <div class="data_l f_fl">
+                                                <p class="name_addr cf">
+                                                    <span class="f_fl f_pr">{{ d[i].CustomerName }}{{ d[i].isNewCus==true ? "<i></i>" : "" }}</span>
+													<em class="f_vab">{{ d[i].ProvinceName+d[i].CityName }}</em>
+                                                </p>
+                                                <p class="book_case_name f_toe">{{ d[i].SchemeName }}</p>
+                                                <p class="date_time">{{ d[i].CreateTime }}</p>
+                                            </div>
+                                            <div class="data_r state3 f_fr" onclick="get_customeInfo(this)" data-id="{{ d[i].CustomerId }}"></div>
+                                        </li>
+                                    {{# } }}
+                                </script>
+                            	<ul class="bookMeList" id="bookMeList3box" data-show="false"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+            </div>
+    
+        </div>
+    
+        <script src="js/common.js?v=20160527"></script>
+        <script src="js/book_me.js?v=20160527"></script>
+
+    </body>
+</html>

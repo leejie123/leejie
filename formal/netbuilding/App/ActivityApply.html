@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>互联网3D云设计平台_三维家</title>
+    <meta name="keywords" content="3D云设计,装修效果图,装修设计,室内设计软件,家居设计" />
+    <meta name="description" content="三维家云设计,是最专业、最迅速、最智能的3D在线家居设计软件,获得软银中国、广发信德2家国际顶级风投的数千万战略投资" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/base.css?v=20160531">
+    <link rel="stylesheet" href="css/ActivityApply.css?v=20160603_3">
+    <script type="text/javascript">
+        if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+            var version = parseFloat(RegExp.$1);
+            if (version > 2.3) {
+                var phoneScale = parseInt(window.screen.width) / 640;
+                document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+            } else {
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=0, target-densitydpi=device-dpi">');
+        }
+    </script>
+</head>
+<body class="container800 minwidth">
+    <header class="svj-bar">
+        <a href="yx_index.html" class="svj-back"></a>
+        <h1 class="svj-title">免费试用登记</h1>
+    </header>
+    <section class="svj-content">
+        <div class="svj-top">
+            <img src="images/yx_index/banner.jpg" />
+            <div class="svj-time">
+                <img src="images/yx_index/bannerMark.png" />
+                <span>活动时间：5月30日-6月30日</span>
+            </div>
+            <a href="yx_main_cg.html" class="chugui"></a>
+            <a href="yx_main_yg.html" class="yigui"></a>
+            <div class="chuyi">
+                <span><img src="images/yx_index/chugui1.png" /></span>
+                <span><img src="images/yx_index/yigui2.png" /></span>
+            </div>
+        </div>
+        <div class="svj-apply">
+            <h2>只需登记资料即可申请</h2>
+            <p>试用仅限200个名额，先到先得</p>
+            <div class="svj-apply-form">
+                <div class="svj-form-item">
+                    <label>联系人：</label><p><input type="text" placeholder="您的名字" id="txtName"></p>
+                </div>
+                <div class="svj-form-item">
+                    <label>Q Q：</label><p><input type="text" placeholder="您的联系QQ" id="txtQQ"></p>
+                </div>
+                <div class="svj-form-item">
+                    <label>手机号：</label><p><input type="text" placeholder="手机号为试用账号" id="txtMobile"></p>
+                </div>
+                <div class="svj-form-item">
+                    <label>&nbsp</label><p><input type="button" id="btnsubmit" value="提 交"></p>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="ActivityName" id="hidActivityName" value="三维家橱衣柜云设计免费试用登记" />
+        <div class="svj-service">
+            <p>免费开通后，您可以享受的服务有：</p>
+            <ul>
+                <li>橱衣柜云设计功能<span>1个月</span>免费体验</li>
+                <li>在线老师免费咨询，6天*24小时在线指导</li>
+                <li>在线QQ群全程指导，使用培训</li>
+                <li>定期举行在线培训课程</li>
+                <li>免费享有参与三维家3D云设计实践课程和公开课的机会</li>
+            </ul>
+        </div>
+        <div class="svj-rule">
+            <img src="images/yx_index/top.jpg" />
+            <ul>
+                <li>本次活动仅针对橱衣柜云设计进行免费试用，活动对象仅限橱衣柜门店参与</li>
+                <li>一个账号仅能申请一次</li>
+                <li>申请成功后3天内开通试用账号，届时将短信通知请注意查收</li>
+                <li>试用名额仅限200个，先到先得</li>
+                <li>在法律许可的合法范畴内，本活动最终解释权归三维家所有 </li>
+            </ul>
+        </div>
+        <div class="logo">
+            <img src="images/yx_index/logo.jpg" />
+        </div>
+    </section>
+    <!-- footer start -->
+    <footer>
+        <div class="infor">
+            <div class="inforD am-u-sm-12  am-u-sm-centered">
+                <i class="footerIcon"></i>
+                <div class="inforCon">
+                    三维家全国统一客服热线<br />
+                    400-8090-630
+                </div>
+                <a href="tel:4008090630" class="footerTel"></a>
+            </div>
+        </div>
+        <div class="copyright">
+            【三维家】版权所有粤ICP备14070053号-2
+        </div>
+    </footer>
+    <!-- footer end -->
+    <script src="js/common.js?v=20160527"></script>
+    <script type="text/javascript" src="js/toast.js?v=20160527"></script>
+    <script type="text/javascript">
+        var appPath = "http://www.3vjia.com/api/App/";
+        //function yx_ini() {
+        //    if (isLogin() == false) {
+        //        $('#txtCompanyName,#txtName,#txtMobile').blur();
+        //        var tuid = $.getUrlParam("tuid");
+        //        var btnArray = ['登录', '注册'];
+        //        svj.confirm('三维家会员账号将是您的试用账号</br>请登陆后再填写资料', ' ', btnArray, function (e) {
+        //            if (e.index == 1) {   //索引为1的按钮 注册
+        //                if (tuid != null) {
+        //                    window.location.href = "yx_register.html?type=activity&tuid=" + tuid;
+        //                } else {
+        //                    window.location.href = "yx_register.html?type=activity";
+        //                }
+        //            } else {   //索引为0的按钮 登陆
+        //                if (tuid != null) {
+        //                    window.location.href = "yx_login.html?type=activity&tuid=" + tuid;
+        //                } else {
+        //                    window.location.href = "yx_login.html?type=activity";
+        //                }
+        //            }
+        //        });
+        //    }
+        //}
+        $(document).ready(function () {
+            window.localStorage.url = location.href;
+            //if (isLogin()) {
+            //    var obj = JSON.parse(window.localStorage.memberInfo);
+            //    var mobile = obj.Mobile.length > 0 ? obj.Mobile : obj.Account;
+            //    $.ajax({
+            //        type: "get",
+            //        url: appPath + "CheckUser/CheckUserApplyActivity?mobile=" + mobile,
+            //        contentType: "application/json;charset=utf-8",
+            //        dataType: "jsonp",
+            //        async: false,
+            //        success: function (response) {
+            //            if (response.Status == 0) {
+            //                location.href = "ActivityApplyOK.html";
+            //            }
+            //        }
+            //    });
+            //}
+            //$('#txtCompanyName,#txtName,#txtMobile').bind('focus', function () {
+            //    yx_ini();
+            //})
+
+            var isApplyed = window.localStorage.isApplyed;
+            if (isApplyed != null && isApplyed == "1") {
+                location.href = "ActivityApplyOK.html";
+            }
+
+
+
+            $("#btnsubmit").bind("click", function () {
+                var txtName = $("#txtName").val();
+                //if (txtName.length <= 0) {
+                //    svj.alert('请填写联系人'," ");
+                //    return false;
+                //}
+                var txtQQ = $("#txtQQ").val();
+                if (txtQQ.length > 0) {
+                    if (!/^[0-9]*$/.test(txtQQ)) {
+                        svj.alert('请填写正确的QQ号码', " ");
+                        return false;
+                    }
+                }
+                var txtMobile = $("#txtMobile").val();
+                if (txtMobile.length <= 0) {
+                    svj.alert('请填写手机号码', " ");
+                    return false;
+                }
+                if (!/^13[0-9]{9}$|14[0-9]{9}|15[0-9]{9}|17[0-9]{9}$|18[0-9]{9}$/.test(txtMobile)) {
+                    svj.alert('请填写正确的手机号码', " ");
+                    return false;
+                }
+                var activityName = $("#hidActivityName").val();
+                var tuid = $.getUrlParam("tuid");
+                if (tuid == null) {
+                    tuid = "";
+                }
+                var mobile = "";
+                var userName = "";
+                var userId = "";
+
+                var obj = {
+                    tuid: tuid,
+                    companyName: txtQQ,
+                    name: txtName,
+                    mobile: txtMobile,
+                    userName: userName,
+                    userMobile: mobile,
+                    activityName: activityName,
+                    userId: userId
+                }
+
+                $.ajax({
+                    type: "get",
+                    url: appPath + "ActivityApply/SaveData",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "jsonp",
+                    data: obj,
+                    success: function (response) {
+                        if (response.Status == 1) {
+                            window.localStorage.isApplyed = "1";
+                            location.href = "ActivityApplyOK.html";
+                        } else if (response.Status =="-2") {
+                            svj.alert("您已经申请过了，加入QQ群115737138与老师一起交流吧",'  ');
+                        }
+                        else {
+                            svj.alert('申请活动失败，请稍后再试！', ' ');
+                        }
+                    }
+                })
+            });
+
+            //$(document).on('click', '.svj-popup-backdrop', function () {
+            //    $(this).remove();
+            //    $('.svj-popup').remove();
+            //});
+        })
+    </script>
+</body>
+</html>

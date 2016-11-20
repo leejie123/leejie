@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>设计师主页</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="author" content="BenWeng,wengjunbin@sina.com" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/common.css?v=20160527" />
+        <style>
+			html {background-color:#f5f5f5;}
+			.pageWrap.has_h {}
+			.pageWrap .header {display:none;}
+			.designerPage .designerInfo .txt p.has_arrow {margin-top:0.5rem;}
+        </style>
+    </head>
+    
+    <body>
+    
+        <div class="pageWrap has_h">
+
+            <div class="header f_pf">
+                <div class="l_part f_pa"><a href="javascript:;" class="s6_ico js_back f_two">返回</a></div>
+                <h1 class="f_toe">设计师主页</h1>
+            </div>
+            
+            
+            <div class="new_header f_pf">
+            	<ul class="f_cf top_nav top_nav2">
+                	<li class="f_fl" data-position="0">全景</li>
+                    <li class="f_fl" data-position="0">方案</li>
+                    <li class="f_fl" data-position="0">商品</li>
+                    <div class="f_pa index"><a href="index.html" class="f_db">首页</a></div>
+                </ul>
+                <a href="business_center.html" class="f_pa member_center f_db">&emsp;</a>
+            </div>
+            
+            
+    
+            <div class="body">
+                <div class="designerPage">
+            
+            		<script id="designerInfo_data" type="text/html">
+                        <div class="designerInfo f_pr">
+                            <a href="{{ 'store.html?deptId='+d.DeptId }}" class="f_cf f_db">
+                                <img src="{{ 'http://passport.admin.mnmnh.com'+d.ImgURL }}" class="f_fl" onerror="this.src='images/default_head.png'" />
+                                <div class="txt f_fl">
+                                    <p>{{ d.Name }}</p>
+                                    <p class="has_arrow">{{ d.OrganName }}</p>
+                                </div>
+                            </a>
+							<div class="new_foucs_box" onclick="collect(this,0)" data-id=""><span>关注</span></div>
+                        </div>
+                        <ul class="f_cf bookCaseIntro_val">
+                            <li class="f_fl">预约数：<b>{{ d.OrderNum }}</b></li>
+                            <li class="f_fl">方案数：<b>{{ d.SchemeCount }}</b></li>
+                            <li class="f_fl">推荐值：<b>{{ d.Recommended }}</b></li>
+                        </ul>
+                    </script>
+                    
+            		<div id="designerInfo_box"></div>
+                    
+
+                                
+					<script id="designer_case" type="text/html">
+                        {{# for(var i = 0, len = d.length; i < len; i++){ }}
+                            <li class="f_db">
+                                <a href="caseDetail.html?SchemeId={{ d[i].SchemeID }}" class="f_db">
+                                    <div data-src="{{ cutPic(d[i].ImagePath,"_640W.jpgx",1) }}" class="pic_box f_db lazyload loading">
+                                        <img src="images/free.gif"/>
+                                    </div>
+                                    <p class="name">{{ d[i].SchemeName }}</p>
+                                </a>
+								<p class="area_praise f_cf">
+                                   <span class="f_fl" {{ d[i].Area=="" ? 'style="display:none;"' : "" }}><em>{{ /㎡/.test(d[i].Area) ? d[i].Area.replace("㎡","<strong>㎡</strong>") : d[i].Area+'<strong>㎡</strong>' }}</em></span>
+                                   <span class="f_fr f_pr praise_ico" onclick="collect(this,1)" data-id="{{ d[i].SchemeID }}">{{ d[i].TotalFavorite }}</span>
+                                </p>
+                            </li>
+                        {{# } }}
+                    </script>
+                    <div class="waterFall f_cf" id="water_fall">
+                        <ul class="col f_fl"></ul>
+                        <ul class="col f_fl"></ul>
+                    </div>
+
+
+                </div>
+            </div>
+    
+    
+        </div>
+    
+        <script src="js/common.js?v=20160527"></script>
+        <script src="js/designerPage.js?v=20160527"></script>
+        
+
+    </body>
+</html>

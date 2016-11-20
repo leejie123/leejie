@@ -148,6 +148,7 @@ $('.js-submit').bind("click", function (e) {
 
 
 function timelineModuleInit(returndata) {
+	console.log(returndata)
 	//timeline module
 	//应该把展示的逻辑剥离出来，可以供search用。传进一个数组
 	//在这里面增加模板语言，if和else
@@ -330,6 +331,7 @@ if(page.test(hash)) {
 			default :
 				//这种方式可能不安全
 				var returndata = service.search(Tools.getCookie("user_id"), value);
+				console.log(returndata)
 				timelineModuleInit(returndata);
 				
 		}

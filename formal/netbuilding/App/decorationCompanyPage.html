@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>公司主页</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="author" content="BenWeng,wengjunbin@sina.com" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/common.css?v=20160527" />
+        <style>
+			html {background-color:#f5f5f5;}
+			.pageWrap {padding-top:0;}
+			.nav_type.f_pf {top:0;}
+			#bg_logo_name_box {margin-top:5.626rem;}
+			.header .r_part {top:5.625rem;}
+			.share_collect_list {top:12rem;}
+			.focus {width:7.5rem;height:3.75rem;border-radius:0.5rem;background:rgba(255,255,255,0.2);font-size:1.5rem;color:#fff;position:absolute;top:6.5rem;right:1rem;z-index:10;background-clip:padding-box;text-align:center;line-height:3.75rem;}
+        </style>
+    </head>
+    
+    <body>
+    
+    	<div class="pageWrap pageWrap3">
+
+            <div class="header f_pf">
+                <h1></h1>
+            </div>
+            
+            <div class="new_header f_pf">
+            	<ul class="f_cf top_nav top_nav2">
+                	<li class="f_fl" data-position="0">全景</li>
+                    <li class="f_fl" data-position="0">方案</li>
+                    <li class="f_fl" data-position="0">商品</li>
+                    <div class="f_pa index"><a href="index.html" class="f_db">首页</a></div>
+                </ul>
+                <a href="business_center.html" class="f_pa member_center f_db">&emsp;</a>
+            </div>            
+            
+            
+            <div class="body">
+            	
+                <script id="enterprise_info" type="text/html">
+					<div class="bg_logo_name" style="background-image:url({{ d.BackgroundImage=="" ? 'upload/company_bg.jpg' : d.BackgroundImage }})">
+						<img src="{{ d.ShopImage=="" ? 'images/default_shop.png' :  cutPic(d.ShopImage,"") }}" />    
+						<p class="name f_tac f_toe">{{ d.ShopName }}</p>
+					</div>
+                </script>
+                <div id="bg_logo_name_box">
+                    <div class="bg_logo_name" style="background-image:url(upload/company_bg.jpg)">
+                        <img src="upload/store_logo.png" />    
+                        <p class="name f_tac f_toe">林氏木业专卖店</p>
+                    </div>
+                </div>
+                
+				<a href="javascript:;" class="focus" onclick="collect(this,2)" data-id="">+关注</a>
+            
+                
+                <ul class="nav_type f_cf">
+                	<li class="f_fl current"><span>方案</span></li>
+                    <li class="f_fl"><span>评价</span></li>
+                    <li class="f_fr" style="display:none;"><a href="" class="f_two f_db">搜索</a></li>
+                </ul>
+				<script id="company_case" type="text/html">
+                    {{# for(var i = 0, len = d.length; i < len; i++){ }}
+                        <li class="f_db">
+                            <a href="caseDetail.html?SchemeId={{ d[i].SchemeId }}" class="f_db">
+                                <div data-src="{{ cutPic(d[i].ImagePath,"_640W.jpgx",1) }}" class="pic_box f_db lazyload loading">
+                                    <img src="images/free.gif"/>
+                                </div>
+                                <p class="name">{{ d[i].SchemeName }}</p>
+                            </a>
+                            <p class="area_praise f_cf">
+                               <span class="f_fl" {{ d[i].Area=="" ? 'style="display:none;"' : null }}><em>{{ /㎡/.test(d[i].Area) ? d[i].Area.replace("㎡","<strong>㎡</strong>") : d[i].Area+'<strong>㎡</strong>' }}</em></span>
+                               <span class="f_fr f_pr praise_ico" onclick="collect(this,1)" data-id="{{ d[i].SchemeId }}">{{ d[i].TotalFavorite }}</span>
+                            </p>
+                        </li>
+                    {{# } }}
+                </script>
+                <div class="u_tab_content">
+                	<div class="u_tab_item">
+                        <div class="waterFall f_cf" id="water_fall1">
+                            <ul class="col f_fl"></ul>
+                            <ul class="col f_fl"></ul>
+                        </div>
+                    </div>
+                    <div class="u_tab_item f_dn">
+						<script id="evaluation_box" type="text/html">
+                            {{# for(var i = 0, len = d.length; i < len; i++){ }}
+                                <li>
+                                    <p class="f_cf time_addr_name">
+                                        <span class="f_fl addr">{{ d[i].Address }}</span><span class="f_fl">{{ d[i].NickName }}</span>
+                                        <span class="f_fr">{{ getDateDiff(getDateTimeStamp(d[i].CreateTime)) }}</span>
+                                    </p>
+                                    <p class="detail">{{ d[i].Content }}</p>
+                                </li>
+                            {{# } }}
+                        </script>
+                    	<div class="evaluation">
+                        	<p class="title"><span class="f_fl" id="evaluation_num">评价详情(0)</span><span class="f_fr">店长推荐值<b id="intro_val">0</b></span></p>
+                            <ul class="evaluation_list" id="evaluation"></ul>
+                            <a href="javascript:;" class="f_db scan_more_evaluation">查看更多评论</a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+                
+
+            
+            </div>
+    
+    
+            <div class="footer f_pf caseDetail_f"><a class="f_db bookDesign_btn" id="bookDesign_btn" href="javascript:;">免费预约设计</a></div>
+    
+        </div>
+    
+        <script src="js/common.js?v=20160527"></script>
+        <script src="js/decorationCompanyPage.js?v=20160527"></script>
+
+    </body>
+</html>

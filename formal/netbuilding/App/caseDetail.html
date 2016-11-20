@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>详情</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="author" content="BenWeng,wengjunbin@sina.com" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/common.css?v=20160527" />
+        <style>
+			html {background:#f5f5f5;}
+			.pageWrap {}
+        	.pageWrap .header {display:none;}
+			.case_detail .area_praise span.f_fl em strong {color:#b7b7b7;}
+			.caseDetail_inProduct_list li .areaOrPrice span.f_fr {color:#999;}
+        </style>
+    </head>
+    
+    <body>
+    
+    	<div class="pageWrap">
+
+            <div class="header f_pf">
+                <div class="l_part f_pa"><a href="javascript:;" class="s6_ico js_back f_two">返回</a></div>
+                <h1>详情</h1>
+                <div class="r_part f_pa"><a href="javascript:;" class="f_fl s6 share f_two">分享</a></div>
+            </div>
+            
+            <div class="new_header f_pf">
+            	<ul class="f_cf top_nav top_nav2">
+                	<li class="f_fl" data-position="0">全景</li>
+                    <li class="f_fl" data-position="0">方案</li>
+                    <li class="f_fl" data-position="0">商品</li>
+                    <div class="f_pa index"><a href="index.html" class="f_db">首页</a></div>
+                </ul>
+                <a href="business_center.html" class="f_pa member_center f_db">&emsp;</a>
+            </div>
+            
+    
+    
+            <div class="body">
+            
+                <div class="caseDetailPage">
+                    
+    
+    
+					<script id="slider" type="text/html">
+                        {{# for(var i = 0, len = (d.length > 5 ? 5 : d.length); i < len; i++){ }}
+							<a href="javascript:;" class="item f_db">
+								<img src="images/free.gif" data-src="{{ cutPic(d[i].FileFullPath,"_640W.jpgx",1) }}" class="loading"/>
+							</a>
+                        {{# } }}
+                    </script>
+                    <div class="carousel js_carousel">
+                        <div class="slider" id="slider_box"></div>
+                        <p class="title f_tac" style="display:none"><span></span><em><i id="now">1</i>/<b id="all">1</b></em></p>
+                        <ul class="paging"></ul>
+                        <strong class="f_pa f_two stico" style="display:none">720deg</strong>
+                    </div>
+    				<div class="seven_two_degree"><img src="images/720.jpg" width="100%" class="f_vat stico2"/></div>
+   
+					<script id="case_detail" type="text/html">
+                        <p class="f_toe name">{{ d.SchemeName }}</p>
+                        <div class="area_praise f_cf">
+                            <span class="f_fl"><em>{{ d.Area.replace("㎡","<strong>㎡</strong>") }}</em></span>
+                            <div class="f_fr">
+								<span class="f_fr praise_ico" onclick="collect(this,1)" data-id="{{ d.SchemeId }}">{{ d.TotalFavorite }}</span>
+								<i class="f_fr js_comment" data-url="" data-txt="{{ d.SchemeName }}">{{ d.CommentCount }}</i>
+							</div>
+                        </div>
+                        <div class="design_box">
+							<a href="{{ 'designerPage.html?EmployeeId='+d.EmployeeId }}" class="f_db f_cf">
+								<img src="{{ 'http://passport.admin.mnmnh.com'+d.EmployeeIMG }}" onerror="this.src='images/default_head.png'" data-id="{{ d.EmployeeId }}" id="data_id" class="f_fl"/>
+								<div class="nick_name_company f_fl">
+									<p class="nick_name"><b id="designer_detail" data-val="">{{ d.EmployeeName }}</b><strong><em>推荐值：</em>{{ d.Recommended }}</strong></p>
+									<p class="compnay" id="store" data-val="">{{ d.DeptName }}</p>
+								</div>
+							</a>
+                        </div>
+                    </script>
+                    <div class="case_detail" id="case_detail_box"></div>
+
+
+                
+                	<script id="caseDetail_inProduct" type="text/html">
+						{{# for(var i = 0;i < d.length; i++){ }}
+                            <li class="f_fl">
+                                <a href="{{ 'productDetail.html?ProductId='+d[i].ProductId  }}" class="f_db">
+                                    <div class="pic_box loading f_pr" data-src="{{ cutPic(d[i].ImagePath,"_300W") }}">
+                                        <img src="images/free.gif"/>
+                                    </div>
+                                    <p class="f_toe">{{ d[i].ProductName }}</p>
+                                </a>
+                                <p class="areaOrPrice f_cf">
+                                    <span class="f_fr f_pr praise_ico f_product" onclick="collect(this,3)" data-id="{{ d[i].ProductId }}">{{ d[i].TotalFavories }}</span>
+                                </p>
+                            </li>
+						{{# } }}
+                    </script>
+                    <div class="caseDetail_inProduct">
+                        <p class="f_pr other_case_title f_tac"><span>方案中的产品详情</span></p>
+                        <ul class="caseDetail_inProduct_list f_cf" id="caseDetail_inProduct_list"></ul>
+                    </div>
+                    
+                </div>
+                
+            </div>
+    
+    
+            <div class="footer f_pf caseDetail_f"><a href="javascript:;" id="bookDesign_btn" class="f_db bookDesign_btn">免费预约设计</a></div>
+    
+        </div>
+        
+
+    
+        <script src="js/common.js?v=20160527_1"></script>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?v=20160527"></script>
+        <script>
+                wx.config({
+                  debug: false,
+                  appId: 'wxf8b4f85f3a794e77',
+                  timestamp: 1440653247,
+                  nonceStr: 'kUTFBXLacRFYcDsu',
+                  signature: '452aeaea58dd614ee6837e7aaa091057378fcf0e',
+                  jsApiList: [
+                    'checkJsApi',
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo',
+                    'onMenuShareQZone',
+                    'hideMenuItems',
+                    'showMenuItems',
+                    'hideAllNonBaseMenuItem',
+                    'showAllNonBaseMenuItem',
+                    'translateVoice',
+                    'startRecord',
+                    'stopRecord',
+                    'onVoiceRecordEnd',
+                    'playVoice',
+                    'onVoicePlayEnd',
+                    'pauseVoice',
+                    'stopVoice',
+                    'uploadVoice',
+                    'downloadVoice',
+                    'chooseImage',
+                    'previewImage',
+                    'uploadImage',
+                    'downloadImage',
+                    'getNetworkType',
+                    'openLocation',
+                    'getLocation',
+                    'hideOptionMenu',
+                    'showOptionMenu',
+                    'closeWindow',
+                    'scanQRCode',
+                    'chooseWXPay',
+                    'openProductSpecificView',
+                    'addCard',
+                    'chooseCard',
+                    'openCard'
+                  ]
+                });
+        </script>
+        <script src="js/caseDetail.js?v=20160527_1"></script>
+
+    </body>
+</html>

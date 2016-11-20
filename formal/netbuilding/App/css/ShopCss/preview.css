@@ -1,0 +1,324 @@
+#banner {
+  width: 100%;
+  height: 6.6rem;
+  background: url("../../images/bannerbg.png") center no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+#banner .left {
+  width: 3.8rem;
+  height: 3.8rem;
+  margin: 1.4rem 0.6rem 0 1.05rem;
+      border-radius: 100%;
+    overflow: hidden;
+}
+#banner .left img {
+  border-radius: 100%;
+  height:100%;
+}
+#banner .center {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 2rem;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+#banner .right {
+  margin-right: 0.9rem;
+  line-height: 6.6rem;
+}
+#banner .location {
+  position: absolute;
+  right: 0.95rem;
+  bottom: 0.45rem;
+  font-size: 0.6rem;
+  color: white;
+}
+#banner .location i {
+  display: inline-block;
+  background: url("../../images/dizhi.png") center no-repeat;
+  background-size: cover;
+  width: 16px;
+  height: 17px;
+  vertical-align: middle;
+}
+#nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #D2D2D2;
+}
+#nav a {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  height: 1.95rem;
+  line-height: 1.95rem;
+  font-size: 0.7rem;
+  color: #666666;
+  position: relative;
+}
+#nav a.choose {
+  color: #359ffe;
+}
+#nav a.choose span.bd {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  bottom: 0;
+  height: 2px;
+  background-color: #34A0FE;
+}
+#nav a.choose span.bd2 {
+  position: absolute;
+  width: 64%;
+  left: 20%;
+  bottom: 0;
+  height: 2px;
+  background-color: #34A0FE;
+}
+.page1 {
+  display: block;
+}
+.page2,
+.page2,
+.page3,
+.page4 {
+  display: none;
+  background-color: #e4e4e4;
+  padding-bottom: 5rem;
+}
+.page3 .btn {
+  width: 14.4rem;
+  height: 1.9rem;
+  line-height: 1.9rem;
+  margin: 1rem auto 0;
+  text-align: center;
+  background-color: #359FFE;
+  font-size: 0.85rem;
+  color: white;
+}
+.page3 .btn .btnIcon {
+  display: inline-block;
+  background: url("../../images/shangchuan.png") center no-repeat;
+  background-size: cover;
+  width: 16px;
+  height: 15px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+#content {
+  background-color: #F5F5F5;
+  padding-bottom:0.5rem;
+}
+#content .mt24 {
+  height: 0.6rem;
+}
+#content .mt30 {
+  height: 0.75rem;
+}
+#content .scheme {
+  width: 14.2rem;
+  /*height: 11.35rem;*/
+  margin: 0 auto 0.6rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#content h3 {
+  font-size: 0.7rem;
+  color: #333333;
+  font-weight: bolder;
+  margin: 0.5rem 0 0.5rem 0.6rem;
+}
+#content p {
+  font-size: 0.6rem;
+  color: #666666;
+  margin-left: 0.56rem;
+  padding-bottom: 0.5rem;
+}
+#content .loading {
+  display: none;
+}
+.telIcon {
+  position: fixed;
+  right: 0.65rem;
+  top: 12rem;
+  width: 2.2rem;
+}
+.mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+.mask .main {
+  width: 13.5rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10rem;
+  margin: auto;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 0.75rem;
+}
+.mask .main .tel {
+  height: 2.8rem;
+  line-height: 2.8rem;
+  text-align: center;
+  border-bottom: 1px solid #dcdcdc;
+}
+.mask .main .tip {
+  overflow: hidden;
+}
+.mask .main .tip a {
+  float: left;
+  width: 50%;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  text-align: center;
+}
+.mask .main .tip a:first-child {
+  color: #c8c8c8;
+  border-right: 1px solid #dcdcdc;
+  box-sizing: border-box;
+}
+.mask .main .tip a:last-child {
+  color: #359ffe;
+}
+.weui_mask_transition {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: background .3s;
+  transition: background .3s;
+}
+.weui_fade_toggle {
+  background: rgba(0, 0, 0, 0.4);
+}
+.weui_actionsheet {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  -webkit-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 2;
+  width: 100%;
+  background-color: #EFEFF4;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform .3s;
+}
+.weui_actionsheet_toggle {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.weui_actionsheet_menu {
+  background-color: #FFFFFF;
+}
+.weui_actionsheet_cell {
+  position: relative;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 18px;
+}
+.weui_actionsheet_cell:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.weui_actionsheet_action {
+  margin-top: 6px;
+  background-color: #FFFFFF;
+}
+.weui_actionsheet_cell {
+  position: relative;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 18px;
+}
+#mask1 {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#mask1 .showimg {
+  position: relative;
+  width: 11.75rem;
+  height: 7.75rem;
+  margin: 10rem auto 0;
+}
+#mask1 .showimg .cancel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.35rem;
+  height: 1.35rem;
+}
+#mask2 {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#mask2 img {
+  width: 11.7rem;
+  margin: 6rem auto 0;
+}
+.shareIcon,
+.qrIcon {
+  display: inline-block;
+  background: url("../../images/fenxiang.png") center no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-left:33%;
+}
+.qrIcon {
+  background: url("../../images/erweima.png") center no-repeat;
+  background-size: cover;
+}
+.tl {
+    text-align: left;
+}

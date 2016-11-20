@@ -1,0 +1,62 @@
+.header {
+  background-color: #369EFF;
+  height: 2.15rem;
+  line-height: 2.15rem;
+  color: white;
+  font-size: 0.8rem;
+  position: relative;
+}
+.header h3 {
+  line-height: 2.15rem;
+  text-align: center;
+}
+.header .cell_arrow {
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+}
+.header .cell_arrow:after {
+  border-width: 0 0 2px 2px;
+}
+.header a {
+  position: absolute;
+  right: 0.8rem;
+  top: 0;
+  color: white;
+  font-size: 0.7rem;
+}
+.footer {
+  background-color: #F5F5F5;
+}
+.footer .link {
+  /*border-top: 1px solid #D2D2D2;*/
+  /*border-bottom: 1px solid #D2D2D2;*/
+  border-top:1px solid #eaeaea;
+  border-bottom:1px solid #eaeaea;
+  height: 1.65rem;
+  line-height: 1.65rem;
+  text-align:center;
+}
+.footer .link a {
+  display:initial;
+  font-size: 0.7rem;
+  /*color: #666;*/
+  color: #999;
+}
+/*.footer .link a:first-child {
+  text-align: right;
+  padding-right: 0.575rem;
+}
+.footer .link a:last-child {
+  padding-left: 0.575rem;
+}*/
+.footer .logo img {
+  width: 3.2rem;
+  margin: 0.425rem auto 0;
+}
+.footer .logo p {
+  font-size: 0.6rem;
+  color: #b4b4b4;
+  text-align: center;
+  padding: 0.25rem 0 0.85rem;
+}
