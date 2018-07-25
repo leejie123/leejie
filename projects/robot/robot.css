@@ -1,0 +1,248 @@
+.talkModule {
+  width: 500px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+.talkModule:after {
+
+    display: table;
+    clear: both;
+    content: '';
+}
+
+
+.talkModule .item {
+    /*position: absolute;*/
+
+    display: block;
+    margin-bottom: 10px
+}
+
+.talkModule .left {
+    float: left;
+    clear: both;
+}
+.talkModule .right {
+    float: right;
+    clear: both;
+}
+
+.talkModule .avatar {
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+}
+.talkModule .content {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 10px;
+    background-color: skyblue;
+    display: inline-block;
+    padding:  10px;
+    word-break: break-all;
+}
+.talkModule .right .avatar {
+    float: right;
+}
+.talkModule .right .content {
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+
+.talkModule .body {
+    padding: 10px;
+    max-height: 460px;
+    height: 300px;
+    overflow-y:auto;
+}
+.talkModule .body:after {
+    display: table;
+    clear: both;
+    content: ''
+}
+.talkModule .title {
+    font-weight: bold;
+    cursor: move;
+    background-color: skyblue;
+    height: 40px;
+    line-height: 40px;
+    text-align:center;
+    display: block;
+    width: 100%;
+}
+.collectBox .box {
+    width:40px;
+    height:40px;
+    border-radius:8px;
+    border:1px solid #ddd;
+    background-color:rgba(255,255,255, .7);
+    cursor: pointer;
+    margin-bottom: 5px;
+
+    position: relative;
+}
+
+.collectBox .box .mask {
+    width:100%;
+    height:100%;
+    background-color:transparent;
+    position:absolute;
+    z-index:100;
+    margin-top: -4px;
+    margin-left: -4px;
+    padding: 4px;
+}
+
+
+/*.collectBox .box:before {
+    border: 1px solid #ddd;
+
+    width: 18px;
+    height: 18px;
+    border-radius: 30%;
+    content: '';
+    display: inline-block;
+}*/
+
+.collectBox .box:hover {
+    background-color: rgba(255,255,255, .3);
+}
+
+.collectBox .box.additem:before,.collectBox .box.additem:after {
+    position: absolute;
+    border-top: 4px solid #bbb;
+    /*border-bottom: 4px solid #ddd;*/
+    content: "";
+    width: 30px;
+    display: inline-block;
+    left: 5px;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.collectBox .box.additem:after {
+    /*border-left: 4px solid #bbb;
+    border-top: 0px;
+    width: 0px;
+    height: 40px;
+    top: 0px;
+    left: 50%;
+    margin-left: -2px;
+    margin-top: 0px;*/
+    transform: rotate(90deg);
+}
+/*可以使用translate属性*/
+.collectBox .detailbox {
+    display: none;
+    position:absolute;
+    top:48px;
+    left:20px;
+    right:20px;
+    bottom:250px;
+    background-color:rgba(255,255,255,.7);
+    border:1px solid #ddd;
+    border-radius: 30px;
+    padding: 10px;
+    overflow-y: auto;
+    padding-top: 50px;
+}
+
+.collectBox .detailbox:after {
+    content: attr(title);
+    width: 100%;
+    height: 40px;
+    background-color: #ddd;
+    text-align:center;
+    line-height: 40px;
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    /*top: -40px;*/
+    top: 0px;
+    left: 0px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.collectBox .detailbox .detailboxitem{
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    line-height: 40px;
+    /*width: 100%;*/
+    /*overflow: hidden;*/
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.collectBox .detailbox .detailboxitem:hover:before {
+    z-index: 100;
+    left: 0px;
+    position: absolute;
+    content: attr(value);
+    display: inline-block;
+    width: 100px;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.7);
+    top: 42px;
+    color: #fff;
+    line-height: normal;
+}
+
+.collectBox .detailbox .detailboxitem:hover {
+    background-color: #ddd;
+}
+
+.collectBox .detailbox .detailboxitem:hover:after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    border-bottom: 12px solid rgba(0,0,0,.7);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    width: 0px;
+    height: 0px;
+    top: 30px;
+    left: 10px;
+}
+
+.collectBox .item {
+    display: inline-block;
+    color: #333;
+    font-size: 9px;
+    text-align: center;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.display_tpl1 > .fl {
+    color: red;
+    width:100px;
+}
+
+.display_tpl1 > .content {
+    margin-left: 100px;
+}
+
+
